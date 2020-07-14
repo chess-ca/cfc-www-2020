@@ -1,0 +1,33 @@
+{{- $lang := $.Page.Language.Lang }}
+{{- $currentPage := . }}
+ <section id="ws-topbar" class="container">
+  <aside class="menu is-pulled-left is-overlay is-hidden-tablet">
+   <ul class="menu-list">
+{{- range .Site.Menus.main }}
+    <li><a class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+{{- end }}
+   </ul>
+  </aside>
+  <div class="is-pulled-right">
+   <div class="is-hidden-tablet"><i class="fas fa-bars fa-border"></i></div>
+{{- if .IsTranslated }}
+    {{- range .Translations }}
+        {{- if ne .Lang "languages" }}
+   <a class="button is-small is-outline is-primary" href="{{ .Permalink }}" >{{ i18n "other_lang" | upper }}</a>
+        {{- end }}
+    {{- end }}
+{{- end }}
+  </div>
+  <a class="" href="/{{ $lang }}/">
+   <img src="/img/cfc.logo/cfc.logo.433x100.{{ $lang }}.png" class="is-hidden-mobile" style="min-height:100px;">
+   <img src="/img/cfc.logo/cfc.logo.177x100.{{ $lang }}.png" class="is-hidden-tablet" style="min-height:100px;">
+  </a>
+  <nav class="level" role="navigation" aria-label="main navigation">
+   <div class="level-left">
+{{- $currentPage := . }}
+{{- range .Site.Menus.main }}
+    <a class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a>
+{{- end }}
+   </div>
+  </nav>
+ </section>

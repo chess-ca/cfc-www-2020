@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+{{- $tax_plural := $.Page.Data.Plural }}
+ <main class="container content pad-touch-only">
+  <h1>{{ .Title }}</h1>
+  <p>By name:&nbsp;&nbsp;
+{{- range $i, $t := .Data.Terms.Alphabetical }}
+    {{- if gt $i 0 }}&nbsp;, {{ end }}
+    {{- printf "<a href=\"/%s/%s/\">%s</a>" $tax_plural .Term .Term | safeHTML }}
+{{- end}}.
+  </p>
+
+  <p>By count:&nbsp;&nbsp;
+{{- range $i, $t := .Data.Terms.ByCount }}
+    {{- if gt $i 0 }}&nbsp;, {{ end }}
+    {{- printf "<a href=\"/%s/%s/\">%s</a>(%d)" $tax_plural .Term .Term .Count | safeHTML }}
+{{- end}}.
+  </p>
+ </main>
+
+{{- end }}

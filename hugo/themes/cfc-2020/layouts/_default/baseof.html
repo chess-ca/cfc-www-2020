@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="{{ .Page.Language }}">
+{{ partial "html-head.html" . }}
+
+<body>
+ <div id="vue-app" {{with .Page.Params.pageid}} data-pageid="{{.}}"{{end}}>
+{{ partial "html-body-topbar.html" . -}}
+
+{{ block "main" . }}
+ <section class="ws-content container">
+  <h3>UNDER CONSTRUCTION!</h3>
+ </section>
+{{ end }}
+
+{{ partial "html-body-footer.html" . }}
+ </div>
+{{ partial "google-analytics.html" . }}
+ <script src="/built/site.bundle.js"></script>
+</body>
+
+</html>
