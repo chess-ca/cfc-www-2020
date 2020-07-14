@@ -1,0 +1,157 @@
+{{- define "main" }}
+{{- $lang := $.Page.Language.Lang }}
+{{- $list_blogs := first 20 (where .Site.RegularPages "Section" "blog") }}
+ <main id="ws-home" class="container content pad-touch-only">
+  <div class="columns is-8">
+
+   <!-- LEFT MAIN COLUMN -->
+   <div class="column is-8">
+    <div class="columns is-multiline">
+
+     <div class="column is-12">
+      <p class="ws-intro">{{ i18n "cfc-is-the-ngb" | safeHTML }}</p>
+     </div>
+
+     <div class="column is-12 ws-photobox">
+      <div class="columns">
+       <div class="ws-slide column is-narrow">
+        <img src="https://storage.googleapis.com/cfc-public/photos/carousel/2020-02.IM-Norm-3-Mark-Plotkin.jpg">
+       </div>
+       <div class="ws-slide column is-narrow">
+        <img src="https://storage.googleapis.com/cfc-public/photos/carousel/2020-02.round-1-middlegames.jpg">
+       </div>
+      </div>
+     </div>
+
+     <div class="column is-6">
+      <p class="title is-5"><i class="fas fa-chess-bishop"></i> {{ i18n "news" }}</p>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+        <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+        <strong>Magnus Retires</strong><br>
+        Yup, you heard it hear first.  Magnus has retired from competitive chess to join a buddhist monastery.
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+        <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+        <strong>Botez-Demchenko, 2020</strong><br>
+        The Covid lockdown has (temporariliy?) ended OTB chess events, but there has been a big boom in online chess events.
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+        <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+         <strong>BOTW: 2020.05</strong><br>
+         Despite over-the-board chess events cancelled world-wide, there are still interesting chess to watch and play...
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+        <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+        <strong>QGM Qiyu Zhou: Chessbase DVDs</strong><br>
+        Chessbase has just released two DVDs recorded by Canadian WGM Qiyu Zhou.
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+        <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+        <strong>Chess Canada: Embiggened</strong><br>
+        A new issue of Chess Canada, the CFC online magazine, is now available for free download from the CFC homepage...
+       </a>
+      </div>
+     </div>
+
+     <div class="column is-6">
+      <p class="title is-5"><i class="fas fa-chess-knight"></i> {{ i18n "events" }}</p>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       June 27 &mdash; Chess.com<br>Brantford Summer Active
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       June 28 &mdash; LiChess.org<br>Maritime Chess Club #5
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       July 3-5 &mdash; Vernon, BC<br>BC/AB Match & Vernon Open
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       July 18 &mdash; LiChess.org<br>Maritime Chess Club #6
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       June 27 &mdash; Chess.com<br>Brantford Summer Active
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       June 28 &mdash; LiChess.org<br>Maritime Chess Club #5
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       July 3-5 &mdash; Vernon, BC<br>BC/AB Match & Vernon Open
+       </a>
+      </div>
+      <div class="ws-item">
+       <a href="/{{ $lang }}/under-construction/">
+       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+       July 18 &mdash; LiChess.org<br>Maritime Chess Club #6
+       </a>
+      </div>
+     </div>
+
+     <div class="column is-12 is-hidden-mobile">
+      <p class="title is-5"><i class="fas fa-chess-queen"></i> {{ i18n "game-of-the-week" }}</p>
+       <iframe src="https://lichess.org/embed/V0aeNNw5#15?theme=brown&bg=light"
+          width=600 height=397 frameborder=0></iframe>
+     </div>
+    </div>
+   </div>
+
+   <!-- RIGHT COLUMN -->
+   <div class="column is-4">
+    <div class="columns is-multiline">
+     <div class="column is-12">
+      <p class="title is-5"><i class="fas fa-chess-rook"></i> {{ i18n "puzzle-of-the-day"}}</p>
+      <iframe src="https://lichess.org/training/frame?theme=brown&bg=light"
+        style="width:300px; height:333px;" allowtransparency="true" frameborder="0"></iframe>
+     </div>
+     <div class="column is-12">
+      <p class="title is-5"><i class="fas fa-chess-bishop"></i> {{ i18n "quick-links" }}</p>
+      <aside class="menu">
+       <ul class="menu-list" style="list-style:none;">
+        <li><a href="/{{ $lang }}/under-construction/">Ratings</a></li>
+        <li><a href="/{{ $lang }}/under-construction/">Tournaments</a></li>
+        <li><a href="/{{ $lang }}/under-construction/">Current CCN</a></li>
+        <li><a href="https://www.facebook.com/pages/Chess-Federation-of-Canada/163031117086480">{{ i18n "cfc" }} Facebook</a></li>
+        <li><a href="http://www.chesscanada.info/forum/forumdisplay.php?1-Public-Forums">{{ i18n "cfc" }} Forums</a></li>
+        <li><a href="https://forum.chesstalk.com/">ChessTalk</a></li>
+       </ul>
+      </aside>
+     </div>
+     <div class="column is-12">
+      <p class="title is-5"><i class="fas fa-chess-knight"></i> {{ i18n "shopping" }}</p>
+      <figure class="ws-b-2">
+       <a href="http://strategygames.ca/"><img src="/img/shop.strategy_games.jpg"></img></a>
+       <p class="is-size-7 is-primary">The official store of the CFC</p>
+      </figure>
+     </div>
+    </div>
+   </div>
+  </div>
+</main>
+{{ end }}

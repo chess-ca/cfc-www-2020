@@ -1,0 +1,11 @@
+[languages.en]
+    title = "CFC"
+    weight = 1
+    [languages.en.params]
+      foo = 'bar'
+
+[languages.fr]
+    title = "FCE"
+    weight = 2
+    [languages.fr.params]
+      foo = 'la bar'

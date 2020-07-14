@@ -1,0 +1,44 @@
+#-----------------------------------------------------------------------
+# Site:  BareNakedCoder.com
+#-----------------------------------------------------------------------
+baseURL = 'https://chess.ca/'
+#languageCode = 'en-us'
+title = 'chess.ca'
+#uglyURLs = true
+
+theme = 'cfc-2020'
+
+contentDir = '../content'
+#publishDir = '../gae/static-gen'
+enableRobotsTXT = true
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = true
+
+[markup.goldmark.renderer]
+  unsafe= true
+
+[frontmatter]
+  #---- if file is yyyy-mm-dd-post-title.md, date is from file name
+  date = [':filename', ':default']
+
+[permalinks]
+  news = '/news/:year/:month/:filename'
+  cfc = '/cfc/:filename'
+  clubs = '/clubs/:filename'
+  players = '/players/:filename'
+  tournaments = '/tournaments/:filename'
+  webpages = '/:filename'
+  #blog = '/blog/:year/:month/:slug'
+  #code = '/code/:slug'
+
+[author]
+  name = 'CFC / FCE'
+
+[taxonomies]
+  tag = 'tags'
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = false

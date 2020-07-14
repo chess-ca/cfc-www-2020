@@ -1,0 +1,18 @@
+
+main = [
+    {identifier='home', name='Home', url='/en/', weight=10},
+    {identifier='players', name='Players', url='/en/players/', weight=20},
+    {identifier='organizers', name='Organizers', url='/en/organizers/', weight=30},
+    {identifier='elite', name='Elite', url='/en/elite/', weight=40},
+    {identifier='cfc', name='CFC', url='/en/cfc/', weight=80},
+    {identifier='news', name='News', url='/en/news/', weight=90},
+]
+
+#    menu:
+#      main:
+#      - {url: /en/, name: Home, weight: 100}
+#      - {url: /en/players/, name: Players, weight: 110}
+#      - {url: /en/organizers/, name: Organizers, weight: 120}
+#      - {url: /en/elite/, name: Elite, weight: 130}
+#      - {url: /en/cfc/, name: CFC, weight: 140}
+#      - {url: /en/, name: News, weight: 150}

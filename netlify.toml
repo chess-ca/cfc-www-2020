@@ -1,0 +1,40 @@
+# Global settings applied to the whole site.
+#
+# “base” is the directory to change to before starting build. If you set base:
+#        that is where we will look for package.json/.nvmrc/etc, not repo root!
+# “command” is your build command.
+# “publish” is the directory to publish (relative to the root of your repo).
+
+[build]
+  base    = ""
+  command = "bash x-dev/netlify/deploy.bash"
+  publish = "hugo/public"
+
+# Production context: All deploys from the main
+# repository branch will inherit these settings.
+[context.production]
+  [context.production.environment]
+    HUGO_ENV = "production"
+    HUGO_VERSION = "0.73.0"
+
+# Deploy Preview context: All deploys generated from a pull/merge request
+# will inherit these settings.
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.73.0"
+
+# Branch deploy context: All deploys that are not from a pull/merge request
+# or from the production branch will inherit these settings.
+[context.branch-deploy]
+  [context.branch-deploy.environment]
+    HUGO_VERSION = "0.73.0"
+
+# Specific branch context: Deploys from this branch
+# will take these settings and override their
+# current ones.
+[context.feature]
+  command = "make feature"
+
+[context."features/branch"]
+  command = "bash x-dev/netlify/deploy.bash"
+
+# redirects - see "_redirects" file in published root directory
