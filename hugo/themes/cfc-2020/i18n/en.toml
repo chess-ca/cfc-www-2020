@@ -24,8 +24,16 @@ other = 'Game of the Week'
 [quick-links]
 other = 'Quick Links'
 [shopping]
-other = 'Shopping'
+other = 'Shop'
 [More]
 other = 'More'
 [privacy-policy]
 other = "Privacy Policy"
+
+# -------- Other
+[Tournaments]
+other = 'Tournaments'
+[Ratings]
+other = 'Ratings'
+[OLD]
+other = 'OLD'

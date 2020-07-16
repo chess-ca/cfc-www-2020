@@ -29,3 +29,11 @@ other = 'Achats'
 other = 'Plus'
 [privacy-policy]
 other = 'Politique de confidentialité'
+
+# -------- Other
+[Tournaments]
+other = 'Tournois'
+[Ratings]
+other = 'Cotes'
+[OLD]
+other = 'VIEUX'

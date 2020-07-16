@@ -3,7 +3,9 @@
 #  - Netlify.com looks for this file in the root of the published dir.
 # ---------------------------------------------------------------------
 
-# TODO:  Add redirect for Swiss-Sys file (hope it works)
+# TODO:  Add redirect for Swiss-Sys AND Swiss-Manager
+/sites/default/files/cfcmembers.mde /404.html 404
 # TODO:  Add redirect for tdlist file
+/sites/default/files/tdlist.txt /404.html 404
 
 /* /404.html 404

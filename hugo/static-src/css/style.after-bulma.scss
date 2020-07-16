@@ -58,6 +58,10 @@ html {
   a { color:$cp-text; }
   .ws-more { padding:0 .5rem; background-color: $cp-p200; }
 }
+.ws-links a {
+  &.button { margin-bottom:.25rem; }
+  &.button:hover { background-color: $cp-p100; }
+}
 .ws-more {
   padding:2px 1rem;
   i { color: $cp-p500; }
