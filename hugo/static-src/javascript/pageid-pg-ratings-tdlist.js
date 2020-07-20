@@ -20,6 +20,7 @@ function ratings_search(event) {
             console.log('API call: Success:', xhr);
             var rsp = JSON.parse(xhr.response);
             vue_vm.players.list = rsp.players;
+            vue_vm.dbdate = rsp.dbdate;
             vue_vm.searching = false;
             vue_vm.showing_results = true;
         } else {
@@ -52,6 +53,7 @@ export function init_vue_config(vc) {
     vc.data.first = '';
     vc.data.last = '';
     vc.data.players = { list: [] };
+    vc.data.dbdate = '';
     vc.data.searching = false;
     vc.data.showing_results = false;
 

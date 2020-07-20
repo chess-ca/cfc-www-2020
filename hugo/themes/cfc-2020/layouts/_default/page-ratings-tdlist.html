@@ -53,9 +53,14 @@
        <td class="int">[v[p.active_high]v]<span v-if="p.active_high < 30"><sup> g</sup></span></td>
        <td>[v[p.fide]v]</td>
       </tr>
+      <tr>
+       <td></td>
+       <td colspan="4">
+        <br>tdlist.txt date: [v[dbdate]v]
+        <br>{{ $i18n.foot_notes | safeHTML }}</td>
+      </tr>
      </tbody>
     </table>
-    <p>{{ $i18n.foot_notes | safeHTML }}</p>
    </div>
 
  </main>
