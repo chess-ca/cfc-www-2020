@@ -42,7 +42,7 @@ class Sqlite_Dbcon:
     def __enter__(self):
         if os.path.exists(self.sqlite_fpath):
             os.remove(self.sqlite_fpath)
-        now_utc = datetime.utcnow().strftime('%Y-%m-%d-%H:%M:%S UTC')
+        now_utc = datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
         self.dbcon = sqlite3.connect(self.sqlite_fpath)
         self.dbcon.execute('CREATE TABLE metadata (key text, value text)')
         self.dbcon.execute('INSERT INTO metadata (key, value) VALUES (?,?)', ['created', now_utc])
