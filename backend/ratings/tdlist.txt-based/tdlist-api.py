@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.7
-# IMPORTANT: CGI requires a shebang and Unix LF (not Windows CRLF)
+# REQUIRED: For CGI, chmod 711; a shebang; and Unix LF (not Windows CRLF)
 
 import sqlite3, json, os, configparser, pathlib
 import cgi, cgitb
