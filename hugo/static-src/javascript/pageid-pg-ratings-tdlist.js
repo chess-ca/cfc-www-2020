@@ -28,7 +28,7 @@ function ratings_search(event) {
             vue_vm.showing_results = false;
         }
     };
-    var api_url = 'http://swo.webfactional.com/cfc-tdlist/tdlist-api.py'
+    var api_url = 'https://swo.webfactional.com/cfc-tdlist/tdlist-api.py'
         + '?cfc_id=' + this.cfc_id
         + '&first=' + this.first
         + '&last=' + this.last;
