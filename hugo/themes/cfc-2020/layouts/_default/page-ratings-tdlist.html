@@ -32,11 +32,15 @@
    <div v-if="showing_results" class="table-container">
     <table class="ws-ratings-tdlist table is-hoverable is-narrow">
      <thead>
-      <th>{{ i18n "cfc" }} id</th><th>{{ $i18n.Name }}</th>
-      <th>{{ $i18n.City }}</th><th>{{ $i18n.cfc_expiry | safeHTML }}</th>
-      <th>{{ $i18n.regular_rating | safeHTML }}</th><th>{{ $i18n.regular_high | safeHTML }}</th>
-      <th>{{ $i18n.active_rating | safeHTML }}</th><th>{{ $i18n.active_high | safeHTML }}</th>
-      <th>FIDE<br>id</th>
+      <tr>
+       <th>{{ i18n "cfc" }} id</th><th>{{ $i18n.Name }}</th>
+       <th>{{ $i18n.City }}</th><th>{{ $i18n.cfc_expiry | safeHTML }}</th>
+       <th class="right">{{ $i18n.regular_rating | safeHTML }}</th>
+       <th class="right">{{ $i18n.regular_high | safeHTML }}</th>
+       <th class="right">{{ $i18n.active_rating | safeHTML }}</th>
+       <th class="right">{{ $i18n.active_high | safeHTML }}</th>
+       <th>FIDE<br>id</th>
+      </tr>
      </thead>
      <tbody>
       <tr v-if="!searching && players.list.length == 0">
