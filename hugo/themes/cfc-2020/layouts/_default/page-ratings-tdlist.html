@@ -1,0 +1,62 @@
+
+{{- define "title" -}}
+  {{ .Title }}
+{{- end }}
+
+{{- define "main" }}
+{{- $lang := $.Page.Language.Lang }}
+{{- $i18n := $.Page.Params.i18n }}
+ <main class="container content pad-touch-only">
+  <h1 class="title mt-3">{{ .Title }}</h1>
+   <p>{{ $i18n.ratings_tdlist_intro | safeHTML }}</p>
+   <form class="field is-grouped is-grouped-multiline" @submit="ratings_search">
+    <div class="control">
+     <label class="label is-small">{{ i18n "cfc" }} id
+      <input v-model.trim="cfc_id" class="input is-small" type="text" placeholder="{{ i18n "cfc" }} id" @keyup.enter="ratings_search">
+     </label>
+    </div>
+    <div class="control">
+     <label class="label is-small">{{ $i18n.First }}
+      <input v-model.trim="first" class="input is-small" type="text" placeholder="First name" @keyup.enter="ratings_search">
+     </label>
+    </div>
+    <div class="control">
+     <label class="label is-small">{{ $i18n.Last }}
+      <input v-model.trim="last" class="input is-small" type="text" placeholder="Last name" @keyup.enter="ratings_search">
+     </label>
+    </div>
+   </form>
+   <a class="button is-small is-info" @click.prevent="ratings_search" :class="{'is-loading':searching}">{{ $i18n.Search }}</a>
+   <a class="button is-small is-info" @click.prevent="ratings_reset">{{ $i18n.Reset }}</a>
+
+   <div v-if="showing_results" class="table-container">
+    <table class="ws-ratings-tdlist table is-hoverable is-narrow">
+     <thead>
+      <th>{{ i18n "cfc" }} id</th><th>{{ $i18n.Name }}</th>
+      <th>{{ $i18n.City }}</th><th>{{ $i18n.cfc_expiry | safeHTML }}</th>
+      <th>{{ $i18n.regular_rating | safeHTML }}</th><th>{{ $i18n.regular_high | safeHTML }}</th>
+      <th>{{ $i18n.active_rating | safeHTML }}</th><th>{{ $i18n.active_high | safeHTML }}</th>
+      <th>FIDE<br>id</th>
+     </thead>
+     <tbody>
+      <tr v-if="!searching && players.list.length == 0">
+       <td></td><td colspan="4">({{ $i18n.NONE_FOUND }})</td>
+      </tr>
+      <tr v-for="p in players.list" :key="p.cfc_id">
+       <td>[v[p.cfc_id]v]</td>
+       <td>[v[p.last]v], [v[p.first]v]</td>
+       <td>[v[p.city]v]</td>
+       <td>[v[p.expiry]v]</td>
+       <td class="int">[v[p.rating]v]<sup v-if="p.rating_high < 30"> pr</sup></td>
+       <td class="int">[v[p.rating_high]v]<span v-if="p.rating_high < 30"><sup> g</sup></span></td>
+       <td class="int">[v[p.active]v]<sup v-if="p.active_high < 30"> pr</sup></td>
+       <td class="int">[v[p.active_high]v]<span v-if="p.active_high < 30"><sup> g</sup></span></td>
+       <td>[v[p.fide]v]</td>
+      </tr>
+     </tbody>
+    </table>
+    <p>{{ $i18n.foot_notes | safeHTML }}</p>
+   </div>
+
+ </main>
+{{ end }}
