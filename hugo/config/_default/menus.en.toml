@@ -1,11 +1,11 @@
 
 main = [
-    {identifier='home', name='Home', url='/en/', weight=10},
-    {identifier='players', name='Players', url='/en/players/', weight=20},
-    {identifier='organizers', name='Organizers', url='/en/organizers/', weight=30},
-    {identifier='elite', name='Elite', url='/en/elite/', weight=40},
-    {identifier='cfc', name='CFC', url='/en/cfc/', weight=80},
-    {identifier='news', name='News', url='/en/under-construction/', weight=90},
+    {identifier="home", name="Home", url="/en/", weight=10},
+    {identifier="players", name="Players", url="/en/players/", weight=20},
+    {identifier="organizers", name="Organizers", url="/en/organizers/", weight=30},
+    {identifier="elite", name="Elite", url="/en/elite/", weight=40},
+    {identifier="cfc", name="CFC", url="/en/cfc/", weight=80},
+    {identifier="news", name="News", url="/en/under-construction/", weight=90},
 ]
 
 #    menu:

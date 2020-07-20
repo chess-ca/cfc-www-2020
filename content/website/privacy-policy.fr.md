@@ -1,6 +1,6 @@
 +++
-title = 'Politique de confidentialité'
+title = "Politique de confidentialité"
 tags = []
 +++
 
-{{% website-note todo='y' /%}}
+{{% website-note todo="y" /%}}

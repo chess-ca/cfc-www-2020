@@ -4,36 +4,36 @@ other = "fr"
 other = "Français"
 
 [cfc]
-other = 'CFC'
+other = "CFC"
 [chefedcan]
-other = 'Chess Federation of Canada'
+other = "Chess Federation of Canada"
 [cfc_fce]
-other = 'CFC / FCÉ'
+other = "CFC / FCÉ"
 [cfc-is-the-ngb]
-other = 'The <i>Chess Federation of Canada (CFC)</i> is the national governing body for promoting the game of chess in Canada. <a href="/en/under-construction/">More</a>'
+other = "The <i>Chess Federation of Canada (CFC)</i> is the national governing body for promoting the game of chess in Canada. <a href=\"/en/under-construction/\">More</a>"
 
 # -------- Home Page
 [puzzle-of-the-day]
-other = 'Puzzle of the Day'
+other = "Puzzle of the Day"
 [news]
-other = 'News'
+other = "News"
 [events]
-other = 'Events'
+other = "Events"
 [game-of-the-week]
-other = 'Game of the Week'
+other = "Game of the Week"
 [quick-links]
-other = 'Quick Links'
+other = "Quick Links"
 [shopping]
-other = 'Shop'
+other = "Shop"
 [More]
-other = 'More'
+other = "More"
 [privacy-policy]
 other = "Privacy Policy"
 
 # -------- Other
 [Tournaments]
-other = 'Tournaments'
+other = "Tournaments"
 [Ratings]
-other = 'Ratings'
+other = "Ratings"
 [OLD]
-other = 'OLD'
+other = "OLD"

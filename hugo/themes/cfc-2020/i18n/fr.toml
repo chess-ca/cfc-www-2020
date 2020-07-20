@@ -1,39 +1,39 @@
 [other_lang]
-other = 'en'
+other = "en"
 [other_language]
-other = 'English'
+other = "English"
 
 [cfc]
-other = 'FCE'
+other = "FCE"
 [chefedcan]
-other = 'Fédération Canadienne des Échecs'
+other = "Fédération Canadienne des Échecs"
 [cfc_fce]
-other = 'FCE / CFC'
+other = "FCE / CFC"
 [cfc-is-the-ngb]
 other = "La <i>Fédération Canadienne des Échecs (FCE)</i> est l'organisme national directeur pour la promotion du jeu d'échecs au Canada. <a href=\"/fr/under-construction/\">Plus</a>"
 
 # -------- Home Page
 [puzzle-of-the-day]
-other = 'Puzzle du jour'
+other = "Puzzle du jour"
 [news]
-other = 'Nouvelles'
+other = "Nouvelles"
 [events]
-other = 'Événements'
+other = "Événements"
 [game-of-the-week]
-other = 'Jeu de la semaine'
+other = "Jeu de la semaine"
 [quick-links]
-other = 'Liens rapides'
+other = "Liens rapides"
 [shopping]
-other = 'Achats'
+other = "Achats"
 [More]
-other = 'Plus'
+other = "Plus"
 [privacy-policy]
-other = 'Politique de confidentialité'
+other = "Politique de confidentialité"
 
 # -------- Other
 [Tournaments]
-other = 'Tournois'
+other = "Tournois"
 [Ratings]
-other = 'Cotes'
+other = "Cotes"
 [OLD]
-other = 'VIEUX'
+other = "VIEUX"

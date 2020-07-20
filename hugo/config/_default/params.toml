@@ -1,10 +1,10 @@
 
 isProd = false
-description = 'Chess Federation of Canada'
-author = 'CFC'
-gravatar = {email='info@chess.ca'}
+description = "Chess Federation of Canada"
+author = "CFC"
+gravatar = {email="info@chess.ca"}
 social = [
-    {icon='twitter', url='http://twitter.com/ChessCanada', weight=20},
-    {icon='facebook', url='https://www.facebook.com/pages/Chess-Federation-of-Canada/163031117086480', weight=40},
-    {icon='youtube', url='http://www.youtube.com/ChessCanada', weight=60}
+    {icon="twitter", url="http://twitter.com/ChessCanada", weight=20},
+    {icon="facebook", url="https://www.facebook.com/pages/Chess-Federation-of-Canada/163031117086480", weight=40},
+    {icon="youtube", url="http://www.youtube.com/ChessCanada", weight=60}
 ]
