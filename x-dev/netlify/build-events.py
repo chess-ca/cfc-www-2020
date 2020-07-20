@@ -23,16 +23,16 @@ def parse_args():
 
 
 def get_csv_file_from_google_sheets(gsheets_url):
-    print(f'Requesting CSV data from Google Sheets ...\n\tURL: {gsheets_url}')
+    print('Requesting CSV data from Google Sheets ...\n\tURL: {}'.format(gsheets_url))
     with urllib.request.urlopen(gsheets_url) as csv_fp:
         csv_bytes = csv_fp.read()
-    print(f'\tReceived {len(csv_bytes)} bytes')
+    print('\tReceived {} bytes'.format(len(csv_bytes)))
     csv_str = csv_bytes.decode('utf8')
     return csv_str
 
 
 def convert_csv_file_to_python(csv_str):
-    print(f'Converting CSV data (string) to Python ...')
+    print('Converting CSV data (string) to Python ...')
     csv_py = []
     rdr = csv.DictReader(io.StringIO(csv_str))
     fn = rdr.fieldnames
@@ -62,7 +62,7 @@ def csv_row_to_dict(row, rdr):
 
 
 def create_javascript_file(csv_py, javascript_fn):
-    print(f'Writing event data to Javascript file ...\n\tOutput: {javascript_fn}')
+    print('Writing event data to Javascript file ...\n\tOutput: {}'.format(javascript_fn))
     with open(javascript_fn, 'w') as js_fp:
         js_fp.write('window.ws_cfc_events = ')
         json.dump(csv_py, js_fp, indent='\t')
