@@ -1,21 +1,32 @@
+#!/usr/bin/env python3.7
+# IMPORTANT: CGI requires a shebang and Unix LF (not Windows CRLF)
 
-import sqlite3, json, os
+import sqlite3, json, os, configparser, pathlib
+import cgi, cgitb
 
-sqlite_db = r'C:\_TEMP\_TEST_tdlist\tdlist.txt.sqlite'
+# print('content-type: text/html')
+
+config_fp = pathlib.Path(__file__).with_suffix('.config')
+config_cp = configparser.ConfigParser()
+config_cp.read(config_fp)
+config = config_cp['tdlist-api']
 
 
 def main():
-    respond_cfc_id("106488")
+    if config['tdlist_run_type'] == 'local':
+        # request_players(cfc_id='106488')
+        request_players(first='Dona*')
+        # request_players(last='Para*')
+    else:
+        cgitb.enable(display=0, logdir=config['tdlist_log'])
+        req = form = cgi.FieldStorage(encoding='utf-8')
+        cfc_id = req['cfc_id'].value if 'cfc_id' in req else None
+        first = req['first'].value if 'first' in req else None
+        last = req['last'].value if 'last' in req else None
+        request_players(cfc_id=cfc_id, first=first, last=last)
 
 
-def respond_http_headers():
-    print('content-type: application/json')
-    print('cache-control: public, max-age=120, must-revalidate')
-    print('status: 200')   # http status (transport layer) is not apicode (application layer)
-    print()
-
-
-def respond_players(cfc_id=None, last=None, first=None):
+def request_players(cfc_id=None, last=None, first=None):
     where = []
     sqldata = []
     if cfc_id:
@@ -25,7 +36,7 @@ def respond_players(cfc_id=None, last=None, first=None):
         if '*' not in last:
             where.append('last_lc=?')
         else:
-            where.append('last_lc=?')
+            where.append('last_lc LIKE ?')
             last = last.replace('*', '%')
         sqldata.append(last.lower())
     if first:
@@ -36,23 +47,41 @@ def respond_players(cfc_id=None, last=None, first=None):
             first = first.replace('*', '%')
         sqldata.append(first.lower())
 
-
-def respond_cfc_id(cfc_id):
-    with Sqlite_Dbcon(sqlite_db) as dbcon:
+    with Sqlite_Dbcon(config['tdlist_sqlite']) as dbcon:
         dbcsr = dbcon.cursor()
-        dbcsr.execute('SELECT * FROM players WHERE cfc_id=?', [cfc_id])
-        player = dbcsr.fetchone()
-        if player is None:
-            respond_http_headers()
-            print(f'{{apicode:101, error:"NOT FOUND: cfc_id={cfc_id}}}')
-        else:
-            respond_http_headers()
-            print_players([player['data']])
+        # ---- Get the datetime of this database
+        sql = 'SELECT value FROM metadata WHERE key=?'
+        dbcsr.execute(sql, ['created'])
+        row = dbcsr.fetchone()
+        dbdate = row['value'] if row else None
+        # ---- Get the player data
+        sql = 'SELECT * FROM players WHERE ### ORDER BY last_lc'
+        sql = sql.replace('###', ' AND '.join(where))
+        # print(f'DEBUG: SQL: {sql}')
+        # print(f'DEBUG: SQLDATA: {sqldata}')
+        dbcsr = dbcon.cursor()
+        pdata = []
+        for player in dbcsr.execute(sql, sqldata):
+            pdata.append(player['data'])
+        # ---- Respond
+        respond(0, players=pdata, dbdate=dbdate)
+        # if len(pdata) == 0:
+        #     respond_error(101, f'NOT FOUND: Zero players were found')
+        # else:
+        #     respond_players(pdata)
 
 
-def print_players(players):
-    players_data = ',\n'.join(players)
-    print(f'{{apicode:0, players:[\n{players_data}\n]}}')
+def respond(apicode, players=None, dbdate=None, errmsg=None):
+    print('Content-Type: application/json')
+    print('Cache-Control: public, max-age=60, must-revalidate')
+    print('Access-Control-Allow-Origin: *')
+    print('Status: 200')   # http status (transport layer) is not apicode (application layer)
+    print()
+    errmsg = errmsg.replace('"', '\\"') if errmsg else ''
+    dbdate = dbdate or ''
+    count = len(players) if players else 0
+    pdata = ('\n' + (',\n'.join(players)) + '\n') if players else ''
+    print(f'{{"apicode":{apicode}, "error":"{errmsg}", "count":{count}, "players":[{pdata}], "dbdate":"{dbdate}"}}')
 
 
 class Sqlite_Dbcon:

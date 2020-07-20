@@ -4,7 +4,7 @@
 {{- end }}
 
 {{- define "main" }}
- <section class="ws-main container">
+ <main class="ws-main container">
     <h1 class="title mt-3">{{ .Title }}</h1>
     <div class="ws-section-menu columns is-multiline">
 {{- range $group := .Params.sectionMenu.groups }}
@@ -21,5 +21,5 @@
 {{- end }}
    </div>
 {{ .Content }}
- </section>
+ </main>
 {{- end }}

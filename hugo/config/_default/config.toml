@@ -27,7 +27,7 @@ defaultContentLanguageInSubdir = true
   clubs = '/clubs/:filename'
   players = '/players/:filename'
   tournaments = '/tournaments/:filename'
-  webpages = '/:filename'
+  website = '/:filename'
   #blog = '/blog/:year/:month/:slug'
   #code = '/code/:slug'
 

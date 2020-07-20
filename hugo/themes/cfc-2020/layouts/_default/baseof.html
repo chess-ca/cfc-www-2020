@@ -1,10 +1,12 @@
 <!doctype html>
 
-<html lang="{{ .Page.Language }}">
+<html lang="{{ .Page.Language }}"{{ with .Params.pageid }} data-pageid="{{.}}"{{end}}>
+<head>
 {{ partial "html/head.html" . }}
+</head>
 
 <body>
- <div id="vue-app" {{with .Page.Params.pageid}} data-pageid="{{.}}"{{end}}>
+ <div id="vue-app">
 {{ partial "html/body-topbar.html" . -}}
 
 {{ block "main" . }}
@@ -15,8 +17,8 @@
 
 {{ partial "html/body-footer.html" . }}
  </div>
-{{ partial "google-analytics.html" . }}
  <script src="/built/site.bundle.js"></script>
+{{ partial "google-analytics.html" . }}
 </body>
 
 </html>
