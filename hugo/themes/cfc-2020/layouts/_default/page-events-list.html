@@ -1,0 +1,76 @@
+{{- define "inside-head" }} <script src="/built/cfc-events.js"></script>
+{{ end }}
+
+{{- define "title" -}}
+  {{ .Title }}
+{{- end }}
+
+{{- define "main" }}
+{{- $lang := $.Page.Language.Lang }}
+{{- $i18n := $.Page.Params.i18n }}
+ <main class="container content pad-touch-only">
+  <h1 class="title mt-3">{{ .Title }}</h1>
+   <div class="field is-grouped is-grouped-multiline">
+    <div class="control">
+     <div class="select is-small is-primary">
+      <select v-model="e_type">
+       <option value="*">{{ $i18n.All_types }}</option>
+       <option value="Online">{{ $i18n.Online }}</option>
+       <option value="OTB">{{ $i18n.OTB }}</option>
+       <option value="Junior-Online">{{ $i18n.Jr_Online }}</option>
+       <option value="Junior-OTB">{{ $i18n.Jr_OTB }}</option>
+       <option value="Foreign">{{ $i18n.Foreign }}</option>
+      </select>
+     </div>
+    </div>
+    <div class="control">
+     <div class="select is-small is-primary">
+      <select v-model="e_prov">
+       <option value="*">{{ $i18n.All_provinces }}</option>
+       <option value="Online">{{ $i18n.Online }}</option>
+       <option value="AB">AB - Alberta</option>
+       <option value="BC">BC - British Columbia</option>
+       <option value="MB">MB - Manitoba</option>
+       <option value="NB">NB - New Brunswick</option>
+       <option value="NL">NL - Newfoundland and Labrador</option>
+       <option value="NT">NT - Northwest Territories</option>
+       <option value="NS">NS - Nova Scotia</option>
+       <option value="NU">NU - Nunavut</option>
+       <option value="ON">ON - Ontario</option>
+       <option value="PE">PE - Prince Edward Island</option>
+       <option value="QC">QC - Quebec</option>
+       <option value="SK">SK - Saskatchewan</option>
+       <option value="YT">YT - Yukon</option>
+       <option value="FO">{{ $i18n.Foreign }}</option>
+      </select>
+     </div>
+    </div>
+   </div>
+
+   <div class="table-container">
+    <table class="ws-ratings-tdlist table is-hoverable is-narrow" style="min-width:800px;">
+     <thead>
+      <tr>
+       <th>{{ $i18n.Type }}</th><th>{{ $i18n.Event }}</th>
+       <th>{{ $i18n.Dates }}</th><th>{{ $i18n.Location }}</th>
+       <th>{{ $i18n.Province }}</th><th>{{ $i18n.Info }}</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr v-if="cfc_events.length == 0">
+       <td></td><td colspan="4">({{ $i18n.NONE }})</td>
+      </tr>
+      <tr v-for="e in cfc_events">
+       <td>[v[e.type]v]</td>
+       <td>[v[e.name]v]</td>
+       <td>[v[e.dates]v]</td>
+       <td>[v[e.city]v]</td>
+       <td>[v[e.prov]v]</td>
+       <td v-html="e.links"></td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+
+ </main>
+{{ end }}
