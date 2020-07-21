@@ -1,3 +1,6 @@
+{{- define "inside-head" }} <script src="/built/cfc-events.js"></script>
+{{ end }}
+
 {{- define "main" }}
 {{- $lang := $.Page.Language.Lang }}
 {{- $list_blogs := first 20 (where .Site.RegularPages "Section" "blog") }}

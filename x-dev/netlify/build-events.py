@@ -3,7 +3,7 @@
 GSHEETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0OdgsCSYzlRBMOMkLFTHVuIcdXNSz7XQ3KWz4jtJr5fH4wHzDv1HRP3ytG4PwqxAXdTQLjOL0srAB/pub?gid=0&single=true&output=csv'
 
 import urllib.request
-import argparse, csv, io, json
+import argparse, csv, io, re, json
 
 
 def main():
@@ -45,8 +45,20 @@ def convert_csv_file_to_python(csv_str):
     return csv_py
 
 
+# Pattern (Markdown links) example:  "...[Google](https://google.com)..."
+link_re = re.compile(r'\[(.*?)\]\((.*?)\)')
+
+
 def csv_row_to_dict(row, rdr):
     fn = rdr.fieldnames
+
+    main_url = ''
+    links = str(row[fn[8]]).strip()
+    for i, m in enumerate(link_re.finditer(links)):
+        if i == 0:
+            main_url = m[2]
+        links = links.replace(m[0], '<a href="{}">{}</a>'.format(m[2], m[1]))
+
     event = {
         'incl': str(row[fn[0]]).strip(),
         'type': str(row[fn[1]]).strip(),
@@ -56,7 +68,8 @@ def csv_row_to_dict(row, rdr):
         'dates': str(row[fn[5]]).strip(),
         'city': str(row[fn[6]]).strip(),
         'prov': str(row[fn[7]]).strip(),
-        'links': str(row[fn[8]]).strip(),
+        'url': main_url,
+        'links': links,
     }
     return event
 
