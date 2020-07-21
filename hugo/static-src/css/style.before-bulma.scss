@@ -29,9 +29,10 @@ $cp-n200: hsl(39,85%,95%);
 $cp-n100: hsl(39,85%,98%);
 
 $primary: $cp-p300;
-$primary-invert: $cp-text;
+$primary-invert: #000;  // $cp-text;
 $link: $cp-p400;
 $text: $cp-text;
+$text-strong: #000;
 
 //======================================================================
 // Fonts

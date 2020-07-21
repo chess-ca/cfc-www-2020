@@ -5,6 +5,7 @@ layout = "page-events-list"
 pageid = "pg-events-list"
 
 [i18n]
+    AddEvent = "Add Event"
     All_types = "All types"
     Online = "Online"
     OTB = "OTB"
