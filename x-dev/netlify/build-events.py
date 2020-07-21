@@ -56,8 +56,8 @@ def csv_row_to_dict(row, rdr):
     links = str(row[fn[8]]).strip()
     for i, m in enumerate(link_re.finditer(links)):
         if i == 0:
-            main_url = m[2]
-        links = links.replace(m[0], '<a href="{}">{}</a>'.format(m[2], m[1]))
+            main_url = m.group(2)
+        links = links.replace(m.group(0), '<a href="{}">{}</a>'.format(m.group(2), m.group(1)))
 
     event = {
         'incl': str(row[fn[0]]).strip(),
