@@ -4,8 +4,8 @@
 # ---------------------------------------------------------------------
 
 # TODO:  Add redirect for Swiss-Sys AND Swiss-Manager
-/sites/default/files/cfcmembers.mde /404.html 404
+/sites/default/files/cfcmembers.mde https://storage.googleapis.com/cfc-public/data/cfcmembers.mde
 # TODO:  Add redirect for tdlist file
-/sites/default/files/tdlist.txt /404.html 404
+/sites/default/files/tdlist.txt https://storage.googleapis.com/cfc-public/data/tdlist.txt
 
 /* /404.html 404
