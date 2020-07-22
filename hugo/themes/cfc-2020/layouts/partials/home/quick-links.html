@@ -1,5 +1,6 @@
 {{- $lang := $.Page.Language.Lang }}
-      <p class="title is-5"><i class="fas fa-chess-bishop"></i> {{ i18n "quick-links" }}</p>
+{{- $i18n := $.Page.Params.i18n }}
+      <p class="title is-5"><i class="fas fa-chess-bishop"></i> {{ $i18n.quick_links }}</p>
       <aside class="menu ws-links">
        <div class="columns is-mobile">
         <div class="column is-narrow">

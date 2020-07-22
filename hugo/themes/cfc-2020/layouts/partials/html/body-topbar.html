@@ -1,13 +1,7 @@
 {{- $lang := $.Page.Language.Lang }}
 {{- $currentPage := . }}
  <section id="ws-topbar" class="container">
-  <aside :class="{'is-open':sideNav_show}" @click="sideNav_toggle" class="menu is-pulled-left is-overlay is-hidden-tablet">
-   <ul class="menu-list">
-{{- range .Site.Menus.main }}
-    <li><a class="menu-item{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-{{- end }}
-   </ul>
-  </aside>
+{{- partialCached "html/body-topbar-sidenav.html" . }}
 
   <div class="columns is-mobile">
    <div class="column is-narrow">
@@ -31,12 +25,5 @@
    </div>
   </div>
 
-  <nav class="level is-hidden-mobile" role="navigation" aria-label="main navigation">
-   <div class="level-left">
-{{- $currentPage := . }}
-{{- range .Site.Menus.main }}
-    <a class="level-item menu-item{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a>
-{{- end }}
-   </div>
-  </nav>
+{{ partialCached "html/body-topbar-navbar.html" . }}
  </section>

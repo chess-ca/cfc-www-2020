@@ -9,22 +9,12 @@ other = "FCE"
 other = "Fédération Canadienne des Échecs"
 [cfc_fce]
 other = "FCE / CFC"
-[cfc-is-the-ngb]
-other = "La <i>Fédération Canadienne des Échecs (FCE)</i> est l'organisme national directeur pour la promotion du jeu d'échecs au Canada. <a href=\"/fr/under-construction/\">Plus</a>"
 
 # -------- Home Page
-[puzzle-of-the-day]
-other = "Puzzle du jour"
 [news]
 other = "Nouvelles"
 [events]
 other = "Événements"
-[game-of-the-week]
-other = "Jeu de la semaine"
-[quick-links]
-other = "Liens rapides"
-[shopping]
-other = "Achats"
 [More]
 other = "Plus"
 [privacy-policy]

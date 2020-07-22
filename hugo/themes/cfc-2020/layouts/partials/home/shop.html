@@ -1,4 +1,5 @@
-      <p class="title is-5"><i class="fas fa-chess-knight"></i> {{ i18n "shopping" }}</p>
+{{- $i18n := $.Page.Params.i18n }}
+      <p class="title is-5"><i class="fas fa-chess-knight"></i> {{ $i18n.Shop }}</p>
       <figure class="shop-items">
        <a href="http://strategygames.ca/"><img src="/img/shop.strategy_games.jpg"></img></a>
        <p class="is-size-7 is-primary">The official store of the CFC</p>

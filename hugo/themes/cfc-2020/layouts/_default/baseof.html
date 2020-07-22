@@ -17,10 +17,10 @@
  </section>
 {{ end }}
 
-{{ partial "html/body-footer.html" . }}
+{{ partialCached "html/body-footer.html" . }}
  </div>
  <script src="/built/site.bundle.js"></script>
-{{- partial "google-analytics.html" . }}
+{{- partialCached "google-analytics.html" . }}
 </body>
 
 </html>

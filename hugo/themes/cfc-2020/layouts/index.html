@@ -3,6 +3,7 @@
 
 {{- define "main" }}
 {{- $lang := $.Page.Language.Lang }}
+{{- $i18n := $.Page.Params.i18n }}
 {{- $list_blogs := first 20 (where .Site.RegularPages "Section" "blog") }}
  <main id="ws-home" class="container content pad-touch-only">
   <div class="columns is-8">
@@ -12,7 +13,7 @@
     <div class="columns is-multiline">
 
      <div class="column is-12">
-      <p class="ws-intro">{{ i18n "cfc-is-the-ngb" | safeHTML }}</p>
+      <p class="ws-intro">{{ $i18n.intro_text | safeHTML }}</p>
      </div>
 
      <div class="column is-12 ws-photobox">

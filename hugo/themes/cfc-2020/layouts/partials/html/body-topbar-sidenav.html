@@ -1,0 +1,8 @@
+
+  <aside :class="{'is-open':sideNav_show}" @click="sideNav_toggle" class="menu is-pulled-left is-overlay is-hidden-tablet">
+   <ul class="menu-list">
+{{- range .Site.Menus.main }}
+    <li><a class="menu-item" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+{{- end }}
+   </ul>
+  </aside>

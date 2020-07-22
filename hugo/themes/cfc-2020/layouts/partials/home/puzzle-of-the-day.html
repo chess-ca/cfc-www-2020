@@ -1,3 +1,4 @@
-      <p class="title is-5"><i class="fas fa-chess-rook"></i> {{ i18n "puzzle-of-the-day"}}</p>
+{{- $i18n := $.Page.Params.i18n }}
+      <p class="title is-5"><i class="fas fa-chess-rook"></i> {{ $i18n.puzzle_of_the_day }}</p>
       <iframe src="https://lichess.org/training/frame?theme=brown&bg=light"
         style="width:300px; height:333px;" allowtransparency="true" frameborder="0"></iframe>
