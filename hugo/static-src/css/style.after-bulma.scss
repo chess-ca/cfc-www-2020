@@ -27,6 +27,7 @@ html {
 .checkers-3r { padding-top:30px; background: #fff url("/img/squares/squares.6px.2x3.png") repeat-x; }
 .checkers-4r { padding-top:36px; background: #fff url("/img/squares/squares.6px.2x4.png") repeat-x; }
 
+#ws-overlay { background-color: hsla(90,27%,65%,0.25); z-index:900; }
 #ws-topbar {
   &.container {
     padding:0.5rem 0;
@@ -39,14 +40,35 @@ html {
       &:hover { border-bottom:2px solid $cp-p500; }
     }
     aside {
-      position:absolute; z-index:999;
-      width:140px; margin-left:-144px;
-      margin-top:8rem;
-      ul {
-        text-align:right;
-        background-color: #fff;
-      }
+      height: 100%; width: 0; overflow-x: hidden;
+      position: fixed; z-index: 901; top: 0; left: 0;
+      background-color: #fff;
+      transition: 0.2s ease-out;
+      padding-top: 60px;
+      &.is-open { width:240px; border-right:8px solid $cp-p300; }
     }
+    //aside {
+    //  //position:absolute; z-index:999; margin-left:-144px;
+    //  width:240px; background-color: #fff;
+    //  margin-top:8rem;
+    //  ul {
+    //    text-align:right;
+    //    background-color: #fff;
+    //  }
+    //  .is-closed { width:0; }
+    //  .is-open { width:240px; }
+    //}
+  }
+  .ws-sidenav-enter-active {
+    transition: all .3s ease;
+  }
+  .ws-sidenav-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .ws-sidenav-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
   }
 }
 #ws-home {

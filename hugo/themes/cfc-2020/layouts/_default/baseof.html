@@ -8,6 +8,7 @@
 
 <body>
  <div id="vue-app">
+ <div id="ws-overlay" :class="{'is-overlay':sideNav_show}" @click="sideNav_toggle"></div>
 {{ partial "html/body-topbar.html" . -}}
 
 {{ block "main" . }}

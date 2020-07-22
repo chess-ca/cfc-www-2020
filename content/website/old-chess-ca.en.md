@@ -5,7 +5,7 @@ tags = []
 
 Go to the OLD chess.ca website, click:
 
-<a href="https://chess.ca/" class="button is-primary">Go to OLD chess.ca</a>
+<a href="http://old.chess.ca/" class="button is-primary">Go to OLD chess.ca</a>
 
 Things to know before you go:
 
@@ -14,8 +14,8 @@ not yet been migrated to the NEW website. The OLD website will remain until all
 content has been migrated to the NEW website.  
 
 * Be careful! The OLD chess.ca is blocked for some users because of virsuses that *may*
-redirect you to another website that has malware.  If this happens, do not do
-anything on the other page (especially do not enter ids, passwords, credit cards, etc).
+or *may not* redirect you to another website that has malware.  If this happens, do not do
+anything on that other website (especially do not enter ids, passwords, credit cards, etc).
 Close your browser tab immediately.
 
 * How? Getting around the blocking is different for different browsers:
