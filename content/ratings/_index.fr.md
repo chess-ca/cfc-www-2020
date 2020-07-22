@@ -5,7 +5,14 @@ layout = "page-ratings-tdlist"
 pageid = "pg-ratings-tdlist"
 
 [i18n]
-    ratings_tdlist_intro = "Recherchez les notes des joueurs et les dates d'expiration. Utilisez * comme joker; exemple: Carls*"
+    ratings_tdlist_intro = """
+        <div class="notification" style="font-size:90%">
+         REMARQUE: pour l'instant, seules les dernières notes et dates d'expiration sont disponibles
+         (à partir du fichier tdlist.txt). Nous travaillons à la migration de la note complète
+         et l'historique des tournois (comme sur l'ancien site Web) mais cela prendra plus de temps.
+        </div>
+        Recherchez les notes des joueurs et les dates d'expiration. Utilisez * comme joker; exemple: Carls*
+        """
     First = "Prénom"
     Last = "Nom de famille"
     Search = "Chercher"

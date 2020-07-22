@@ -5,7 +5,14 @@ layout = "page-ratings-tdlist"
 pageid = "pg-ratings-tdlist"
 
 [i18n]
-    ratings_tdlist_intro = "Search for player ratings and expiry dates.  Use * as a wild card; example: Carls*"
+    ratings_tdlist_intro = """
+        <div class="notification" style="font-size:90%">
+         NOTE: For now, only the lastest rating and expiry dates are available
+         (from the tdlist.txt file). We are working on migrating the full rating
+         and tournament history (like on the old website) but this will take more time.
+        </div>
+        Search for player ratings and expiry dates.  Use * as a wild card; example: Carls*
+        """
     First = "First name"
     Last = "Last name"
     Search = "Search"
