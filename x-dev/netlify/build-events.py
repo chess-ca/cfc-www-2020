@@ -40,8 +40,8 @@ def convert_csv_file_to_python(csv_str):
         event = csv_row_to_dict(row, rdr)
         if event['incl'] != '' or event['type'] == '' or event['name'] == '':
             continue
-        del event['start']          # Not needed by front-end
         csv_py.append(event)
+    csv_py = sorted(csv_py, key=lambda e: (e['start'], e['name']))
     return csv_py
 
 
