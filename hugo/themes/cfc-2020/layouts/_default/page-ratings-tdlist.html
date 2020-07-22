@@ -37,8 +37,8 @@
        <th>{{ $i18n.City }}</th><th>{{ $i18n.cfc_expiry | safeHTML }}</th>
        <th class="right">{{ $i18n.regular_rating | safeHTML }}</th>
        <th class="right">{{ $i18n.regular_high | safeHTML }}</th>
-       <th class="right">{{ $i18n.active_rating | safeHTML }}</th>
-       <th class="right">{{ $i18n.active_high | safeHTML }}</th>
+       <th class="right">{{ $i18n.quick_rating | safeHTML }}</th>
+       <th class="right">{{ $i18n.quick_high | safeHTML }}</th>
        <th>FIDE<br>id</th>
       </tr>
      </thead>
@@ -60,8 +60,9 @@
       <tr>
        <td></td>
        <td colspan="4">
-        <br>tdlist.txt date: [v[dbdate]v]
-        <br>{{ $i18n.foot_notes | safeHTML }}</td>
+        <br>{{ $i18n.foot_notes | safeHTML }}
+        <br>tdlist.txt : [v[dbdate]v]
+       </td>
       </tr>
      </tbody>
     </table>
