@@ -31,6 +31,8 @@ other = "Plus"
 other = "Politique de confidentialité"
 
 # -------- Other
+[Contact_the_CFC]
+other = 'Contactez le FCE'
 [More_news]
 other = "Plus de nouvelles"
 [More_events]
