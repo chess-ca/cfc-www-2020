@@ -31,6 +31,8 @@ other = "Plus"
 other = "Politique de confidentialité"
 
 # -------- Other
+[More_news]
+other = "Plus de nouvelles"
 [More_events]
 other = "Plus d'événements"
 [Tournaments]
