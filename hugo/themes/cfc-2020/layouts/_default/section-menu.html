@@ -13,13 +13,16 @@
        <h4 class="title is-6"><i class="fas fa-chess-bishop"></i></span> {{$group.title|safeHTML}}</h4>
        <p>
 {{- range $item := $group.items}}
-        <a href="{{$item.url | safeHTML }}" class="button is-small">{{$item.txt|safeHTML}}</a>
+        <a href="{{$item.url | safeHTML }}" class="button is-small">
+         {{- with $item.uc }}_{{ end }}{{ $item.txt|safeHTML -}}
+        </a>
 {{- end }}
        </p>
       </div>
      </div>
 {{- end }}
    </div>
+   <p>_ &#8658; {{ i18n "Under_Construction" }}
 {{ .Content }}
  </main>
 {{- end }}
