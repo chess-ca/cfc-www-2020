@@ -3,6 +3,7 @@
  * @author Don Parakin
  */
 import Vue from 'vue';
+import * as ws_chess_com_game from './ws-chess-com-game';
 import * as pageid_pg_all from './pageid-pg-all';
 import * as pageid_pg_home from './pageid-pg-home';
 import * as pageid_pg_events_list from './pageid-pg-events-list';
@@ -12,6 +13,8 @@ import * as pageid_pg_ratings_tdlist from './pageid-pg-ratings-tdlist';
 
 const el_html = document.getElementsByTagName('html')[0];
 const pageid = el_html.getAttribute('data-pageid') || '';
+
+ws_chess_com_game.add_component(Vue);
 
 const vue_config = {
     el: '#vue-app',
