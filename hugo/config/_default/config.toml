@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------------
 # Site:  BareNakedCoder.com
 #-----------------------------------------------------------------------
-baseURL = "https://chess-ca.netlify.app/"
+baseURL = "https://www.chess.ca/"
 #languageCode = "en-us"
 title = "chess.ca"
 #uglyURLs = true
