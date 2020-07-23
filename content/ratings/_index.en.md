@@ -1,7 +1,7 @@
 +++
 title = "Ratings"
 date = "2020-07-11"
-layout = "page-ratings-tdlist"
+layout = "ws-ratings-tdlist"
 pageid = "pg-ratings-tdlist"
 
 [i18n]

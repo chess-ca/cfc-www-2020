@@ -14,20 +14,17 @@ enableRobotsTXT = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
-[markup.goldmark.renderer]
-  unsafe= true
-
 [frontmatter]
   #---- if file is yyyy-mm-dd-post-title.md, date is from file name
   date = [":filename", ":default"]
 
 [permalinks]
-  news = "/news/:year/:month/:filename"
-  cfc = "/cfc/:filename"
-  clubs = "/clubs/:filename"
-  players = "/players/:filename"
-  tournaments = "/tournaments/:filename"
-  website = "/:filename"
+  news = "/news/:year/:month-:day.:slug"
+  cfc = "/cfc/:slug"
+  clubs = "/clubs/:slug"
+  players = "/players/:slug"
+  tournaments = "/tournaments/:slug"
+  website = "/ws/:filename"
   #blog = "/blog/:year/:month/:slug"
   #code = "/code/:slug"
 
@@ -36,6 +33,9 @@ defaultContentLanguageInSubdir = true
 
 [taxonomies]
   tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe= true
 
 [markup]
   [markup.tableOfContents]

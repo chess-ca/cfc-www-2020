@@ -1,7 +1,7 @@
 +++
 title = "évènements à venir"
 date = "2020-07-11"
-layout = "page-events-list"
+layout = "ws-events-list"
 pageid = "pg-events-list"
 
 [i18n]
