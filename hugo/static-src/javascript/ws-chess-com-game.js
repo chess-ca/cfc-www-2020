@@ -1,5 +1,9 @@
 /**
  * @file VueJS component: chess.com game
+ *  - chess.com requires some JS after the iframe is mounted.
+ *    Previously, when this was added inline, VueJS complained
+ *    since it doesn't like <scripts> within the vue-app.
+ *    By putting all this in a Vue component, everyone is happy.
  * @author Don Parakin, 2020
  */
 
@@ -17,7 +21,7 @@ const vue_data = function() {
     return { };
 };
 const vue_mounted = function() {
-    // Code from chess.com:
+    // Code from chess.com: must run after the <iframe> is mounted.
     window.addEventListener("message",e=>{e['data']&&this.game_id===e['data']['id']&&document.getElementById(`${e['data']['id']}`)&&(document.getElementById(`${e['data']['id']}`).style.height=`${e['data']['frameHeight']+30}px`)});
 };
 

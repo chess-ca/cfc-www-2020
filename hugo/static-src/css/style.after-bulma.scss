@@ -27,6 +27,9 @@ html {
 .checkers-3r { padding-top:30px; background: #fff url("/img/squares/squares.6px.2x3.png") repeat-x; }
 .checkers-4r { padding-top:36px; background: #fff url("/img/squares/squares.6px.2x4.png") repeat-x; }
 
+//----------------------------------------------------------------------
+// All Pages:  topbar, sidenav
+//----------------------------------------------------------------------
 #ws-overlay { background-color: hsla(90,27%,65%,0.25); z-index:900; }
 #ws-topbar {
   &.container {
@@ -47,17 +50,6 @@ html {
       padding-top: 60px;
       &.is-open { width:240px; border-right:8px solid $cp-p300; }
     }
-    //aside {
-    //  //position:absolute; z-index:999; margin-left:-144px;
-    //  width:240px; background-color: #fff;
-    //  margin-top:8rem;
-    //  ul {
-    //    text-align:right;
-    //    background-color: #fff;
-    //  }
-    //  .is-closed { width:0; }
-    //  .is-open { width:240px; }
-    //}
   }
   .ws-sidenav-enter-active {
     transition: all .3s ease;
@@ -71,10 +63,31 @@ html {
     opacity: 0;
   }
 }
+//----------------------------------------------------------------------
+// Home Page:
+//----------------------------------------------------------------------
 #ws-home {
   p.title, p.ws-intro { border-top:2px solid $cp-p100; padding-top:.5rem; }
   .shop-items { border: 2px solid $cp-p200; padding:0.5rem; }
 }
+//---------------- Photobox (Vue component)
+.ws-photobox {
+  overflow: hidden;
+  ul { margin:0; overflow-x:hidden; white-space:nowrap; }
+  ul li {
+    display:inline-block; margin-right:1rem;
+    p { font-size:0.75rem; }
+  }
+  ul li img { height:300px; }
+  .ws-photobox-move { transition: transform 1s; }
+  .ws-photobox-enter-active, .ws-photobox-leave-active {
+    transition: all 1s;
+  }
+}
+
+//----------------------------------------------------------------------
+//----------------------------------------------------------------------
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .ws-item {
   border-top: 1px solid $cp-p200;
   font-size:84%; padding-bottom: 1rem;
@@ -90,17 +103,8 @@ html {
   i { color: $cp-p500; }
   background-color: $cp-p200; float:right;
 }
-.ws-photobox {
-  overflow-x: hidden;
-  .ws-slide {
-    //padding: 0.5rem; margin: 0 0.5rem;
-    //border: 1px solid $cp-p300;
-    overflow-x:hidden;
-    img {
-      height:300px;
-    }
-  }
-}
+
+
 .ws-note {
   padding:0.5rem; margin:0.5rem;
   background-color:#ffd; border:2px solid #f44;
