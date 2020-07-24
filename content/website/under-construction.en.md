@@ -18,7 +18,7 @@ this [LINK](http://www.chess.ca/en/ws/old-chess-ca/).
 </div>
 
 * **Blocked:**
-On July 3, 2020, many browsers started blocking chess.ca because of malware.
+On July 3, 2020, most browsers started blocking chess.ca because of malware.
 
 * **Repair #1:**
 A few suspicious things were found and removed from chess.ca.
@@ -39,7 +39,7 @@ Ideally, we would have everything ready but having something was better than the
 we had with the old blocked website.
 The initial launch had the basic framework as well as two essential functions:
 (1) list of upcoming tournaments
-and (2) lookup of players latest rating and CFC expiry dates.
+and (2) lookup of players' latest rating and CFC expiry dates.
 
 * **Migration:**
 Over the next few months, the remaining content and functions of the old

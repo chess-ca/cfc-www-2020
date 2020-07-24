@@ -55,7 +55,7 @@
        <td class="int">[v[p.rating_high]v]<span v-if="p.rating_high < 30"><sup> g</sup></span></td>
        <td class="int">[v[p.active]v]<sup v-if="p.active_high < 30"> pr</sup></td>
        <td class="int">[v[p.active_high]v]<span v-if="p.active_high < 30"><sup> g</sup></span></td>
-       <td>[v[p.fide_id]v]</td>
+       <td><a :href="'https://ratings.fide.com/card.phtml?event='+p.fide_id" target="_blank">[v[p.fide_id]v]</a></td>
       </tr>
       <tr>
        <td></td>
