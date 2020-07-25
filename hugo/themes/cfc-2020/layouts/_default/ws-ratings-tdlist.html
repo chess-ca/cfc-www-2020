@@ -51,10 +51,22 @@
        <td>[v[p.last]v], [v[p.first]v]</td>
        <td>[v[p.city]v]</td>
        <td>[v[p.expiry]v]</td>
-       <td class="int">[v[p.rating]v]<sup v-if="p.rating_high < 30"> pr</sup></td>
-       <td class="int">[v[p.rating_high]v]<span v-if="p.rating_high < 30"><sup> g</sup></span></td>
-       <td class="int">[v[p.active]v]<sup v-if="p.active_high < 30"> pr</sup></td>
-       <td class="int">[v[p.active_high]v]<span v-if="p.active_high < 30"><sup> g</sup></span></td>
+       <template v-if="p.rating_high > 30" v-once>
+        <td class="int">[v[p.rating]v]</td>
+        <td class="int">[v[p.rating_high]v]</td>
+       </template>
+       <template v-else>
+        <td class="int"><i>pr: [v[p.rating]v]</i></td>
+        <td class="int"><i>[v[p.rating_high]v]g</i></td>
+       </template>
+       <template v-if="p.active_high > 30" v-once>
+        <td class="int">[v[p.active]v]</td>
+        <td class="int">[v[p.active_high]v]</td>
+       </template>
+       <template v-else>
+        <td class="int"><i>pr: [v[p.active]v]</i></td>
+        <td class="int"><i>[v[p.active_high]v]g</i></td>
+       </template>
        <td><a :href="'https://ratings.fide.com/profile/'+p.fide_id" target="_blank">[v[p.fide_id]v]</a></td>
       </tr>
       <tr>

@@ -25,6 +25,6 @@ pageid = "pg-ratings-tdlist"
     quick_rating = "Quick<br>Rating"
     quick_high = "Quick<br>High"
     NONE_FOUND = "NONE FOUND"
-    foot_notes = "<sup>pr</sup> is a provisional rating. <sup>g</sup> is the number of games rated"
+    foot_notes = "<i>pr:</i> is a provisional rating. <i>g</i> is the number of games rated"
 +++
 
