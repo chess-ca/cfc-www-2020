@@ -27,6 +27,4 @@ function cfc_events() {
 export function init_vue_config(vc) {
     vc.data = vc.data || {};
     vc.data.cfc_events = cfc_events();
-    // vc.computed = vc.computed || {};
-    // vc.computed.cfc_events = cfc_events;
 }
