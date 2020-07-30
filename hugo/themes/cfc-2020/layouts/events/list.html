@@ -67,8 +67,7 @@
        <td>[v[e.type]v]</td>
        <td>[v[e.name]v]</td>
        <td>[v[e.dates]v]</td>
-       <td>[v[e.city]v]<span v-if="e.prov != 'Online'">, [v[e.prov]v]</span></td>
-       <!--td>[v[e.prov]v]</td-->
+       <td>[v[e.city]v]<span v-if="e.prov != 'Online' && e.prov != 'FO'">, [v[e.prov]v]</span></td>
        <td v-html="e.links"></td>
       </tr>
      </tbody>

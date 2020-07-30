@@ -25,6 +25,7 @@ pageid = "pg-ratings-tdlist"
     quick_rating = "Cotes<br>Quick"
     quick_high = "Quick<br>élevé"
     NONE_FOUND = "PERSONNE N'EST TROUVE"
-    foot_notes = "<i>pr:</i> est une note provisoire. <i>g</i> est le nombre de jeux notés"
+    games = "j"
+    foot_notes = "<i>(&mldr;)</i> est une note provisoire. <i>(&mldr;j)</i> est le nombre de jeux notés"
 +++
 
