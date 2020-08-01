@@ -5,7 +5,9 @@ tags = []
 
 Go to the OLD chess.ca website, click:
 
-<a href="http://old.chess.ca/" class="button is-primary">Go to OLD chess.ca</a>
+(((Link to the old website removed. Google scanned us again, found this link,
+and blocked us again because the old website has malware.  You will need to 
+enter the URL yourself:  old dot chess dot ca )))
 
 Things to know before you go:
 

@@ -6,7 +6,9 @@ translation = "Google"
 
 Accédez à l'ancien site Web chess.ca, cliquez sur:
 
-<a href="http://old.chess.ca/" class="button is-primary">Allez sur l'ancien chess.ca</a>
+(((Lien vers l'ancien site Web supprimé. Google nous a scanné à nouveau, a trouvé ce lien,
+et nous a bloqué à nouveau parce que l'ancien site Web contient des logiciels malveillants. Tu devras
+entrez l'URL vous-même: old point chess point ca )))
 
 Choses à savoir avant de partir::
 
