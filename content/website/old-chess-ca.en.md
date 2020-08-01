@@ -5,9 +5,11 @@ tags = []
 
 Go to the OLD chess.ca website, click:
 
-(((Link to the old website removed. Google scanned us again, found this link,
-and blocked us again because the old website has malware.  You will need to 
-enter the URL yourself:  old dot chess dot ca )))
+<div class="notification">
+Link to the old website removed. Google scanned us again, found this link,
+and blocked us again because the old website still has malware.
+You will need to enter the URL yourself: old dot chess dot ca 
+</div>
 
 Things to know before you go:
 

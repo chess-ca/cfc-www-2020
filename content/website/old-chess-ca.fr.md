@@ -6,9 +6,11 @@ translation = "Google"
 
 Accédez à l'ancien site Web chess.ca, cliquez sur:
 
-(((Lien vers l'ancien site Web supprimé. Google nous a scanné à nouveau, a trouvé ce lien,
+<div class="notification">
+Lien vers l'ancien site Web supprimé. Google nous a scanné à nouveau, a trouvé ce lien,
 et nous a bloqué à nouveau parce que l'ancien site Web contient des logiciels malveillants. Tu devras
-entrez l'URL vous-même: old point chess point ca )))
+entrez l'URL vous-même: old point chess point ca 
+</div>
 
 Choses à savoir avant de partir::
 
