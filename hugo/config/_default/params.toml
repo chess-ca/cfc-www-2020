@@ -1,7 +1,5 @@
 
 isProd = false
-description = "Chess Federation of Canada"
-author = "CFC"
 gravatar = {email="info@chess.ca"}
 social = [
     {icon="twitter", url="http://twitter.com/ChessCanada", weight=20},

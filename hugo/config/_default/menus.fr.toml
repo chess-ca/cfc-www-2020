@@ -5,5 +5,5 @@ main = [
     {identifier="organizers", name="organisateurs", url="/fr/organizers/", weight=30},
     {identifier="elite", name="élite", url="/fr/elite/", weight=40},
     {identifier="cfc", name="FCE", url="/fr/cfc/", weight=80},
-    {identifier="news", name="nouvelles", url="/fr/ws/under-construction/", weight=90},
+    {identifier="news", name="nouvelles", url="/fr/news/", weight=90},
 ]

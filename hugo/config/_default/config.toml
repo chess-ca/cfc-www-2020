@@ -13,13 +13,16 @@ contentDir = "../content"
 enableRobotsTXT = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
+enableMissingTranslationPlaceholders = false
 
 [frontmatter]
   #---- if file is yyyy-mm-dd-post-title.md, date is from file name
   date = [":filename", ":default"]
 
 [permalinks]
-  news = "/news/:year/:month-:day.:slug"
+  x1news = "/news/:slug"
+  x2news = "/news/:year:/:filename"
+  news = "/news/:year:/:month/:day/:slug"
   cfc = "/cfc/:slug"
   clubs = "/clubs/:slug"
   players = "/players/:slug"
