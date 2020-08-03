@@ -4,33 +4,46 @@ tags = []
 translation = "Google"
 +++
 
-Accédez à l'ancien site Web chess.ca, cliquez sur:
+Nous avons essayé de garder l'ancien site Web chess.ca disponible à "old.chess.ca"
+pendant que nous migrions son contenu.
 
-<div class="notification">
-Lien vers l'ancien site Web supprimé. Google nous a scanné à nouveau, a trouvé ce lien,
-et nous a bloqué à nouveau parce que l'ancien site Web contient des logiciels malveillants. Tu devras
-entrez l'URL vous-même: old point chess point ca 
-</div>
+Mais lorsque Google l'a trouvé et ses logiciels malveillants, ils ont bloqué tous les sites Web se terminant par "chess.ca".
+Y compris le nouveau site Web chess.ca, qui ne contenait aucun virus ou logiciel malveillant.
 
-Choses à savoir avant de partir::
+Donc, malheureusement, l'ancien site Web chess.ca ne sera plus disponible à partir de maintenant.
+Si vous avez un fort besoin d'informations non encore migrées vers le nouveau site Web,
+[Contactez le FCE](https://forms.gle/miag39Q6tutM7pmc7).
 
-* Pourquoi aller? Vous devrez peut-être accéder à l'ancien site Web si vous avez besoin de quelque chose qui a
-pas encore été migré vers le nouveau site Web. L'ancien site Web restera jusqu'à ce que tous
-le contenu a été migré vers le nouveau site Web.  
+### L'histoire
 
-* Faites attention! L'ancien chess.ca est bloqué pour certains utilisateurs à cause de virus qui * peuvent *
-vous redirige vers un autre site Web contenant des logiciels malveillants. Si cela se produit, ne faites pas
-quoi que ce soit sur l'autre page (surtout ne saisissez pas d'identifiants, de mots de passe, de cartes de crédit, etc.).
-Fermez immédiatement l'onglet de votre navigateur.
+* **Bloqué**:
+Le 3 juillet 2020, de nombreux navigateurs ont commencé à bloquer chess.ca
+à cause de logiciels malveillants.
 
-* Comment? Contourner le blocage est différent pour différents navigateurs:
+* **Réparation #1:**
+Quelques éléments suspects ont été trouvés et supprimés de chess.ca.
+Nous avons demandé un examen mais, le 7 juillet, on nous a dit que nous avions échoué l'examen.
+Il restait encore de nombreux problèmes de logiciels malveillants à trouver et à résoudre.
 
-  * Chrome: pour accéder à l'ancien chess.ca, vous devrez peut-être cliquer sur le bouton "Recharger",
-  le bouton "Détails" et "visiter ce site dangereux".
-    
-  * Firefox: Pour accéder à l'ancien chess.can, vous devrez peut-être cliquer sur le bouton "Voir les détails"
-  et "ignorer le risque".
-  
-  * Microsoft Edge: ce navigateur ne vous bloquera pas. Il n'utilise pas le
-  [Stop Badware](https://www.stopbadware.org/)
-  service utilisé par Chrome et Firefox. Vous devriez vous rendre directement sur chess.ca.
+* **Réparation #2, #3, #4, ... ou remplacer:**
+Après un peu plus de travail, nous avons finalement réalisé que la quantité de compétences et de travail que cela permettrait
+prendre pour réparer complètement notre site Web vieux de presque 10 ans a dépassé la quantité de travail
+pour simplement le réécrire.
+
+* **Décision:**
+Le 14 juillet, une réunion en ligne a eu lieu et la décision a été prise de remplacer chess.ca.
+
+* **Lancé:**
+Le 23 juillet, le nouveau chess.ca a été lancé, mais de nombreuses parties sont encore «en construction».
+Idéalement, tout serait prêt, mais avoir quelque chose était mieux que rien
+nous avions avec l'ancien site Web bloqué.
+Le lancement initial avait le cadre de base ainsi que deux fonctions essentielles:
+(1) liste des tournois à venir
+et (2) recherche des dernières cotes et des dates d'expiration du CFC.
+
+* **Migration:**
+Au cours des prochains mois, le contenu et les fonctions restants de l'ancien
+Le site Web sera migré vers le nouveau chess.ca.
+
+Merci pour votre patience!
+

@@ -3,33 +3,44 @@ title = "Old chess.ca"
 tags = []
 +++
 
-Go to the OLD chess.ca website, click:
+We tried to keep the old chess.ca website available at "old.chess.ca"
+while we migrated its content.
 
-<div class="notification">
-Link to the old website removed. Google scanned us again, found this link,
-and blocked us again because the old website still has malware.
-You will need to enter the URL yourself: old dot chess dot ca 
-</div>
+But when Google found it and its malware, they blocked all websites ending in "chess.ca".
+Including the new chess.ca website, which did not have any viruses or malware.
 
-Things to know before you go:
+So, unfortunately, the old chess.ca website will be unavailable from now on.
+If you have a strong need for info not yet migrated to the new website, 
+[Contact the CFC](https://forms.gle/miag39Q6tutM7pmc7).
 
-* Why go? You may need to go to the OLD website if you need something that has
-not yet been migrated to the NEW website. The OLD website will remain until all
-content has been migrated to the NEW website.  
+### History
 
-* Be careful! The OLD chess.ca is blocked for some users because of virsuses that *may*
-or *may not* redirect you to another website that has malware.  If this happens, do not do
-anything on that other website (especially do not enter ids, passwords, credit cards, etc).
-Close your browser tab immediately.
+* **Blocked:**
+On July 3, 2020, most browsers started blocking chess.ca because of malware.
 
-* How? Getting around the blocking is different for different browsers:
+* **Repair #1:**
+A few suspicious things were found and removed from chess.ca.
+We requested a review but, on July 7, we were told we had failed the review.
+There were still many malware issues to be found and fixed.
 
-  * Chrome: To get to the OLD chess.ca, you may need to click the "Reload" button,
-    the "Details" button, and "visit this unsafe site".
-    
-  * Firefox: To get to the OLD chess.ca, you may need to click the "See details" button
-    and "ignore the risk".
-  
-  * Microsoft Edge: This browser will not block you. It does not use the
-    [Stop Badware](https://www.stopbadware.org/) service that is used by
-    Chrome and Firefox. You should go directly to chess.ca.
+* **Repair #2, #3, #4, ... or Replace:**
+After some more work, we eventually realized that amount of skill and work it would
+take to fully fix our almost 10 year old website far exceeded the amount of work
+to just re-write it. 
+
+* **Decision:**
+On July 14, an online meeting was held and the decision was made to replace chess.ca.
+
+* **Launched:**
+On July 23, the new chess.ca was launched but with many parts still "under construction".
+Ideally, we would have everything ready but having something was better than the nothing
+we had with the old blocked website.
+The initial launch had the basic framework as well as two essential functions:
+(1) list of upcoming tournaments
+and (2) lookup of players' latest rating and CFC expiry dates.
+
+* **Migration:**
+Over the next few months, the remaining content and functions of the old
+website will be migrated to the new chess.ca.
+
+Thanks for your patience!
