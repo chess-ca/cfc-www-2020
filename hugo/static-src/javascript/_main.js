@@ -8,7 +8,7 @@ import * as pageid_pg_home from './pageid/pg-home'
 import * as pageid_pg_events_list from './pageid/pg-events-list';
 import * as pageid_pg_ratings_tdlist from './pageid/pg-ratings-tdlist';
 
-//import * as ws_select_next from './ws-select-next';
+import * as ws_select_next from './ws-select-next';
 import * as ws_photobox from './ws-photobox';
 import * as ws_chess_com_game from './ws-chess-com-game';
 //import * as pageid_pg_home from './pageid-pg-home';
