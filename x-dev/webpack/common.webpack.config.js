@@ -67,6 +67,9 @@ function add_vuejs(wpconfig) {
     wpconfig.resolve.alias = wpconfig.resolve.alias || {};
     wpconfig.resolve.alias.vue =  `vue/dist/${vue_file}`;
     // Future Ref: https://github.com/microsoft/TypeScript-Vue-Starter
+    // Ref: https://vue-loader.vuejs.org/guide/#manual-setup
+    //wpconfig.rules.push({ test:/\.vue$/, loader: 'vue-loader' });
+    //wpconfig.plugins.push( new VueLoaderPlugin() );
 }
 
 module.exports = {getWebpackConfig};
