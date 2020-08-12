@@ -6,6 +6,8 @@
 {{- define "main" }}
  <main class="ws-main container">
     <h1 class="title mt-3">{{ .Title }}</h1>
+    <p>&empty; &#8658; {{ i18n "Under_Construction" }}</p>
+    <br>
     <div class="ws-section-menu columns is-multiline">
 {{- range $group := .Params.sectionMenu.groups }}
      <div class="column {{ $group.classes | default "is-6 is-4-desktop" }}">
@@ -14,7 +16,7 @@
        <p>
 {{- range $item := $group.items}}
         <a href="{{$item.url | safeHTML }}" class="button is-small">
-         {{- with $item.uc }}_{{ end }}{{ $item.txt|safeHTML -}}
+         {{- with $item.uc }}&empty; {{ end }}{{ $item.txt|safeHTML -}}
         </a>
 {{- end }}
        </p>
@@ -22,7 +24,6 @@
      </div>
 {{- end }}
    </div>
-   <p>_ &#8658; {{ i18n "Under_Construction" }}
 {{ .Content }}
  </main>
 {{- end }}

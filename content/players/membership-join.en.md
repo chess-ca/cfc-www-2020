@@ -3,7 +3,6 @@ title = "CFC Membership - Join"
 +++
 
 Thanks in advance for joining the CFC!
-
 A CFC membership not only supports the game and sport of chess in Canada,
 it allows you to participate in CFC-rated tournaments.
 
