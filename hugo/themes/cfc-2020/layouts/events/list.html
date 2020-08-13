@@ -14,6 +14,7 @@
     <div class="control">
      <div class="select is-small is-primary">
       <select v-model="e_type">
+       <option value="*">{{ $i18n.filter_by_type }}</option>
        <option value="*">{{ $i18n.All_types }}</option>
        <option value="Online">{{ $i18n.Online }}</option>
        <option value="OTB">{{ $i18n.OTB }}</option>
@@ -25,6 +26,7 @@
     <div class="control">
      <div class="select is-small is-primary">
       <select v-model="e_prov">
+       <option value="*">{{ $i18n.filter_by_location }}</option>
        <option value="*">{{ $i18n.All_provinces }}</option>
        <option value="Online">{{ $i18n.Online }}</option>
        <option value="AB">AB - Alberta</option>
