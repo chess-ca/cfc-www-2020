@@ -2,7 +2,7 @@
       <p class="title is-5"><i class="fas fa-chess-knight"></i> {{ i18n "events" }}</p>
       <div class="ws-item" v-for="e in cfc_events">
        <a :href="e.url">
-       <div class="ws-more"><i class="fas fa-chevron-right"></i></div>
+        <div class="ws-more is-pulled-right"><img src="/img/icons/ws-more.svg"></div>
        [v[ e.dates ]v] &mdash; [v[ e.city ]v]<br><span v-html="e.name"></span>
        </a>
       </div>
