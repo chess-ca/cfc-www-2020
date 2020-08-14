@@ -228,7 +228,7 @@ const t_search_results = `
        <td></td><td colspan="4">({{ i18n.none_found }})</td>
       </tr>
       <tr v-for="p in players.list" :key="p.m_id" @click="show_player(p.m_id)" class="is-clickable">
-       <td v-if="ui_state==2"><img src="/img/icons/ws-more.svg" style="width:0.8rem"></td>
+       <td v-if="ui_state==2"><div class="ws-more"></div></td>
        <td>{{p.name}}</td>
        <td>{{p.city_prov}}</td>
        <td>{{p.m_id}}</td>
@@ -304,7 +304,7 @@ const t_tournaments = `
       </tr>
       <template v-for="t in tournaments.list">
       <tr v-if="filter.t_type=='*' || t.type==filter.t_type" @click="show_crosstable(t.t_id)" class="is-clickable">
-       <td><img src="/img/icons/ws-more.svg" style="width:0.8rem"></td>
+       <td><div class="ws-more"></div></td>
        <td>{{t.name}}</td>
        <td>{{t.last_day}}</td>
        <td class="ta-center">{{t.type}}</td>

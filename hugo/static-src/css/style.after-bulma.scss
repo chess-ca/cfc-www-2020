@@ -103,7 +103,13 @@ html {
   &.button { margin-bottom:.25rem; }
   &.button:hover { background-color: $cp-p100; }
 }
-.ws-more { width:0.9rem; }
+.ws-more {
+  width:18px; height:18px;
+  //background: no-repeat url('/img/icons/ws-more.svg');
+  background: no-repeat url('data:image/svg+xml,%3Csvg width="100%25" height="100%25" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"%3E%3Cg id="Background"%3E%3Crect x="-0.046" y="-0.041" width="16.072" height="15.743" style="fill:%23e5ecdf;"/%3E%3C/g%3E%3Cpath d="M6.963,1.976l0.687,-0.687c0.29,-0.29 0.761,-0.29 1.048,0l6.013,6.01c0.29,0.29 0.29,0.761 0,1.048l-6.013,6.013c-0.291,0.29 -0.761,0.29 -1.048,0l-0.687,-0.687c-0.294,-0.294 -0.287,-0.773 0.013,-1.061l3.726,-3.55l-8.888,0c-0.412,0 -0.743,-0.331 -0.743,-0.743l0,-0.989c0,-0.412 0.331,-0.743 0.743,-0.743l8.888,0l-3.726,-3.55c-0.304,-0.288 -0.31,-0.767 -0.013,-1.061Z" style="fill:%23759556;fill-rule:nonzero;"/%3E%3C/svg%3E');
+  //background: no-repeat url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Cg id='Background'%3E%3Crect x='-0.046' y='-0.041' width='16.072' height='15.743' style='fill:%23e5ecdf;'/%3E%3C/g%3E%3Cpath d='M6.963,1.976l0.687,-0.687c0.29,-0.29 0.761,-0.29 1.048,0l6.013,6.01c0.29,0.29 0.29,0.761 0,1.048l-6.013,6.013c-0.291,0.29 -0.761,0.29 -1.048,0l-0.687,-0.687c-0.294,-0.294 -0.287,-0.773 0.013,-1.061l3.726,-3.55l-8.888,0c-0.412,0 -0.743,-0.331 -0.743,-0.743l0,-0.989c0,-0.412 0.331,-0.743 0.743,-0.743l8.888,0l-3.726,-3.55c-0.304,-0.288 -0.31,-0.767 -0.013,-1.061Z' style='fill:%23759556;fill-rule:nonzero;'/%3E%3C/svg%3E");
+  &.right { float:right; }
+}
 .is-clickable { cursor: pointer; }
 
 .ws-note {

@@ -24,9 +24,9 @@ other = "Politique de confidentialité"
 [Contact_the_CFC]
 other = 'Contactez le FCE'
 [More_news]
-other = "Plus de nouvelles"
+other = "Plus"
 [More_events]
-other = "Plus d'événements"
+other = "Plus"
 [Tournaments]
 other = "Tournois"
 [Ratings]
@@ -35,3 +35,9 @@ other = "Cotes"
 other = "VIEUX"
 [Under_Construction]
 other="En Construction"
+
+# -------- News
+[updated]
+other="actualisé"
+[table_of_contents]
+other="Table des matières"

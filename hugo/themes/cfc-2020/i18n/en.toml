@@ -24,9 +24,9 @@ other = "Privacy Policy"
 [Contact_the_CFC]
 other = 'Contact the CFC'
 [More_news]
-other = "More news"
+other = "More"
 [More_events]
-other = "More events"
+other = "More"
 [Tournaments]
 other = "Tournaments"
 [Ratings]
@@ -35,3 +35,9 @@ other = "Ratings"
 other = "OLD"
 [Under_Construction]
 other="Under Construction"
+
+# -------- News
+[updated]
+other="updated"
+[table_of_contents]
+other="Contents"
