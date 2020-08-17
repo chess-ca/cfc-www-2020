@@ -1,0 +1,9 @@
+{{- $n_headers := findRE "<li.*?>" .TableOfContents | len }}
+{{- if and (ne .Params.tableofcontents false) (or (gt $n_headers 2) .Params.tableofcontents) }}
+  <div class="ws-toc">
+   <fieldset>
+    <legend>{{ i18n "table_of_contents" }}</legend>
+{{ .TableOfContents }}
+   </fieldset>
+  </div>
+{{- end }}

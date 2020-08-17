@@ -5,6 +5,7 @@
 
 # /newsfeed/* /en/news/
 /newsfeed/* /en/
+/membership-rates /en/players/membership-fees/
 /sites/default/files/cfcmembers.mde https://storage.googleapis.com/cfc-public/data/cfcmembers.mde
 /sites/default/files/tdlist.txt https://storage.googleapis.com/cfc-public/data/tdlist.txt
 

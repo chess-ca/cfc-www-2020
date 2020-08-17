@@ -1,0 +1,21 @@
+{{ define "main" }}
+ <main class="ws-main container">
+  <h1 class="title mt-3">{{ .Title }}</h1>
+  <p>(using: layouts/_default/news.html)
+  <ul>
+{{- range .Data.Pages }}
+   <li>{{ .Render "time-element" }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{- end }}
+  </ul>
+  <div class="notification">
+  <h3>.Sections</h3>
+  {{ printf ".Section ." . }}<br><br>
+  {{ printf "printf: %#v" .Sections }}<br><br>
+  <h3>.Data.Pages</h3>
+  {{ printf "printf: %#v" .Data.Pages }}<br><br>
+  {{ range .Sections }}
+  {{ printf "range: %#v" . }}
+  {{ end }}<br><br>
+  </div>
+ </main>
+{{ end }}
