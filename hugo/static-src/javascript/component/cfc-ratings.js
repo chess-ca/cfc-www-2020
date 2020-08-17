@@ -232,7 +232,7 @@ const t_search_results = `
        <td>{{p.name}}</td>
        <td>{{p.city_prov}}</td>
        <td>{{p.m_id}}</td>
-       <td>{{p.expiry}}</td>
+       <td><span v-if="p.expiry > '2080-01-01'">LIFE</span><span v-else>{{p.expiry}}</span></td>
        <template v-if="p.rating_hi > 30" v-once>
         <td class="ta-center">{{p.rating}}</td>
         <td class="ta-center">{{p.rating_hi}}</td>

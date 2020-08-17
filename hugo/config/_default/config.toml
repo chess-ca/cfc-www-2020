@@ -20,13 +20,10 @@ enableMissingTranslationPlaceholders = false
   date = [":filename", ":default"]
 
 [permalinks]
-  x1news = "/news/:slug"
-  x2news = "/news/:year:/:filename"
+  cfc = "/cfc/:filename"
+  clubs = "/clubs/:filename"
   news = "/news/:year:/:month/:day/:slug"
-  cfc = "/cfc/:slug"
-  clubs = "/clubs/:slug"
   players = "/players/:filename"
-  tournaments = "/tournaments/:slug"
   website = "/ws/:filename"
   #blog = "/blog/:year/:month/:slug"
   #code = "/code/:slug"
