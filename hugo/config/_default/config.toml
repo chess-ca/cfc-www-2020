@@ -22,7 +22,7 @@ enableMissingTranslationPlaceholders = false
 [permalinks]
   cfc = "/cfc/:filename"
   clubs = "/clubs/:filename"
-  news = "/news/:year:/:month/:day/:slug"
+  news = "/news/:year/:month/:day/:slug"
   players = "/players/:filename"
   website = "/ws/:filename"
   #blog = "/blog/:year/:month/:slug"
