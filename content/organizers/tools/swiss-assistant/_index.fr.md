@@ -5,20 +5,22 @@ layout = "ws-single"
 
 _Swiss Assistant_ was built for the specific purpose of building the reports that need
 to be sent to the CFC for ratings.  It does not do pairings, only the reports.
-Therefore, it is much simpler than the pairings software.
+
+Therefore, _Swiss Assistant_ is much simpler than the pairing softwares.
 For online tournaments, where the platform does the pairings, _Swiss Assistant_
 is ideal. If you are already an expert and more comfortable with one of the pairing softwares,
-keep using it if you prefer.
+use whichever you prefer.
 
 ## Downloads
-* Download [Swiss Assistant Sofware](https://storage.googleapis.com/cfc-public/files/SwissAssistant2.zip).
+* Download [Swiss Assistant Sofware](https://storage.googleapis.com/cfc-public/files/SwissAssistant2.zip)
+  (Windows only).
 * Download [Database of CFC Members](https://storage.googleapis.com/cfc-public/data/cfcmembers.mde).
   This is updated weekly (usually Wednesdays) so download the latest.
 
 ## Install Tips
 * The download file is a .zip file. When unzipped, it will create a directory called
   "SwissAssistant2". Go into that directory. Double-click on the executable,
-  "SwissAssistant2.exe" to start the application.
+  "SwissAssistant2.exe", to start the application.
 * Some Anti-Virus software installed on your PC may not like an executable file (.exe)
   inside of a .zip file.  We cannot help your resolve that.  You may need to temporarily
   disable your Anti-Virus download while you download this one file from the CFC server
