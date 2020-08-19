@@ -9,10 +9,10 @@ Here are some useful tools for organizers and arbiters.
 When you register players for your CFC-rated tournament,
 you will need to lookup their CFC membership id, expiry date, and rating.
 
-* **If you will have internet access** while registering players,
+* If you **will have internet access** while registering players,
   use [Ratings](/en/ratings/).
 
-* **If you will not have internet access** while registering players,
+* If you **will not have internet access** while registering players,
   get the "tdlist.txt" file from
   [HERE](https://storage.googleapis.com/cfc-public/data/tdlist.txt)
   and save it to your laptop.
