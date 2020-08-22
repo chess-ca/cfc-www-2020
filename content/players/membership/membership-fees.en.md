@@ -14,7 +14,7 @@ and 2) some provinces have an association that receive a portion of the fee.
 
 Most CFC members have Ordinary Annual memberships.
 
-A "Junior" is defined as anyone who was born after 
+A "Junior" is anyone who was born after 
 December 31, <script>document.write(cfc_junior);</script>.
 
 | Province | Adult | Junior |
@@ -32,7 +32,7 @@ December 31, <script>document.write(cfc_junior);</script>.
 | Quebec | 38.00  | 25.00  | 
 | Saskatchewan | 38.00  | 25.00  | 
 | Yukon | 38.00  | 25.00  | 
-| Foreign | 36.00  | 24.00  | 
+| Foreign | 36.00  | 24.00  |
 
 ## Family Annual Memberships
 
@@ -41,7 +41,7 @@ who resides at the same address as the Ordinary Member
 and who purchases his or her membership at the same time
 may join the CFC at a reduced rate.
 
-A "Junior" is defined as anyone who was born after 
+A "Junior" is anyone who was born after 
 December 31, <script>document.write(cfc_junior);</script>.
 
 | Province | Adult | Junior |
@@ -82,7 +82,7 @@ The fee is good for one specific tournament only and expires on the last day of 
 The fee depends on the time controls of the tournament: Regular or Quick.
 The fee depends on the province in which the player resides (not the province where the tournament is held).
 
-A "Junior" is defined as anyone who was born after 
+A "Junior" is anyone who was born after 
 December 31, <script>document.write(cfc_junior);</script>.
 
 ### Regular Time Control
