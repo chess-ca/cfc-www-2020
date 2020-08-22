@@ -2,20 +2,20 @@
 title = "CFC Membership - Fees"
 layout = "ws-single"
 +++
-<script>var cfc_now_year = (new Date()).getFullYear();</script>
+<script>var cfc_junior = (new Date()).getFullYear() - 21;</script>
 
 The CFC has several membership types.
 
 The fees for memberships are different by province
 because 1) each province calculates taxes differently
-and 2) some provinces have associations that receive a portion of the fee.
+and 2) some provinces have an association that receive a portion of the fee.
 
 ## Ordinary Annual Memberships
 
 Most CFC members have Ordinary Annual memberships.
 
-A "Junior" is defined as anyone whose age was 19 or less on
-January 1, <script>document.write(cfc_now_year);</script>.
+A "Junior" is defined as anyone who was born after 
+December 31, <script>document.write(cfc_junior);</script>.
 
 | Province | Adult | Junior |
 |----------|-------|--------|
@@ -41,8 +41,8 @@ who resides at the same address as the Ordinary Member
 and who purchases his or her membership at the same time
 may join the CFC at a reduced rate.
 
-A "Junior" is anyone whose age was 19 or less on
-January 1, <script>document.write(cfc_now_year);</script>.
+A "Junior" is defined as anyone who was born after 
+December 31, <script>document.write(cfc_junior);</script>.
 
 | Province | Adult | Junior |
 |----------|-------|--------|
@@ -63,7 +63,7 @@ January 1, <script>document.write(cfc_now_year);</script>.
 
 ## Life Memberships
 
-Any person resident in Canada, may become a Life Member.
+Any person resident in Canada may become a Life Member.
 The CFC at the same time will collect any Provincial Life Member Fees set by the provincial affiliate
 for the province in which the member resides.
 
@@ -82,8 +82,8 @@ The fee is good for one specific tournament only and expires on the last day of 
 The fee depends on the time controls of the tournament: Regular or Quick.
 The fee depends on the province in which the player resides (not the province where the tournament is held).
 
-A "Junior" is anyone whose age was 19 or less on
-January 1, <script>document.write(cfc_now_year);</script>.
+A "Junior" is defined as anyone who was born after 
+December 31, <script>document.write(cfc_junior);</script>.
 
 ### Regular Time Control
 
@@ -107,7 +107,7 @@ Regular (or Standard or "Slow") times controls give each player
 | Yukon | 16.00 | 8.00
 | Foreign | 16.00 | 8.00
 
-### Quick (Active) Time Control
+### Quick Time Control
 
 Quick (or Active or Rapid) times controls give each player
 less than 60 minutes for a game of 60 moves. 
