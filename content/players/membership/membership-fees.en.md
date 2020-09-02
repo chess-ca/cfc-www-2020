@@ -25,7 +25,7 @@ without purchasing a CFC membership.
 |----------|-------|--------|
 | Alberta | 43.00  | 28.00  | 
 | British Columbia | 38.00  | 25.00  | 
-| Manitoba | 49.00  | 34.00  | 
+| Manitoba | 25.00  | 17.00  | 
 | New Brunswick | 46.00  | 30.00  | 
 | Newfoundland & Labrador | 44.00  | 29.00  | 
 | North West Territories | 38.00  | 25.00  | 
@@ -54,7 +54,7 @@ December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
 |----------|-------|--------|
 | Alberta | 21.50  | 14.00 
 | British Columbia | 19.00  | 12.50 
-| Manitoba | 24.50  | 17.00 
+| Manitoba | 18.00  | 10.00 
 | New Brunswick | 23.00  | 15.00 
 | Newfoundland & Labrador | 22.00  | 14.50 
 | North West Territories | 19.00  | 12.50 
