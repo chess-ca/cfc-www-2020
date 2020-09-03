@@ -1,27 +1,27 @@
 +++
-title = "CFC Membership - Fees"
+title = "Adhésion au FCE - Frais"
 layout = "ws-single"
 +++
 
-The CFC has several membership types.
-Fees depend on the province in which the member resides
-(not the province in which a tournament is held).
+Le FCE a plusieurs types de membres.
+Les frais dépendent de la province de résidence du membre
+(pas la province dans laquelle un tournoi a lieu).
 
-The fees for memberships are different by province
-because 1) each province calculates taxes differently
-and 2) some provinces have a chess association that receive a portion of the fee.
+Les frais d'adhésion sont différents selon la province
+parce que 1) chaque province calcule les impôts différemment
+et 2) certaines provinces ont une association d'échecs qui reçoit une partie des frais.
 
-## Annual Memberships
+## Adhésions annuelles
 
-Most CFC members have Annual memberships.
+La plupart des membres du CFC ont des adhésions annuelles.
 
-A "Junior" is anyone who was born after 
-December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
+Un "Junior" est toute personne née le 1er janvier
+<span v-text = "(new Date ()). getFullYear () - 20"> </span> ou après.
 
-\* Quebec residents with an active FQE membership may play in CFC-rated events
-without purchasing a CFC membership.
+\* Les résidents du Québec ayant une adhésion active à la FQE peuvent participer à des événements classés CFC
+sans acheter un abonnement CFC. Les membres du CFC peuvent participer à des événements classés FQE sans être membre de la FQE.
 
-| Province of Residence | Adult | Junior |
+| Province de résidence | Adulte | Junior |
 |----------|-------|--------|
 | Alberta | 43.00  | 28.00  | 
 | British Columbia | 38.00  | 25.00  | 
@@ -39,18 +39,17 @@ without purchasing a CFC membership.
 | Yukon | 38.00  | 25.00  | 
 | Foreign | 36.00  | 24.00  |
 
-## Family Annual Memberships
+## Abonnements annuels familiaux
 
-Any spouse, child, or sibling of a regular Member
-who 1) resides at the same address as the regular Member
-and 2) who purchases his or her membership at the same time
-as the regular Member may join the CFC at a reduced rate.
-Only the additional memberships are reduced; not the regular member's fee.
+Familles avec au moins un membre adulte du CFC (non actualisé) (annuel ou à vie)
+peut acheter des adhésions supplémentaires au CFC pour un conjoint, des enfants ou des frères et sœurs
+pour un tarif réduit. Des abonnements supplémentaires doivent être achetés
+en même temps que l'abonnement adulte régulier.
 
-A "Junior" is anyone who was born after 
-December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
+Un "Junior" est toute personne née le 1er janvier
+<span v-text = "(new Date ()). getFullYear () - 20"> </span> ou après.
 
-| Province of Residence | Adult | Junior |
+| Province de résidence | Adulte | Junior |
 |----------|-------|--------|
 | Alberta | 21.50  | 14.00 
 | British Columbia | 19.00  | 12.50 
@@ -67,39 +66,39 @@ December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
 | Yukon | 19.00  | 12.50 
 | Foreign | 18.00  | 12.00 
 
-## Life Memberships
+## Adhésions à vie
 
-Any person resident in Canada may become a Life Member.
-The CFC at the same time will collect any Provincial Life Member Fees set by the provincial affiliate
-for the province in which the member resides.
+Toute personne résidant au Canada peut devenir membre à vie.
+Le FCE percevra en même temps tous les frais provinciaux de membre à vie fixés par l'affilié provincial.
+pour la province dans laquelle réside le membre.
 
-| Age   | CFC Fee |
+| Age   | Frais FCE |
 |-------|-----|
-| 30 and under | 720.00 |
-| 31 to 40 | 630.00 |
-| 41 to 50 | 540.00 |
-| 51 to 60 | 450.00 |
-| 61 and over | 360.00 |
+| 30 ans et moins | 720.00 |
+| 31 à 40 | 630.00 |
+| 41 à 50 | 540.00 |
+| 51 à 60 | 450.00 |
+| 61 ans et plus | 360.00 |
 
-## Single Tournament Fee 
+## Frais de tournoi unique 
 
-Instead of a CFC membership, players may pay a single tournament fee to play in one CFC-rated tournament and be rated.
-The fee is good for one specific tournament only and expires on the last day of the tournament.
-The fee depends on the time controls of the tournament: Regular or Quick.
-The fee depends on the province in which the player resides (not the province where the tournament is held).
+Au lieu d'être membre du CFC, les joueurs peuvent payer une seule cotisation de tournoi pour participer à un tournoi classé CFC et être notés.
+Les frais sont valables pour un tournoi spécifique uniquement et expirent le dernier jour du tournoi.
+Les frais dépendent des contrôles horaires du tournoi: régulier ou rapide.
+Les frais dépendent de la province dans laquelle réside le joueur (et non de la province où se déroule le tournoi).
 
-A "Junior" is anyone who was born after 
-December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
+Un "Junior" est toute personne née le 1er janvier
+<span v-text = "(new Date ()). getFullYear () - 20"> </span> ou après.
 
-\* Quebec residents with an active FQE membership may play in CFC-rated events
-without purchasing a CFC membership.
+\* Les résidents du Québec ayant une adhésion active à la FQE peuvent participer à des événements classés CFC
+sans acheter un abonnement CFC. Les membres du CFC peuvent participer à des événements classés FQE sans être membre de la FQE.
 
-### Regular Time Control
+### Contrôle horaire régulier
 
-Regular (or Standard or "Slow") times controls give each player
-60 minutes or more for a game of 60 moves. 
+Les contrôles de temps régulier (ou standard ou "lent") donnent à chaque joueur
+60 minutes ou plus pour une partie de 60 coups.
 
-| Province of Residence | Adult | Junior |
+| Province de résidence | Adulte | Junior |
 |----------|-------|--------|
 | Alberta | 20.00 | 10.00
 | British Columbia | 16.00 | 8.00
@@ -117,12 +116,12 @@ Regular (or Standard or "Slow") times controls give each player
 | Yukon | 16.00 | 8.00
 | Foreign | 16.00 | 8.00
 
-### Quick Time Control
+### Contrôle rapide du temps
 
-Quick (or Active or Rapid) times controls give each player
-less than 60 minutes for a game of 60 moves. 
+Les commandes de temps rapide (ou actif ou rapide) donnent à chaque joueur
+moins de 60 minutes pour une partie de 60 coups.
 
-| Province of Residence | Adult | Junior |
+| Province de résidence | Adulte | Junior |
 |----------|-------|--------|
 | Alberta | 12.00 | 6.00
 | British Columbia | 8.00 | 4.00

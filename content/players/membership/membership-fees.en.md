@@ -15,11 +15,11 @@ and 2) some provinces have a chess association that receive a portion of the fee
 
 Most CFC members have Annual memberships.
 
-A "Junior" is anyone who was born after 
-December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
+A "Junior" is anyone who was born January 1, 
+<span v-text="(new Date()).getFullYear() - 20"></span> or later.
 
 \* Quebec residents with an active FQE membership may play in CFC-rated events
-without purchasing a CFC membership.
+without purchasing a CFC membership.  CFC members may play in FQE-rated events without an FQE membership.
 
 | Province of Residence | Adult | Junior |
 |----------|-------|--------|
@@ -41,14 +41,13 @@ without purchasing a CFC membership.
 
 ## Family Annual Memberships
 
-Any spouse, child, or sibling of a regular Member
-who 1) resides at the same address as the regular Member
-and 2) who purchases his or her membership at the same time
-as the regular Member may join the CFC at a reduced rate.
-Only the additional memberships are reduced; not the regular member's fee.
+Families with at least one (undiscounted) Adult CFC Member (Annual or Life)
+may purchase additional CFC memberships for a spouse, children, or siblings
+for a discounted fee.  Additional memberships must be purchased
+at the same time as the regular Adult membership.
 
-A "Junior" is anyone who was born after 
-December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
+A "Junior" is anyone who was born January 1, 
+<span v-text="(new Date()).getFullYear() - 20"></span> or later.
 
 | Province of Residence | Adult | Junior |
 |----------|-------|--------|
@@ -88,11 +87,11 @@ The fee is good for one specific tournament only and expires on the last day of 
 The fee depends on the time controls of the tournament: Regular or Quick.
 The fee depends on the province in which the player resides (not the province where the tournament is held).
 
-A "Junior" is anyone who was born after 
-December 31, <span v-text="(new Date()).getFullYear() - 21"></span>.
+A "Junior" is anyone who was born January 1, 
+<span v-text="(new Date()).getFullYear() - 20"></span> or later.
 
 \* Quebec residents with an active FQE membership may play in CFC-rated events
-without purchasing a CFC membership.
+without purchasing a CFC membership.  CFC members may play in FQE-rated events without an FQE membership.
 
 ### Regular Time Control
 
