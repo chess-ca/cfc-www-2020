@@ -21,7 +21,7 @@ if [ $rc -ne 0 ]; then exit $rc; fi
 
 echo ---- ---- ---- ---- TASK: build-events.py
 python3 --version
-python3 $DIR_ROOT/x-dev/netlify/build-events.py -o "$DIR_ROOT/hugo/static/built/cfc-events.js"
+python3 $DIR_ROOT/x-dev/netlify/build-events.py -o "$DIR_ROOT/hugo/static/data/cfc-events.js"
 rc=$?
 echo ---- ---- ---- ---- return code: $rc
 if [ $rc -ne 0 ]; then exit $rc; fi

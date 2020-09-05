@@ -3,7 +3,7 @@
 GSHEETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0OdgsCSYzlRBMOMkLFTHVuIcdXNSz7XQ3KWz4jtJr5fH4wHzDv1HRP3ytG4PwqxAXdTQLjOL0srAB/pub?gid=0&single=true&output=csv'
 
 import urllib.request
-import argparse, csv, io, re, json
+import argparse, csv, io, re, json, pathlib
 
 
 def main():
@@ -76,6 +76,8 @@ def csv_row_to_dict(row, rdr):
 
 def create_javascript_file(csv_py, javascript_fn):
     print('Writing event data to Javascript file ...\n\tOutput: {}'.format(javascript_fn))
+    dest_dir = pathlib.Path(javascript_fn).parent
+    dest_dir.mkdir(parents=True, exist_ok=True)
     with open(javascript_fn, 'w') as js_fp:
         js_fp.write('window.ws_cfc_events = ')
         json.dump(csv_py, js_fp, indent='\t')
