@@ -3,8 +3,8 @@
 #  - Netlify.com looks for this file in the root of the published dir.
 # ---------------------------------------------------------------------
 
-/handbook /en/cfc/cfc-rules/
-/handbook/ /en/cfc/cfc-rules/
+/handbook /en/cfc/rules/
+/handbook/ /en/cfc/rules/
 
 # /newsfeed/* /en/news/
 /newsfeed/* /en/
