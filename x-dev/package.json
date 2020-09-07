@@ -24,7 +24,7 @@
     "rollup-plugin-vue": "*",
     "rollup-plugin-terser": "*",
     "rollup-plugin-sizes": "*",
-    "vue": "^2.6.0",
+    "vue": "2.6.12",
     "vue-template-compiler": "*"
   },
   "repository": {

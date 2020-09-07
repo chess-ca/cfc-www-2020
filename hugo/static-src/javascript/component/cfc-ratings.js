@@ -1,5 +1,5 @@
 /**
- * @file VueJS component for <ws-photobox> tag
+ * @file VueJS component for <> tag
  * @author Don Parakin, 2020
  */
 const server_url = 'https://server.chess.ca/api/ratings';

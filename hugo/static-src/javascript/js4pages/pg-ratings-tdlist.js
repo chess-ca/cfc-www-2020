@@ -46,18 +46,21 @@ function ratings_reset(event) {
     this.players.list = [];
 }
 
+function init(pageid, vue_config) {
+    if (pageid !== 'pg-ratings-tdlist') return;
 
-export function init_vue_config(vc) {
-    vc.data = vc.data || {};
-    vc.data.cfc_id = '';
-    vc.data.first = '';
-    vc.data.last = '';
-    vc.data.players = { list: [] };
-    vc.data.dbdate = '';
-    vc.data.searching = false;
-    vc.data.showing_results = false;
+    vue_config.data = vue_config.data || {};
+    vue_config.data.cfc_id = '';
+    vue_config.data.first = '';
+    vue_config.data.last = '';
+    vue_config.data.players = { list: [] };
+    vue_config.data.dbdate = '';
+    vue_config.data.searching = false;
+    vue_config.data.showing_results = false;
 
-    vc.methods = vc.methods || {};
-    vc.methods.ratings_search = ratings_search;
-    vc.methods.ratings_reset = ratings_reset;
+    vue_config.methods = vue_config.methods || {};
+    vue_config.methods.ratings_search = ratings_search;
+    vue_config.methods.ratings_reset = ratings_reset;
 }
+
+export default { init }

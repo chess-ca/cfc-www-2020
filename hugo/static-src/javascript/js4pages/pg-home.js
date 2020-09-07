@@ -1,7 +1,10 @@
 
+import cfcPhotoBox from '../component/cfcPhotoBox.vue';
+import gameChessCom from '../component/gameChessCom.vue';
+
 const max_events_on_home_page = 8;
 
-function cfc_events() {
+function events_for_home_page() {
     const now_ymd = (new Date()).toISOString().slice(0,10);
     const re_cancelled = /cancelled/i;
     const data_out = [];
@@ -24,7 +27,14 @@ function cfc_events() {
     return data_out;
 }
 
-export function init_vue_config(vc) {
-    vc.data = vc.data || {};
-    vc.data.cfc_events = cfc_events();
+function init(pageid, vue_config) {
+    if (pageid !== 'pg-home') return;
+
+    vue_config.data = vue_config.data || {};
+    vue_config.data.cfc_events = events_for_home_page();
+    vue_config.components = vue_config.components || {};
+    vue_config.components['cfc-photo-box'] = cfcPhotoBox;
+    vue_config.components['game-chess-com'] = gameChessCom;
 }
+
+export default { init }

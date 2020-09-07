@@ -19,11 +19,15 @@ function cfc_events() {
     return data_out;
 }
 
-export function init_vue_config(vc) {
-    vc.data = vc.data || {};
-    vc.data.e_type = '*';
-    vc.data.e_prov = '*';
+function init(pageid, vue_config) {
+    if (pageid !== 'pg-events-list') return;
 
-    vc.computed = vc.computed || {};
-    vc.computed.cfc_events = cfc_events;
+    vue_config.data = vue_config.data || {};
+    vue_config.data.e_type = '*';
+    vue_config.data.e_prov = '*';
+
+    vue_config.computed = vue_config.computed || {};
+    vue_config.computed.cfc_events = cfc_events;
 }
+
+export default { init }

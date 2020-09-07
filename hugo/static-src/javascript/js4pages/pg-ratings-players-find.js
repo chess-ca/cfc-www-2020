@@ -1,4 +1,7 @@
 
+import * as cfc_ratings from '../component/cfc-ratings'
+cfc_ratings.add_component(Vue);
+
 function ratings_search(event) {
     const vue_vm = this;
     vue_vm.error_msg = '';
@@ -52,20 +55,23 @@ function player(mid) {
     console.log('clicked for player:', mid)
 }
 
+function init(pageid, vue_config) {
+    if (pageid !== 'pg-ratings-players-find') return;
 
-export function init_vue_config(vc) {
-    vc.data = vc.data || {};
-    vc.data.mid = '';
-    vc.data.first = '';
-    vc.data.last = '';
-    vc.data.players = { list: [] };
-    vc.data.dbdate = '';
-    vc.data.error_msg = '';
-    vc.data.searching = false;
-    vc.data.showing_results = false;
+    vue_config.data = vue_config.data || {};
+    vue_config.data.mid = '';
+    vue_config.data.first = '';
+    vue_config.data.last = '';
+    vue_config.data.players = { list: [] };
+    vue_config.data.dbdate = '';
+    vue_config.data.error_msg = '';
+    vue_config.data.searching = false;
+    vue_config.data.showing_results = false;
 
-    vc.methods = vc.methods || {};
-    vc.methods.ratings_search = ratings_search;
-    vc.methods.ratings_reset = ratings_reset;
-    vc.methods.player = player;
+    vue_config.methods = vue_config.methods || {};
+    vue_config.methods.ratings_search = ratings_search;
+    vue_config.methods.ratings_reset = ratings_reset;
+    vue_config.methods.player = player;
 }
+
+export default { init };
