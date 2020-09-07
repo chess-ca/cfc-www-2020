@@ -19,8 +19,12 @@
 
 {{ partialCached "html/body-footer.html" . }}
  </div>
- <script src="/built/site.bundle.js"></script>
-{{- partialCached "google-analytics.html" . }}
+{{- if hugo.IsProduction }}
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+{{- else }}
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+{{- end }}
+ <script src="/built/cfc.bundle.js"></script>
+{{- partial "google-analytics.html" . }}
 </body>
-
 </html>
