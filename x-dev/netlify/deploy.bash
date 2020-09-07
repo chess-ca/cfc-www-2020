@@ -12,9 +12,9 @@ rc=$?
 echo ---- ---- ---- ---- return code: $rc
 if [ $rc -ne 0 ]; then exit $rc; fi
 
-echo ---- ---- ---- ---- TASK: npm run webpack:build-prod
+echo ---- ---- ---- ---- TASK: npm run rollup:build-prod
 cd $DIR_ROOT/x-dev
-npm run webpack:build-prod
+npm run rollup:build-prod
 rc=$?
 echo ---- ---- ---- ---- return code: $rc
 if [ $rc -ne 0 ]; then exit $rc; fi
