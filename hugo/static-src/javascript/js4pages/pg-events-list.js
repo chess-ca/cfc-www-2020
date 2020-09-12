@@ -19,8 +19,8 @@ function cfc_events() {
     return data_out;
 }
 
-function init(pageid, vue_config) {
-    if (pageid !== 'pg-events-list') return;
+function init(pginfo, vue_config) {
+    if (pginfo.id !== 'pg-events-list') return;
 
     vue_config.data = vue_config.data || {};
     vue_config.data.e_type = '*';

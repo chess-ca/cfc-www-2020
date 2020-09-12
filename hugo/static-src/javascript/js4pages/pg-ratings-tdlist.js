@@ -46,8 +46,8 @@ function ratings_reset(event) {
     this.players.list = [];
 }
 
-function init(pageid, vue_config) {
-    if (pageid !== 'pg-ratings-tdlist') return;
+function init(pginfo, vue_config) {
+    if (pginfo.id !== 'pg-ratings-tdlist') return;
 
     vue_config.data = vue_config.data || {};
     vue_config.data.cfc_id = '';

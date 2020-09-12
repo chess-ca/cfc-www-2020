@@ -55,8 +55,8 @@ function player(mid) {
     console.log('clicked for player:', mid)
 }
 
-function init(pageid, vue_config) {
-    if (pageid !== 'pg-ratings-players-find') return;
+function init(pginfo, vue_config) {
+    if (pginfo.id !== 'pg-ratings-players-find') return;
 
     vue_config.data = vue_config.data || {};
     vue_config.data.mid = '';

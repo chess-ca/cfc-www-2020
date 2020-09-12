@@ -8,7 +8,7 @@ function goto(url) {
     window.location.href = url;
 }
 
-function init(pageid, vue_config) {
+function init(pginfo, vue_config) {
     // For *all* pages ...
     vue_config.data = vue_config.data || {};
     vue_config.data.sideNav_show = false;
