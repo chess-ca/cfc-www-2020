@@ -14,6 +14,7 @@ function events_for_home_page() {
         let skip_it =
             (e['end'] < now_ymd)
             || (e['incl'] !== '')
+            || (e['prov'] === 'FO')
             || (e['name'].match(re_cancelled))
         ;
         if ( skip_it ) continue;
@@ -27,8 +28,8 @@ function events_for_home_page() {
     return data_out;
 }
 
-function init(pageid, vue_config) {
-    if (pageid !== 'pg-home') return;
+function init(pginfo, vue_config) {
+    if (pginfo.id !== 'pg-home') return;
 
     vue_config.data = vue_config.data || {};
     vue_config.data.cfc_events = events_for_home_page();
