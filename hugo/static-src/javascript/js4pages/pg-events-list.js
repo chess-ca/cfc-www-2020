@@ -2,6 +2,7 @@
 function cfc_events() {
     const vm = this;
     const now_ymd = (new Date()).toISOString().slice(0,10);
+    let yyyy = now_ymd.slice(0,4);
     const data_out = [];
     const data_in = window.ws_cfc_events || [];
     for (let i=0, i_end=data_in.length; i<i_end; i++) {
@@ -13,6 +14,10 @@ function cfc_events() {
             || (vm.e_prov !== '*' && vm.e_prov !== e['prov'])
         ;
         if ( !skip_it ) {
+            if ( e.start.slice(0,4) > yyyy ) {
+                yyyy = e.start.slice(0,4);
+                data_out.push({newyear: yyyy});
+            }
             data_out.push(e);
         }
     }
