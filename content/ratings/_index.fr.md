@@ -1,8 +1,8 @@
 +++
-title = "Cotes"
-date = "2020-08-13"
-layout = "players-find"
-pageid = "pg-ratings-players-find"
+title = "Cotes et tableaux croisés"
+date = "2020-09-23"
+layout = "ratings"
+pageid = "pg-ratings"
 
 [i18n]
     None = "Required"
