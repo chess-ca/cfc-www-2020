@@ -11,12 +11,12 @@ const dest_dir = path.resolve(__dirname, '../../hugo/static/built');
 const isDev = process.env.BUILD.toLowerCase().startsWith('dev');
 
 const js_build = {
-    external: ['vue'],
+    external: ['vue', 'vue-router'],
     input: {cfc: path.resolve(src_dir, 'cfc.bundle.rollup-entry.js')},
     output: {
         dir: dest_dir,
         entryFileNames: '[name].bundle.js',
-        globals: {vue: 'Vue'},
+        globals: {vue: 'Vue', 'vue-router': 'VueRouter'},
         format: 'iife'
     },
     plugins: [

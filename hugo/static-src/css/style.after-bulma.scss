@@ -12,6 +12,7 @@ $primary-invert: findColorInvert($primary);
 [v-cloak] { display: none; }
 .debug { border: 1px solid #f00; }
 .debug-bg { background-color: #fcc; }
+.ws-error { color:#f00; background-color:#fee; padding-left:0.5rem; }
 
 html {
   background: #fff url("/img/squares/squares.6px.2x6.png") repeat-x;
@@ -93,6 +94,15 @@ html {
 
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
+// Page Transitions for mini-SPAs: Ratings, ...
+.ws-go-forward-enter-active, .ws-go-forward-leave-active,
+.ws-go-back-enter-active, .ws-go-back-leave-active {
+  transition: all 0.2s ease;
+}
+.ws-go-forward-enter { transform: translateX(400px); opacity: 0; }
+.ws-go-forward-leave-to { transform: translateX(-400px); opacity: 0; }
+.ws-go-back-enter { transform: translateX(-400px); opacity: 0; }
+.ws-go-back-leave-to { transform: translateX(400px); opacity: 0; }
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .ws-item {
   border-top: 1px solid $cp-p200;

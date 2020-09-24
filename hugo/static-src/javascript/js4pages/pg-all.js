@@ -1,6 +1,10 @@
 
-function sideNave_toggle() {
-    console.log('sideNav_toggle:', 'invoked!');
+import Vue from 'vue';
+import cfcSpinner from '../component/cfcSpinner.vue';
+
+Vue.component('cfc-spinner', cfcSpinner);
+
+function sideNav_toggle() {
     this.sideNav_show = ! this.sideNav_show;
 }
 
@@ -14,7 +18,7 @@ function init(pginfo, vue_config) {
     vue_config.data.sideNav_show = false;
     vue_config.data.select_1 = '';
     vue_config.methods = vue_config.methods || {};
-    vue_config.methods.sideNav_toggle = sideNave_toggle;
+    vue_config.methods.sideNav_toggle = sideNav_toggle;
     vue_config.methods.goto = goto;
 }
 
