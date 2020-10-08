@@ -5,6 +5,11 @@ GSHEETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0OdgsCSYzlRBMOM
 import urllib.request
 import argparse, csv, io, re, json, pathlib
 
+_mm2mmm = {
+    '01':'Jan', '02':'Feb', '03':'Mar', '04':'Apr', '05':'May', '06':'June',
+    '07':'July', '08':'Aug', '09':'Sept', '10':'Oct', '11':'Nov', '12':'Dec',
+}
+
 
 def main():
     args = parse_args()
@@ -53,7 +58,7 @@ def csv_row_to_dict(row, rdr):
     fn = rdr.fieldnames
 
     main_url = ''
-    links = str(row[fn[8]]).strip()
+    links = str(row[fn[7]]).strip()
     for i, m in enumerate(link_re.finditer(links)):
         if i == 0:
             main_url = m.group(2)
@@ -65,13 +70,27 @@ def csv_row_to_dict(row, rdr):
         'name': str(row[fn[2]]).strip(),
         'start': str(row[fn[3]]).strip(),
         'end': str(row[fn[4]]).strip(),
-        'dates': str(row[fn[5]]).strip(),
-        'city': str(row[fn[6]]).strip(),
-        'prov': str(row[fn[7]]).strip(),
+        'city': str(row[fn[5]]).strip(),
+        'prov': str(row[fn[6]]).strip(),
         'url': main_url,
         'links': links,
     }
+    event['dates'] = date_str(event['start'], event['end'])
     return event
+
+
+def date_str(start, end):
+    mm1 = _mm2mmm[start[5:7]] if start[5:7] in _mm2mmm else '???'
+    dd1 = start[8:10].lstrip(' 0')
+    mm2 = _mm2mmm[end[5:7]] if end[5:7] in _mm2mmm else '???'
+    dd2 = end[8:10].lstrip(' 0')
+    if mm1 == mm2:      # not checking year since date ranges are never that large.
+        if dd1 == dd2:
+            return f'{mm1} {dd1}'
+        else:
+            return f'{mm1} {dd1}-{dd2}'
+    else:
+        return f'{mm1[0:3]} {dd1}-{mm2[0:3]} {dd2}'
 
 
 def create_javascript_file(csv_py, javascript_fn):
