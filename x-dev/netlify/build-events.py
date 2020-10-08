@@ -86,11 +86,11 @@ def date_str(start, end):
     dd2 = end[8:10].lstrip(' 0')
     if mm1 == mm2:      # not checking year since date ranges are never that large.
         if dd1 == dd2:
-            return f'{mm1} {dd1}'
+            return '{} {}'.format(mm1, dd1)
         else:
-            return f'{mm1} {dd1}-{dd2}'
+            return '{} {}-{}'.format(mm1, dd1, dd2)
     else:
-        return f'{mm1[0:3]} {dd1}-{mm2[0:3]} {dd2}'
+        return '{} {}-{} {}'.format(mm1[0:3], dd1, mm2[0:3], dd2)
 
 
 def create_javascript_file(csv_py, javascript_fn):
