@@ -9,6 +9,8 @@ import pg_events_list from './js4pages/pg-events-list';
 import pg_ratings from './js4pages/pg-ratings';
 import pg_ratings_tdlist from './js4pages/pg-ratings-tdlist';
 import pg_ratings_players_find from './js4pages/pg-ratings-players-find';
+import pg_membership_how from './js4pages/pg-membership-how';
+
 
 const pginfo = get_page_info();
 const vue_config = {
@@ -22,7 +24,7 @@ const vue_config = {
 };
 
 const pglist = [
-    pg_all, pg_home, pg_events_list,
+    pg_all, pg_home, pg_events_list, pg_membership_how,
     pg_ratings, pg_ratings_players_find, pg_ratings_tdlist
 ];
 pglist.forEach(pg => pg.init(pginfo, vue_config));

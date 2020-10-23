@@ -7,7 +7,7 @@
  <main id="ws-news" class="container content pad-touch-only">
   <h1 class="title mt-3">{{ .Title }}</h1>
 {{- partial "parts/table-of-contents.html" . }}
-  <div class="ws-content">
+  <div class="ws-content" v-cloak>
 {{ .Content }}
   </div>
  </main>
