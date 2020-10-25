@@ -12,14 +12,16 @@ it allows you to participate in CFC-rated tournaments.
 The CFC uses a system called GoMembership to manage its memberships.
 After joining, you will have and id & password on GoMembership for your membership.
 
-Parents, you can do this for your child and pass it along when she/he is older.
+See [CFC membership types and fees](/en/players/membership-fees/).
+
+Parents, you can set up GoMembership for your child and pass it along when she/he is older.
 
 How to join or renew?
 Select answers to the following questions to get specific instructions:
 
 <div class="select">
 <select v-model="mbr.is_member">
-  <option value="">CFC member?</option>
+  <option value="">Q: CFC member?</option>
   <option value="N">I have never been a CFC member</option>
   <option value="Y">I am a CFC member</option>
   <option value="Y">I was a CFC member in the past</option>
@@ -29,11 +31,11 @@ Select answers to the following questions to get specific instructions:
 <div v-show="mbr.is_member=='Y'" class="mt-3">
 
 Since you are/were a CFC member, a GoMembership account has already been created for you.
-Your GoMembership id is your CFC membership number.
+Your GoMembership id and your CFC membership number are the same.
 
  <div class="select">
   <select v-model="mbr.knows_cfc_id">
-   <option value="">My CFC membership number?</option>
+   <option value="">Q: My CFC membership number?</option>
    <option value="Y">I know my CFC membership number</option>
    <option value="N">I do not know my CFC membership number</option>
   </select>
@@ -41,7 +43,7 @@ Your GoMembership id is your CFC membership number.
  <div v-show="mbr.knows_cfc_id=='Y'" class="mt-3">
   <div class="select">
    <select v-model="mbr.knows_gm_pw">
-    <option value="">My GoMembership password?</option>
+    <option value="">Q: My GoMembership password?</option>
     <option value="Y">I know my GoMembership password</option>
     <option value="N">I do not know my GoMembership password</option>
    </select>
@@ -52,8 +54,8 @@ Your GoMembership id is your CFC membership number.
 <!-- --------------------------------------------------------------- -->
 <div v-show="show_create_gm_id" class="mt-3">
 
-To become a CFC member, you must complete BOTH steps:
-1) create an id on GoMembership and 2) buy a CFC membership.
+To become a CFC member, you must complete
+BOTH steps: 1) create an id on GoMembership and 2) buy a CFC membership.
 
 ## Create a GoMembership id
 
@@ -70,7 +72,7 @@ To become a CFC member, you must complete BOTH steps:
 * On the Agreements & Opt-ins page, just click "Accept & Continue".
 
 * Next you should see your home page within GoMembership.
-  If it appears, close the pop-up window (click the "X").
+  * If it appears, close the pop-up window (click the "X").
   
 * IMPORTANT! Remember your CFC number. You will need to provide it when you enter CFC-rated
   tournaments. Also, you can use it later to log in to GoMembership again (with your password;
@@ -93,7 +95,7 @@ Do NOT create a new GoMembership account (it will have a different CFC number).
   <br><a class="button is-info" href="https://cfc.azolve.com/" target="_blank">Go to GoMembership</a>
 
 * On the GoMembership log-in page, 
-  * In the Username box (the 1st box), enter your email address.
+  * In the Username box (the 1st box), enter your CFC number.
   * Click the "Forgot Password?" link (below the input boxes).
   * On the "Password Reset" pop-up message, click "OK".
   
@@ -161,7 +163,7 @@ Once logged in, follow the instructions below to buy a CFC membership.
   
   ![click shopping cart](buy-shopping-cart.png)
   
-* ...
+* Continue your purchase (similar to other web stores).
 
 </div>
 
