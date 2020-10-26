@@ -21,7 +21,7 @@ Select answers to the following questions to get specific instructions:
 
 <div class="select">
 <select v-model="mbr.is_member">
-  <option value="">Q: CFC member?</option>
+  <option value="">Q: Are you a CFC member?</option>
   <option value="N">I have never been a CFC member</option>
   <option value="Y">I am a CFC member</option>
   <option value="Y">I was a CFC member in the past</option>
@@ -35,7 +35,7 @@ Your GoMembership id and your CFC membership number are the same.
 
  <div class="select">
   <select v-model="mbr.knows_cfc_id">
-   <option value="">Q: My CFC membership number?</option>
+   <option value="">Q: Do you know your CFC membership number?</option>
    <option value="Y">I know my CFC membership number</option>
    <option value="N">I do not know my CFC membership number</option>
   </select>
@@ -43,7 +43,7 @@ Your GoMembership id and your CFC membership number are the same.
  <div v-show="mbr.knows_cfc_id=='Y'" class="mt-3">
   <div class="select">
    <select v-model="mbr.knows_gm_pw">
-    <option value="">Q: My GoMembership password?</option>
+    <option value="">Q: Do you know your GoMembership password?</option>
     <option value="Y">I know my GoMembership password</option>
     <option value="N">I do not know my GoMembership password</option>
    </select>
@@ -107,9 +107,9 @@ Do NOT create a new GoMembership account (it will have a different CFC number).
 
  <div class="select">
   <select v-model="mbr.got_reset_email">
-  <option value="">Q: Did you receive a reset email?</option>
-   <option value="Y">I did receive a reset email</option>
-   <option value="N">I did not receive a reset email</option>
+  <option value="">Q: Did you receive a password reset email?</option>
+   <option value="Y">I did receive a password reset email</option>
+   <option value="N">I did not receive a password reset email</option>
   </select>
  </div>
 </div>
