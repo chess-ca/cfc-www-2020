@@ -1,7 +1,9 @@
 {{- $src := .Get "src" }}
-{{- $alt := .Get "alt" }}
+{{- $caption := .Get "caption" }}
+{{- $alt := .Get "alt" | default $caption }}
 
 {{- $img := $.Page.Resources.GetMatch $src }}
 <figure style="overflow-x:auto;">
  <img src="{{ $src }}" alt="{{ $alt }}" style="min-width:{{ $img.Width }}px;"/>
+{{- with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>
