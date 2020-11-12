@@ -6,7 +6,7 @@
 {{- define "main" }}
  <main class="ws-main container">
     <h1 class="title mt-3">{{ .Title }}</h1>
-    <p>&empty; &#8658; {{ i18n "Under_Construction" }}</p>
+    <p>({{ i18n "Under_Construction" }})</p>
     <br>
     <div class="ws-section-menu columns is-multiline">
 {{- range $group := .Params.sectionMenu.groups }}
