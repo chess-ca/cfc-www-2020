@@ -1,8 +1,5 @@
-
       <cfc-photo-box :photos="[
-        { img: 'cloud:/photos/carousel/hart-house.great-hall.jpg', text: 'Great Venues: Hart House (yup, it\'s been a slow news year)'},
-        { img: 'cloud:/photos/carousel/2020-04.QZ-at-ChessBase.jpg', text: 'Canadian WGM Qiyu Zho records two new Chessbase DVDs' },
-        { img: 'cloud:/photos/carousel/2020-04.Chess-Canada-2020-Embiggened.jpg', text: 'New issue of Chess Canada available here: [BIG PDF](cloud:/newsletters/2020/cfc.cc2020.pdf) and [PGN](cloud:/newsletters/2020/cfc.cc2020.pgn)' },
-        { img: 'cloud:/photos/carousel/2020-02.IM-Norm-3-Mark-Plotkin.jpg', text: 'Arbiter Aris, an IM report, and new IM Mark Plotkin' },
-        { img: 'cloud:/photos/carousel/2020-02.round-1-middlegames.jpg', text: 'Nailbiting at [EMC](https://elevatemychess.com/)\'s February IM Norm Tournament' },
+{{- range $.Page.Params.photobox }}
+        { img: '{{ .src }}', text: '{{ .text }}'},
+{{- end }}
       ]" :wait="3"></cfc-photo-box>

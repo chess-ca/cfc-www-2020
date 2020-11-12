@@ -45,7 +45,7 @@ html {
     .fa-bars { font-size:180%; color:$cp-p500; margin-bottom:1rem; }
     nav a {
       color:$cp-p500;
-      margin:.8rem 1.2rem .8rem 0;
+      margin:0 1.2rem .5rem 0;
       border-bottom:2px solid transparent;
       &:hover { border-bottom:2px solid $cp-p500; }
     }
