@@ -17,9 +17,9 @@ The current legal rules of the CFC are contained in the "Continuance" submitted 
 
 The legacy rules of the CFC are contained in the legacy _CFC Handbook_.
 
-Although no longer the CFC's Bylaws nor legally binding,
+Although it is no longer the "official" CFC Bylaws nor is legally binding,
 the current CFC president, Vlad Drkulec, has promised to abide by
-the legacy _CFC Handbook_ as CFC policy to the extent possible and consistent with the NFP Act.
+the legacy _CFC Handbook_ as CFC policy to the extent possible consistent with the NFP Act.
 
 <a href="https://docs.google.com/document/d/1ZSPT-Adi0FoZ1EQbziX2jYeR4tsnyLVpz5EdElO6dgI/preview"
    class="button is-primary">LEGACY (Old CFC Handbook)</a>

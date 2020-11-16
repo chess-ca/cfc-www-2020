@@ -20,13 +20,8 @@ enableMissingTranslationPlaceholders = false
   date = [":filename", ":default"]
 
 [permalinks]
-  cfc = "/cfc/:filename"
-  clubs = "/clubs/:filename"
   news = "/news/:year/:month/:day/:slug"
-  players = "/players/:filename"
   website = "/ws/:filename"
-  #blog = "/blog/:year/:month/:slug"
-  #code = "/code/:slug"
 
 [author]
   name = "CFC / FCE"
