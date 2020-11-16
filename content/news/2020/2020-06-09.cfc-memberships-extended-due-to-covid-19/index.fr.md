@@ -3,6 +3,8 @@ title = "CFC Memberships Extended Due To COVID-19"
 author = "Don Parakin"
 +++
 
+See [UPDATE](/en/news/2020/11/01/cfc-memberships-extensions-end/).
+
 Read the official announcement
 [HERE](http://www.chesscanada.info/forum/showthread.php?5380-CFC-membership-extensions-due-to-COVID-19)
 
