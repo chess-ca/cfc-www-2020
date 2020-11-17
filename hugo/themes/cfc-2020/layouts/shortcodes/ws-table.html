@@ -1,7 +1,16 @@
-{{- $src := .Get "src" }}
-{{- $alt := .Get "alt" }}
-
-{{- $img := $.Page.Resources.GetMatch $src }}
-<figure style="overflow-x:auto;">
- <img src="{{ $src }}" alt="{{ $alt }}" style="min-width:{{ $img.Width }}px;"/>
-</figure>
+{{- $data := .Get "data" }}
+{{- $thead := .Get "thead" }}
+{{- $minwidth := .Get "minwidth" | default "800px"}}
+<table class="table is-hoverable is-narrow" style="min-width:{{ $minwidth }};">
+{{- if $thead }}
+ <thead>
+  <tr>{{ range split $thead "|" }}<th>{{.}}</th>{{ end }}</tr>
+ </thead>
+{{- end }}
+ <tbody>
+{{- $data_csv := $.Page.Resources.GetMatch $data | transform.Unmarshal (dict "comment" "#") }}
+{{- range $data_csv }}
+  <tr>{{ range . }}<td>{{ . | markdownify }}</td>{{ end }}</tr>
+{{- end }}
+ </tbody>
+</table>
