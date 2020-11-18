@@ -2,6 +2,7 @@
 title = "FIDE Titles - FM, CM"
 layout = "ws-single"
 tableofcontents = false
+review_content = "2000-01-01"
 +++
 
 Jump to [FIDE Masters](#fide-master-fm), [Woman FIDE Masters](#woman-fide-master-wfm),
