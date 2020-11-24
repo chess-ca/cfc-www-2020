@@ -55,9 +55,9 @@ The CFC has sent a team to FIDE's Chess Olympiad every time it has been held: ev
   <td class="has-text-right">Personnel:</td>
   <td>
 
-   See [Staff](#)<br>
-   See [Executive](#)<br>
-   See [Other Officers](#)
+   See [Staff](/en/cfc/personnel/)<br>
+   See [Executive](/en/cfc/personnel/)<br>
+   See [Other Officers](/en/cfc/personnel/)
 
   </td>
  </tr>

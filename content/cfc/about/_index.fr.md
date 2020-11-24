@@ -53,9 +53,9 @@ Le CFC a envoyé une équipe à l'Olympiade d'échecs de la FIDE à chaque fois 
   <td class="has-text-right">Personnel:</td>
   <td>
 
-   Voir [Staff](#)<br>
-   Voir [Executive](#)<br>
-   Voir [Other Officers](#)
+   Voir [Staff](/fr/cfc/personnel/)<br>
+   Voir [Executive](/fr/cfc/personnel/)<br>
+   Voir [Other Officers](/fr/cfc/personnel/)
 
   </td>
  </tr>

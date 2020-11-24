@@ -10,7 +10,11 @@
  <tbody>
 {{- $data_csv := $.Page.Resources.GetMatch $data | transform.Unmarshal (dict "comment" "#") }}
 {{- range $data_csv }}
+{{- if eq "--section--" (index . 0) }}
+  <tr class="ws-bg-p100"><td colspan="99">{{ index . 1 }}</td></tr>
+{{- else }}
   <tr>{{ range . }}<td>{{ . | markdownify }}</td>{{ end }}</tr>
+{{- end }}
 {{- end }}
  </tbody>
 </table>
