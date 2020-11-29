@@ -33,7 +33,7 @@ function ratings_search(event) {
             vue_vm.showing_results = false;
         }
     };
-    var api_url = 'https://server.e4e5.org/api/ratings/player/find'
+    var api_url = 'https://server.chess.ca/api/ratings/player/find'
         + '?mid=' + this.mid
         + '&first=' + this.first
         + '&last=' + this.last;
