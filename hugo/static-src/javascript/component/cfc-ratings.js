@@ -2,7 +2,7 @@
  * @file VueJS component for <> tag
  * @author Don Parakin, 2020
  */
-const server_url = 'https://server.chess.ca/api/ratings';
+const server_url = 'https://server.e4e5.org/api/ratings';
 const earliest = '2006';
 
 const vue_tag = 'cfc-ratings';

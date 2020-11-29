@@ -9,7 +9,7 @@
 //  - Although XMLHttpRequest is old-school, it works on newer and
 //    older browsers (without another dependency to worry about).
 //----------------------------------------------------------------------
-const api_prefix = 'https://server.chess.ca/api';
+const api_prefix = 'https://server.e4e5.org/api';
 
 export function api(options) {
     const method = String(options.method || 'GET').toUpperCase();
