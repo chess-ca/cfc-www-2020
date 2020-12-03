@@ -1,6 +1,7 @@
 +++
 title = "Organizer Tools"
 layout = "ws-single"
+content_todo = "Add how to report new memberships to CFC"
 +++
 
 Here are some useful tools for organizers and arbiters.
@@ -9,10 +10,10 @@ Here are some useful tools for organizers and arbiters.
 When you register players for your CFC-rated tournament,
 you will need to lookup their CFC membership id, expiry date, and rating.
 
-* If you **will have internet access** while registering players,
+* If you *will* have internet access while registering players,
   use [Ratings](/en/ratings/).
 
-* If you **will not have internet access** while registering players,
+* If you *will not* have internet access while registering players,
   get the "tdlist.txt" file from
   [HERE](https://storage.googleapis.com/cfc-public/data/tdlist.txt)
   and save it to your laptop.
@@ -47,14 +48,19 @@ You need to report the results of games played to the CFC for rating.
   ratings may mean a player must play in a different section of a future tournament
   or is or isn't selected or eligible to participate in an tournament. 
 
+* Results are sent to the CFC in two files: myevent.<u>ctr</u> and myevent.<u>tms</u>.
+  These files are input to the Ratings Program. No other format will be accepted.
+
 * **Pairing Software**:
   Both [SwissSys](/en/organizers/tools/swiss-sys/) and
   [Swiss-Manager](/en/organizers/tools/swiss-manager/) will create 
-  result reports in the format required by the CFC.
+  result reports in the required .ctr and .tms formats.
 
 * **Swiss Assistant**:
   If you did not use pairing software, "Swiss Assistant" is a simple tool
-  for just creating the reports for CFC (for Swiss and Round Robin).
+  for just creating the reports in the required .ctr and .tms formats.
+  It works for both Swiss System and Round Robin tournaments.
+  Great for online tournaments (where the platform did the pairings).
   See [MORE](/en/organizers/tools/swiss-assistant).
 
 ## Reporting Memberships to the CFC

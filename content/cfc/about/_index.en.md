@@ -1,7 +1,7 @@
 +++
 title = "About the CFC"
 layout = "ws-single"
-review_content = "2000-01-01"
+content_review = "2000-01-01"
 # TODO: Link to other pages
 +++
 

@@ -2,7 +2,7 @@
 title = "FIDE Titles - IA, IO, FA, NA"
 layout = "ws-single"
 tableofcontents = false
-review_content = "2021-07-01"
+content_review = "2021-04-01 - List of Arbiters"
 +++
 
 Jump to [International Arbiters](#international-arbiter-ia),
