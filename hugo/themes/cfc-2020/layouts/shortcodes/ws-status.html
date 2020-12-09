@@ -1,0 +1,23 @@
+<h5>---- DUE or OVERDUE ----</h5>
+Pages with "content_todo"<br>
+{{- range (sort (where $.Site.AllPages ".Params.content_todo" "!=" nil) ".RelPermalink") }}
+ &nbsp;&nbsp;__ <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a> - {{ .Param "content_todo" }}<br>
+{{- else }}
+ &nbsp;&nbsp;__ (none found)<br>
+{{- end }}
+
+{{- $today := now.Format "2006-01-02" }}
+<br>Pages with "content_review" date &leq; {{ $today }}<br>
+{{- range (sort (where $.Site.AllPages "Params.content_review" "<=" $today) ".Params.content_review") }}
+&nbsp;&nbsp;__ {{ .Param "content_review" }} - <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a><br>
+{{- else }}
+&nbsp;&nbsp;__ (none found)<br>
+{{- end }}
+
+<br><br><h5>---- FUTURE ----</h5>
+Pages with "content_review" date &gt; {{ $today }}<br>
+{{- range (sort (where $.Site.AllPages "Params.content_review" ">" $today) ".Params.content_review") }}
+&nbsp;&nbsp;__ {{ .Param "content_review" }} - <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a><br>
+{{- else }}
+&nbsp;&nbsp;__ (none found)<br>
+{{- end }}
