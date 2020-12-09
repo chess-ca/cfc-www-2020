@@ -1,0 +1,10 @@
+# ----------------------------------------------------------------------
+- ["--set-editor--", "John Upper"]
+- ["--set-url-prefix--", "https://server.chess.ca/files/cfc/newsletters"]
+- ["2020", "[Chess Canada - Embiggened - 131 pages](URL_PREFIX/2020/2020.CFC.ChessCanada.Embiggened.pdf)", "[PGN](URL_PREFIX/2020/2020.CFC.ChessCanada.Embiggened.pgn)"]
+- ["2019", "[Chess Canada - Gnome - 96 pages](URL_PREFIX/2019/2019.CFC.ChessCanada.Gnome.pdf)", "[PGN](URL_PREFIX/2019/2019.CFC.ChessCanada.Gnome.pgn)"]
+- ["2018", "[Chess Canada - Dragon - 117 pages](URL_PREFIX/2018/2018.CFC.ChessCanada.Dragon.pdf)", "[PGN](URL_PREFIX/2018/2018.CFC.ChessCanada.Dragon.pgn)"]
+- ["2017", "[Chess Canada - Ketchup - 91 pages](URL_PREFIX/2017/2017.CFC.ChessCanada.Ketchup.pdf)", "[PGN](URL_PREFIX/2017/2017.CFC.ChessCanada.Ketchup.pgn)"]
+- ["2016", "[Chess Canada - Olympiad - 140 pages](URL_PREFIX/2016/2016.CFC.ChessCanada.Olympiad.pdf)", "[PGN](URL_PREFIX/2016/2016.CFC.ChessCanada.Olympiad.pgn)"]
+- ["--set-editor--", ""]
+- ["", "(more newsletters coming soon)", ""]

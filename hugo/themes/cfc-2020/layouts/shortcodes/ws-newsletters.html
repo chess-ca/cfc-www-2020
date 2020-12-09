@@ -1,0 +1,27 @@
+{{- $data := .Get "data" }}
+{{- $thead := .Get "thead" }}
+{{- $minwidth := .Get "minwidth" | default "800px"}}
+{{- $local := newScratch }}
+{{- $local.Set "editor" "" }}
+{{- $local.Set "url_prefix" "UNDEFINED" }}
+<table class="table is-hoverable is-narrow" style="min-width:{{ $minwidth }};">
+{{- if $thead }}
+ <thead>
+  <tr>{{ range split $thead "|" }}<th>{{.}}</th>{{ end }}</tr>
+ </thead>
+{{- end }}
+ <tbody>
+{{- $data_csv := $.Page.Resources.GetMatch $data | transform.Unmarshal (dict "comment" "#") }}
+{{- range $data_csv }}
+{{- if eq "--set-editor--" (index . 0) }}
+{{- $local.Set "editor" (index . 1) }}
+{{- else if eq "--set-url-prefix--" (index . 0) }}
+{{- $local.Set "url_prefix" (index . 1) }}
+{{- else if eq "--section--" (index . 0) }}
+  <tr class="ws-bg-p100"><td colspan="99">{{ index . 1 }}</td></tr>
+{{- else }}
+  <tr>{{ range . }}<td>{{ replace . "URL_PREFIX" ($local.Get "url_prefix") | markdownify }}</td>{{ end }}<td>{{ $local.Get "editor" }}</td></tr>
+{{- end }}
+{{- end }}
+ </tbody>
+</table>
