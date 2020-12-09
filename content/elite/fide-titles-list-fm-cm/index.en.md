@@ -2,7 +2,7 @@
 title = "FIDE Titles - FM, CM"
 layout = "ws-single"
 tableofcontents = false
-content_review = "2012-04-01"
+content_review = "2021-04-01 - Check for updates"
 content_todo = "Add CMs and WCMs"
 +++
 

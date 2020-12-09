@@ -12,7 +12,7 @@ is ideal. If you are already an expert and more comfortable with one of the pair
 use whichever you prefer.
 
 ## Downloads
-* Download [Swiss Assistant Sofware](https://storage.googleapis.com/cfc-public/files/SwissAssistant2.zip)
+* Download [Swiss Assistant Sofware]({{< ws-cdn "/misc/SwissAssistant2.zip" >}})
   (Windows only).
 * Download [Database of CFC Members](https://storage.googleapis.com/cfc-public/data/cfcmembers.mde).
   This is updated weekly (usually Wednesdays) so download the latest.

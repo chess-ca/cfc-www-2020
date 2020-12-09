@@ -2,7 +2,7 @@
 title = "FIDE Titles - GM, IM"
 layout = "ws-single"
 tableofcontents = false
-content_review = "2021-07-01"
+content_review = "2021-04-01 - Check for updates"
 +++
 
 Jump to [Grandmasters](#grandmaster-gm), [Woman Grandmaster](#woman-grandmaster-wgm),

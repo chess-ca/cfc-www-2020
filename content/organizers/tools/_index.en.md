@@ -37,8 +37,8 @@ software programs for use in CFC-rated tournaments.  Pick one.
 * **Manual**
   Before software was available, pairings were done manually with pairing cards.
   For you old schoolers, here are pairing
-  [cards](https://storage.googleapis.com/cfc-public/files/pairing-cards.pdf) and
-  [sheets](https://storage.googleapis.com/cfc-public/files/pairing-sheet.pdf).
+  [cards]({{< ws-cdn "/misc/pairing-cards.pdf" >}}) and
+  [sheets]({{< ws-cdn "/misc/pairing-sheet.pdf" >}}).
 
 ## Reporting Results to the CFC
 You need to report the results of games played to the CFC for rating.

@@ -19,6 +19,7 @@
      * @file VueJS component for <ws-photobox> tag
      * @author Don Parakin, 2020
      */
+    const url_cfccdn = 'https://server.chess.ca/files';
     const url_cloud = 'https://storage.googleapis.com/cfc-public';
     const wait_time = 10 * 1000;
 
@@ -35,19 +36,27 @@
         };
     };
     const vue_beforeMount = function() {
+        let cfccdn_re = /cfccdn:/g;
         let cloud_re = /cloud:/g;
         let link_re = /\[(.*?)\]\((.*?)\)/g;
         for (let i=0; i<this.photos.length; i++) {
             let p = this.photos[i];
             p.key = i;
+            //---- Image URL might have URL short codes
             if (p.img) {
+                p.img = p.img.replace('cfccdn:', url_cfccdn);
                 p.img = p.img.replace('cloud:', url_cloud);
             }
+            //---- Text might have URLs with short codes
             p.text = p.text || "";
             let match;
+            while ((match = cfccdn_re.exec(p.text))) {
+              p.text = p.text.replace(match[0], url_cfccdn);
+            }
             while ((match = cloud_re.exec(p.text))) {
                 p.text = p.text.replace(match[0], url_cloud);
             }
+            //---- Text might have a Markdown style link "[text](url)"
             while ((match = link_re.exec(p.text)) !== null) {
                 let link_html = '<a href="'+match[2]+'">'+match[1]+'</a>';
                 p.text = p.text.replace(match[0], link_html);
