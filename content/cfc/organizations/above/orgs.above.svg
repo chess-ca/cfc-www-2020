@@ -1,0 +1,49 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="194" height="293" viewBox="0 0 194 293" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css"><![CDATA[
+.st1 {fill:#000000;font-family:Arial;font-size:12pt;font-weight:bold}
+]]></style>
+    <defs/>
+    <g transform="translate(-143,-143)">
+        <g transform="translate(144,144)" id="shape1">
+            <path fill="#cce7df" stroke="#3498db" d="M0,0L192,0L192,54L0,54L0,0z"/>
+            <text class="st1">
+                <tspan y="32" x="82">IOC</tspan>
+            </text>
+        </g>
+        <g transform="translate(198,223)" id="shape2">
+            <path fill="#cce7df" stroke="#3498db" d="M0,0L138,0L138,54L0,54L0,0z"/>
+            <text class="st1">
+                <tspan y="32" x="51">FIDE</tspan>
+            </text>
+        </g>
+        <g transform="translate(198,381)" id="shape3">
+            <path fill="#cce7df" stroke="#3498db" d="M0,0L138,0L138,54L0,54L0,0z"/>
+            <text class="st1">
+                <tspan y="32" x="51">COC</tspan>
+            </text>
+        </g>
+        <g transform="translate(246,302)" id="shape4">
+            <path fill="#cce7df" stroke="#3498db" d="M0,0L90,0L90,54L0,54L0,0z"/>
+            <text class="st1">
+                <tspan y="22" x="28">CFC</tspan>
+                <tspan y="42" x="29">FCE</tspan>
+            </text>
+        </g>
+        <g transform="translate(198,408)" id="shape5">
+            <path fill="none" stroke="#236ea1" d="M-7.8,0L-30,0L-30,-210"/>
+            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M0,0L-7.8,-2L-7.8,2L0,0"/>
+        </g>
+        <g transform="translate(198,250)" id="shape6">
+            <path fill="none" stroke="#236ea1" d="M-7.8,0L-30,0L-30,-52"/>
+            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M0,0L-7.8,-2L-7.8,2L0,0"/>
+        </g>
+        <g transform="translate(215,278)" id="shape7">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,36L23.2,36"/>
+            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M31,36L23.2,34L23.2,38L31,36"/>
+        </g>
+        <g transform="translate(215,381)" id="shape8">
+            <path fill="none" stroke="#236ea1" d="M0,0L0,-39L23.2,-39"/>
+            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M31,-39L23.2,-41L23.2,-37L31,-39"/>
+        </g>
+    </g>
+</svg>
