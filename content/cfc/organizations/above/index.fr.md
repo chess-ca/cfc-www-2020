@@ -44,3 +44,10 @@ COC [reconnaît](https://olympic.ca/coc-recognized-organizations/)
 le [FCE / CFC](https://www.chess.ca/)
 en tant qu'organisme directeur national du sport des échecs au Canada.
 Voir la [lettre de reconnaissance](recognition-letter-chess1.pdf).
+
+## Autres organisations
+
+
+* Le [Commonwealth Chess Association](http://www.commonwealthchess.com/)
+  est une organisation d'échecs dans les pays du Commonwealth britannique.
+* L'[International Correspondence Chess Federation](https://www.iccf.com/).

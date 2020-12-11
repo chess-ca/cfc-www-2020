@@ -1,49 +1,57 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="194" height="293" viewBox="0 0 194 293" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" height="238" viewBox="0 0 239 238" xmlns:xlink="http://www.w3.org/1999/xlink" width="239">
     <style type="text/css"><![CDATA[
-.st1 {fill:#000000;font-family:Arial;font-size:12pt;font-weight:bold}
+.st1 {fill:#000000;font-family:Arial;font-size:14pt;font-weight:bold}
 ]]></style>
-    <defs/>
-    <g transform="translate(-143,-143)">
-        <g transform="translate(144,144)" id="shape1">
-            <path fill="#cce7df" stroke="#3498db" d="M0,0L192,0L192,54L0,54L0,0z"/>
+    <defs>
+        <filter id="filter1">
+            <feGaussianBlur stdDeviation="2"/>
+        </filter>
+    </defs>
+    <g transform="translate(-109.67,-261.67)">
+        <g transform="translate(113,265)" id="shape1">
+            <path filter="url(#filter1)" fill-opacity="0.13" fill="#000000" d="M217.7,40.7C224.3,40.7,229.7,35.3,229.7,28.7L229.7,14.7C229.7,8,224.3,2.7,217.7,2.7L14.7,2.7C8,2.7,2.7,8,2.7,14.7L2.7,28.7C2.7,35.3,8,40.7,14.7,40.7L217.7,40.7z"/>
+            <path stroke="#868686" fill="#c4e4b4" d="M215,38C221.6,38,227,32.6,227,26L227,12C227,5.4,221.6,0,215,0L12,0C5.4,0,0,5.4,0,12L0,26C0,32.6,5.4,38,12,38L215,38z" fill-rule="evenodd"/>
             <text class="st1">
-                <tspan y="32" x="82">IOC</tspan>
+                <tspan x="97" y="25.5">IOC</tspan>
             </text>
         </g>
-        <g transform="translate(198,223)" id="shape2">
-            <path fill="#cce7df" stroke="#3498db" d="M0,0L138,0L138,54L0,54L0,0z"/>
+        <g transform="translate(170,321.43)" id="shape2">
+            <path filter="url(#filter1)" fill-opacity="0.13" fill="#000000" d="M160.7,40.7C167.3,40.7,172.7,35.3,172.7,28.7L172.7,14.7C172.7,8,167.3,2.7,160.7,2.7L14.7,2.7C8,2.7,2.7,8,2.7,14.7L2.7,28.7C2.7,35.3,8,40.7,14.7,40.7L160.7,40.7z"/>
+            <path stroke="#868686" fill="#c4e4b4" d="M158,38C164.6,38,170,32.6,170,26L170,12C170,5.4,164.6,0,158,0L12,0C5.4,0,0,5.4,0,12L0,26C0,32.6,5.4,38,12,38L158,38z" fill-rule="evenodd"/>
             <text class="st1">
-                <tspan y="32" x="51">FIDE</tspan>
+                <tspan x="63" y="25.5">FIDE</tspan>
             </text>
         </g>
-        <g transform="translate(198,381)" id="shape3">
-            <path fill="#cce7df" stroke="#3498db" d="M0,0L138,0L138,54L0,54L0,0z"/>
+        <g transform="translate(170,453.43)" id="shape3">
+            <path filter="url(#filter1)" fill-opacity="0.13" fill="#000000" d="M160.7,40.7C167.3,40.7,172.7,35.3,172.7,28.7L172.7,14.7C172.7,8,167.3,2.7,160.7,2.7L14.7,2.7C8,2.7,2.7,8,2.7,14.7L2.7,28.7C2.7,35.3,8,40.7,14.7,40.7L160.7,40.7z"/>
+            <path stroke="#868686" fill="#c4e4b4" d="M158,38C164.6,38,170,32.6,170,26L170,12C170,5.4,164.6,0,158,0L12,0C5.4,0,0,5.4,0,12L0,26C0,32.6,5.4,38,12,38L158,38z" fill-rule="evenodd"/>
             <text class="st1">
-                <tspan y="32" x="51">COC</tspan>
+                <tspan x="64" y="25.5">COC</tspan>
             </text>
         </g>
-        <g transform="translate(246,302)" id="shape4">
-            <path fill="#cce7df" stroke="#3498db" d="M0,0L90,0L90,54L0,54L0,0z"/>
+        <g transform="translate(227,377.85)" id="shape4">
+            <path filter="url(#filter1)" fill-opacity="0.13" fill="#000000" d="M103.7,59.8C110.3,59.8,115.7,54.4,115.7,47.8L115.7,14.7C115.7,8,110.3,2.7,103.7,2.7L14.7,2.7C8,2.7,2.7,8,2.7,14.7L2.7,47.8C2.7,54.4,8,59.8,14.7,59.8L103.7,59.8z"/>
+            <path stroke="#868686" fill="#c4e4b4" d="M101,57.1C107.6,57.1,113,51.8,113,45.1L113,12C113,5.4,107.6,0,101,0L12,0C5.4,0,0,5.4,0,12L0,45.1C0,51.8,5.4,57.1,12,57.1L101,57.1z" fill-rule="evenodd"/>
             <text class="st1">
-                <tspan y="22" x="28">CFC</tspan>
-                <tspan y="42" x="29">FCE</tspan>
+                <tspan x="37" y="23.6">CFC</tspan>
+                <tspan x="37" y="46.6">FCE</tspan>
             </text>
         </g>
-        <g transform="translate(198,408)" id="shape5">
-            <path fill="none" stroke="#236ea1" d="M-7.8,0L-30,0L-30,-210"/>
-            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M0,0L-7.8,-2L-7.8,2L0,0"/>
+        <g transform="translate(150.23,303)" id="shape5">
+            <path stroke="#868686" d="M0,0L0,28.4C0,33.4,4,37.4,9,37.4L15.4,37.4" fill="none"/>
+            <path stroke-width="1" stroke-linecap="round" stroke="#868686" fill="#868686" d="M19.8,37.4L14.6,34.4C15.1,35.3,15.4,36.3,15.4,37.4C15.4,38.5,15.1,39.5,14.6,40.4L19.8,37.4"/>
         </g>
-        <g transform="translate(198,250)" id="shape6">
-            <path fill="none" stroke="#236ea1" d="M-7.8,0L-30,0L-30,-52"/>
-            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M0,0L-7.8,-2L-7.8,2L0,0"/>
+        <g transform="translate(150.23,303)" id="shape6">
+            <path stroke="#868686" d="M0,0L0,160.4C0,165.4,4,169.4,9,169.4L15.4,169.4" fill="none"/>
+            <path stroke-width="1" stroke-linecap="round" stroke="#868686" fill="#868686" d="M19.8,169.4L14.6,166.4C15.1,167.3,15.4,168.3,15.4,169.4C15.4,170.5,15.1,171.5,14.6,172.4L19.8,169.4"/>
         </g>
-        <g transform="translate(215,278)" id="shape7">
-            <path fill="none" stroke="#236ea1" d="M0,0L0,36L23.2,36"/>
-            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M31,36L23.2,34L23.2,38L31,36"/>
+        <g transform="translate(197.88,359.43)" id="shape7">
+            <path stroke="#868686" d="M0,0L0,21C0,28.7,6.3,35,14,35L24.7,35" fill="none"/>
+            <path stroke-width="1" stroke-linecap="round" stroke="#868686" fill="#868686" d="M29.1,35L23.9,32C24.4,32.9,24.7,33.9,24.7,35C24.7,36.1,24.4,37.1,23.9,38L29.1,35"/>
         </g>
-        <g transform="translate(215,381)" id="shape8">
-            <path fill="none" stroke="#236ea1" d="M0,0L0,-39L23.2,-39"/>
-            <path stroke-linecap="round" fill="#236ea1" stroke-width="1" stroke="#236ea1" d="M31,-39L23.2,-41L23.2,-37L31,-39"/>
+        <g transform="translate(197.88,453.43)" id="shape8">
+            <path stroke="#868686" d="M0,0L0,-22.5C0,-30.2,6.3,-36.5,14,-36.5L24.7,-36.5" fill="none"/>
+            <path stroke-width="1" stroke-linecap="round" stroke="#868686" fill="#868686" d="M29.1,-36.5L23.9,-39.5C24.4,-38.6,24.7,-37.6,24.7,-36.5C24.7,-35.4,24.4,-34.4,23.9,-33.5L29.1,-36.5"/>
         </g>
     </g>
 </svg>

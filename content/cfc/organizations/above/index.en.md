@@ -46,3 +46,9 @@ COC [recognizes](https://olympic.ca/coc-recognized-organizations/)
 the [CFC / FCE](https://www.chess.ca/)
 as the national governing body for the sport of chess in Canada.
 See the [letter of recognition](recognition-letter-chess1.pdf).
+
+## Other Organizations
+
+* The [Commonwealth Chess Association](http://www.commonwealthchess.com/)
+  is an organization for chess in the countries of the British Commonwealth.
+* The [International Correspondence Chess Federation](https://www.iccf.com/).
