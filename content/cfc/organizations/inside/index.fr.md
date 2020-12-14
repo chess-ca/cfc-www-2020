@@ -9,7 +9,7 @@ layout = "ws-single"
 * MB: [Manitoba Chess Association](http://www.chessmanitoba.com/) (MCA)
 * NB: [New Brunswick Chess Association](http://mcc.devastation.ca/NBCA.html) (NBCA)
 * NL: [Newfoundland and Labrador Chess Association](http://nlchess.ca/) (NLCA)
-* NS: Nova Scotia Chess Association (NSCA)
+* NS: [Chess Nova Scotia](https://www.chessns.ca/)
   * [Nova Scotia Scholastic Chess Association](http://www.nssca.ca/)
 * ON: [Ontario Chess Association](http://www.ontariochess.com/) (OCA)
   * [Eastern Ontario Chess Association](http://www.eoca.ca/) (EOCA)
@@ -20,7 +20,7 @@ layout = "ws-single"
 * QC: [Fédération québécoise des échecs](http://fqechecs.qc.ca/) (FQE)
   * [Liste des régions](https://www.fqechecs.qc.ca/regions/)
   * [Outaouais Chess League](https://www.matoutaouais.org/) 
-* SK: Saskatchewan Chess Association
+* SK: Saskatchewan Chess Association (SCA)
 * NT/NU/YT: (pas d'organisation)
 
 ## Autre

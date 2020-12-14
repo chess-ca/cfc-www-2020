@@ -1,0 +1,7 @@
+{{- $piece := .Get 0 }}
+{{- $pieces := (dict "wK" "&#x2654;" "wQ" "&#x2655;" "wP" "&#x2659;") }}
+{{- $pieces = merge $pieces (dict "wB" "&#x2657;" "wN" "&#x2658;" "wR" "&#x2656;") }}
+{{- $pieces = merge $pieces (dict "bK" "&#x265A;" "bQ" "&#x265B;" "bP" "&#x265F;") }}
+{{- $pieces = merge $pieces (dict "bB" "&#x265D;" "bN" "&#x265E;" "bR" "&#x265C;") }}
+{{- $code := index $pieces $piece | default "" }}
+{{- $code | safeHTML -}}
