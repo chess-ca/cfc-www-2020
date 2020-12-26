@@ -21,6 +21,7 @@ pageid = "pg-events-list"
     Province = "Province"
     Info = "Info"
     NONE = "NONE"
+    caveat = "The CFC does not endorse nor is in any way responsible for the events listed."
 +++
 
 
