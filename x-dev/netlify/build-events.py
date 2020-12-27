@@ -59,10 +59,13 @@ def csv_row_to_dict(row, rdr):
 
     main_url = ''
     links = str(row[fn[7]]).strip()
-    for i, m in enumerate(link_re.finditer(links)):
-        if i == 0:
-            main_url = m.group(2)
-        links = links.replace(m.group(0), '<a href="{}">{}</a>'.format(m.group(2), m.group(1)))
+    if '[' not in links:    # no links in markdown syntax; just a ULR.
+        links = '<a href="{}">website</a>'.format(links)
+    else:
+        for i, m in enumerate(link_re.finditer(links)):
+            if i == 0:
+                main_url = m.group(2)
+            links = links.replace(m.group(0), '<a href="{}">{}</a>'.format(m.group(2), m.group(1)))
 
     event = {
         'incl': str(row[fn[0]]).strip(),
@@ -84,13 +87,12 @@ def date_str(start, end):
     dd1 = start[8:10].lstrip(' 0')
     mm2 = _mm2mmm[end[5:7]] if end[5:7] in _mm2mmm else '???'
     dd2 = end[8:10].lstrip(' 0')
-    if mm1 == mm2:      # not checking year since date ranges are never that large.
-        if dd1 == dd2:
-            return '{} {}'.format(mm1, dd1)
-        else:
-            return '{} {}-{}'.format(mm1, dd1, dd2)
-    else:
+    if mm1 != mm2:
         return '{} {}-{} {}'.format(mm1[0:3], dd1, mm2[0:3], dd2)
+    elif dd1 != dd2:
+        return '{} {}-{}'.format(mm1, dd1, dd2)
+    else:
+        return '{} {}'.format(mm1, dd1)
 
 
 def create_javascript_file(csv_py, javascript_fn):

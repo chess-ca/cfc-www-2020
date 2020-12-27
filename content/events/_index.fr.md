@@ -21,7 +21,7 @@ pageid = "pg-events-list"
     Province = "Province"
     Info = "Info"
     NONE = "AUCUN"
-    caveat = "Le FCE n'approuve ni n'est en aucun cas responsable des événements répertoriés."
+    caveat = "Le FCE n'endosse ni n'est en aucun cas responsable de tout événement répertorié."
 +++
 
 
