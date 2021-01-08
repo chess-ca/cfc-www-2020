@@ -9,6 +9,7 @@
         ajax: { waiting: false, error: '' },
         err: {s4p:null, s4t:null},
         error_msg: null,
+        now_yyyy: (new Date()).getFullYear(),
         i18n: get_i18n()
     }; }
 
@@ -85,7 +86,8 @@
 
     <h4 v-text="i18n.search_for_events" v-once/>
     <a class="button is-small is-info" @click.prevent="tournaments_lastdays(60)" v-text="i18n.last_nn_days"></a>
-    <a class="button is-small is-info" @click.prevent="tournaments_year(2020)"">2020</a>
+    <a class="button is-small is-info" @click.prevent="tournaments_year(now_yyyy-1)">{{ now_yyyy-1 }}</a>
+    <a class="button is-small is-info" @click.prevent="tournaments_year(now_yyyy)">{{ now_yyyy }}</a>
     <br><br>
     <form class="field is-grouped is-grouped-multiline">
       <div class="control">
