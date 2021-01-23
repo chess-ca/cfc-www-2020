@@ -29,7 +29,7 @@ Andres Pugi remembers his dad:
 > develop young minds with problem solving, strategic thinking, under pressure logic and analytical
 > processing. Skills he learned as a child in his native Estonia and was able utilize in his research work
 > career. For over 20 years he greatly enjoyed teaching on Saturday mornings at the YMCA and passing on
-> his enjoyment of chess to young girls and boys in the Kingston area.&quot
+> his enjoyment of chess to young girls and boys in the Kingston area.
 
 When asked for instructions regarding his donation, Andres hoped that his donation would
 continue the legacy of his father's original donation into the future, and focus it on young

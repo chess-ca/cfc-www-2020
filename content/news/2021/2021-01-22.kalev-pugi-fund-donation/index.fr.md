@@ -29,7 +29,7 @@ Andres Pugi se souvient de son père:
 > développer de jeunes esprits avec résolution de problèmes, réflexion stratégique, logique sous pression et analytique
 > traitement. Compétences qu'il a acquises dans son enfance dans son Estonie natale et qu'il a pu utiliser dans ses travaux de recherche
 > carrière. Pendant plus de 20 ans, il a beaucoup aimé enseigner le samedi matin au YMCA et transmettre
-> son plaisir des échecs aux jeunes filles et garçons de la région de Kingston. ''
+> son plaisir des échecs aux jeunes filles et garçons de la région de Kingston.
 
 Lorsqu'on lui a demandé des instructions concernant son don, Andres a espéré que son don serait
 poursuivre l'héritage du don original de son père dans le futur et le concentrer sur les jeunes
