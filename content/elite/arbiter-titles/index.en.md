@@ -1,5 +1,5 @@
 +++
-title = "FIDE Titles - IA, IO, FA, NA"
+title = "Arbiter Titles"
 layout = "ws-single"
 tableofcontents = false
 content_review = "2021-04-01 - Check for updates"

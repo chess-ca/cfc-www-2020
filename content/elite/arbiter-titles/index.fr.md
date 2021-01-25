@@ -1,5 +1,5 @@
 +++
-title = "FIDE Titres - IA, IO, FA, NA"
+title = "Arbiter Titres"
 layout = "ws-single"
 tableofcontents = false
 +++
