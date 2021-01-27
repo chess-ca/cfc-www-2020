@@ -4,6 +4,7 @@ GSHEETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0OdgsCSYzlRBMOM
 
 import urllib.request
 import argparse, csv, io, re, json, pathlib
+from datetime import datetime
 
 _mm2mmm = {
     '01':'Jan', '02':'Feb', '03':'Mar', '04':'Apr', '05':'May', '06':'June',
@@ -38,12 +39,17 @@ def get_csv_file_from_google_sheets(gsheets_url):
 
 def convert_csv_file_to_python(csv_str):
     print('Converting CSV data (string) to Python ...')
+    yyyymmdd = datetime.now().strftime('%Y-%m-%d')
     csv_py = []
     rdr = csv.DictReader(io.StringIO(csv_str))
     fn = rdr.fieldnames
     for row in rdr:
         event = csv_row_to_dict(row, rdr)
-        if event['incl'] != '' or event['type'] == '' or event['name'] == '':
+        if event['incl'] != '':         # It's a comment line!
+            continue
+        if event['type'] == '' or event['name'] == '':
+            continue
+        if event['end'] < yyyymmdd:
             continue
         csv_py.append(event)
     csv_py = sorted(csv_py, key=lambda e: (e['start'], e['name']))
@@ -59,9 +65,11 @@ def csv_row_to_dict(row, rdr):
 
     main_url = ''
     links = str(row[fn[7]]).strip()
-    if '[' not in links:    # no links in markdown syntax; just a ULR.
+    if links == '':         # no link
+        pass
+    elif '[' not in links:  # no markdown syntax; just a plan URL.
         links = '<a href="{}">website</a>'.format(links)
-    else:
+    else:                   # markdown syntax found
         for i, m in enumerate(link_re.finditer(links)):
             if i == 0:
                 main_url = m.group(2)
