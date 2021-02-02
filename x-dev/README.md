@@ -14,6 +14,8 @@ the application's root directory with this non-app stuff.
     - `npm install`
   - Add the useful `"scripts"` from `package.json` to your IDE's run
     configuration.  These include commands from running Hugo, Gulp, etc.
+  - IDE Settings:
+    - Use Unix/Mac line endings (\n). Intellij: File > Settings > Editor > Code Style: line separator.
 - Developer refresh (as required):
   - (TBD)
 - NOTES:
