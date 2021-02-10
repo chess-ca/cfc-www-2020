@@ -122,7 +122,6 @@
             </template>
           </tbody>
         </table>
-        <div class="notification">{{ i18n.missing_2005 }}</div>
       </div>
     </div>
     <div v-if="dbdate" class="notes">

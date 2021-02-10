@@ -324,7 +324,6 @@ const t_tournaments = `
       </template>
      </tbody>
     </table>
-    <div class="notification is-warning">{{ i18n.missing_2005 }}</div>
    </div>
 `;
 const t_crosstable = `
@@ -466,7 +465,6 @@ const i18n_fr = {
     games_played: 'Jeux<br>joués', score: 'Score',
     rating_pre: 'Ancien<br>Cote', rating_perf: 'Perf<br>Cote',
     rating_post: 'Nouvelle<br><br>Cote', rating_high: 'plus élevée<br>Cote',
-    missing_2005: 'Les événements avant 2006 ne sont pas (encore!) Disponibles. Les données antérieures à 2006 sont en cours de reconstitution et seront bientôt disponibles. Merci pour votre patience.',
     // ---- t_crosstable
     pairings: 'Appariements', prov: 'Prov', org_name: 'Organisateur',
     player: 'Joueur',

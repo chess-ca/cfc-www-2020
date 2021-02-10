@@ -44,10 +44,6 @@ const i18n_text = [
     ['rating_perf', 'Perf<br>Rating', 'Perf<br>Cote'],
     ['rating_post', 'New<br>Rating', 'Nouvelle<br>Cote'],
     ['rating_high', 'Highest<br>Rating', 'plus élevée<br>Cote'],
-    ['missing_2005',
-        'Events before 2006 are not (yet!) available. The data from before 2006 is being reconstructed and will be available soon. Thanks for your patience.',
-        'Les événements avant 2006 ne sont pas (encore!) Disponibles. Les données antérieures à 2006 sont en cours de reconstitution et seront bientôt disponibles. Merci pour votre patience.'
-    ],
     //---- Page: TournamentSearchResults
     //  (NONE)
     //---- Page: TournamentList
