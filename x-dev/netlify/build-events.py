@@ -68,6 +68,7 @@ def csv_row_to_dict(row, rdr):
     if links == '':         # no link
         pass
     elif '[' not in links:  # no markdown syntax; just a plan URL.
+        main_url = links
         links = '<a href="{}">website</a>'.format(links)
     else:                   # markdown syntax found
         for i, m in enumerate(link_re.finditer(links)):
