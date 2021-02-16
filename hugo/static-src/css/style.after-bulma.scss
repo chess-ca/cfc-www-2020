@@ -15,8 +15,8 @@ $primary-invert: findColorInvert($primary);
 .ws-error { color:#f00; background-color:#fee; padding-left:0.5rem; }
 
 html {
-  background: #fff url("/img/squares/squares.6px.2x6.png") repeat-x;
-  padding-top:36px;
+  background: #fff url("/img/squares/squares.6px.2x8.png") repeat-x;
+  padding-top:48px;
 }
 //-------- Bulma's container goes right to edge on mobile
 @media screen and (max-width: $desktop + 10px) {
@@ -141,7 +141,7 @@ html {
 
 #ws-footer {
   margin-top:6rem; padding:3rem 0 6rem 0;
-  background: #fff url("/img/squares/squares.6px.2x6.png") repeat-x;
+  background: #fff url("/img/squares/squares.6px.2x8.png") repeat-x;
   //padding-top:36px;
   //border-top:3px solid $cp-p100; background-color: #fff;
   //background-color: $cp-p100;
