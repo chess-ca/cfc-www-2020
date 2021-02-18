@@ -28,7 +28,7 @@ the [CFC / FCE](https://www.chess.ca/)
 as the Member Federation for Canada.
 
 FIDE was founded June 20, 1924 during the (athletic) Olympics held in Paris, France.
-Canada was 1 of the 15 founding countries of FIDE (before USSR and USA joined).
+Canada was 1 of the 15 founding countries of FIDE (before USSR and USA).
 
 FIDE consists of (see [geography of chess](https://en.wikipedia.org/wiki/Geography_of_chess)):
 * Four (4) Continental organizations: [Africa](http://africa-chess.org/),
