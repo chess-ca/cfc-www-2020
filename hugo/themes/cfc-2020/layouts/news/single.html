@@ -8,6 +8,7 @@
   <h1 class="title mt-3">{{ .Title }}</h1>
 {{- partial "parts/table-of-contents.html" . }}
   <div class="ws-content">
+{{ partial "parts/by-line.html" . }}
 {{ .Content }}
   </div>
  </main>
