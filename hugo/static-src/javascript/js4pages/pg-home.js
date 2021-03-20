@@ -34,7 +34,6 @@ function init(pginfo, vue_config) {
     vue_config.data.cfc_events = events_for_home_page();
     vue_config.components = vue_config.components || {};
     vue_config.components['cfc-photo-box'] = cfcPhotoBox;
-    vue_config.components['game-chess-com'] = gameChessCom;
 }
 
 export default { init }

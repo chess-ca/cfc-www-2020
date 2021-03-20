@@ -3,7 +3,6 @@ title = "In Memoriam - Nathan Divinsky"
 slug = "in-memoriam-nathan-divinskey"
 author = "Fred McKim, CFC Treasurer"
 short-date = "2012-07-16"
-content_todo = "Switch PGNs from text to viewer"
 +++
 
 Nathan Divinsky (29 October 1925 ; 17 June 2012)
