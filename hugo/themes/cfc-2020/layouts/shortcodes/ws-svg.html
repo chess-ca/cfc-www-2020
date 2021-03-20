@@ -1,0 +1,7 @@
+{{- $src := .Get "src" }}
+{{- $alt := .Get "alt" }}
+{{- $minwidth := .Get "minwidth" | default "800px"}}
+{{- $svg := $.Page.Resources.GetMatch $src }}
+<div style="min-width:{{ $minwidth }}; overflow-x:auto;">
+ <img src="{{ $src }}" alt="{{ $alt }}">
+</div>

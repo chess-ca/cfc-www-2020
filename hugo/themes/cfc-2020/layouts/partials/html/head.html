@@ -7,6 +7,11 @@
  {{ printf "<link rel=%q href=%q title=%q type=%q/>" .Rel .Permalink $.Site.Title .MediaType.Type | safeHTML }}
 {{- end }}
  <link rel="preconnect" href="https://www.google-analytics.com">
+{{- with $.Page.Params.page_css }}
+ <style>
+{{ . | safeCSS }}
+ </style>
+{{- end }}
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:600&display=swap">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
  <link rel="stylesheet" href="/built/cfc.bundle.css">

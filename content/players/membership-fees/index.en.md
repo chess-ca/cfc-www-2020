@@ -15,7 +15,7 @@ and 2) some provinces have a chess association that receive a portion of the fee
 
 Most CFC members have Annual memberships.
 
-A "Junior" is anyone who was born January 1, 
+A "Junior" is anyone whose year of birth is 
 <span v-text="(new Date()).getFullYear() - 20"></span> or later.
 
 \* Quebec residents with an active FQE membership may play in CFC-rated events
@@ -46,7 +46,7 @@ may purchase additional CFC memberships for a spouse, children, or siblings
 for a discounted fee.  Additional memberships must be purchased
 at the same time as the regular Adult membership.
 
-A "Junior" is anyone who was born January 1, 
+A "Junior" is anyone whose year of birth is 
 <span v-text="(new Date()).getFullYear() - 20"></span> or later.
 
 | Province of Residence | Adult | Junior |
@@ -87,7 +87,7 @@ The fee is good for one specific tournament only and expires on the last day of 
 The fee depends on the time controls of the tournament: Regular or Quick.
 The fee depends on the province in which the player resides (not the province where the tournament is held).
 
-A "Junior" is anyone who was born January 1, 
+A "Junior" is anyone whose year of birth is 
 <span v-text="(new Date()).getFullYear() - 20"></span> or later.
 
 \* Quebec residents with an active FQE membership may play in CFC-rated events

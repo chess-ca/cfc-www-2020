@@ -1,7 +1,8 @@
 {{- $data := .Get "data" }}
 {{- $thead := .Get "thead" }}
+{{- $table_class := .Get "table_class" }}
 {{- $minwidth := .Get "minwidth" | default "800px"}}
-<table class="table is-hoverable is-narrow" style="min-width:{{ $minwidth }};">
+<table class="table is-hoverable is-narrow{{ with $table_class }} {{.}}{{ end }}" style="min-width:{{ $minwidth }};">
 {{- if $thead }}
  <thead>
   <tr>{{ range split $thead "|" }}<th>{{.}}</th>{{ end }}</tr>
@@ -11,9 +12,9 @@
 {{- $data_csv := $.Page.Resources.GetMatch $data | transform.Unmarshal (dict "comment" "#") }}
 {{- range $data_csv }}
 {{- if eq "--section--" (index . 0) }}
-  <tr class="ws-bg-p100"><td colspan="99">{{ index . 1 }}</td></tr>
+  <tr class="ws-bg-p100"><td colspan="99">{{ index . 1 | markdownify }}</td></tr>
 {{- else }}
-  <tr>{{ range . }}<td>{{ . | markdownify }}</td>{{ end }}</tr>
+  <tr>{{ range . }}<td>{{ if eq . "-" }}&ndash;{{ else }}{{ . | markdownify }}{{ end }}</td>{{ end }}</tr>
 {{- end }}
 {{- end }}
  </tbody>
