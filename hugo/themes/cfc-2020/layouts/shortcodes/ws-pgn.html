@@ -1,4 +1,11 @@
-
-<div class="cbreplay">
-{{ .Inner }}
-</div>
+{{- /*
+    ws-pgn:
+        - ARG: chess-com=<game-id>
+            On chess.com > Analysis > Load PGN. Analyze the game.
+            Click share icon to get game id (an integer).
+*/ -}}
+{{ $chess_com := .Get "chess-com" }}
+{{- if .Inner }}{{ end }}
+{{- with $chess_com }}
+ <game-chess-com game_id="{{ . }}"></game-chess-com>
+{{- end }}

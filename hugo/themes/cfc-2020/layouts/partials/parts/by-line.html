@@ -1,4 +1,5 @@
-  <p class="is-size-7"> &mdash; <time datetime="{{ .Date.Format "2006-01-02" }}">{{- .Param "short-date" | default (.Date.Format "2006-01-02") -}}</time>
+{{- $short_date := .Param "short-date" | default (.Date.Format "2006-01-02") }}
+  <p class="is-size-7"> &mdash; <time datetime="{{ $short_date }}">{{ $short_date }}</time>
 {{- with .Params.updated }} &mdash; {{ i18n "updated" }} {{ . }}{{- end }}
 {{- with .Params.author }} &mdash; {{ . }}{{- end }}
 {{- with .Params.tags }} &mdash; {{ delimit . ", " }}{{- end -}}

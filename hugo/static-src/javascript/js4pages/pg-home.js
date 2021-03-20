@@ -1,6 +1,5 @@
 
 import cfcPhotoBox from '../component/cfcPhotoBox.vue';
-import gameChessCom from '../component/gameChessCom.vue';
 
 const max_events_on_home_page = 8;
 
