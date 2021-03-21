@@ -1,44 +1,41 @@
 +++
-title = "CFC Rules & Regulations"
+title = "Règles et statuts du FCE"
 layout = "ws-single"
 +++
 
 # Documents
 
-## Legal
+## Légal
 
-The current legal rules of the CFC are contained in the "Continuance" submitted in 2014 to comply with the
+Les règles juridiques actuelles du FCE sont contenues dans le «Maintien» soumis en 2014 pour se conformer à la
 [Not For Profit Corporations Act (2009)](https://laws-lois.justice.gc.ca/eng/annualstatutes/2009_23/FullText.html).
 
-<a href="https://docs.google.com/document/d/1rum-FSQx2RAfwrAXw9lA5-4NQ8Zffidis8yT_QJELb4/preview"
-   class="button is-primary">LEGAL (Continuance)</a>
+<a href="/fr/cfc/rules/nfp-continuance/"
+   class="button is-primary">LEGAL - NFP Continuance 2014+</a>
 
 ## Legacy
 
-The legacy rules of the CFC are contained in the legacy _CFC Handbook_.
+Les règles héritées du FCE sont contenues dans l'ancien _CFC Handbook_.
 
-Although it is no longer the "official" CFC Bylaws nor is legally binding,
-the current CFC president, Vlad Drkulec, has promised to abide by
-the legacy _CFC Handbook_ as CFC policy to the extent possible consistent with the NFP Act.
+Bien qu'il ne s'agisse plus des statuts "officiels" du FCE et qu'il ne soit plus juridiquement contraignant,
+l'actuel président du FCE, Vlad Drkulec, a promis de respecter
+l'ancien _CFC Handbook_ en tant que politique FCE dans la mesure du possible, conformément à la loi NFP.
 
 <a href="https://docs.google.com/document/d/1ZSPT-Adi0FoZ1EQbziX2jYeR4tsnyLVpz5EdElO6dgI/preview"
-   class="button is-primary">LEGACY (Old CFC Handbook)</a>
+   class="button is-primary">LEGACY - Ancien CFC Handbook</a>
 
-# History
+<br><br>
 
-In 1976, the CFC became a corporation.
-The Letters Patent for incorporation are contained in Section 2 of the legacy _CFC Handbook_.
+# Histoire
 
-In 2014, the CFC changed its structure to comply with the
+En 1976, la FCE est devenue une société.
+Les lettres patentes pour l'incorporation sont contenues dans la section 2 de l'ancien _CFC Handbook_.
+
+En 2014, le FCE a modifié sa structure pour se conformer à la
 [Not For Profit Corporations Act (2009)](https://laws-lois.justice.gc.ca/eng/annualstatutes/2009_23/FullText.html).
-This change was rushed to meet a deadline that, if missed,
-would have dissolved the CFC and disbursed its assets to other charities.
-As such, there was not enough time to convert the legacy _CFC Handbook_.
+Ce changement a été précipité pour respecter un délai qui, s'il est manqué,
+aurait dissous le FCE et versé ses actifs à d'autres organismes de bienfaisance.
+En tant que tel, il n'y avait pas assez de temps pour convertir l'intégralité du CFC Handbook hérité.
 
-In 2020, with the launch of the new CFC website, the _CFC Handbook_ 
-was converted from a single web page to two Google Docs: Legal and Legacy (see above).
-The Google Doc format enables both readers and editors to read or update a single copy
-in a format easier than the website's HTML.
-
-As of today, the need to update the CFC rules and regulations is a well recognized problem.
-Several volunteers are now working on updating sections.
+## Versions
+* 2020-08: [CFC Handbook (and NFP Continuance) de l'ancien site Web](https://server.chess.ca/files/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf)

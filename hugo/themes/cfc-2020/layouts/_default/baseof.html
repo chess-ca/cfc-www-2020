@@ -24,6 +24,7 @@
 {{- else }}
  <script src="https://cdn.jsdelivr.net/combine/npm/vue@2.6.12/dist/vue.js,npm/vue-router@3.4.3/dist/vue-router.js"></script>
 {{- end }}
+{{- partial "html/body-scripts.html" . }}
  <script src="/built/cfc.bundle.js"></script>
 {{- partial "google-analytics.html" . }}
 </body>

@@ -92,6 +92,11 @@ html {
   }
 }
 
+.ws-content a.anchorjs-link {
+  text-decoration:none; border-bottom:0 solid #fff; font-size:1.5rem !important;
+  &:hover { border-bottom:0 solid #fff; background-color:#fff; }
+}
+
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 // Page Transitions for mini-SPAs: Ratings, ...
@@ -124,8 +129,9 @@ html {
 
 .ws-note {
   padding:0.5rem; margin:0.5rem;
-  background-color:#ffd; border:2px solid #f44;
+  background-color:#ffd; border:2px solid #888;
 }
+.ws-highlight { background-color:#ffd; }
 
 
 .ws-main {
@@ -171,9 +177,9 @@ html {
 .ws-toc {
   background-color: #fff;    // so it's not transparent
   fieldset {
-    border:2px solid $cp-p300; font-size:1rem;
+    border:1px solid $cp-p300; font-size:0.9rem;
     margin-bottom: 1rem; padding:.5rem 1rem 1rem 1rem; // padding-left:.5rem; padding-right:.5rem;
-    @include browsers(border-radius, 6px);
+    @include browsers(border-radius, 4px);
     legend {
       padding:0 .5rem; color:$cp-p300; xfont-size:.8rem; font-weight:bold; margin-left:.5rem;
     }
@@ -193,9 +199,10 @@ html {
     width:100%;
   }
   @media screen and (min-width:641px) {
-    float:right; max-width:50%; min-width:30%; margin-left:.6rem;
+    float:right; max-width:50%; min-width:30%; margin-left:.6rem; z-index:99;
   }
 }
+.ws-toc-wide { max-width:100%; min-width:100%; }
 
 .ws-content {
   .mt-0 { margin-top:0; }

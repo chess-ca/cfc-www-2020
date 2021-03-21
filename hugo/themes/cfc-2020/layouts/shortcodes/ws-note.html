@@ -1,0 +1,7 @@
+ <div class="ws-note">
+{{- $pglang := $.Page.Language.Lang }}
+{{- if .Get "todo" }}{{ if eq $pglang "fr" }}EN CONSTRUCTION{{ else }}UNDER CONSTRUCTION{{ end }}{{ end }}
+{{- if .Get "en2fr" }}{{ if eq $pglang "fr" }}TRADUCTION NÉCESSAIRE{{ else }}TRANSLATION NEEDED{{ end }}{{ end }}
+{{- if .Get "okfr" }}{{ if eq $pglang "fr" }}(Traduit par google; vérification nécessaire){{ else }}(translated by Google; verification needed){{ end }}{{ end }}
+{{- if .Inner }}{{ .Inner }}{{ end }}
+ </div>
