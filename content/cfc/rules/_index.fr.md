@@ -21,7 +21,7 @@ Bien qu'il ne s'agisse plus des statuts "officiels" du FCE et qu'il ne soit plus
 l'actuel président du FCE, Vlad Drkulec, a promis de respecter
 l'ancien _CFC Handbook_ en tant que politique FCE dans la mesure du possible, conformément à la loi NFP.
 
-<a href="https://docs.google.com/document/d/1ZSPT-Adi0FoZ1EQbziX2jYeR4tsnyLVpz5EdElO6dgI/preview"
+<a href="/fr/cfc/rules/cfc-handbook-2014/"
    class="button is-primary">LEGACY - Ancien CFC Handbook</a>
 
 <br><br>
@@ -38,4 +38,4 @@ aurait dissous le FCE et versé ses actifs à d'autres organismes de bienfaisanc
 En tant que tel, il n'y avait pas assez de temps pour convertir l'intégralité du CFC Handbook hérité.
 
 ## Versions
-* 2020-08: [CFC Handbook (and NFP Continuance) de l'ancien site Web](https://server.chess.ca/files/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf)
+* 2020-08: [CFC Handbook (and NFP Continuance) de l'ancien site Web](https://server.chess.ca/files/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf) (PDF)

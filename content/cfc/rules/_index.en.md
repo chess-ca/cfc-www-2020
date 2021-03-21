@@ -21,7 +21,7 @@ Although it is no longer the "official" CFC Bylaws nor is it legally binding,
 Vlad Drkulec, the current CFC president, has promised to abide by
 the legacy _CFC Handbook_ as CFC policy to the extent possible consistent with the NFP Act.
 
-<a href="https://docs.google.com/document/d/1ZSPT-Adi0FoZ1EQbziX2jYeR4tsnyLVpz5EdElO6dgI/preview"
+<a href="/en/cfc/rules/cfc-handbook-2014/"
    class="button is-primary">LEGACY - Old CFC Handbook</a>
 
 <br><br>
@@ -38,4 +38,4 @@ would have dissolved the CFC and disbursed its assets to other charities.
 As such, there was not enough time to convert the entire legacy CFC Handbook.
 
 ## Versions
-* 2020-08: [CFC Handbook (and NFP Continuance) from the old website](https://server.chess.ca/files/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf)
+* 2020-08: [CFC Handbook (and NFP Continuance) from the old website](https://server.chess.ca/files/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf) (PDF)
