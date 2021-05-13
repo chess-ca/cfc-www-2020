@@ -41,7 +41,7 @@ def do_rollup_build():
 
 def do_events_build_OLD():
     print('─'*72, '\nTASK: Upcoming Events List (OLD)')
-    cmd = f'python3 {ROOT_PATH}/x-dev/netlify/build-events.py -o "{ROOT_PATH}/hugo/static/data/cfc-events.js"'
+    cmd = 'python3 {0}/x-dev/netlify/build-events.py -o "{0}/hugo/static/data/cfc-events.js"'.format(ROOT_PATH)
     run_command('x-dev', cmd)
 
 
@@ -100,7 +100,7 @@ def do_events_build():
         js_fp.write('\twindow.ws_cfc_events = ')
         json.dump(events, js_fp, indent=None)
         js_fp.write(';')
-    print(f'\tData saved in: {dest_file}')
+    print('\tData saved in: {}'.format(dest_file))
 
 
 def do_clubs_build():
