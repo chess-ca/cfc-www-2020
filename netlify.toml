@@ -7,7 +7,7 @@
 
 [build]
   base    = ""
-  command = "bash x-dev/netlify/deploy.bash"
+  command = "python3 x-dev/netlify/deploy.py"
   publish = "hugo/public"
 
 # Production context: All deploys from the main
