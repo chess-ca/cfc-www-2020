@@ -118,7 +118,8 @@ def do_hugo_build():
 def run_command(working_dir, cmd, check=True):
     shell = isinstance(cmd, str)
     print('Command:', cmd if shell else ' '.join(cmd))
-    os.chdir(ROOT_PATH if working_dir == '.' else ROOT_PATH / working_dir)
+    wd = ROOT_PATH if working_dir == '.' else ROOT_PATH / working_dir
+    os.chdir(str(wd))
     subprocess.run(cmd, shell=shell, check=check)
 
 
