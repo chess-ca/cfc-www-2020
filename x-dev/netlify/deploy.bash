@@ -1,41 +1,56 @@
 #!/usr/bin/env bash
 
-DIR_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-DIR_ROOT="$( cd "$DIR_SCRIPT/../.." >/dev/null 2>&1 && pwd )"
+readonly ROOT_DIR=$(readlink -e "$(dirname $0)/../..")
+readonly DIVIDER="────────────────────────────────────────────────────────────────────────"
 
-echo ---- DIR_ROOT = $DIR_ROOT
+main() {
+  do_npm_install
+  do_rollup_build
+  do_events_build
+  do_clubs_build
+  do_hugo_build
+}
 
-echo ---- ---- ---- ---- TASK: npm install
-cd $DIR_ROOT/x-dev
-npm install
-rc=$?
-echo ---- ---- ---- ---- return code: $rc
-if [ $rc -ne 0 ]; then exit $rc; fi
+do_npm_install() {
+  echo -e "${DIVIDER}\nTASK: npm install"
+  set -e
+  cd "${ROOT_DIR}/x-dev"
+  npm install
+}
 
-echo ---- ---- ---- ---- TASK: npm run rollup:build-prod
-cd $DIR_ROOT/x-dev
-npm run rollup:build-prod
-rc=$?
-echo ---- ---- ---- ---- return code: $rc
-if [ $rc -ne 0 ]; then exit $rc; fi
+do_rollup_build() {
+  echo -e "${DIVIDER}\nTASK: JavaScript Build (using Rollup)"
+  set -e
+  cd "${ROOT_DIR}/x-dev"
+  npm run rollup:build-prod
+}
 
-echo ---- ---- ---- ---- TASK: build-events.py
-python3 --version
-python3 $DIR_ROOT/x-dev/netlify/build-events.py -o "$DIR_ROOT/hugo/static/data/cfc-events.js"
-rc=$?
-echo ---- ---- ---- ---- return code: $rc
-if [ $rc -ne 0 ]; then exit $rc; fi
+do_events_build() {
+  echo -e "${DIVIDER}\nTASK: Upcoming Events Build"
+  set -e
+  # python3 --version
+  py -3 "${ROOT_DIR}/x-dev/netlify/events-build.py" -o "${ROOT_DIR}/content/events/cfc-events.js"
+}
 
-echo ---- ---- ---- ---- TASK: hugo -d public --gc
-cd $DIR_ROOT/hugo
-hugo -d public --gc
-rc=$?
-echo ---- ---- ---- ---- return code: $rc
-if [ $rc -ne 0 ]; then exit $rc; fi
+do_clubs_build() {
+  echo -e "${DIVIDER}\nTASK: Chess Clubs Build"
+  echo "(under construction)"
+}
 
+do_hugo_build() {
+  echo -e "${DIVIDER}\nTASK: Website Build (using Hugo)"
+  set -e
+  cd "${ROOT_DIR}/hugo"
+  hugo -d public --gc
+}
+
+main
 
 #=======================================================================
 # Notes:
 #  - Using deploy script instead of &&-chain of commands because
 #    Netlify would not always do npm install so deploy would fail.
 #    Could not find why so now this script always does npm install.
+#  - Using bash, not python, because Netlify doesn't print stdout
+#    in correct order (all subprocess first; then all print after).
+#    Could not find why so using bash.
