@@ -1,0 +1,28 @@
+.ws-toc {
+  background-color: #fff;    // so it's not transparent
+  fieldset {
+    border:1px solid $cp-p300; font-size:0.9rem;
+    margin-bottom: 1rem; padding:.5rem 1rem 1rem 1rem; // padding-left:.5rem; padding-right:.5rem;
+    @include browsers(border-radius, 4px);
+    legend {
+      padding:0 .5rem; color:$cp-p300; xfont-size:.8rem; font-weight:bold; margin-left:.5rem;
+    }
+    //xfont-size:90%; xpadding-bottom:6px; xwidth:100%; xmargin:0;
+    ul { margin:0; }
+    & nav ul {
+      list-style:outside none;
+      & ul {
+        & li { padding-left:14px; text-indent:-14px; }
+        & li:before { content: "\2013\00a0"; }  // see https://css-tricks.com/snippets/html/glyphs/
+      }
+      a { border:none; color:$cp-p500; }
+      a:hover { background-color:$cp-p100; }
+    }
+  }
+  @media screen and (max-width:640px) {
+    width:100%;
+  }
+  @media screen and (min-width:641px) {
+    float:right; max-width:50%; min-width:30%; margin-left:.6rem; z-index:99;
+  }
+}

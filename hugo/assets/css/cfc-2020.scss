@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+@import "cfc-2020/_initialize";
+@import "cfc-2020/bulma";
+$primary-invert: findColorInvert($primary);
+@import "style.after-bulma";

@@ -14,4 +14,6 @@
 {{- end }}
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:600&display=swap">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
- <link rel="stylesheet" href="/built/cfc.bundle.css">
+{{- $opts := (dict "outputStyle" "compressed") }}
+{{- $style := resources.Get "css/cfc-2020.scss" | resources.ToCSS $opts | resources.Fingerprint }}
+ <link rel="stylesheet" href="{{ $style.RelPermalink }}">

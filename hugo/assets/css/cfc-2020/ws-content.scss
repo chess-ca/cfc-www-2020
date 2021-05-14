@@ -1,0 +1,36 @@
+.ws-content {
+  .mt-0 { margin-top:0; }
+  //h1 { border-top:3px double $cp-p700; margin-top:1rem; font-size:2rem; }
+  h1 { margin-top:1rem; font-size:1.4rem; padding-top:5px; border-top:2px solid $cp-p300; }
+  h2 { margin-top:0.75rem; font-size:1.2rem; border-top:1px solid $cp-p200; }
+  h3 { margin-top:0.5rem; font-size:1.1rem; border-top:none; }
+  h4, h5, h6, { margin-top:0.25rem; font-size:.9rem; border:none; }
+  @media screen and (max-width:640px) {
+    h4:before, h5:before, h6:before { content: "\2013\00a0"; }
+    h4 { margin-left:1rem; }
+    h5 { margin-left:2rem; }
+    h6 { margin-left:3rem; }
+  }
+  @media screen and (min-width:641px) {
+    h4:before, h5:before, h6:before { content: "\2014\00a0"; }
+    h4 { margin-left:2rem; }
+    h5 { margin-left:4rem; }
+    h6 { margin-left:6rem; }
+  }
+  a {
+    color:$cp-text; border-bottom:2px dotted $cp-p300;
+    &:hover { background-color:$cp-p100; border-bottom:2px solid $cp-p300; }
+  }
+  pre { padding: .5rem .5rem; border:1px solid $cp-p700; font-size:16px; }
+  div.highlight { margin-bottom:1rem; }
+  code { padding: 0 .25rem; }
+  ul li { margin-bottom:1rem; }
+  figure figcaption { font-style:normal; font-size:80%; }
+}
+@media screen and (min-width:801px) {
+  .ws-content {
+    padding-left: 4rem;
+    h1, h2 { margin-left: -4rem; }
+    h3 { margin-left: -2rem; }
+  }
+}
