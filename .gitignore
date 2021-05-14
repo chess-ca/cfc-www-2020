@@ -2,7 +2,7 @@
 #---- Built files
 built/
 built.*
-data/cfc-events.js
+cfc-events.js
 
 #---- Hugo
 hugo/public/

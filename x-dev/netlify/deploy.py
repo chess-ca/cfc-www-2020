@@ -23,11 +23,11 @@ _months = {
 def main():
     do_npm_install()
     do_rollup_build()
-    do_events_build_OLD()
-    # do_events_build()
+    # do_events_build_OLD()
+    do_events_build()
     do_clubs_build()
     do_hugo_build()
-
+    
 
 def do_npm_install():
     print('─'*72, '\nTASK: NPM Install')

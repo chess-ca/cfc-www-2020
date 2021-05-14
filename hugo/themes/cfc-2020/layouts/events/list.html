@@ -1,4 +1,6 @@
-{{- define "inside-head" }} <script src="/data/cfc-events.js"></script>
+{{- define "inside-head" }} <script>
+{{ (.Resources.GetMatch "cfc-events.js").Content | safeJS }}
+ </script>
 {{ end }}
 
 {{- define "title" -}}
@@ -56,8 +58,8 @@
     <table class="ws-ratings-tdlist table is-hoverable is-narrow" style="min-width:800px;">
      <thead>
       <tr>
-       <th>{{ $i18n.Type }}</th><th>{{ $i18n.Event }}</th>
-       <th>{{ $i18n.Dates }}</th><th>{{ $i18n.Location }}</th>
+       <th>{{ $i18n.Dates }}</th><th>{{ $i18n.Event }}</th>
+       <th>{{ $i18n.Type }}</th><th>{{ $i18n.Location }}</th>
        <!--th>{{ $i18n.Province }}</th--><th>{{ $i18n.Info }}</th>
       </tr>
      </thead>
@@ -70,9 +72,9 @@
         <td></td><td colspan="4"><strong>---- [v[e.newyear]v] ----</strong></td>
        </tr>
        <tr v-else>
-        <td>[v[e.type]v]</td>
+        <td>[v[e.dates.{{ $lang }}]v]</td>
         <td>[v[e.name]v]</td>
-        <td>[v[e.dates]v]</td>
+        <td>[v[e.type]v]</td>
         <td>[v[e.city]v]<span v-if="e.prov != 'Online' && e.prov != 'FO'">, [v[e.prov]v]</span></td>
         <td v-html="e.links"></td>
        </tr>
