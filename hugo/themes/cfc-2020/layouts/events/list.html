@@ -1,6 +1,6 @@
-{{- define "inside-head" }} <script>
-{{ (.Resources.GetMatch "cfc-events.js").Content | safeJS }}
- </script>
+{{- define "inside-head" }}
+{{- $events := resources.Get "js/cfc-events.js" | resources.Fingerprint
+}} <script src="{{ $events.RelPermalink }}"></script>
 {{ end }}
 
 {{- define "title" -}}

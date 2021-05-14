@@ -1,4 +1,6 @@
-{{- define "inside-head" }} <script src="/data/cfc-events.js"></script>
+{{- define "inside-head" }}
+{{- $events := resources.Get "js/cfc-events.js" | resources.Fingerprint
+}} <script src="{{ $events.RelPermalink }}"></script>
 {{ end }}
 
 {{- define "main" }}

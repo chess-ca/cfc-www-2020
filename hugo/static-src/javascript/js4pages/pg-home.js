@@ -12,7 +12,6 @@ function events_for_home_page() {
         let e = data_in[i];
         let skip_it =
             (e['end'] < now_ymd)
-            || (e['incl'] !== '')
             || (e['prov'] === 'FO')
             || (e['name'].match(re_cancelled))
         ;

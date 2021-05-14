@@ -6,6 +6,6 @@
       <div class="ws-item" v-for="e in cfc_events">
        <a :href="e.url">
         <div class="ws-more right"></div>
-       [v[ e.dates ]v] &mdash; [v[ e.city ]v]<br><span v-html="e.name"></span>
+       [v[ e.dates.{{ $lang }} ]v] &mdash; [v[ e.city ]v]<br><span v-html="e.name"></span>
        </a>
       </div>
