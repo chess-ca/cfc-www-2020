@@ -16,9 +16,12 @@
   },
   "author": "Don Parakin",
   "license": "COPYRIGHT",
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
   "dependencies": {
     "bulma": "*",
-    "hugo-bin": "^0.62.0",
+    "hugo-bin": "^0.70.0",
     "rollup": "*",
     "rollup-plugin-scss": "*",
     "rollup-plugin-vue": "*",
