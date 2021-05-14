@@ -12,33 +12,33 @@ main() {
 }
 
 do_npm_install() {
-  echo -e "${DIVIDER}\nTASK: npm install"
+  echo -e "\n${DIVIDER}\nTASK: npm install"
   set -e
   cd "${ROOT_DIR}/x-dev"
   npm install
 }
 
 do_rollup_build() {
-  echo -e "${DIVIDER}\nTASK: JavaScript Build (using Rollup)"
+  echo -e "\n${DIVIDER}\nTASK: JavaScript Build (using Rollup)"
   set -e
   cd "${ROOT_DIR}/x-dev"
   npm run rollup:build-prod
 }
 
 do_events_build() {
-  echo -e "${DIVIDER}\nTASK: Upcoming Events Build"
+  echo -e "\n${DIVIDER}\nTASK: Upcoming Events Build"
   set -e
-  # python3 --version
-  py -3 "${ROOT_DIR}/x-dev/netlify/events-build.py" -o "${ROOT_DIR}/content/events/cfc-events.js"
+  python3 --version
+  python3 "${ROOT_DIR}/x-dev/netlify/events-build.py" -o "${ROOT_DIR}/content/events/cfc-events.js"
 }
 
 do_clubs_build() {
-  echo -e "${DIVIDER}\nTASK: Chess Clubs Build"
+  echo -e "\n${DIVIDER}\nTASK: Chess Clubs Build"
   echo "(under construction)"
 }
 
 do_hugo_build() {
-  echo -e "${DIVIDER}\nTASK: Website Build (using Hugo)"
+  echo -e "\n${DIVIDER}\nTASK: Website Build (using Hugo)"
   set -e
   cd "${ROOT_DIR}/hugo"
   hugo -d public --gc
