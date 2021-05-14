@@ -13,10 +13,10 @@ CLUBS_GSHEET = ''
 
 ROOT_PATH = pathlib.Path(__file__).resolve().parents[2]
 _months = {
-    '01':['Jan','janv'],  '02':['Feb','févr'], '03':['Mar','mars'],
-    '04':['Apr','avr'],   '05':['May','mai'],  '06':['June','juin'],
-    '07':['July','juil'], '08':['Aug','aout'], '09':['Sept','sept'],
-    '10':['Oct','oct'],   '11':['Nov','nov'],  '12':['Dec','déc'],
+    '01': ['Jan', 'janv'],  '02': ['Feb', 'févr'], '03': ['Mar', 'mars'],
+    '04': ['Apr', 'avr'],   '05': ['May', 'mai'],  '06': ['June', 'juin'],
+    '07': ['July', 'juil'], '08': ['Aug', 'aout'], '09': ['Sept', 'sept'],
+    '10': ['Oct', 'oct'],   '11': ['Nov', 'nov'],  '12': ['Dec', 'déc'],
 }
 
 
@@ -27,7 +27,7 @@ def main():
     do_events_build()
     do_clubs_build()
     do_hugo_build()
-    
+
 
 def do_npm_install():
     print('─'*72, '\nTASK: NPM Install')
@@ -96,7 +96,7 @@ def do_events_build():
     events = sorted(events, key=lambda e: (e['start'], e['name']))
 
     dest_file = 'content/events/cfc-events.js'
-    with open(ROOT_PATH / dest_file, 'w') as js_fp:
+    with open(str(ROOT_PATH / dest_file), 'w') as js_fp:
         js_fp.write('\twindow.ws_cfc_events = ')
         json.dump(events, js_fp, indent=None)
         js_fp.write(';')
@@ -155,5 +155,6 @@ def nice_dates(start, end):
             fr='{} {}'.format(dd1, _months[mm1][1]),
         )
     return dates
+
 
 main()
