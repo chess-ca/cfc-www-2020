@@ -1,6 +1,6 @@
 {{- define "inside-head" }}
-{{- $events := resources.Get "js/cfc-events.js" | resources.Fingerprint
-}} <script src="{{ $events.RelPermalink }}"></script>
+{{- $events := resources.Get "js/cfc-events.js" | resources.Fingerprint }}
+ <script src="{{ $events.RelPermalink }}"></script>
 {{ end }}
 
 {{- define "title" -}}
