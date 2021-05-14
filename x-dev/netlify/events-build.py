@@ -87,6 +87,7 @@ def convert_csv_to_python(csv_str):
 
 
 def write_javascript_file(events, js_file):
+    pathlib.Path(js_file).parent.mkdir(parents=True, exist_ok=True)
     with open(js_file, 'w') as js_fp:
         js_fp.write('\twindow.ws_cfc_events = ')
         json.dump(events, js_fp, indent=None)
