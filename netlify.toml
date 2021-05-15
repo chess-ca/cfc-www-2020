@@ -12,21 +12,21 @@
 
 # Production context: All deploys from the main
 # repository branch will inherit these settings.
-[context.production]
-  [context.production.environment]
-    HUGO_ENV = "production"
-    HUGO_VERSION = "0.73.0"
+#[context.production]
+#  [context.production.environment]
+#    HUGO_ENV = "production"
+#    HUGO_VERSION = "0.73.0"
 
 # Deploy Preview context: All deploys generated from a pull/merge request
 # will inherit these settings.
-[context.deploy-preview.environment]
-  HUGO_VERSION = "0.73.0"
+#[context.deploy-preview.environment]
+#  HUGO_VERSION = "0.73.0"
 
 # Branch deploy context: All deploys that are not from a pull/merge request
 # or from the production branch will inherit these settings.
-[context.branch-deploy]
-  [context.branch-deploy.environment]
-    HUGO_VERSION = "0.73.0"
+#[context.branch-deploy]
+#  [context.branch-deploy.environment]
+#    HUGO_VERSION = "0.73.0"
 
 # Specific branch context: Deploys from this branch
 # will take these settings and override their
