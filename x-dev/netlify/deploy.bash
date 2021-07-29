@@ -29,7 +29,7 @@ do_events_build() {
   echo -e "\n${DIVIDER}\nTASK: Upcoming Events Build"
   set -e
   python3 --version
-  python3 "${ROOT_DIR}/x-dev/netlify/events-build.py" -o "${ROOT_DIR}/hugo/assets/js/cfc-events.js"
+  python3 "${ROOT_DIR}/x-dev/netlify/events-build.py" -o "${ROOT_DIR}/hugo/assets/ext/cfc-events.js"
 }
 
 do_clubs_build() {
