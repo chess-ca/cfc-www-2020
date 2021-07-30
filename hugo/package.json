@@ -1,0 +1,28 @@
+{
+  "name": "cfc-website",
+  "version": "1.0.0",
+  "description": "CFC / chess.ca website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hugo:version": "cd ../hugo && hugo version",
+    "hugo:build": "cd ../hugo && hugo --cleanDestinationDir",
+    "hugo:serve": "cd ../hugo && hugo server",
+    "hugo:serve+drafts": "cd ../hugo && hugo server --buildDrafts",
+    "hugo:new-post": "cd ../hugo && hugo"
+  },
+  "author": "Don Parakin",
+  "license": "COPYRIGHT",
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
+  "dependencies": {
+    "alpinejs": ">=3.2.0",
+    "bulma": "*",
+    "hugo-bin": ">=0.70.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/parakin/cfc-website.git"
+  }
+}

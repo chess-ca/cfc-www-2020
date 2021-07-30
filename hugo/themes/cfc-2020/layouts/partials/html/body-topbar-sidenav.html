@@ -1,5 +1,5 @@
 
-  <aside :class="{'is-open':sideNav_show}" @click="sideNav_toggle" class="menu is-pulled-left is-overlay is-hidden-tablet">
+  <aside x-bind:class="{'is-open': sideNav.show}" x-on:click="sideNav.toggle" class="menu is-pulled-left is-overlay is-hidden-tablet" role="navigation" aria-label="main navigation">
    <ul class="menu-list">
 {{- range .Site.Menus.main }}
     <li><a class="menu-item" href="{{ .URL | relURL }}">{{ .Name }}</a></li>

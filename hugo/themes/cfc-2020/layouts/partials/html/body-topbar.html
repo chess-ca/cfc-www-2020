@@ -6,12 +6,12 @@
   <div class="columns is-mobile">
    <div class="column is-narrow">
     <a class="level-item" href="/{{ $lang }}/">
-     <img src="/img/cfc.logo/cfc.logo.540x140.{{ $lang }}.png" class="is-hidden-mobile" style="min-height:100px;">
-     <img src="/img/cfc.logo/cfc.logo.186x120.{{ $lang }}.png" class="is-hidden-tablet" style="min-height:100px;">
+     <img src="/img/cfc.logo/cfc.logo.540x140.{{ $lang }}.png" class="is-hidden-mobile" style="min-height:100px;" alt="CFC Logo">
+     <img src="/img/cfc.logo/cfc.logo.186x120.{{ $lang }}.png" class="is-hidden-tablet" style="min-height:100px;" alt="CFC Logo">
     </a>
    </div>
    <div class="column"></div>
-   <div class="column is-narrow pt-5 mr-1">
+   <div class="column is-narrow pt-5 mr-1 hide-if-print">
 {{- if .IsTranslated }}
     {{- range .Translations }}
         {{- if ne .Lang "languages" }}
@@ -20,7 +20,7 @@
     {{- end }}
 {{- end }}
    </div>
-   <div class="column is-narrow is-hidden-tablet pt-5 mr-1" @click="sideNav_toggle">
+   <div class="column is-narrow is-hidden-tablet pt-5 mr-1" x-on:click="sideNav.toggle">
     <i class="fas fa-bars fa-border"></i>
    </div>
   </div>

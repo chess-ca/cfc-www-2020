@@ -7,8 +7,8 @@
 </head>
 
 <body>
- <div id="vue-app">
- <div id="ws-overlay" :class="{'is-overlay':sideNav_show}" @click="sideNav_toggle"></div>
+ <div id="vue-app" x-data="page_data">
+ <div id="ws-overlay" x-bind:class="{'is-overlay':sideNav.show}" x-on:click="sideNav.toggle"></div>
 {{ partial "html/body-topbar.html" . -}}
 
 {{ block "main" . }}
@@ -26,6 +26,9 @@
 {{- end }}
 {{- partial "html/body-scripts.html" . }}
  <script src="/built/cfc.bundle.js"></script>
+{{- $js_opts := dict "format" "iife" "target" "es2015" "minify" true }}
+{{- $js := resources.Get "js/cfc-2020.js" | js.Build $js_opts | resources.Fingerprint }}
+ <script src="{{ $js.RelPermalink }}"></script>
 {{- partial "google-analytics.html" . }}
 </body>
 </html>
