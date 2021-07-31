@@ -1,0 +1,10 @@
+{{- $init := .Get "init" | default "show" }}
+{{- $labels := .Get "labels" | default "Hide|Show" }}
+
+{{- $labels := split $labels "|" }}
+<div x-data="{isHidden: {{ if eq $init "hide" }}true{{ else }}false{{ end }}}">
+ <button x-on:click="isHidden = !isHidden" class="button is-small" x-text="isHidden ? '{{ index $labels 1 }}' : '{{ index $labels 0 }}'"></button>
+ <div x-show="!isHidden">
+{{ .Inner }}
+ </div>
+</div>

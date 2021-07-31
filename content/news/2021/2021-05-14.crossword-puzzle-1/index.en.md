@@ -48,9 +48,7 @@ tableofcontents = false
 * 18: Though he defeated Albin and Marco in a 3-person match, he is most famous for losing to Lasker
   playing the Black pieces in a Bird's Opening in Amsterdam, 1889 
 
-<hide-or-show text-show="Show Solution" text-hide="Hide Solution">
-
 ### Solution
+{{< ws-hide-or-show init="hide" labels="Hide Solution|Show Solution" >}}
 {{% ws-figure src="solution.png" %}}
-
-</hide-or-show>
+{{< /ws-hide-or-show >}}

@@ -2,7 +2,6 @@
 import Vue from 'vue';
 import cfcSpinner from '../component/cfcSpinner.vue';
 import gameChessCom from '../component/gameChessCom.vue';
-import hideOrShow from '../component/hide-or-show.vue';
 
 Vue.component('cfc-spinner', cfcSpinner);
 
@@ -24,7 +23,6 @@ function init(pginfo, vue_config) {
     vue_config.methods.goto = goto;
     vue_config.components = vue_config.components || {};
     vue_config.components['game-chess-com'] = gameChessCom;
-    vue_config.components['hide-or-show'] = hideOrShow;
 }
 
 export default { init }

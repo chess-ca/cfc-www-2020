@@ -1,3 +1,3 @@
 
-import './css/style.scss';
+// import './css/style.scss';
 import './javascript/_main';
