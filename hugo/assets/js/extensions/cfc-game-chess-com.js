@@ -15,7 +15,6 @@ function cfc_game_chess_com(el) {
     let game_id = get_attr(el, 'game', '6922798')
 
     let html = game_html.replaceAll('[[GAME_ID]]', game_id);
-    console.log('cfc_game_chess_com: updated html with ', game_id);
     el.innerHTML = html;
 
     // Code from chess.com: must run after the <iframe> is mounted.

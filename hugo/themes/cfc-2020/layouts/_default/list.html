@@ -1,6 +1,6 @@
 {{ define "main" }}
  <main class="ws-main container">
-  <h1 class="title mt-3">{{ .Title }}</h1>
+  <h1 id="ws-page-title" class="title mt-3">{{ .Title }}</h1>
   <ul>
 {{- range .Data.Pages }}
    <li>{{ .Render "time-element" }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
