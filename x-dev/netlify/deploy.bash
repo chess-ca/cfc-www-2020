@@ -5,6 +5,7 @@ readonly DIVIDER="────────────────────�
 
 main() {
   do_npm_install
+  do_npm_install_old
   do_rollup_build
   do_events_build
   do_clubs_build
@@ -18,7 +19,7 @@ do_npm_install() {
   npm install
 }
 
-do_npm_install() {
+do_npm_install_old() {
   echo -e "\n${DIVIDER}\nTASK: npm install (Old/Temp while moving to AlpineJS)"
   set -e
   cd "${ROOT_DIR}/x-dev"
