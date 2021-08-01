@@ -1,9 +1,9 @@
 +++
 slug = "../p/top"
 title = "Meilleurs joueurs"
-layout = "player-lists-top"
 pageid = "pg-ratings-player-lists-top"
 no_vuejs = 1
+page_css = ".control input, .control select { min-width:12rem; }"
 
 [i18n]
     # ---- For input form
@@ -31,5 +31,8 @@ no_vuejs = 1
     quick_high = 'Rapide<br>élevé'
     games = 'j'
     provisional_notes = '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés'
-
 +++
+
+{{< ws-embed-html "s1_nav.html" >}}
+{{< ws-embed-html "s2_form.html" >}}
+{{< ws-embed-html "s3_report.html" >}}
