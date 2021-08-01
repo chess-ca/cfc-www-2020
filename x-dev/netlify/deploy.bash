@@ -14,6 +14,13 @@ main() {
 do_npm_install() {
   echo -e "\n${DIVIDER}\nTASK: npm install"
   set -e
+  cd "${ROOT_DIR}/hugo"
+  npm install
+}
+
+do_npm_install() {
+  echo -e "\n${DIVIDER}\nTASK: npm install (Old/Temp while moving to AlpineJS)"
+  set -e
   cd "${ROOT_DIR}/x-dev"
   npm install
 }
