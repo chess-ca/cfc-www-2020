@@ -1,23 +1,47 @@
 {{- $file_name := .Get 0 }}
+{{/*
+  ws-embed-html - a Hugo Shortcode
+    - For page bundles, can embed an HTML file in same directory as index.en.html
+    - To share one HTML file with all languages, language specific strings within
+      the HTML must be handled. The HTML file is a template with "[[key]]" tags
+      that will be replaced by values defined in each index.*.html.
+    - Each index.*.html's front matter defines [i18n] with map of key => text
+    - Tags in the HTML will be replaced with text from the [i18n] values
+      - "[[key]]" will be replaced by value of i18n.key
+      - IMPORTANT: only use lower case in tags "[[lowercase-only]]"
+      - IMPORTANT: no spaces allowed in tags "[[ this-wont-work ]]"
+    - Special substitutions:
+      - "[[page_title]]" will be replaced by the current page's title
+      - "[[page_lang]]" will be replaced by the current page's language code
+      - Keys with prefix "sitepage_":
+        - Set i18n.sitepage_mypage to page location (as required by $.Site.GetPage)
+        - "[[sitepage_mypage]]" will be replaced by that page's .RelPermalink
+        - "[[sitepage_mypage.title]]" will be replaced by that page's .Title
+
+  Hugo/Golang things to know:
+    - All keys in $i18n (defined in the page's front matter) are converted
+      to lowercase. (important when testing for prefixes on keys)
+*/}}
+{{- $page_res := $.Page.Resources.GetMatch $file_name }}
+{{- $html := $page_res.Content }}
 {{- $i18n := $.Page.Params.i18n }}
 
-{{- $local := newScratch }}
-{{- $page_res := $.Page.Resources.GetMatch $file_name }}
-{{- $local.Set "html" $page_res.Content }}
-
-{{- with $.Page.Title }}{{- $local.Set "html" (replace ($local.Get "html") "[[PageTitle]]" . )}}{{- end }}
-{{- with $.Page.Language.Lang }}{{- $local.Set "html" (replace ($local.Get "html") "[[lang]]" . )}}{{- end }}
+{{- with $.Page.Title }}
+  {{- $html = replace $html "[[page_title]]" . }}
+{{- end }}
+{{- with $.Page.Language.Lang }}
+  {{- $html = replace $html "[[page_lang]]" . }}
+{{- end }}
 
 {{- range $key, $val := $i18n }}
-  {{- if hasPrefix $key "relpermalink_" }}
+  {{/* NOTE: Hugo converts all $key's to lowercase! */}}
+  {{- if hasPrefix $key "sitepage_" }}
     {{- with ($.Site.GetPage $val) }}
-      {{- $link := .RelPermalink }}
-      {{- $old := printf "[[%s]]" $key }}
-      {{- $local.Set "html" (replace ($local.Get "html") $old $link) }}
+      {{- $html = replace $html (printf "[[%s]]" $key) .RelPermalink }}
+      {{- $html = replace $html (printf "[[%s.title]]" $key) .Title }}
     {{- end }}
   {{- else }}
-    {{- $old := printf "[[%s]]" $key }}
-    {{- $local.Set "html" (replace ($local.Get "html") $old $val) }}
+    {{- $html = replace $html (printf "[[%s]]" $key) $val }}
   {{- end }}
 {{- end }}
-{{ $local.Get "html" | safeHTML }}
+{{ $html | safeHTML }}
