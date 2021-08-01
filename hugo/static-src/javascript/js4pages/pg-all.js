@@ -1,7 +1,6 @@
 
 import Vue from 'vue';
 import cfcSpinner from '../component/cfcSpinner.vue';
-import gameChessCom from '../component/gameChessCom.vue';
 
 Vue.component('cfc-spinner', cfcSpinner);
 
@@ -22,7 +21,6 @@ function init(pginfo, vue_config) {
     vue_config.methods.sideNav_toggle = sideNav_toggle;
     vue_config.methods.goto = goto;
     vue_config.components = vue_config.components || {};
-    vue_config.components['game-chess-com'] = gameChessCom;
 }
 
 export default { init }

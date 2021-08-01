@@ -6,5 +6,5 @@
 {{- with $gotw_text }}
       <p>{{ $gotw_text }}</p>
 {{- end }}
-      <game-chess-com game_id="{{ $gotw_id }}"></game-chess-com>
+      <div x-cfc-game-chess-com game="{{ $gotw_id }}"></div>
 {{- end }}
