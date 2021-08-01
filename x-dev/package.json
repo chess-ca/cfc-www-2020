@@ -20,15 +20,17 @@
     "buildTags": "extended"
   },
   "dependencies": {
+    "alpinejs": ">=3.2.0",
     "bulma": "*",
-    "hugo-bin": "^0.70.0",
+    "hugo-bin": ">=0.70.0",
     "rollup": "*",
+    "@rollup/plugin-node-resolve": "*",
     "rollup-plugin-scss": "*",
-    "rollup-plugin-vue": "*",
+    "rollup-plugin-vue": "5.1.9",
     "rollup-plugin-terser": "*",
     "rollup-plugin-sizes": "*",
     "vue": "2.6.12",
-    "vue-template-compiler": "*"
+    "vue-template-compiler": "2.6.12"
   },
   "repository": {
     "type": "git",

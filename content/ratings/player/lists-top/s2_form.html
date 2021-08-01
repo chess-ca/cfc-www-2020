@@ -1,0 +1,87 @@
+  <section class="container content pad-touch-only">
+   <form x-on:submit.prevent="get_report">
+    <div class="field is-grouped is-grouped-multiline">
+     <div class="control">
+      <label class="label is-small">[[top_n_size]]</label>
+      <input x-model="topn" class="input is-small" type="text" x-on:change="on_change()">
+     </div>
+     <div class="control">
+      <label class="label is-small">[[rating_type]]</label>
+      <div class="select is-small">
+       <select x-model="type" x-on:change="on_change()">
+        <option value="R">[[regular_ratings]]</option>
+        <option value="Q">[[quick_ratings]]</option>
+       </select>
+      </div>
+     </div>
+    </div>
+
+    <div x-bind:class="{'hide-if-print': age_min<=0 && age_max>=99}">
+     <div class="field is-grouped is-grouped-multiline">
+      <div class="control">
+       <label class="label is-small">[[age_ge]]</label>
+       <input x-model="age_min" class="input is-small" type="text" x-on:change="on_change()">
+      </div>
+      <div class="control">
+       <label class="label is-small">[[age_le]]</label>
+       <input x-model="age_max" class="input is-small" type="text" x-on:change="on_change()">
+      </div>
+     </div>
+    </div>
+
+    <div x-bind:class="{'hide-if-print': gender==='' && province===''}">
+     <div class="field is-grouped is-grouped-multiline">
+      <div class="control">
+       <label class="label is-small">[[gender]]</label>
+       <div class="select is-small">
+        <select x-model="gender" x-on:change="on_change()">
+         <option value="">(all)</option>
+         <option value="F">Female</option>
+         <option value="M">Male</option>
+        </select>
+       </div>
+      </div>
+      <div class="control">
+       <label class="label is-small">[[province]]</label>
+       <div class="select is-small">
+        <select x-model="province" x-on:change="on_change()">
+         <option value="">(all)</option>
+         <template x-for="prov in prov_list">
+          <option x-bind:value="prov.code" x-text="prov.name"></option>
+         </template>
+        </select>
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <div x-bind:class="{'hide-if-print': cfc_expiry_min <= date_default && last_played <= date_default}">
+     <div class="field is-grouped is-grouped-multiline">
+      <div class="control">
+       <label class="label is-small">[[cfc_expired]]</label>
+       <input x-model="cfc_expiry_min" class="input is-small" type="text" x-on:change="on_change()">
+      </div>
+      <div class="control">
+       <label class="label is-small">[[last_event_ge]]</label>
+       <input x-model="last_played" class="input is-small" type="text" x-on:change="on_change()">
+      </div>
+     </div>
+    </div>
+
+    <div x-bind:class="{'hide-if-print': rating_min<=0 && rating_max>=99}">
+     <div class="field is-grouped is-grouped-multiline">
+      <div class="control">
+       <label class="label is-small">[[rating_ge]]</label>
+       <input x-model="rating_min" class="input is-small" type="text" x-on:change="on_change()">
+      </div>
+      <div class="control">
+       <label class="label is-small">[[rating_le]]</label>
+       <input x-model="rating_max" class="input is-small" type="text" x-on:change="on_change()">
+      </div>
+     </div>
+    </div>
+    <br>
+
+    <button class="button is-small is-info hide-if-print" x-on:click="get_report">Create Report</button>
+   </form>
+  </section>

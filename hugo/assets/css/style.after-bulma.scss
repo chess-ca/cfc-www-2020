@@ -10,6 +10,16 @@ html {
   background: #fff url("/img/squares/squares.6px.2x8.png") repeat-x;
   padding-top:48px;
 }
+@media screen {
+  html {
+    background: #fff url("/img/squares/squares.6px.2x8.png") repeat-x;
+    padding-top:48px;
+  }
+}
+@media print {
+  .hide-if-print { display:none; }
+}
+
 //-------- Bulma's container goes right to edge on mobile
 @media screen and (max-width: $desktop + 10px) {
   //.pad-touch-only { padding: 12px; }

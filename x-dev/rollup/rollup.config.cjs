@@ -1,6 +1,7 @@
 
 const path = require('path');
-const scss = require('rollup-plugin-scss');
+const nodeResolve = require('@rollup/plugin-node-resolve')
+// const scss = require('rollup-plugin-scss');
 const vue = require('rollup-plugin-vue');
 const { terser } = require('rollup-plugin-terser');
 const sizes = require('rollup-plugin-sizes');
@@ -20,11 +21,14 @@ const js_build = {
         format: 'iife'
     },
     plugins: [
-        scss({
-            output:'../hugo/static/built/cfc.bundle.css',
-            outputStyle: isDev ? 'nested' : 'compressed',
-            //includePaths: ['../../../x-dev/node_modules']
+        nodeResolve.nodeResolve({
+            moduleDirectories: ['node_modules', 'C:\\_\\IT\\Projects\\CFC\\CFC-Website\\CFC-website.Code\\x-dev\\node_modules']
         }),
+        // scss({
+        //     output:'../hugo/static/built/cfc.bundle.css',
+        //     outputStyle: isDev ? 'nested' : 'compressed',
+        //     //includePaths: ['../../../x-dev/node_modules']
+        // }),
         vue(),
         isDev ? null : terser(),
         sizes({details: false})

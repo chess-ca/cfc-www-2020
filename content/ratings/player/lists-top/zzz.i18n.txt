@@ -1,7 +1,4 @@
-
-const i18n_text = [
     //---- Common
-    ['cfc_id', 'CFC id', 'FCE id'],
     ['err_enter_criteria', 'Enter search criteria', 'Entrez les critères de recherche'],
     ['err_fetching', 'Error fetching data. Try again later.', 'Erreur lors de la récupération des données. Réessayez plus tard.'],
     ['none_found', 'NONE FOUND', 'PERSONNE N\'EST TROUVE'],
@@ -22,13 +19,6 @@ const i18n_text = [
     //---- Page: PlayerSearchResults:
     //  (NONE)
     //---- Page Fragment: PlayerList
-    ['name', 'Name', 'Nom'],
-    ['city', 'City', 'Ville'],
-    ['cfc_expiry', 'CFC Expiry', 'Expiration<br>du FCE'],
-    ['regular_rating', 'Regular<br>Rating', 'Cote<br>Régulière'],
-    ['regular_high', 'Regular<br>High', 'Régulier<br>élevé'],
-    ['quick_rating', 'Quick<br>Rating', 'Cote<br>Rapide'],
-    ['quick_high', 'Quick<br>High', 'Rapide<br>élevé'],
     ['provisional_notes',
         '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated',
         '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés'
@@ -61,22 +51,3 @@ const i18n_text = [
     ['quick', 'Quick', 'Rapide'],
     ['rr', 'Round Robin', 'Round Robin'],
     ['swiss', 'Swiss Sys', 'Swiss Sys'],
-];
-
-//---- Build i18n (just once, on import)
-function build_i18n() {
-    const el_html = document.getElementsByTagName('html')[0];
-    const lang = el_html.getAttribute('lang') || 'en';
-    let i_lang = lang==='fr' ? 2 : 1;
-    let i18n = {};
-    i18n_text.forEach(function(txt) {
-        i18n[txt[0]] = txt[i_lang];
-    });
-    return i18n;
-}
-
-const i18n = build_i18n();
-
-export function get_i18n() {
-    return i18n;
-}

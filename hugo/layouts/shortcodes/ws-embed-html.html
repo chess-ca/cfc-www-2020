@@ -1,0 +1,23 @@
+{{- $file_name := .Get 0 }}
+{{- $i18n := $.Page.Params.i18n }}
+
+{{- $local := newScratch }}
+{{- $page_res := $.Page.Resources.GetMatch $file_name }}
+{{- $local.Set "html" $page_res.Content }}
+
+{{- with $.Page.Title }}{{- $local.Set "html" (replace ($local.Get "html") "[[PageTitle]]" . )}}{{- end }}
+{{- with $.Page.Language.Lang }}{{- $local.Set "html" (replace ($local.Get "html") "[[lang]]" . )}}{{- end }}
+
+{{- range $key, $val := $i18n }}
+  {{- if hasPrefix $key "relpermalink_" }}
+    {{- with ($.Site.GetPage $val) }}
+      {{- $link := .RelPermalink }}
+      {{- $old := printf "[[%s]]" $key }}
+      {{- $local.Set "html" (replace ($local.Get "html") $old $link) }}
+    {{- end }}
+  {{- else }}
+    {{- $old := printf "[[%s]]" $key }}
+    {{- $local.Set "html" (replace ($local.Get "html") $old $val) }}
+  {{- end }}
+{{- end }}
+{{ $local.Get "html" | safeHTML }}
