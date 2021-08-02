@@ -35,7 +35,7 @@
        <td x-show="type=='Q'" class="ta-center" x-html="p.quick_indicator > 30 ? p.quick_indicator : '<i>('+p.quick_indicator+' [[games]])</i>'"></td>
        <td x-show="p.cfc_expiry > '2080-01-01'">LIFE</td>
        <td x-show="p.cfc_expiry < '2080-01-01' && p.cfc_expiry > '1980-01-01'" x-text="p.cfc_expiry"></td>
-       <td x-show="p.cfc_expiry < '1980-01-01'" x-text="p.cfc_expiry">&ndash;</td>
+       <td x-show="p.cfc_expiry < '1980-01-01'">&ndash;</td>
       </tr>
      </template>
 

@@ -5,8 +5,9 @@ pageid = "pg-ratings-player-lists-top"
 no_vuejs = 1
 page_css = ".control input, .control select { min-width:12rem; }"
 
-[i18n]
-    # ---- For input form
+[i18n_top]
+    none = ''
+[i18n_form]
     css1 = 'style="min-width:12rem;"'
     top_n_size = 'Top N (size of list)'
     rating_type = 'Rating type'
@@ -21,18 +22,19 @@ page_css = ".control input, .control select { min-width:12rem; }"
     rating_ge = 'Rating &ge;'
     rating_le = 'Rating &le;'
     # ---- For player-list.html partial
+[i18n_report]
     name = 'Name'
     city = 'City'
-    cfc_id = 'CFC id'
-    cfc_expiry = 'CFC Expiry'
     regular_rating = 'Regular<br>Rating'
     regular_high = 'Regular<br>High'
     quick_rating = 'Quick<br>Rating'
     quick_high = 'Quick<br>High'
     games = 'g'
+    cfc_id = 'CFC id'
+    cfc_expiry = 'CFC Expiry'
     provisional_notes = '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated'
 +++
 
-{{< ws-embed-html "s1_nav.html" >}}
-{{< ws-embed-html "s2_form.html" >}}
-{{< ws-embed-html "s3_report.html" >}}
+{{< ws-embed-html "s1_top.html" "i18n_top" >}}
+{{< ws-embed-html "s2_form.html" "i18n_form" >}}
+{{< ws-embed-html "s3_report.html" "i18n_report" >}}

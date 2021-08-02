@@ -1,11 +1,17 @@
 {{- $file_name := .Get 0 }}
+{{- $i18n_var_name := .Get 1 | default "i18n" }}
 {{/*
   ws-embed-html - a Hugo Shortcode
     - For page bundles, can embed an HTML file in same directory as index.en.html
     - To share one HTML file with all languages, language specific strings within
       the HTML must be handled. The HTML file is a template with "[[key]]" tags
       that will be replaced by values defined in each index.*.html.
-    - Each index.*.html's front matter defines [i18n] with map of key => text
+    - Each index.*.html's front matter defines variables, such as [i18n],
+      with a map of key => text.
+    - The variable in the front matter defaults to "i18n" but this can be set to
+      the 2nd parameter of the short code. This allows having different sets of
+      translations for different HTML files (when embedding 2+ HTML files).
+      (The discussion below assumes the variable name is "i18n")
     - Tags in the HTML will be replaced with text from the [i18n] values
       - "[[key]]" will be replaced by value of i18n.key
       - IMPORTANT: only use lower case in tags "[[lowercase-only]]"
@@ -24,7 +30,8 @@
 */}}
 {{- $page_res := $.Page.Resources.GetMatch $file_name }}
 {{- $html := $page_res.Content }}
-{{- $i18n := $.Page.Params.i18n }}
+{{/* $i18n := $.Page.Params.i18n */}}
+{{- $i18n := index $.Page.Params $i18n_var_name }}
 
 {{- with $.Page.Title }}
   {{- $html = replace $html "[[page_title]]" . }}
