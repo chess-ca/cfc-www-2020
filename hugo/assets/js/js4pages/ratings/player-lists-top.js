@@ -66,13 +66,13 @@ function on_change() {
     this.report_is = 'empty';
 }
 
-function has_provisional_ratings(players) {
-    // If yes, show the description notes at bottom of report
+function has_provisional_ratings(players, ratings_type) {
+    // For deciding if to show the description notes at bottom of report.
     let it_has = false;
     for (let i=0; i<players.length; i++) {
         let p = players[i];
-        if ((p.type==='R' && p.regular_indicator <= 30)
-            || (p.type==='Q' && p.quick_indicator <= 30) ) {
+        let indicator = ratings_type==='Q' ? p.quick_indicator : p.regular_indicator;
+        if (indicator <= 30) {
             it_has = true;
             break;
         }
