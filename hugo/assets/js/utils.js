@@ -9,9 +9,10 @@
 //  - Although XMLHttpRequest is old-school, it works on newer and
 //    older browsers (without another dependency to worry about).
 //----------------------------------------------------------------------
-const default_api_prefix = 'https://server.chess.ca/api';
-
 export function call_api(options) {
+    const default_api_prefix = 'https://server.chess.ca/api';
+    // const default_api_prefix = 'http://127.0.0.1:5000/api';
+
     const page_data = options.page_data || {};
     const method = String(options.method || 'GET').toUpperCase();
     const api = options.api || null;
@@ -53,18 +54,25 @@ export function call_api(options) {
 
 
 //----------------------------------------------------------------------
-// go()
+// go(): go to a new page/url
 //----------------------------------------------------------------------
 export function go(dest, el) {
     if (el && el.addClass) {
-        el.addClass('is-loading')   // this Bulma.io class adds a spinner to buttons
+        // This Bulma.io class adds a spinner to buttons
+        el.addClass('is-loading')
     }
     if (dest === '<<<') {
         history.back();
     } else if (dest === '>>>') {
         history.forward();
+    } else if (dest.startsWith('lang=')) {
+        const langs_from_to = dest.substring(5).split(':');
+        const lang_from = `/${langs_from_to[0]}`;
+        const lang_to = `/${langs_from_to[1]}`;
+        const new_url = String(window.location).replace(lang_from, lang_to, 1);
+        window.location.replace(new_url);
     } else {
-        dest = dest.replaceAll('[lang]', get_page_lang());
+        dest = dest.replaceAll('[[lang]]', get_page_lang());
         window.location.assign(dest);
     }
 }
@@ -112,3 +120,26 @@ export function get_provinces (lang, exclude) {
     }
     return p_list;
 }
+
+
+/**
+ * Returns variable name/vars from the URL's query string.
+ * - /path/to/page?x=1&y=2&z=a%20b ==> {x:'1', y:'2', z:'a b'}
+ *
+ * @returns {string: string, ...}
+ */
+export function get_url_query_vars() {
+    var q = window.location.search.substr(1)    // drop the "?" prefix
+    q = q.split('&');
+    var qvars = {};
+    for (var i=0; i<q.length; i++) {
+        var v_v = q[i].split('=', 2);
+        if (v_v.length < 2) {
+            qvars[v_v[0]] = true;   // a var without a value
+        } else {
+            qvars[v_v[0]] = decodeURI(v_v[1]);
+        }
+    }
+    return qvars;
+}
+

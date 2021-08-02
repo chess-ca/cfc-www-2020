@@ -15,7 +15,7 @@
 {{- if .IsTranslated }}
     {{- range .Translations }}
         {{- if ne .Lang "languages" }}
-    <a class="level-item button is-small is-primary" href="{{ .Permalink }}" >{{ .Lang | upper }}</a>
+    <a class="level-item button is-small is-primary" x-on:click="go('lang={{ $lang }}:{{ .Lang }}', $el)">{{ .Lang | upper }}</a>
         {{- end }}
     {{- end }}
 {{- end }}
