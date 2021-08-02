@@ -11,43 +11,53 @@ import pg_ratings_tournament_lists from './js4pages/ratings/tournament-lists';
 const plugin_list = [
     CFC_Spinner, CFC_Game_ChessCom
 ];
-const pg_list = [
+const page_list = [
     pg_all_pages,
     pg_ratings_home,
     pg_ratings_player_lists_top, pg_ratings_tournament_lists
 ];
 
-
 _main();
-
 function _main() {
-    window.Alpine = Alpine;             // for easy access.
-    init_alpine_plugins();
-    init_js_for_pages();
+    window.Alpine = Alpine;     // for easy access.
+    document.addEventListener('alpine:init',
+        runs_before_alpine_initializes_the_page);
     Alpine.start();
 }
 
-function init_alpine_plugins() {
-    plugin_list.forEach(pi => Alpine.plugin(pi));
-}
+function runs_before_alpine_initializes_the_page() {
+    //---- Plugins
+    plugin_list.forEach(plugin => {
+        Alpine.plugin(plugin)
+    });
 
-function init_called_by_alpine() {
-    this.init_funcs.forEach(init_func => init_func())
-}
-
-function init_js_for_pages() {
+    //---- Page Data (x-data)
+    // All pages have x-data="page_data"; this is what all pages get
     const el_html = document.getElementsByTagName('html')[0];
     let page_data = {
         lang: el_html.getAttribute('lang') || 'en',
         page_id: el_html.getAttribute('data-pageid') || '',
-        init_funcs: [],
-        init: init_called_by_alpine
     };
+    page_list.forEach(page => {
+        if (page && page.pre_init) {
+            page.pre_init(page_data);
+            if (page_data.init) {
+                console.error('A page\'s .pre_init() set page_data.init.',
+                    '\nIt should not: page_data.init will be overridden');
+            }
+        }
+    });
+    page_data.init = runs_after_alpine_initializes_the_page;
 
-    pg_list.forEach(pg => pg.page_init(page_data));
-    // console.log('cfc-2020.js: initial page_data=', page_data);
+    Alpine.data('page_data', () => page_data );
+    //---- Now, all is ready for AlpineJS to begin initializing the page!
+}
 
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('page_data', () => (page_data))
+function runs_after_alpine_initializes_the_page() {
+    const page_data = this;
+    page_list.forEach(page => {
+        if (page && page.post_init) {
+            page.post_init(page_data);
+        }
     });
 }

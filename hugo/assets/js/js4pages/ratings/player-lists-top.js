@@ -1,8 +1,12 @@
 
 import { call_api, get_provinces } from '../../utils';
 
-function page_init(page_data) {
-    if (page_data.page_id !== 'pg-ratings-player-lists-top') return;
+export default { pre_init }
+
+const page_id = 'pg-ratings-player-lists-top';
+
+function pre_init(page_data) {
+    if (page_data.page_id !== page_id) return;
 
     let pd = page_data;
     pd.now_yyyy = (new Date()).getFullYear();
@@ -79,5 +83,3 @@ function has_provisional_ratings(players, ratings_type) {
     }
     return it_has;
 }
-
-export default { page_init }

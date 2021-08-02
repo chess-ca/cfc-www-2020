@@ -1,11 +1,9 @@
 
 import { go } from '../utils';
 
-function sidenav_toggle(e) {
-    this.sideNav.show = ! this.sideNav.show;
-}
+export default { pre_init }
 
-function page_init(page_data) {
+function pre_init(page_data) {
     let pd = page_data;
     pd.sideNav = {
         show: false,
@@ -14,4 +12,6 @@ function page_init(page_data) {
     pd.go = go;
 }
 
-export default { page_init }
+function sidenav_toggle(e) {
+    this.sideNav.show = ! this.sideNav.show;
+}
