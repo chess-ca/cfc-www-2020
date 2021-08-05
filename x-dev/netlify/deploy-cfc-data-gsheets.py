@@ -150,10 +150,10 @@ def _nice_dates(start, end):
     e_m = _re_date.match(end)
     if e_m is None:
         return {'en': 'BAD: {}'.format(end)}
-    s_mm, s_dd = s_m[2], s_m[3].lstrip('0')
+    s_mm, s_dd = s_m.group(2), s_m.group(3).lstrip('0')
     if s_mm not in _months.keys():
         return {'en': 'BAD: {}'.format(start)}
-    e_mm, e_dd = e_m[2], e_m[3].lstrip('0')
+    e_mm, e_dd = e_m.group(2), e_m.group(3).lstrip('0')
     if e_mm not in _months.keys():
         return {'en': 'BAD: {}'.format(end)}
 
