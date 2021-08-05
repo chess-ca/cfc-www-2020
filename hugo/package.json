@@ -17,9 +17,9 @@
     "buildTags": "extended"
   },
   "dependencies": {
-    "alpinejs": ">=3.2.0",
+    "alpinejs": "^3.2.3",
     "bulma": "*",
-    "hugo-bin": ">=0.70.0"
+    "hugo-bin": "^0.75.0"
   },
   "repository": {
     "type": "git",

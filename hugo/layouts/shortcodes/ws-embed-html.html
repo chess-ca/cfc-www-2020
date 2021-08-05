@@ -1,6 +1,6 @@
 {{- $file_name := .Get 0 }}
 {{- $i18n_var_name := .Get 1 | default "i18n" }}
-{{/*
+{{- /*
   ws-embed-html - a Hugo Shortcode
     - For page bundles, can embed an HTML file in same directory as index.en.html
     - To share one HTML file with all languages, language specific strings within
@@ -30,7 +30,6 @@
 */}}
 {{- $page_res := $.Page.Resources.GetMatch $file_name }}
 {{- $html := $page_res.Content }}
-{{/* $i18n := $.Page.Params.i18n */}}
 {{- $i18n := index $.Page.Params $i18n_var_name }}
 
 {{- with $.Page.Title }}
@@ -41,7 +40,7 @@
 {{- end }}
 
 {{- range $key, $val := $i18n }}
-  {{/* NOTE: Hugo converts all $key's to lowercase! */}}
+  {{- /* NOTE: Hugo converts all $key's to lowercase! */}}
   {{- if hasPrefix $key "sitepage_" }}
     {{- with ($.Site.GetPage $val) }}
       {{- $html = replace $html (printf "[[%s]]" $key) .RelPermalink }}
@@ -51,4 +50,4 @@
     {{- $html = replace $html (printf "[[%s]]" $key) $val }}
   {{- end }}
 {{- end }}
-{{ $html | safeHTML }}
+{{- $html | safeHTML }}

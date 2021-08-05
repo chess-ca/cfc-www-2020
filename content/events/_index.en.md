@@ -2,6 +2,7 @@
 title = "Upcoming Events"
 date = "2020-07-11"
 pageid = "pg-events-list"
+needs_cfc_data = 1
 
 [i18n]
     AddEvent = "Add Event"

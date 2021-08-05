@@ -1,10 +1,11 @@
 //----------------------------------------------------------------------
 // style.after-bulma.scss
 //----------------------------------------------------------------------
-[v-cloak] { display: none; }
+[x-cloak] { display: none !important; }
 .debug { border: 1px solid #f00; }
 .debug-bg { background-color: #fcc; }
 .ws-error { color:#f00; background-color:#fee; padding-left:0.5rem; }
+
 
 html {
   background: #fff url("/img/squares/squares.6px.2x8.png") repeat-x;

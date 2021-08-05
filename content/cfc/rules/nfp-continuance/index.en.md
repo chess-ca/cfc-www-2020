@@ -1,7 +1,7 @@
 +++
 title = "CFC NFP Continuance (2014)"
 layout = "ws-single"
-anchorjs = "Y"
+needs_anchorjs = 1
 +++
 
 # Special Resolution of Members

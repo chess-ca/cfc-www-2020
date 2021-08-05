@@ -8,7 +8,7 @@ main() {
   do_npm_install_old
   do_rollup_build
   do_events_build
-  do_clubs_build
+  do_cfc_data_build
   do_hugo_build
 }
 
@@ -40,9 +40,11 @@ do_events_build() {
   python3 "${ROOT_DIR}/x-dev/netlify/events-build.py" -o "${ROOT_DIR}/hugo/assets/ext/cfc-events.js"
 }
 
-do_clubs_build() {
-  echo -e "\n${DIVIDER}\nTASK: Chess Clubs Build"
-  echo "(under construction)"
+do_cfc_data_build() {
+  echo -e "\n${DIVIDER}\nTASK: CFC Data Build from Google Sheets"
+  set -e
+  python3 --version
+  python3 "${ROOT_DIR}/x-dev/netlify/deploy-cfc-data-gsheets.py" -o "${ROOT_DIR}/hugo/assets/ext"
 }
 
 do_hugo_build() {

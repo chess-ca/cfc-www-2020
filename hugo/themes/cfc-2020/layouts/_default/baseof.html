@@ -23,16 +23,7 @@
 
 {{ partialCached "html/body-footer.html" . }}
  </div>
-{{- if hugo.IsProduction }}
- <script src="https://cdn.jsdelivr.net/combine/npm/vue@2.6.12,npm/vue-router@3.4.3"></script>
-{{- else }}
- <script src="https://cdn.jsdelivr.net/combine/npm/vue@2.6.12/dist/vue.js,npm/vue-router@3.4.3/dist/vue-router.js"></script>
-{{- end }}
 {{- partial "html/body-scripts.html" . }}
- <script src="/built/cfc.bundle.js"></script>
-{{- $js_opts := dict "format" "iife" "target" "es2015" "minify" true }}
-{{- $js := resources.Get "js/cfc-2020.js" | js.Build $js_opts | resources.Fingerprint }}
- <script src="{{ $js.RelPermalink }}"></script>
 {{- partial "google-analytics.html" . }}
 </body>
 </html>

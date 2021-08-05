@@ -9,7 +9,7 @@
     <table class="ws-ratings-tdlist table is-hoverable is-narrow">
      <thead>
      <tr>
-      <template x-if="!player_list_is_single"><th>#</th></template>
+      <th>#</th>
       <th>[[name]]</th>
       <th>[[city]]</th>
       <th x-show="type=='R'" class="ta-center">[[regular_rating]]</th>
@@ -20,22 +20,27 @@
      </tr>
      </thead>
      <tbody>
-     <template v-if="players.length === 0">
-      <tr><td></td><td colspan="4" v-text="i18n.none_found"></td></tr>
-     </template>
-
+      <tr x-show="players.length === 0">
+       <td></td><td colspan="5">([[none_found]])</td>
+      </tr>
      <template x-for="p in players">
       <tr x-on:click="go('/[[page_lang]]/ratings/#/p/'+p.cfc_id)" class="is-clickable">
        <td x-text="p.pos"></td>
        <td x-text="p.name_last + ', ' + p.name_first"></td>
        <td x-text="p.addr_city ? p.addr_city + ', ' + p.addr_province : p.addr_province"></td>
-       <td x-show="type=='R'" class="ta-center" x-html="p.regular_indicator > 30 ? p.regular_rating : '<i>('+p.regular_rating+')</i>'"></td>
-       <td x-show="type=='R'" class="ta-center" x-html="p.regular_indicator > 30 ? p.regular_indicator : '<i>('+p.regular_indicator+' [[games]])</i>'"></td>
-       <td x-show="type=='Q'" class="ta-center" x-html="p.quick_indicator > 30 ? p.quick_rating : '<i>('+p.quick_rating+')</i>'"></td>
-       <td x-show="type=='Q'" class="ta-center" x-html="p.quick_indicator > 30 ? p.quick_indicator : '<i>('+p.quick_indicator+' [[games]])</i>'"></td>
-       <td x-show="p.cfc_expiry > '2080-01-01'">LIFE</td>
-       <td x-show="p.cfc_expiry < '2080-01-01' && p.cfc_expiry > '1980-01-01'" x-text="p.cfc_expiry"></td>
-       <td x-show="p.cfc_expiry < '1980-01-01'">&ndash;</td>
+       <td x-show="type==='R'">
+        <span class="ta-center" x-html="p.regular_indicator > 30 ? p.regular_rating : '<i>('+p.regular_rating+')</i>'"></span>
+        <span class="ta-center" x-html="p.regular_indicator > 30 ? p.regular_indicator : '<i>('+p.regular_indicator+' [[games]])</i>'"></span>
+       </td>
+       <td x-show="type=='Q'">
+        <span class="ta-center" x-html="p.quick_indicator > 30 ? p.quick_rating : '<i>('+p.quick_rating+')</i>'"></span>
+        <span class="ta-center" x-html="p.quick_indicator > 30 ? p.quick_indicator : '<i>('+p.quick_indicator+' [[games]])</i>'"></span>
+       </td>
+       <td>
+        <span x-show="p.cfc_expiry > '2080-01-01'">LIFE</span>
+        <span x-show="p.cfc_expiry < '2080-01-01' && p.cfc_expiry > '1980-01-01'" x-text="p.cfc_expiry"></span>
+        <span x-show="p.cfc_expiry < '1980-01-01'">&ndash;</span>
+       </td>
       </tr>
      </template>
 

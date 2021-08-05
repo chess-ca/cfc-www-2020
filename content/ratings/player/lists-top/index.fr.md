@@ -31,6 +31,7 @@ page_css = ".control input, .control select { min-width:12rem; }"
     quick_rating = 'Cote<br>Rapide'
     quick_high = 'Rapide<br>élevé'
     games = 'j'
+    none_found = "personne n'est trouve"
     provisional_notes = '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés'
 +++
 

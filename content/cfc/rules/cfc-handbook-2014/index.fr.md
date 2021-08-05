@@ -1,7 +1,7 @@
 +++
 title = "CFC Handbook (to 2014)"
 layout = "ws-single"
-anchorjs = "Y"
+needs_anchorjs = 1
 +++
 
 The CFC handbook has all the rules and regulations associated with the organization
