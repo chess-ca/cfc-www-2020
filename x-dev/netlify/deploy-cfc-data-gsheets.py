@@ -117,14 +117,14 @@ def get_from_google_sheets(gsheets_url, keys):
     print('... from Google Sheet: {}'.format(gsheets_url))
     with urllib.request.urlopen(gsheets_url) as csv_fp:
         csv_bytes = csv_fp.read()
-    print('Received {} bytes'.format(len(csv_bytes)))
+    print('... Received {} bytes'.format(len(csv_bytes)))
     csv_str = csv_bytes.decode('utf8')
 
-    csv_rdr = csv.DictReader(io.StringIO(csv_str))
+    csv_rdr = csv.reader(io.StringIO(csv_str))
     dict_list = []
     for row in csv_rdr:
         a_dict = { keys[i]: str(val).strip()
-            for i, val in enumerate(row.values())
+            for i, val in enumerate(row)
             if i < len(keys)
         }
         dict_list.append(a_dict)
