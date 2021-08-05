@@ -106,7 +106,7 @@ def get_clubs():
 def write_javascript(cfc_data, out_dir):
     js_file = out_dir / CFC_DATA_FILENAME
     js_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(js_file, 'w') as js_fp:
+    with open(str(js_file), 'w') as js_fp:
         js_fp.write('\twindow.{} = '.format(CFC_DATA_VARNAME))
         json.dump(cfc_data, js_fp, indent='\t')
         js_fp.write(';')
