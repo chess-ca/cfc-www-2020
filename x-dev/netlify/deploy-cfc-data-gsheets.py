@@ -26,6 +26,7 @@ CFC_DATA_FILENAME = 'cfc-data.js'
 CFC_DATA_VARNAME = 'ws_cfc_data'
 
 _yyyy_mm_dd = datetime.datetime.now().strftime('%Y-%m-%d')
+_re_date = re.compile(r'\s*(\d{4})-([01]\d)-([0123]\d)\s*')
 _re_markdown_link = re.compile(r'\[(.*?)]\((.*?)\)')
 _months = {     # Maps month number to English & French abbreviation
     '01': ['Jan', 'janv'],  '02': ['Feb', 'févr'], '03': ['Mar', 'mars'],
@@ -143,21 +144,29 @@ def _markdown(md_str):
 def _nice_dates(start, end):
     # Converts dates to human readable English and French.
     # Note: English is "Month day"; French is "day month".
-    mm1 = start[5:7]
-    dd1 = start[8:10].lstrip('0')
-    mm2 = end[5:7]
-    dd2 = end[8:10].lstrip('0')
+    s_m = _re_date.match(start)
+    if s_m is None:
+        return {'en': 'BAD: {}'.format(start)}
+    e_m = _re_date.match(end)
+    if e_m is None:
+        return {'en': 'BAD: {}'.format(end)}
+    s_mm, s_dd = s_m[2], s_m[3].lstrip('0')
+    if s_mm not in _months.keys():
+        return {'en': 'BAD: {}'.format(start)}
+    e_mm, e_dd = e_m[2], e_m[3].lstrip('0')
+    if e_mm not in _months.keys():
+        return {'en': 'BAD: {}'.format(end)}
 
     dates = dict()
-    if mm1 != mm2:
-        dates['en'] = '{} {}-{} {}'.format(_months[mm1][0], dd1, _months[mm2][0], dd2)
-        dates['fr'] = '{} {}-{} {}'.format(dd1, _months[mm1][1], dd2, _months[mm2][1])
-    elif dd1 != dd2:
-        dates['en'] = '{} {}-{}'.format(_months[mm1][0], dd1, dd2)
-        dates['fr'] = '{}-{} {}'.format(dd1, dd2, _months[mm1][1])
+    if s_mm != e_mm:
+        dates['en'] = '{} {}-{} {}'.format(_months[s_mm][0], s_dd, _months[e_mm][0], e_dd)
+        dates['fr'] = '{} {}-{} {}'.format(s_dd, _months[s_mm][1], e_dd, _months[e_mm][1])
+    elif s_dd != e_dd:
+        dates['en'] = '{} {}-{}'.format(_months[s_mm][0], s_dd, e_dd)
+        dates['fr'] = '{}-{} {}'.format(s_dd, e_dd, _months[s_mm][1])
     else:
-        dates['en'] = '{} {}'.format(_months[mm1][0], dd1)
-        dates['fr'] = '{} {}'.format(dd1, _months[mm1][1])
+        dates['en'] = '{} {}'.format(_months[s_mm][0], s_dd)
+        dates['fr'] = '{} {}'.format(s_dd, _months[s_mm][1])
     return dates
 
 
