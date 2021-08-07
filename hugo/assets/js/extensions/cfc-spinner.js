@@ -3,6 +3,15 @@
 //  - Alpine plugin for "x-cfc-spinner" directive.
 // ---------------------------------------------------------------------
 
+export default function (Alpine) {
+    window.ws_globals = window.ws_globals || {};
+    window.ws_globals.cfc_spinner = {
+        style_appended: false
+    };
+
+    Alpine.directive('cfc-spinner', cfc_spinner);
+}
+
 function cfc_spinner(el) {
     if ( ! window.ws_globals.cfc_spinner.style_appended ) {
         const el_head = document.getElementsByTagName('body')[0];
@@ -12,15 +21,6 @@ function cfc_spinner(el) {
         window.ws_globals.cfc_spinner.style_appended = true;
     }
     el.innerHTML = spinner_html;
-}
-
-export default function (Alpine) {
-    window.ws_globals = window.ws_globals || {};
-    window.ws_globals.cfc_spinner = {
-        style_appended: false
-    };
-
-    Alpine.directive('cfc-spinner', cfc_spinner);
 }
 
 const spinner_html = `

@@ -19,6 +19,9 @@ EVENTS_KEYS = ['//', 'type', 'name', 'start', 'end', 'city', 'prov', 'links']
 NEWSFLASH_GSHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2D3ne_UlPK6d4ABWRGdwOb5vLuajOTCK-NNqurRWtcdY9s7F5b_o5hj72hir4GbCxVvtnkdXP-Jy8/pub?gid=0&single=true&output=csv'
 NEWSFLASH_KEYS = ['//', 'start', 'end', 'highlight', 'en', 'fr']
 
+PHOTOBOX_HOME_GSHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ezBYFPIBc0K5CHdHWii2F1XCRScwa4f7BFTmYb7EcJPkDCmwno6URVYkGbXeKCmLA3komvyCuaYN/pub?gid=0&single=true&output=csv'
+PHOTOBOX_HOME_KEYS = ['//', 'start', 'end', 'photo_url', 'en', 'fr']
+
 CLUBS_GSHEET = ''
 CLUBS_KEYS = []
 
@@ -28,6 +31,7 @@ CFC_DATA_VARNAME = 'ws_cfc_data'
 _yyyy_mm_dd = datetime.datetime.now().strftime('%Y-%m-%d')
 _re_date = re.compile(r'\s*(\d{4})-([01]\d)-([0123]\d)\s*')
 _re_markdown_link = re.compile(r'\[(.*?)]\((.*?)\)')
+_re_first_url = re.compile(r'href=\"(.*?)\"')
 _months = {     # Maps month number to English & French abbreviation
     '01': ['Jan', 'janv'],  '02': ['Feb', 'févr'], '03': ['Mar', 'mars'],
     '04': ['Apr', 'avr'],   '05': ['May', 'mai'],  '06': ['June', 'juin'],
@@ -39,8 +43,9 @@ _months = {     # Maps month number to English & French abbreviation
 def main():
     out_dir = get_output_directory()
     cfc_data = {
-        'events': get_events(),
         'newsflashes': get_news_flashes(),
+        'photobox_home': get_photobox_home(),
+        'events': get_events(),
         'clubs': get_clubs(),
     }
     write_javascript(cfc_data, out_dir)
@@ -71,13 +76,18 @@ def get_events():
         e['links'] = _markdown(e['links'])
         if '<a' not in e['links']:
             e['links'] = '<a href="{}">website</a>'.format(e['links'])
+        match = _re_first_url.search(e['links'])
+        e['url'] = match.group(1) if match else ''
 
         # ---- Dates: convert to human readable English and French
         e['dates'] = _nice_dates(e['start'], e['end'])
 
         filtered.append(e)
 
-    return sorted(filtered, key=lambda e: (e['start'], e['name']))
+    filtered = sorted(filtered, key=lambda e: (e['start'], e['name']))
+    for i in range(len(filtered)):
+        filtered[i]['oid'] = i + 1      # A unique object id for Javascript
+    return filtered
 
 
 def get_news_flashes():
@@ -96,7 +106,30 @@ def get_news_flashes():
 
         filtered.append(nf)
 
-    return sorted(filtered, key=lambda nf: (nf['start'], nf['end']), reverse=True)
+    filtered = sorted(filtered, key=lambda nf: (nf['start'], nf['end']), reverse=True)
+    for i in range(len(filtered)):
+        filtered[i]['oid'] = i + 1      # A unique object id for Javascript
+    return filtered
+
+
+def get_photobox_home():
+    print('Getting PHOTOBOX HOME data ...')
+    photos = get_from_google_sheets(PHOTOBOX_HOME_GSHEET, PHOTOBOX_HOME_KEYS)
+    filtered = []
+    for p in photos:
+        if p['//'] != '':
+            continue    # It's a comment line!
+        del p['//']     # Not used by the front-end
+        if p['end'] < _yyyy_mm_dd:
+            continue    # Photo is in the past
+        p['en'] = _markdown(p['en'])
+        p['fr'] = _markdown(p['fr'])
+
+        filtered.append(p)
+
+    for i in range(len(filtered)):
+        filtered[i]['oid'] = i + 1      # A unique object id for Javascript
+    return filtered
 
 
 def get_clubs():
@@ -104,12 +137,14 @@ def get_clubs():
 
 
 def write_javascript(cfc_data, out_dir):
+    js = ['\nwindow.{} = '.format(CFC_DATA_VARNAME)]
+    js.append(json.dumps(cfc_data, indent='\t'))
+    js.append(';\n')
+
     js_file = out_dir / CFC_DATA_FILENAME
     js_file.parent.mkdir(parents=True, exist_ok=True)
     with open(str(js_file), 'w') as js_fp:
-        js_fp.write('\twindow.{} = '.format(CFC_DATA_VARNAME))
-        json.dump(cfc_data, js_fp, indent='\t')
-        js_fp.write(';')
+        js_fp.write(''.join(js))
     print('... Javascript created: {}'.format(js_file))
 
 

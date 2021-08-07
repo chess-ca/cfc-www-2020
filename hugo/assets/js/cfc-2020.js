@@ -4,6 +4,7 @@ import CFC_Spinner from './extensions/cfc-spinner';
 import CFC_Game_ChessCom from './extensions/cfc-game-chess-com';
 
 import pg_all_pages from './js4pages/all-pages';
+import pg_home from './js4pages/home';
 import pg_ratings_home from './js4pages/ratings/home';
 import pg_ratings_player_lists_top from './js4pages/ratings/player-lists-top';
 import pg_ratings_tournament_lists from './js4pages/ratings/tournament-lists';
@@ -12,8 +13,8 @@ const plugin_list = [
     CFC_Spinner, CFC_Game_ChessCom
 ];
 const page_list = [
-    pg_all_pages,
-    pg_ratings_home,
+    pg_all_pages, pg_home,
+    pg_ratings_home, // pg_ratings_player_details,
     pg_ratings_player_lists_top, pg_ratings_tournament_lists
 ];
 

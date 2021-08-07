@@ -3,9 +3,13 @@
        <a href="/{{ $lang }}/events/" class="button is-small is-primary">{{ i18n "More_events" }} &nbsp; <i class="fas fa-chevron-right"></i></a>
       </div>
       <p class="title is-5"><i class="fas fa-chess-knight"></i> {{ i18n "events" }}</p>
-      <div class="ws-item" v-for="e in cfc_events">
-       <a :href="e.url">
+      <template x-for="e in next_events()">
+      <div class="ws-item">
+       <a x-bind:href="e.url">
         <div class="ws-more right"></div>
-       [v[ e.dates.{{ $lang }} ]v] &mdash; [v[ e.city ]v]<br><span v-html="e.name"></span>
+        <span x-text="e.dates.{{ $lang }}"></span>
+        &mdash; <span x-text="e.city"></span>
+        <br><span x-html="e.name"></span>
        </a>
       </div>
+      </template>
