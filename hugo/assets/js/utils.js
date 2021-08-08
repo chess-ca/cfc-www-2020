@@ -129,9 +129,9 @@ export function get_provinces (lang, exclude) {
  * @returns {string: string, ...}
  */
 export function get_url_query_vars() {
-    var q = window.location.search.substr(1)    // drop the "?" prefix
+    let q = window.location.search.substr(1)    // drop the "?" prefix
     q = q.split('&');
-    var qvars = {};
+    let qvars = {};
     for (var i=0; i<q.length; i++) {
         var v_v = q[i].split('=', 2);
         if (v_v.length < 2) {
@@ -143,3 +143,15 @@ export function get_url_query_vars() {
     return qvars;
 }
 
+export function css_insert_once(id, css) {
+    const long_id = 'inserted-css-' + id;
+    let el_style = document.getElementById(long_id);
+    if (el_style) return;   // CSS was already inserted!
+
+    el_style = document.createElement('style');
+    el_style.id = long_id;
+    el_style.appendChild(document.createTextNode(css));
+
+    const el_head = document.getElementsByTagName('head')[0];
+    el_head.appendChild(el_style);
+}

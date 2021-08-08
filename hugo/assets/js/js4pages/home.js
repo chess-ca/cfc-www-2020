@@ -2,9 +2,10 @@
 export default { pre_init }
 
 function pre_init(page_data) {
-    let pd = page_data;
-    pd.newsflashes = (window.ws_cfc_data && window.ws_cfc_data.newsflashes) || [];
-    pd.photobox = (window.ws_cfc_data && window.ws_cfc_data.photobox_home) || [];
+    const pd = page_data;
+    const cfc_data = window.ws_cfc_data || {};
+    pd.newsflashes = cfc_data.newsflashes || [];
+    pd.photobox_home = cfc_data.photobox_home || [];
     pd.next_events = next_events;
 }
 

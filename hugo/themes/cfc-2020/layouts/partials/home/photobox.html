@@ -1,5 +1,2 @@
-      <cfc-photo-box :photos="[
-{{- range $.Page.Params.photobox }}
-        { img: '{{ .src }}', text: '{{ .text }}'},
-{{- end }}
-      ]" :wait="3"></cfc-photo-box>
+{{- $lang := $.Page.Language.Lang }}
+      <div x-cfc-photobox="photobox_home" wait="8" lang="{{ $lang }}"></div>

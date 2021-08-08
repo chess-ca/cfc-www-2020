@@ -1,6 +1,7 @@
 
 import Alpine from 'alpinejs';
 import CFC_Spinner from './extensions/cfc-spinner';
+import CFC_Photobox from './extensions/cfc-photobox';
 import CFC_Game_ChessCom from './extensions/cfc-game-chess-com';
 
 import pg_all_pages from './js4pages/all-pages';
@@ -12,7 +13,7 @@ import pg_ratings_player_lists_top from './js4pages/ratings/player-lists-top';
 import pg_ratings_tournament_lists from './js4pages/ratings/tournament-lists';
 
 const plugin_list = [
-    CFC_Spinner, CFC_Game_ChessCom
+    CFC_Spinner, CFC_Photobox, CFC_Game_ChessCom
 ];
 const page_list = [
     pg_all_pages, pg_home,

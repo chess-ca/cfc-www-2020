@@ -2,24 +2,14 @@
 // cfc-spinner.js
 //  - Alpine plugin for "x-cfc-spinner" directive.
 // ---------------------------------------------------------------------
+import { css_insert_once } from '../utils';
 
 export default function (Alpine) {
-    window.ws_globals = window.ws_globals || {};
-    window.ws_globals.cfc_spinner = {
-        style_appended: false
-    };
-
     Alpine.directive('cfc-spinner', cfc_spinner);
 }
 
 function cfc_spinner(el) {
-    if ( ! window.ws_globals.cfc_spinner.style_appended ) {
-        const el_head = document.getElementsByTagName('body')[0];
-        const el_style = document.createElement('style');
-        el_style.innerText = spinner_css;
-        el_head.appendChild(el_style);
-        window.ws_globals.cfc_spinner.style_appended = true;
-    }
+    css_insert_once('cfc-spinner', spinner_css);
     el.innerHTML = spinner_html;
 }
 
