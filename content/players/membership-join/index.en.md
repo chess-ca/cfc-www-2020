@@ -20,7 +20,7 @@ How to join or renew?
 Select answers to the following questions to get specific instructions:
 
 <div class="select">
-<select v-model="mbr.is_member">
+<select x-model="mbr.is_member">
   <option value="">Q: Are you a CFC member?</option>
   <option value="N">I have never been a CFC member</option>
   <option value="Y">I am a CFC member</option>
@@ -28,21 +28,21 @@ Select answers to the following questions to get specific instructions:
 </select>
 </div>
 
-<div v-show="mbr.is_member=='Y'" class="mt-3">
+<div x-show="mbr.is_member==='Y'" class="mt-3">
 
 Since you are/were a CFC member, a GoMembership account has already been created for you.
 Your GoMembership id and your CFC membership number are the same.
 
  <div class="select">
-  <select v-model="mbr.knows_cfc_id">
+  <select x-model="mbr.knows_cfc_id">
    <option value="">Q: Do you know your CFC membership number?</option>
    <option value="Y">I know my CFC membership number</option>
    <option value="N">I do not know my CFC membership number</option>
   </select>
  </div>
- <div v-show="mbr.knows_cfc_id=='Y'" class="mt-3">
+ <div x-show="mbr.knows_cfc_id==='Y'" class="mt-3">
   <div class="select">
-   <select v-model="mbr.knows_gm_pw">
+   <select x-model="mbr.knows_gm_pw">
     <option value="">Q: Do you know your GoMembership password?</option>
     <option value="Y">I know my GoMembership password</option>
     <option value="N">I do not know my GoMembership password</option>
@@ -52,7 +52,7 @@ Your GoMembership id and your CFC membership number are the same.
 </div>
 
 <!-- --------------------------------------------------------------- -->
-<div v-show="show_create_gm_id" class="mt-3">
+<div x-show="show_create_gm_id" class="mt-3">
 
 To become a CFC member, you must complete
 BOTH steps: 1) create an id on GoMembership and 2) buy a CFC membership.
@@ -84,7 +84,7 @@ BOTH steps: 1) create an id on GoMembership and 2) buy a CFC membership.
 </div>
 
 <!-- --------------------------------------------------------------- -->
-<div v-show="show_gm_pw_reset_part1" class="mt-3">
+<div x-show="show_gm_pw_reset_part1" class="mt-3">
 
 A GoMembership account has already been created for your old CFC number.
 Do NOT create a new GoMembership account (it will have a different CFC number).
@@ -106,7 +106,7 @@ Do NOT create a new GoMembership account (it will have a different CFC number).
 * After waiting 15-30 minutes (and checking your SPAM or JUNK folders), answer this question:
 
  <div class="select">
-  <select v-model="mbr.got_reset_email">
+  <select x-model="mbr.got_reset_email">
   <option value="">Q: Did you receive a password reset email?</option>
    <option value="Y">I did receive a password reset email</option>
    <option value="N">I did not receive a password reset email</option>
@@ -115,7 +115,7 @@ Do NOT create a new GoMembership account (it will have a different CFC number).
 </div>
 
 <!-- --------------------------------------------------------------- -->
-<div v-show="show_gm_pw_reset_part2" class="mt-3">
+<div x-show="show_gm_pw_reset_part2" class="mt-3">
 
 ## Reset Your GoMembership Password (Part 2 of 2)
 
@@ -127,7 +127,7 @@ Follow the instruction in the email from chess.ca / GoMembership.
 </div>
 
 <!-- --------------------------------------------------------------- -->
-<div v-show="show_gm_signin" class="mt-3">
+<div x-show="show_gm_signin" class="mt-3">
 
 ## Log in to GoMembership
 Go to GoMembership (use the button below).
@@ -141,7 +141,7 @@ Once logged in, follow the instructions below to buy a CFC membership.
 </div>
 
 <!-- --------------------------------------------------------------- -->
-<div v-show="show_buy_cfc" class="mt-3">
+<div x-show="show_buy_cfc" class="mt-3">
 
 ## Buy a CFC Membership
 
@@ -168,7 +168,7 @@ Once logged in, follow the instructions below to buy a CFC membership.
 </div>
 
 <!-- --------------------------------------------------------------- -->
-<div v-show="show_contact_cfc_find_id" class="mt-3">
+<div x-show="show_contact_cfc_find_id" class="mt-3">
 
 ## Contact the CFC to Find My CFC Number
 Do NOT sign up in GoMembership as that will create a new CFC number.
@@ -185,10 +185,14 @@ Provide any details that might help us find it.
 </div>
 
 <!-- --------------------------------------------------------------- -->
-<div v-show="show_contact_cfc_add_email" class="mt-3">
+<div x-show="show_contact_cfc_add_email" class="mt-3">
 
-## Contact the CFC
-Contact the CFC to have your email id added to your GoMembership id.
+## Contact the CFC to Update My Email
+Do NOT sign up in GoMembership as that will create a new CFC number.
+
+We just need to update your email address so you can reset your password.
+
+Contact the CFC to send us your CFC id and your current email address.
 
 <a class="button is-info" href="https://forms.gle/miag39Q6tutM7pmc7" target="_blank">Contact the CFC</a>
 </div>
