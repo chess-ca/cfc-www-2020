@@ -17,9 +17,11 @@
     "buildTags": "extended"
   },
   "dependencies": {
-    "alpinejs": "^3.2.3",
+    "hugo-bin": "^0.75.0",
     "bulma": "*",
-    "hugo-bin": "^0.75.0"
+    "alpinejs": "^3.2.3",
+    "gsap": "*",
+    "anchor-js": "*"
   },
   "repository": {
     "type": "git",
