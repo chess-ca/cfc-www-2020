@@ -16,7 +16,7 @@ et 2) certaines provinces ont une association d'échecs qui reçoit une partie d
 La plupart des membres du CFC ont des adhésions annuelles.
 
 Un "Junior" est toute personne née le 1er janvier
-<span v-text = "(new Date ()). getFullYear () - 20"> </span> ou après.
+<b x-text = "(new Date()).getFullYear() - 20"></b> ou après.
 
 \* Les résidents du Québec ayant une adhésion active à la FQE peuvent participer à des événements classés CFC
 sans acheter un abonnement CFC. Les membres du CFC peuvent participer à des événements classés FQE sans être membre de la FQE.
@@ -47,7 +47,7 @@ pour un tarif réduit. Des abonnements supplémentaires doivent être achetés
 en même temps que l'abonnement adulte régulier.
 
 Un "Junior" est toute personne née le 1er janvier
-<span v-text = "(new Date ()). getFullYear () - 20"> </span> ou après.
+<b x-text="(new Date()).getFullYear() - 20"></b> ou après.
 
 | Province de résidence | Adulte | Junior |
 |----------|-------|--------|
@@ -88,7 +88,7 @@ Les frais dépendent des contrôles horaires du tournoi: régulier ou rapide.
 Les frais dépendent de la province dans laquelle réside le joueur (et non de la province où se déroule le tournoi).
 
 Un "Junior" est toute personne née le 1er janvier
-<span v-text = "(new Date ()). getFullYear () - 20"> </span> ou après.
+<b x-text = "(new Date()).getFullYear() - 20"></b> ou après.
 
 \* Les résidents du Québec ayant une adhésion active à la FQE peuvent participer à des événements classés CFC
 sans acheter un abonnement CFC. Les membres du CFC peuvent participer à des événements classés FQE sans être membre de la FQE.
