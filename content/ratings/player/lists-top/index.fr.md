@@ -32,6 +32,7 @@ page_css = ".control input, .control select { min-width:12rem; }"
     games = 'j'
     none_found = "personne n'est trouve"
     provisional_notes = '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés'
+    bug_spinning = "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration."
 +++
 
 {{< ws-embed-html "s1_top.html" "i18n_top" >}}
