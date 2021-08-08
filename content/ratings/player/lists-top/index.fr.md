@@ -2,7 +2,6 @@
 slug = "../p/top"
 title = "Meilleurs joueurs"
 pageid = "pg-ratings-player-lists-top"
-no_vuejs = 1
 page_css = ".control input, .control select { min-width:12rem; }"
 
 [i18n_top]
