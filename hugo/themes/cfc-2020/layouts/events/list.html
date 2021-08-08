@@ -1,7 +1,3 @@
-{{- define "inside-head" }}
-{{- $events := resources.Get "ext/cfc-events.js" | resources.Fingerprint }}
- <script src="{{ $events.RelPermalink }}"></script>
-{{ end }}
 
 {{- define "title" -}}
   {{ .Title }}
@@ -16,7 +12,7 @@
    <div class="field is-grouped is-grouped-multiline">
     <div class="control">
      <div class="select is-small is-primary">
-      <select v-model="e_type">
+      <select x-model="e_type">
        <option value="*">{{ $i18n.filter_by_type }}</option>
        <option value="*">{{ $i18n.All_types }}</option>
        <option value="Online">{{ $i18n.Online }}</option>
@@ -28,7 +24,7 @@
     </div>
     <div class="control">
      <div class="select is-small is-primary">
-      <select v-model="e_prov">
+      <select x-model="e_prov">
        <option value="*">{{ $i18n.filter_by_location }}</option>
        <option value="*">{{ $i18n.All_provinces }}</option>
        <option value="Online">{{ $i18n.Online }}</option>
@@ -63,22 +59,8 @@
        <!--th>{{ $i18n.Province }}</th--><th>{{ $i18n.Info }}</th>
       </tr>
      </thead>
-     <tbody>
-      <tr v-if="cfc_events.length == 0">
-       <td></td><td colspan="4">({{ $i18n.NONE }})</td>
-      </tr>
-      <template v-for="e in cfc_events">
-       <tr v-if="e.newyear">
-        <td></td><td colspan="4"><strong>---- [v[e.newyear]v] ----</strong></td>
-       </tr>
-       <tr v-else>
-        <td>[v[e.dates.{{ $lang }}]v]</td>
-        <td>[v[e.name]v]</td>
-        <td>[v[e.type]v]</td>
-        <td>[v[e.city]v]<span v-if="e.prov != 'Online' && e.prov != 'FO'">, [v[e.prov]v]</span></td>
-        <td v-html="e.links"></td>
-       </tr>
-      </template>
+     <tbody x-html="get_table_rows()">
+      <!-- See notes in the Javascript -->
      </tbody>
     </table>
    </div>

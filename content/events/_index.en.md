@@ -3,6 +3,7 @@ title = "Upcoming Events"
 date = "2020-07-11"
 pageid = "pg-events-list"
 needs_cfc_data = 1
+no_vuejs = 1
 
 [i18n]
     AddEvent = "Add Event"
@@ -21,7 +22,7 @@ needs_cfc_data = 1
     Location = "Location"
     Province = "Province"
     Info = "Info"
-    NONE = "NONE"
+    NONE = "(none)"
     caveat = "The CFC does not endorse nor is in any way responsible for the events listed."
 +++
 
