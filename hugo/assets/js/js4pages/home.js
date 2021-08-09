@@ -3,15 +3,42 @@ export default { pre_init }
 
 function pre_init(page_data) {
     const pd = page_data;
-    const cfc_data = window.ws_cfc_data || {};
-    pd.newsflashes = cfc_data.newsflashes || [];
-    pd.photobox_home = cfc_data.photobox_home || [];
-    pd.next_events = next_events;
+    pd.newsflashes = get_newsflashes();
+    pd.photobox_home = get_photos();
+    pd.next_events = get_next_events;
 }
 
 const max_events_on_home_page = 7;
 
-function next_events() {
+function get_newsflashes() {
+    const now_ymd = (new Date()).toISOString().slice(0,10);
+    const cfc_data = window.ws_cfc_data || {};
+    const news_in = cfc_data.newsflashes || [];
+    const news_out = [];
+    for (let i=0; i<news_in.length; i++) {
+        let nf = news_in[i];
+        if (nf['start'] > now_ymd || nf['end'] < now_ymd)
+            continue;
+        news_out.push(nf);
+    }
+    return news_out;
+}
+
+function get_photos() {
+    const now_ymd = (new Date()).toISOString().slice(0,10);
+    const cfc_data = window.ws_cfc_data || {};
+    const photos_in = cfc_data.photobox_home || [];
+    const photos_out = [];
+    for (let i=0; i<photos_in.length; i++) {
+        let nf = photos_in[i];
+        if (nf['start'] > now_ymd || nf['end'] < now_ymd)
+            continue;
+        photos_out.push(nf);
+    }
+    return photos_out;
+}
+
+function get_next_events() {
     const now_ymd = (new Date()).toISOString().slice(0,10);
     const re_cancelled = /cancelled/i;
 
