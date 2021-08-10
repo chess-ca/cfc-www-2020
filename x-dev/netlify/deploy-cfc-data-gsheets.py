@@ -106,7 +106,8 @@ def get_news_flashes():
 
         filtered.append(nf)
 
-    filtered = sorted(filtered, key=lambda nf: (nf['start'], nf['end']), reverse=True)
+    # Now using the order within the gsheet. Was too confusing ordered by start/end in reverse.
+    # filtered = sorted(filtered, key=lambda nf: (nf['start'], nf['end']), reverse=True)
     for i in range(len(filtered)):
         filtered[i]['oid'] = i + 1      # A unique object id for Javascript
     return filtered
