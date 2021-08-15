@@ -1,7 +1,11 @@
 
 export default { pre_init }
 
+const page_id = 'pg-home';
+
 function pre_init(page_data) {
+    if (page_data.page_id !== page_id) return;
+
     const pd = page_data;
     pd.newsflashes = get_newsflashes();
     pd.photobox_home = get_photos();

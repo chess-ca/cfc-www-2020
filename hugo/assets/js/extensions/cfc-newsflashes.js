@@ -48,8 +48,8 @@ const newsflash_css = `
         border:1px solid #bbb; border-radius:6px;
         padding:4px 0.5rem; margin-bottom:0.25rem;
     }
-    .cfc-newsflashes div.highlight-g { background-color:#dfd; }
-    .cfc-newsflashes div.highlight-y { background-color:#ffd; }
+    .cfc-newsflashes div.highlight-g { background-color:#D6F5B8; }
+    .cfc-newsflashes div.highlight-y { background-color:#FFFFCC; }
     .cfc-newsflashes div.highlight-o { background-color:#FFF8E0; }
-    .cfc-newsflashes div.highlight-r { background-color:#fdd; }
+    .cfc-newsflashes div.highlight-r { background-color:#FFDDDD; }
 `;

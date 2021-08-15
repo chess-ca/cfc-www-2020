@@ -13,21 +13,31 @@ export function call_api(options) {
     const default_api_prefix = 'https://server.chess.ca/api';
     // const default_api_prefix = 'http://127.0.0.1:5000/api';
 
+    const null_func = function() {};
+
     const page_data = options.page_data || {};
+    const lang = page_data['lang'] || 'en';
+    const timeout = options.timeout || 8000;
     const method = String(options.method || 'GET').toUpperCase();
     const api = options.api || null;
     const api_prefix = options.api_prefix || default_api_prefix;
     const body = options.body || {};
-    const null_fn = function() {};
-    const onSuccess = options.onSuccess || null_fn;
-    const onFail = options.Fail || null_fn;
+    const onSuccess = options.onSuccess || null_func;
+    const onFail = options.Fail || null_func;
     const onFail_alert = options.onFail_alert || true;
+    const onTimeout = options.onTimeout || null_func;
+    const onTimeout_alert = options.onTimeout_alert || true;
 
     const xhr = new XMLHttpRequest();
-    xhr.timeout = 10000;
-    xhr.ontimeout = function (e) {
-        console.log('API timed-out:', method, api, xhr);
-        onFail(page_data, {apicode:-101}, xhr);
+    xhr.timeout = timeout;
+    xhr.ontimeout = function () {
+        console.log('API call timed-out:', method, api, xhr);
+        onTimeout(page_data, xhr);
+        if (onTimeout_alert) {
+            alert( lang === 'fr'
+                ? 'La demande a expiré. Réessayez plus tard.'
+                : 'Request timed-out. Try again later.');
+        }
     };
     xhr.onload = function () {
         const rsp = xhr.response && JSON.parse(xhr.response);
@@ -40,8 +50,7 @@ export function call_api(options) {
             if (onFail_alert) {
                 alert(page_data.lang === 'fr'
                     ? 'Échec de l\'appel au serveur FCE.\n\nRéessayez plus tard.'
-                    : 'Call to CFC Server failed.\n\nTry again later.'
-                );
+                    : 'Call to CFC Server failed.\n\nTry again later.');
             }
         }
     };

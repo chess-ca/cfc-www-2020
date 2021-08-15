@@ -1,0 +1,61 @@
+  <section x-show="report_is === 'ready'" class="container content pad-touch-only" x-cloak>
+    <div class="table-container">
+      <div class="field is-grouped is-grouped-multiline">
+        <div class="control">
+          <div class="select is-small is-primary">
+            <select x-model="filter.t_type">
+              <option value="*">[[filter_by_type]]</option>
+              <option value="*">[[all_types]]</option>
+              <option value="R">[[only_regular]]</option>
+              <option value="Q">[[only_quick]]</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <table class="ws-ratings-tdlist table is-hoverable is-narrow">
+        <thead>
+        <tr>
+          <th></th>
+          <th>[[event]]</th>
+          <th>[[end_date]]</th>
+          <th class="ta-center">[[type]]</th>
+          <th class="ta-center">[[games_played]]</th>
+          <th class="ta-center">[[score]]</th>
+          <th class="ta-center">[[rating_pre]]</th>
+          <th class="ta-center">[[rating_perf]]</th>
+          <th class="ta-center">[[rating_post]]</th>
+          <th class="ta-center"><span class="has-text-primary">[[rating_high]]</span></th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr x-show="tournaments.length === 0">
+            <td></td><td colspan="4">([[none_found]])</td>
+          </tr>
+        <template x-for="t in filtered_tournaments()">
+          <tr x-show="filter.t_type==='*' || t.type===filter.t_type" x-on:click="show_crosstable(t.t_id)" class="is-clickable">
+            <td><div class="ws-link size-18"></div></td>
+            <td x-text="t.name"></td>
+            <td x-text="t.last_day"></td>
+            <td class="ta-center" x-text="t.type"></td>
+            <td class="ta-center" x-text="t.games_played"></td>
+            <td class="ta-center" x-text="t.score"></td>
+            <td class="ta-center" x-text="t.rating_pre"></td>
+            <td class="ta-center" x-text="t.rating_perf"></td>
+            <td class="ta-center">
+              <span x-html="t.rating_hi > 50 ? t.rating_post : ('<i>('+t.rating_post+')</i>')"></span>
+            </td>
+            <td class="has-text-primary ta-center">
+              <span x-html="t.rating_hi > 50 ? t.rating_hi : ('<i>('+t.rating_hi+' [[games]])</i>')"></span>
+            </td>
+          </tr>
+        </template>
+          <tr x-show="event_has_provisional_rating">
+            <td></td>
+            <td colspan="9">
+              <ul><li>[[provisional_notes]]</li></ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
