@@ -102,7 +102,7 @@ html {
   padding:0.5rem; margin:0.5rem;
   background-color:#ffd; border:2px solid #888;
 }
-.ws-highlight { background-color:#ffd; }
+.ws-highlight { background-color: $cp-p050; } //#ffc; }
 
 
 .ws-main {
@@ -143,6 +143,21 @@ html {
 .ws-toc-wide { max-width:100%; min-width:100%; }
 
 .ws-bg-highlight td, .ws-bg-p100 { background-color: $cp-p100; }
+
+
+//---- Fix for AlpineJS:
+//   - In AlpineJS, x-for loops must be on <template> tags only and the
+//     <template> must have 1 child element only.
+//   - In some more complex situations, such as different types of rows,
+//     the <tbody> is the 1 child element of the <template> and is
+//     repeated in loop.  HTML allows multiple <tbody>s in a <table>.
+//   - But, this breaks Bulma since it removes the bottom border from
+//     the last <tr> child of <tbody>.  Since every <tbody> contains just
+//     one <tr>, then ALL <tr>s have their bottom borders removed.
+//   - The following rule, added to <table>, fixes this.
+table.fix-for-alpinejs tbody tr:last-child {
+  td, th { border-bottom-width: 1px; }
+}
 
 
 

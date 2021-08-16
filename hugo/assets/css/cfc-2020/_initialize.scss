@@ -12,6 +12,7 @@ $cp-p400: hsl(90,27%,55%);
 $cp-p300: hsl(90,27%,65%);
 $cp-p200: hsl(90,27%,80%);
 $cp-p100: hsl(90,27%,90%);
+$cp-p050: hsl(90,27%,96%);
 //---- CFC Accent
 $cp-a900: hsl(293,27%,20%);
 $cp-a700: hsl(293,27%,35%);
@@ -41,7 +42,7 @@ $text-strong: #000;
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald:600');
 //TO-TEST: @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
-$family-sans-serif: "Open Sans", sans-serif;
+$family-sans-serif: "Nunito", sans-serif;
 $family-primary: $family-sans-serif;
 $family-secondary: "Oswald", serif;
 

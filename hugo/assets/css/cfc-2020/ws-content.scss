@@ -18,8 +18,10 @@
     h6 { margin-left:6rem; }
   }
   a {
-    color:$cp-text; border-bottom:2px dotted $cp-p300;
-    &:hover { background-color:$cp-p100; border-bottom:2px solid $cp-p300; }
+    color:$cp-text; border-bottom:2px dotted $cp-p300; transition: all 500ms;
+    &:hover {
+      background-color:$cp-p100; border-bottom:2px solid $cp-p300; transition: all 2s;
+    }
   }
   pre { padding: .5rem .5rem; border:1px solid $cp-p700; font-size:16px; }
   div.highlight { margin-bottom:1rem; }

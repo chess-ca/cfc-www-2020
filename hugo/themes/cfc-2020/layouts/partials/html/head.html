@@ -12,8 +12,11 @@
 {{ . | safeCSS }}
  </style>
 {{- end }}
- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:600&display=swap">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Oswald:600&display=swap">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
-{{- $opts := (dict "outputStyle" "compressed") }}
+{{- $opts := (dict
+    "outputStyle" "compressed"
+    "includePaths" (slice "node_modules")
+ ) }}
 {{- $style := resources.Get "css/cfc-2020.scss" | resources.ToCSS $opts | resources.Fingerprint }}
  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
