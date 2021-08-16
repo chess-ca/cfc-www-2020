@@ -1,6 +1,5 @@
 +++
 title = "Privacy Policy"
-tags = []
 layout = "ws-single"
 +++
 
