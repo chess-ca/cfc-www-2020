@@ -44,7 +44,7 @@ function get_player_details(pd, cfc_id) {
     pd.report_is = 'loading';
     call_api({
         page_data: pd,
-        api: '/ratings/player/' + cfc_id,
+        api: `/ratings/player/${cfc_id}`,
         onSuccess: onSuccess,
         onFail: function(pd) {
             pd.report_is = 'empty'
@@ -59,35 +59,24 @@ function onSuccess(pd, rsp) {
     pd.dbdate = rsp.dbdate || '???';
     pd.player = rsp.player || {};
     pd.tournaments = pd.player.tournaments || [];
-    pd.player_has_provisional_rating =
-        (pd.player.rating_hi <= 30 || pd.player.quick_hi <= 30);
+    pd.player_has_provisional_rating = (
+        pd.player.rating_hi <= 30 || pd.player.quick_hi <= 30
+    );
     pd.report_is = 'ready';
 
     const el_title = document.getElementById('ws-page-title');
-    const name = pd.player.name_first
     if (el_title) { el_title.innerText = pd.player.name }
 }
 
 function filtered_tournaments() {
     const pd = this;
-    let list = []
-    if (pd.filter.t_type === '*') {
-        list = pd.tournaments
-    } else {
-        pd.tournaments.forEach(t => {
-            if (t.type === pd.filter.t_type) {
-                list.push(t);
-            }
-        });
-    }
     pd.event_has_provisional_rating = false;
-    for (let i=0; i<list.length; i++) {
-        let t = list[i];
-        if (t.rating_hi < 30) {
-            pd.event_has_provisional_rating = true;
-            break;
-        }
-    }
+    let list = pd.tournaments.filter(
+        t => (pd.filter.t_type === '*' || pd.filter.t_type === t.type)
+    );
+    pd.event_has_provisional_rating = list.reduce(
+        (it_has, t) => it_has || (t.rating_hi < 30), false
+    );
     return list;
 }
 
@@ -95,7 +84,7 @@ function show_crosstable(event_id) {
     const pd = this;
     const cfc_id = pd.player.m_id;
     pd.go(
-        '/[[lang]]/ratings/t/?id=' + event_id
-        + (cfc_id ? ('&p='+cfc_id) : '')
+        `/[[lang]]/ratings/t/?id=${event_id}`
+        + (cfc_id ? `&p=${cfc_id}` : '')
     )
 }

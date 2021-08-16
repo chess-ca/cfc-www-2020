@@ -1,18 +1,18 @@
   <section x-show="report_is === 'ready'" class="container content pad-touch-only" x-cloak>
-    <div class="table-container">
-      <div class="field is-grouped is-grouped-multiline">
-        <div class="control">
-          <div class="select is-small is-primary">
-            <select x-model="filter.t_type">
-              <option value="*">[[filter_by_type]]</option>
-              <option value="*">[[all_types]]</option>
-              <option value="R">[[only_regular]]</option>
-              <option value="Q">[[only_quick]]</option>
-            </select>
-          </div>
+    <div class="field is-grouped is-grouped-multiline">
+      <div class="control">
+        <div class="select is-small is-primary">
+          <select x-model="filter.t_type">
+            <option value="*">[[filter_by_type]]</option>
+            <option value="*">[[all_types]]</option>
+            <option value="R">[[only_regular]]</option>
+            <option value="Q">[[only_quick]]</option>
+          </select>
         </div>
       </div>
-      <table class="ws-ratings-tdlist table is-hoverable is-narrow">
+    </div>
+    <div class="table-container">
+      <table class="ws-ratings-tdlist table fix-for-alpinejs is-hoverable is-narrow">
         <thead>
         <tr>
           <th></th>
@@ -49,13 +49,10 @@
             </td>
           </tr>
         </template>
-          <tr x-show="event_has_provisional_rating">
-            <td></td>
-            <td colspan="9">
-              <ul><li>[[provisional_notes]]</li></ul>
-            </td>
-          </tr>
         </tbody>
       </table>
+      <div x-show="event_has_provisional_rating">
+        <ul><li>[[provisional_notes]]</li></ul>
+      </div>
     </div>
   </section>

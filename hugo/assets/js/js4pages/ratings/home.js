@@ -22,12 +22,12 @@ function pre_init(page_data) {
 
 function search_players(el) {
     const pd = this;
-    let p_cfc = String(pd.p_cfc).trim();
-    let p_first = String(pd.p_first).trim();
-    let p_last = String(pd.p_last).trim();
-    console.log('search_players:', p_cfc, p_first, p_last);
+    const p_cfc = encodeURI(String(pd.p_cfc).trim());
+    const p_first = encodeURI(String(pd.p_first).trim());
+    const p_last = encodeURI(String(pd.p_last).trim());
+
     if (p_cfc !== '') {
-        let next = `/${pd.lang}/ratings/#/p/${p_cfc}`;
+        let next = `/${pd.lang}/ratings/p/?id=${p_cfc}`;
         go(next, el);
     } else if (p_first !== '' || p_last !== '') {
         let next = `/${pd.lang}/ratings/#/psr/${p_first || '*'}/${p_last || '*'}`;
@@ -39,11 +39,11 @@ function search_players(el) {
 
 function search_tournaments(el) {
     const pd = this;
-    let t_name = String(pd.t_name).trim();
+    let t_name = encodeURI(String(pd.t_name).trim());
     if (t_name === '') {
         pd.err.s4t = 'err_enter_criteria';
     } else {
-        let next = `/${pd.lang}/ratings/#/tsr?name=` + encodeURI(t_name);
+        let next = `/${pd.lang}/ratings/#/tsr?name=${t_name}`;
         go(next, el);
     }
 }
