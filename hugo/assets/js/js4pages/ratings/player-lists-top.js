@@ -8,7 +8,7 @@ const page_id = 'pg-ratings-player-lists-top';
 function pre_init(page_data) {
     if (page_data.page_id !== page_id) return;
 
-    let pd = page_data;
+    const pd = page_data;
     pd.now_yyyy = (new Date()).getFullYear();
     pd.prov_list = get_provinces(pd.lang, ['US', 'FO']);
 

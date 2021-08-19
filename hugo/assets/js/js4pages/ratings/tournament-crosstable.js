@@ -9,7 +9,7 @@ const _log = console.log;
 function pre_init(page_data) {
     if (page_data.page_id !== page_id) return;
 
-    let pd = page_data;
+    const pd = page_data;
     pd.report_is = 'empty';
     pd.dbdate = '';
     pd.tid = '';
@@ -24,12 +24,13 @@ function pre_init(page_data) {
 function post_init(page_data) {
     if (page_data.page_id !== page_id) return;
 
+    const pd = page_data;
     const qvars = get_url_query_vars();
     const event_id = qvars['id'];
     page_data.highlighted_mid = parseInt(qvars['p'] || '0');
 
     if ( event_id ) {
-        get_tournament_crosstable(page_data, event_id);
+        get_tournament_crosstable(pd, event_id);
     } else {
         console.error('URL arg "id" is missing.')
         window.location.replace(`/${pd.lang}/ratings/`);
@@ -38,10 +39,11 @@ function post_init(page_data) {
 
 /**
  * Get the tournament crosstable from the CFC server.
- * @param pd - the AlpineJS page data
+ * @param page_data - the AlpineJS page data
  * @param event_id - tournament's event id
  */
-function get_tournament_crosstable(pd, event_id) {
+function get_tournament_crosstable(page_data, event_id) {
+    const pd = page_data;
     pd.report_is = 'loading';
     call_api({
         page_data: pd,
@@ -56,7 +58,8 @@ function get_tournament_crosstable(pd, event_id) {
     });
 }
 
-function onSuccess(pd, rsp) {
+function onSuccess(page_data, rsp) {
+    const pd = page_data;
     //---- Split results from "+27|-12|=4|..." to an array
     let crosstable = rsp.tournament.crosstable.map( cte => {
         cte.results = cte.results.replaceAll('X', '&#x2A2F;').split('|');

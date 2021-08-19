@@ -1,0 +1,20 @@
+<section class="container content pad-touch-only">
+ <p class="notes">&mdash; [[search_intro]]</p>
+
+ <form class="field is-grouped is-grouped-multiline" x-on:submit.prevent="do_search()">
+  <div class="control">
+   <label class="label is-small">[[inp_first]]
+    <input x-model="p_first" class="input is-small" type="text" placeholder="[[inp_first]]"
+        x-on:keyup="report_is = 'empty'" x-on:keyup.enter="do_search()">
+   </label>
+  </div>
+  <div class="control">
+   <label class="label is-small">[[inp_last]]
+    <input x-model="p_last" class="input is-small" type="text" placeholder="[[inp_last]]"
+        x-on:keyup="report_is = 'empty'" x-on:keyup.enter="do_search()">
+   </label>
+  </div>
+ </form>
+ <p class="ws-error" x-show="report_is=='err_enter_criteria'">[[err_enter_criteria]]</p>
+ <button type="submit" class="button is-small is-info" x-on:click="do_search($el)">[[search]]</button>
+</section>

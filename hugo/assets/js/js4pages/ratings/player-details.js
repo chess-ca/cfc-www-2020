@@ -3,13 +3,13 @@ import {call_api, get_url_query_vars} from '../../utils';
 
 export default { pre_init, post_init }
 
-const page_id = 'pg-player-details'
+const page_id = 'pg-player-details';
 const _log = console.log;
 
 function pre_init(page_data) {
     if (page_data.page_id !== page_id) return;
 
-    let pd = page_data;
+    const pd = page_data;
     pd.report_is = 'empty';
     pd.dbdate = '';
     pd.player = {};
@@ -25,10 +25,11 @@ function pre_init(page_data) {
 function post_init(page_data) {
     if (page_data.page_id !== page_id) return;
 
+    const pd = page_data;
     const qvars = get_url_query_vars();
     const cfc_id = qvars['id'];
     if ( cfc_id ) {
-        get_player_details(page_data, cfc_id);
+        get_player_details(pd, cfc_id);
     } else {
         console.error('URL arg "id" is missing.')
         window.location.replace(`/${pd.lang}/ratings/`);
@@ -37,10 +38,11 @@ function post_init(page_data) {
 
 /**
  * Get the player details from the CFC server.
- * @param pd - the AlpineJS page data
+ * @param page_data - the AlpineJS page data
  * @param cfc_id - player's CFC membership id
  */
-function get_player_details(pd, cfc_id) {
+function get_player_details(page_data, cfc_id) {
+    const pd = page_data;
     pd.report_is = 'loading';
     call_api({
         page_data: pd,
@@ -55,7 +57,8 @@ function get_player_details(pd, cfc_id) {
     });
 }
 
-function onSuccess(pd, rsp) {
+function onSuccess(page_data, rsp) {
+    const pd = page_data;
     pd.dbdate = rsp.dbdate || '???';
     pd.player = rsp.player || {};
     pd.tournaments = pd.player.tournaments || [];

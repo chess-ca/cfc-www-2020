@@ -1,0 +1,29 @@
++++
+slug = "../p/sr/"
+title = "Joueurs - Recherche"
+pageid = "pg-player-search-results"
+
+[i18n_form]
+    search_intro = 'Utilisez &ldquo;*&rdquo; comme joker: Bob* Fis*er'
+    inp_first = 'Prénom'
+    inp_last = 'Nom de famille'
+    search = 'Chercher'
+    err_enter_criteria = 'Entrez les critères de recherche'
+[i18n_results]
+    name = 'Nom'
+    city = 'Ville'
+    cfc_id = 'FCE id'
+    cfc_expiry = 'Expiration<br>du FCE'
+    regular_rating = 'Cote<br>Régulière'
+    regular_high = 'Régulier<br>élevé'
+    quick_rating = 'Cote<br>Rapide'
+    quick_high = 'Rapide<br>élevé'
+    provisional_notes = '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés.'
+    games = 'j'
+    none_found = "personne n'est trouve"
+    bug_spinning = "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration."
++++
+
+{{< ws-embed-html "s1_top.html" >}}
+{{< ws-embed-html "s2_form.html" "i18n_form" >}}
+{{< ws-embed-html "s3_results.html" "i18n_results" >}}

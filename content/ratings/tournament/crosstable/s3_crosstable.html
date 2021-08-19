@@ -34,8 +34,9 @@
           </template>
         </tbody>
       </table>
-      <div x-show="has_provisional_ratings">
-        <ul><li>[[provisional_notes]]</li></ul>
-      </div>
+      <ul style="font-size:0.8rem; margin-top:2rem;">
+        <li x-show="has_provisional_ratings">[[provisional_notes]]</li>
+        <li x-show="dbdate">Data: <span x-text="dbdate"></span></li>
+      </ul>
     </div>
   </section>

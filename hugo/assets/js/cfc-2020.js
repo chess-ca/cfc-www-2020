@@ -5,23 +5,24 @@ import CFC_Photobox from './extensions/cfc-photobox';
 import CFC_NewsFlashes from './extensions/cfc-newsflashes';
 import CFC_Game_ChessCom from './extensions/cfc-game-chess-com';
 
-import pg_all_pages from './js4pages/all-pages';
 import pg_home from './js4pages/home';
 import pg_membership_how from './js4pages/players/membership-how';
 import pg_upcoming_events from './js4pages/other/events-list';
 import pg_ratings_home from './js4pages/ratings/home';
 import pg_ratings_player_details from './js4pages/ratings/player-details';
+import pg_ratings_player_search_results from './js4pages/ratings/player-search-results'
 import pg_ratings_player_lists_top from './js4pages/ratings/player-lists-top';
 import pg_ratings_tournament_crosstable from './js4pages/ratings/tournament-crosstable';
 import pg_ratings_tournament_lists from './js4pages/ratings/tournament-lists';
+import { go } from "./utils";
 
 const plugin_list = [
     CFC_Spinner, CFC_Photobox, CFC_NewsFlashes, CFC_Game_ChessCom
 ];
 const page_list = [
-    pg_all_pages, pg_home,
-    pg_upcoming_events, pg_membership_how,
+    pg_home, pg_upcoming_events, pg_membership_how,
     pg_ratings_home, pg_ratings_player_details, pg_ratings_player_lists_top,
+    pg_ratings_player_search_results,
     pg_ratings_tournament_crosstable, pg_ratings_tournament_lists
 ];
 
@@ -42,9 +43,14 @@ function runs_before_alpine_initializes_the_page() {
     //---- Page Data (x-data)
     // All pages have x-data="page_data"; this is what all pages get
     const el_html = document.getElementsByTagName('html')[0];
-    let page_data = {
+    const page_data = {
         lang: el_html.getAttribute('lang') || 'en',
         page_id: el_html.getAttribute('data-pageid') || '',
+        sideNav: {
+            show: false,
+            toggle: function() { this.sideNav.show = ! this.sideNav.show; }
+        },
+        go: go
     };
     page_list.forEach(page => {
         if (page && page.pre_init) {

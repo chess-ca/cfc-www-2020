@@ -8,7 +8,7 @@ const page_id = 'pg-ratings-home';
 function pre_init(page_data) {
     if (page_data.page_id !== page_id) return;
 
-    let pd = page_data;
+    const pd = this;
     pd.now_yyyy = (new Date()).getFullYear();
     pd.p_cfc = '';       // input: player cfc id
     pd.p_first = '';     // input: player first name

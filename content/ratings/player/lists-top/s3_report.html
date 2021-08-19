@@ -5,7 +5,6 @@
    </div>
 
    <div x-show="report_is=='ready'">
-    <div class="is-pulled-right">Data: <span x-text="dbdate"></span></div>
     <table class="ws-ratings-tdlist table fix-for-alpinejs is-hoverable is-narrow">
      <thead>
      <tr>
@@ -21,10 +20,10 @@
      </thead>
      <tbody>
       <tr x-show="players.length === 0">
-       <td></td><td colspan="5">([[none_found]])</td>
+       <td></td><td colspan="99">([[none_found]])</td>
       </tr>
      <template x-for="p in players">
-      <tr x-on:click="go('/[[page_lang]]/ratings/#/p/'+p.cfc_id)" class="is-clickable">
+      <tr x-on:click="go('/[[page_lang]]/ratings/p/?id='+p.cfc_id)" class="is-clickable">
        <td x-text="p.pos"></td>
        <td x-text="p.name_last + ', ' + p.name_first"></td>
        <td x-text="p.addr_city ? p.addr_city + ', ' + p.addr_province : p.addr_province"></td>
@@ -49,8 +48,9 @@
      </template>
      </tbody>
     </table>
-    <div x-show="has_provisional_ratings(players, type)">
-      <ul><li>[[provisional_notes]]</li></ul>
-    </div>
+    <ul style="font-size:0.8rem; margin-top:2rem;">
+     <li x-show="has_provisional_ratings(players, type)">[[provisional_notes]]</li>
+     <li x-show="dbdate">Data: <span x-text="dbdate"></span></li>
+    </ul>
    </div>
   </section>
