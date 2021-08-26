@@ -1,5 +1,6 @@
   <section x-show="report_is === 'ready'" class="container content pad-touch-only" x-cloak>
-    <div class="table-container">
+    <p x-show="! player.name">"<span x-text="cfc_id"></span>" [[not_found]].</p>
+    <div x-show="player.name" class="table-container">
       <table class="ws-ratings-tdlist table is-hoverable is-narrow">
         <thead>
         <tr>
@@ -15,8 +16,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr x-show="!player">
-          <td></td><td colspan="9">[[none_found]]</td>
+        <tr x-show="! player.name">
+          <td></td><td colspan="99">[[none_found]]</td>
         </tr>
         <template x-for="p in [player]">
           <tr class="ws-bg-highlight">

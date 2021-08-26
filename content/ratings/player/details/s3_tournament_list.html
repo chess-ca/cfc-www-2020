@@ -1,9 +1,9 @@
-  <section x-show="report_is === 'ready'" class="container content pad-touch-only" x-cloak>
+  <section x-show="report_is === 'ready' && player.name" class="container content pad-touch-only" x-cloak>
     <div class="field is-grouped is-grouped-multiline">
       <div class="control">
         <div class="select is-small is-primary">
           <select x-model="filter.t_type">
-            <option value="*">[[filter_by_type]]</option>
+            <option value="">[[filter_by_type]]</option>
             <option value="*">[[all_types]]</option>
             <option value="R">[[only_regular]]</option>
             <option value="Q">[[only_quick]]</option>
@@ -32,7 +32,7 @@
             <td></td><td colspan="4">([[none_found]])</td>
           </tr>
         <template x-for="t in filtered_tournaments()">
-          <tr x-show="filter.t_type==='*' || t.type===filter.t_type" x-on:click="show_crosstable(t.t_id)" class="is-clickable">
+          <tr x-on:click="go_crosstable(t.t_id)" class="is-clickable">
             <td><div class="ws-link size-18"></div></td>
             <td x-text="t.name"></td>
             <td x-text="t.last_day"></td>
