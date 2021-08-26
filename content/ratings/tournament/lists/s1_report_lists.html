@@ -1,6 +1,6 @@
   <section class="container content pad-touch-only">
-   <a class="button is-small is-info" x-on:click="go('/[[page_lang]]/ratings/#/tsr?days=60', $el)">[[last_nn_days]]</a>
-   <a class="button is-small is-info" x-on:click="go('/[[page_lang]]/ratings/#/tsr?year='+(now_yyyy-1), $el)" x-text="now_yyyy-1"></a>
-   <a class="button is-small is-info" x-on:click="go('/[[page_lang]]/ratings/#/tsr?year='+(now_yyyy), $el)" x-text="now_yyyy"></a>
+   <a class="button is-small is-info" x-on:click="go('/[[page_lang]]/ratings/t/sr?d=60', $el)">[[last_nn_days]]</a>
+   <a class="button is-small is-info" x-on:click="go('/[[page_lang]]/ratings/t/sr?y='+(now_yyyy), $el)" x-text="now_yyyy"></a>
+   <a class="button is-small is-info" x-on:click="go('/[[page_lang]]/ratings/t/sr?y='+(now_yyyy-1), $el)" x-text="now_yyyy-1"></a>
    <br><br><p>[[coming_soon]]</p>
   </section>
