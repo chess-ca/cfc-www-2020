@@ -20,7 +20,6 @@
   "format" "iife"
   "target" "es2015"
   "minify" true
-  "sourceMap" "inline"
 }}
 {{- $cfc_2020_js := resources.Get "js/cfc-2020.js" | js.Build $js_opts | resources.Fingerprint }}
  <script src="{{ $cfc_2020_js.RelPermalink }}"></script>
