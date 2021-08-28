@@ -7,11 +7,7 @@
 </head>
 
 <body>
-{{- if isset .Params "needs_vuejs" }}
- <div id="vue-app" x-data="page_data">
-{{- else }}
- <div id="vue-app"></div><div x-data="page_data">
-{{- end }}
+ <div x-data="page_data">
  <div id="ws-overlay" x-bind:class="{'is-overlay':sideNav.show}" x-on:click="sideNav.toggle"></div>
 {{ partial "html/body-topbar.html" . -}}
 

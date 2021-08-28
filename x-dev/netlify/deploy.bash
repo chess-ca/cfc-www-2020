@@ -5,9 +5,6 @@ readonly DIVIDER="────────────────────�
 
 main() {
   do_npm_install
-  do_npm_install_old
-  do_rollup_build
-  do_events_build
   do_cfc_data_build
   do_hugo_build
 }
@@ -17,27 +14,6 @@ do_npm_install() {
   set -e
   cd "${ROOT_DIR}/hugo"
   npm install
-}
-
-do_npm_install_old() {
-  echo -e "\n${DIVIDER}\nTASK: npm install (Old/Temp while moving to AlpineJS)"
-  set -e
-  cd "${ROOT_DIR}/x-dev"
-  npm install
-}
-
-do_rollup_build() {
-  echo -e "\n${DIVIDER}\nTASK: JavaScript Build (using Rollup)"
-  set -e
-  cd "${ROOT_DIR}/x-dev"
-  npm run rollup:build-prod
-}
-
-do_events_build() {
-  echo -e "\n${DIVIDER}\nTASK: Upcoming Events Build"
-  set -e
-  python3 --version
-  python3 "${ROOT_DIR}/x-dev/netlify/events-build.py" -o "${ROOT_DIR}/hugo/assets/ext/cfc-events.js"
 }
 
 do_cfc_data_build() {
@@ -51,8 +27,8 @@ do_hugo_build() {
   echo -e "\n${DIVIDER}\nTASK: Website Build (using Hugo)"
   set -e
   cd "${ROOT_DIR}/hugo"
-  hugo version
-  hugo -d public --gc
+  npm run hugo:version
+  npm run hugo:build
 }
 
 main

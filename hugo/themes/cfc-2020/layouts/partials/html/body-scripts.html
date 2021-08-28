@@ -3,19 +3,11 @@
  <script src="{{ $cfc_data_js.RelPermalink }}"></script>
 {{- end }}
 
-{{- if isset .Params "needs_vuejs" }}
-{{- if hugo.IsProduction }}
- <script src="https://cdn.jsdelivr.net/combine/npm/vue@2.6.12,npm/vue-router@3.4.3"></script>
-{{- else }}
- <script src="https://cdn.jsdelivr.net/combine/npm/vue@2.6.12/dist/vue.js,npm/vue-router@3.4.3/dist/vue-router.js"></script>
-{{- end }}
- <script src="/built/cfc.bundle.js"></script>
-{{- end }}
-
 {{- if isset .Params "needs_anchorjs" }}
  <script src="/js/anchor.min.js"></script>
  <script>anchors.add('h1,h2,h3,h4');</script>
 {{- end }}
+
 {{- $js_opts := dict
   "format" "iife"
   "target" "es2015"
