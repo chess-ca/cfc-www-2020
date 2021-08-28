@@ -1,5 +1,5 @@
 
-import { go } from '../../utils';
+import { go, get_url_hash_values } from '../../utils';
 
 export default { pre_init };
 
@@ -8,7 +8,7 @@ const page_id = 'pg-ratings-home';
 function pre_init(page_data) {
     if (page_data.page_id !== page_id) return;
 
-    const pd = this;
+    const pd = page_data;
     pd.now_yyyy = (new Date()).getFullYear();
     pd.p_cfc = '';       // input: player cfc id
     pd.p_first = '';     // input: player first name
@@ -18,6 +18,12 @@ function pre_init(page_data) {
 
     pd.search_players = search_players;
     pd.search_tournaments = search_tournaments;
+
+    const hash = get_url_hash_values();
+    if (hash[0] === 'p') {
+        go(`/${pd.lang}/ratings/p/?id=${hash[1]}`);
+        return;
+    }
 }
 
 function search_players(el) {
@@ -30,7 +36,7 @@ function search_players(el) {
         let next = `/${pd.lang}/ratings/p/?id=${p_cfc}`;
         go(next, el);
     } else if (p_first !== '' || p_last !== '') {
-        let next = `/${pd.lang}/ratings/#/psr/${p_first || '*'}/${p_last || '*'}`;
+        let next = `/${pd.lang}/ratings/p/sr?fn=${p_first}&ln=${p_last}`;
         go(next, el);
     } else {
         pd.err.s4p = 'err_enter_criteria';
@@ -43,7 +49,7 @@ function search_tournaments(el) {
     if (t_name === '') {
         pd.err.s4t = 'err_enter_criteria';
     } else {
-        let next = `/${pd.lang}/ratings/#/tsr?name=${t_name}`;
+        let next = `/${pd.lang}/ratings/t/sr?n=${t_name}`;
         go(next, el);
     }
 }

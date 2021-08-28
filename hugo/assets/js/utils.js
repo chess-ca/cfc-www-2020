@@ -152,6 +152,20 @@ export function get_url_query_vars() {
     return qvars;
 }
 
+/**
+ * Returns values in the URL hash.
+ * - URL /path/to/page/#/v1/v2/ returns ['v1', 'v2', '']
+ * @returns {string[]}
+ */
+export function get_url_hash_values() {
+    var hvals = window.location.hash.substring(1);      // drop the "#" prefix
+    hvals = hvals.split('/');
+    if (hvals[0] === '') {
+        hvals.shift();      // drop first value if empty
+    }
+    return hvals;
+}
+
 export function css_insert_once(id, css) {
     const long_id = 'inserted-css-' + id;
     let el_style = document.getElementById(long_id);

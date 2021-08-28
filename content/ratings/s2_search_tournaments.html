@@ -1,0 +1,12 @@
+  <section class="container content pad-touch-only" x-cloak>
+   <h4 style="border-top:1px solid #759556; margin-top:2rem;">[[search_for_events]]</h4>
+   <form class="field is-grouped is-grouped-multiline" x-on:submit.prevent="search_tournaments">
+    <div class="control">
+     <label class="label is-small">[[inp_event_name]]
+      <input x-model="t_name" class="input is-small" type="text" placeholder="[[inp_event_name]]">
+     </label>
+    </div>
+   </form>
+   <p class="ws-error" x-show="err.s4t=='err_enter_criteria'">[[err_enter_criteria]]</p>
+   <button class="button is-small is-info" x-on:click="search_tournaments($el)">[[search]]</button>
+  </section>

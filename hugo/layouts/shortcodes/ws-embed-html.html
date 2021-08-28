@@ -19,10 +19,10 @@
     - Special substitutions:
       - "[[page_title]]" will be replaced by the current page's title
       - "[[page_lang]]" will be replaced by the current page's language code
-      - Keys with prefix "sitepage_":
-        - Set i18n.sitepage_mypage to page location (as required by $.Site.GetPage)
-        - "[[sitepage_mypage]]" will be replaced by that page's .RelPermalink
-        - "[[sitepage_mypage.title]]" will be replaced by that page's .Title
+      - Keys with prefix "getpage_":
+        - Set i18n.getpage_mypage to page location (as required by $.Site.GetPage)
+        - "[[getpage_mypage.link]]" will be replaced by that page's .RelPermalink
+        - "[[getpage_mypage.title]]" will be replaced by that page's .Title
 
   Hugo/Golang things to know:
     - All keys in $i18n (defined in the page's front matter) are converted
@@ -41,9 +41,9 @@
 
 {{- range $key, $val := $i18n }}
   {{- /* NOTE: Hugo converts all $key's to lowercase! */}}
-  {{- if hasPrefix $key "sitepage_" }}
+  {{- if hasPrefix $key "getpage_" }}
     {{- with ($.Site.GetPage $val) }}
-      {{- $html = replace $html (printf "[[%s]]" $key) .RelPermalink }}
+      {{- $html = replace $html (printf "[[%s.link]]" $key) .RelPermalink }}
       {{- $html = replace $html (printf "[[%s.title]]" $key) .Title }}
     {{- end }}
   {{- else }}

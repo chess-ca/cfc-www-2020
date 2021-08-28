@@ -1,0 +1,28 @@
++++
+slug = "/"
+title = "Ratings & Crosstables xxx"
+pageid = "pg-ratings-home"
+layout = "ws-single"
+
+[i18n_search_players]
+    search_intro = 'Use &ldquo;*&rdquo; as a wild card: Bob* Fis*er'
+    cfc_id = 'CFC id'
+    search_for_players = 'Search for Players'
+    inp_first = 'First name'
+    inp_last = 'Last name'
+    search = 'Search'
+    err_enter_criteria = 'Enter search criteria'
+[i18n_search_tournaments]
+    search_for_events = 'Search for Tournaments'
+    inp_event_name = 'Tournament name'
+    search = 'Search'
+    err_enter_criteria = 'Enter search criteria'
+[i18n_reports]
+    reports = 'Reports'
+    getpage_top_players = '/ratings/player/lists-top'
+    getpage_tournament_lists = '/ratings/tournament/lists'
++++
+
+{{< ws-embed-html "s1_search_players.html" "i18n_search_players" >}}
+{{< ws-embed-html "s2_search_tournaments.html" "i18n_search_tournaments" >}}
+{{< ws-embed-html "s3_reports.html" "i18n_reports" >}}

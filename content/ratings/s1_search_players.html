@@ -1,0 +1,27 @@
+  <section class="container content pad-touch-only" x-cloak>
+   <div class="notes">&mdash; [[search_intro]]</div>
+
+   <h4 style="border-top:1px solid #759556; margin-top:2rem;">[[search_for_players]]</h4>
+   <form class="field is-grouped is-grouped-multiline" x-on:submit.prevent="search_players">
+    <div class="control">
+     <label class="label is-small">[[cfc_id]]
+      <input x-model="p_cfc" class="input is-small" type="text" placeholder="[[cfc_id]]"
+          x-on:keyup.enter="search_players">
+     </label>
+    </div>
+    <div class="control">
+     <label class="label is-small">[[inp_first]]
+      <input x-model="p_first" class="input is-small" type="text" placeholder="[[inp_first]]"
+          x-on:keyup.enter="search_players">
+     </label>
+    </div>
+    <div class="control">
+     <label class="label is-small">[[inp_last]]
+      <input x-model="p_last" class="input is-small" type="text" placeholder="[[inp_last]]"
+          x-on:keyup.enter="search_players">
+     </label>
+    </div>
+   </form>
+   <p class="ws-error" x-show="err.s4p=='err_enter_criteria'">[[err_enter_criteria]]</p>
+   <button type="submit" class="button is-small is-info" x-on:click="search_players($el)">[[search]]</button>
+  </section>
