@@ -73,9 +73,10 @@ def get_events():
             continue    # Critical info missing
         if e['end'] < _yyyy_mm_dd:
             continue    # Event is in the past
-        e['links'] = _markdown(e['links'])
-        if '<a' not in e['links']:
+        if e['links'].startswith('http'):
             e['links'] = '<a href="{}">website</a>'.format(e['links'])
+        elif e['links'] != '':
+            e['links'] = _markdown(e['links'])
         match = _re_first_url.search(e['links'])
         e['url'] = match.group(1) if match else ''
 
@@ -151,6 +152,7 @@ def write_javascript(cfc_data, out_dir):
 
 def get_from_google_sheets(gsheets_url, keys):
     print('... from Google Sheet: {}'.format(gsheets_url))
+    urllib.request.urlcleanup()     # Don't use cached gsheets
     with urllib.request.urlopen(gsheets_url) as csv_fp:
         csv_bytes = csv_fp.read()
     print('... Received {} bytes'.format(len(csv_bytes)))
@@ -178,7 +180,15 @@ def _markdown(md_str):
 
 
 def _nice_dates(start, end):
-    # Converts dates to human readable English and French.
+    # ---- If text is specified in the start date:
+    parts = start.split(':')
+    if len(parts) > 1:
+        return {
+            'en': parts[1],
+            'fr': parts[2] if len(parts) > 2 else parts[1]
+        }
+
+    # ---- Date is yyyy-mm-dd; convert to human readable en & fr.
     # Note: English is "Month day"; French is "day month".
     s_m = _re_date.match(start)
     if s_m is None:
