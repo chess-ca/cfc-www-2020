@@ -13,6 +13,10 @@ import argparse, csv, io, re, json, pathlib
 import urllib.request, datetime
 from pathlib import Path
 
+ROOT_DIR = Path(__file__).parents[2]
+CFC_DATA_DEST = ROOT_DIR / 'hugo/assets/ext/cfc-data.js'
+CFC_DATA_VARNAME = 'ws_cfc_data'
+
 EVENTS_GSHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR0OdgsCSYzlRBMOMkLFTHVuIcdXNSz7XQ3KWz4jtJr5fH4wHzDv1HRP3ytG4PwqxAXdTQLjOL0srAB/pub?gid=0&single=true&output=csv'
 EVENTS_KEYS = ['//', 'type', 'name', 'start', 'end', 'city', 'prov', 'links']
 
@@ -22,11 +26,10 @@ NEWSFLASH_KEYS = ['//', 'start', 'end', 'highlight', 'en', 'fr']
 PHOTOBOX_HOME_GSHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT3ezBYFPIBc0K5CHdHWii2F1XCRScwa4f7BFTmYb7EcJPkDCmwno6URVYkGbXeKCmLA3komvyCuaYN/pub?gid=0&single=true&output=csv'
 PHOTOBOX_HOME_KEYS = ['//', 'start', 'end', 'photo_url', 'en', 'fr']
 
-CLUBS_GSHEET = ''
-CLUBS_KEYS = []
+CLUBS_GSHEET = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUP8-HdBWnut3GY4ua3zTJk66BWumnPpIjEELWQ_IE73mDRCa6w0x_nmAAOodaIoz-sREE2UKuH16G/pub?gid=0&single=true&output=csv'
+CLUBS_KEYS = ['//', 'club', 'city', 'prov', 'last_review', 'review', 'links']
+CLUBS_DEST = ROOT_DIR / 'content/clubs/list/clubs.csv'
 
-CFC_DATA_FILENAME = 'cfc-data.js'
-CFC_DATA_VARNAME = 'ws_cfc_data'
 
 _yyyy_mm_dd = datetime.datetime.now().strftime('%Y-%m-%d')
 _re_date = re.compile(r'\s*(\d{4})-([01]\d)-([0123]\d)\s*')
@@ -38,27 +41,25 @@ _months = {     # Maps month number to English & French abbreviation
     '07': ['July', 'juil'], '08': ['Aug', 'aout'], '09': ['Sept', 'sept'],
     '10': ['Oct', 'oct'],   '11': ['Nov', 'nov'],  '12': ['Dec', 'déc'],
 }
+_provs = {
+    'CANADA': 'Canada',
+    'AB': 'Alberta', 'BC': 'British Columbia', 'MB': 'Manitoba', 'NB': 'New Brunswick',
+    'NL': 'Newfoundland', 'NS': 'Nova Scotia', 'NT': 'North West Territories',
+    'NU': 'Nunavut', 'ON': 'Ontario', 'PE': 'Prince Edward Island', 'QC': 'Quebec',
+    'SK': 'Saskatchewan', 'YT': 'Yukon',
+}
 
 
 def main():
-    out_dir = get_output_directory()
     cfc_data = {
         'newsflashes': get_news_flashes(),
         'photobox_home': get_photobox_home(),
         'events': get_events(),
-        'clubs': get_clubs(),
     }
-    write_javascript(cfc_data, out_dir)
+    write_javascript(cfc_data, CFC_DATA_DEST)
+    clubs_data = get_clubs()
+    write_csv(clubs_data, CLUBS_DEST)
     exit(0)
-
-def get_output_directory():
-    ap = argparse.ArgumentParser(
-        description='CFC Data: get from Google Sheets and convert to Javascript.')
-    ap.add_argument('-o', '--out', type=str, required=True,
-        help='Output file that will contain the event data as Javascript code.')
-    args = ap.parse_args()
-    out_dir = Path(args.out)
-    return out_dir
 
 
 def get_events():
@@ -134,20 +135,50 @@ def get_photobox_home():
     return filtered
 
 
-def get_clubs():
-    return []
-
-
-def write_javascript(cfc_data, out_dir):
+def write_javascript(cfc_data, js_file):
     js = ['\nwindow.{} = '.format(CFC_DATA_VARNAME)]
     js.append(json.dumps(cfc_data, indent='\t'))
     js.append(';\n')
 
-    js_file = out_dir / CFC_DATA_FILENAME
     js_file.parent.mkdir(parents=True, exist_ok=True)
-    with open(str(js_file), 'w') as js_fp:
+    with open(str(js_file), 'wt', encoding='utf-8') as js_fp:
         js_fp.write(''.join(js))
     print('... Javascript created: {}'.format(js_file))
+
+
+def get_clubs():
+    print('Getting CLUBS data ...')
+    clubs_gsheet = get_from_google_sheets(CLUBS_GSHEET, CLUBS_KEYS)
+    clubs = []
+    for c in clubs_gsheet:
+        if c['//'] != '':
+            continue    # It's a comment line!
+        c['prov'] = c['prov'].strip().upper()
+        location = '' if c['prov'] == 'CANADA' \
+            else c['prov'] if c['city'] == '' \
+            else '{}, {}'.format(c['city'], c['prov'])
+        if c['links'].lower().startswith('http'):
+            c['links'] = '[web]({})'.format(c['links'])
+        clubs.append([c['prov'], location, c['club'], c['links']])
+
+    clubs = sorted(clubs, key=lambda c: ('AA' if c[0]=='CANADA' else c[0], c[1]))
+    sectioned = []
+    previous_section = None
+    for c in clubs:
+        if c[0] != previous_section:
+            sectioned.append(['--section--', _provs.get(c[0], c[0]), ''])
+            previous_section = c[0]
+        sectioned.append(c[1:])     # drop c[0]; only needed for sorting
+    return sectioned
+
+
+def write_csv(csv_data, csv_file):
+    with open(str(csv_file), 'wt', encoding='utf-8') as csv_fp:
+        for row in csv_data:
+            cols = [c.replace('"', '""') for c in row]
+            out = '"{}"\n'.format('","'.join(cols))
+            csv_fp.write(out)
+    print('... CSV created: {}'.format(csv_file))
 
 
 def get_from_google_sheets(gsheets_url, keys):

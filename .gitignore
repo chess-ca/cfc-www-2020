@@ -3,6 +3,7 @@
 built/
 built.*
 hugo/assets/ext
+clubs.csv
 
 #---- Hugo
 hugo/public/

@@ -20,7 +20,7 @@ do_cfc_data_build() {
   echo -e "\n${DIVIDER}\nTASK: CFC Data Build from Google Sheets"
   set -e
   python3 --version
-  python3 "${ROOT_DIR}/x-dev/netlify/deploy-cfc-data-gsheets.py" -o "${ROOT_DIR}/hugo/assets/ext"
+  python3 "${ROOT_DIR}/x-dev/netlify/deploy-data.py"
 }
 
 do_hugo_build() {
