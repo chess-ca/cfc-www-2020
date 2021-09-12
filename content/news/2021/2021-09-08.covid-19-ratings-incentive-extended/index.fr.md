@@ -1,18 +1,19 @@
 +++
-title = "Incitation à l'évaluation COVID-19 prolongée"
+title = "L'incitation à la notation COVID-19 est à nouveau prolongée"
 slug = "covid-19-ratings-incentive-extended"
-author = "Paul Leblanc, CFC/FCE Ratings Auditor"
+author = "Tony Li, CFC/FCE Ratings Auditor"
 +++
 
-&#9654; 2021-09-08: Voir [mise à jour](/fr/news/2021/09/08/covid-19-ratings-incentive-extended/).
+Les incitations à la notation ont été prolongées (à nouveau) jusqu'au 1er janvier 2022.
+La politique mise à jour est la suivante :
 
 **Extension - Jeux classés par Internet et incitation à la classification COVID-19**
 
-Le FCE s'étend jusqu'au 1er octobre 2021
+Le FCE s'étend jusqu'au **1er janvier 2022**
 la politique provisoire d'accepter les événements Internet pour Quick (Active).
 
-L'incitatif de notation COVID-19 sera également prolongé jusqu'au 1er octobre 2021.
-Joueurs qui jouent au moins 10 parties classées FCE entre le 1er octobre 2020 et le 1er octobre 2021
+L'incitatif de notation COVID-19 sera également prolongé jusqu'au **1er janvier 2022**.
+Joueurs qui jouent au moins 10 parties classées FCE entre le 1er octobre 2020 et le **1er janvier 2022**
 et qui atteignent une note rapide de 200 points supérieure à leur note régulière
 verra sa cote régulière augmentée de 200 points.
 
