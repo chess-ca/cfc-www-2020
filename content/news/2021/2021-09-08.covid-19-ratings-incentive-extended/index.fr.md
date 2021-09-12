@@ -4,7 +4,8 @@ slug = "covid-19-ratings-incentive-extended"
 author = "Tony Li, CFC/FCE Ratings Auditor"
 +++
 
-Les incitations à la notation ont été prolongées (à nouveau) jusqu'au 1er janvier 2022.
+Les incitations à la notation ont (à nouveau) été prolongées jusqu'au 1er janvier 2022
+et à quatre bonus pour moins de 1200 joueurs.
 La politique mise à jour est la suivante :
 
 **Extension - Jeux classés par Internet et incitation à la classification COVID-19**
@@ -22,7 +23,7 @@ Le temps total est calculé sur la base d'une partie de 60 coups.
 Par exemple, 15 minutes par joueur plus un incrément de 10 secondes équivaut à 25 minutes par joueur.
 
 L'incitatif de notation COVID-19 ne peut être gagné qu'une seule fois dans la vie d'un joueur lorsque le pré-bonus
-le classement dépasse 1200. Les joueurs dont le classement est inférieur à 1200 sont éligibles pour jusqu'à trois
+le classement dépasse 1200. Les joueurs dont le classement est inférieur à 1200 sont éligibles pour jusqu'à __quatre__
 bonus au cours de leur vie jusqu'à un maximum de 1400. Seuls les membres FCE libérés sont
 éligible à cet incitatif.
 

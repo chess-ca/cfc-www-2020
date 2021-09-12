@@ -4,7 +4,8 @@ slug = "covid-19-ratings-incentive-extended"
 author = "Tony Li, CFC Ratings Auditor"
 +++
 
-The ratings incentives have been extended (again) to January 1, 2022.
+The ratings incentives have been extended (again) to January 1, 2022
+and to four bonuses for under 1200 players.
 The updated policy is as follows:
 
 **Extension - Internet Rated Games and COVID-19 Rating Incentive**
@@ -22,7 +23,7 @@ The total time is calculated based on a 60-move game.
 For example, 15 minutes per player plus a 10 second increment is 25 minutes per player.
 
 The COVID-19 rating incentive can only be earned once in a player's lifetime where pre-bonus
-rating exceeds 1200. Players with ratings under 1200 are eligible for up to three 200-point
+rating exceeds 1200. Players with ratings under 1200 are eligible for up to __four__ 200-point
 bonuses in their lifetime up to a maximum rating of 1400. Only paid-up CFC members are
 eligible for this incentive.
 
