@@ -1,46 +1,45 @@
 +++
-title = "Rating Fees"
+title = "Frais de cote"
 layout = "ws-single"
 tableofcontents = false
 +++
 
-## CFC Rating Fees
+## Frais de cote FCE
+
+Tournois réguliers
+* 3,00$/joueur si les résultats sont soumis au format de fichier FCE (fichiers .ctr et .tms)
+  <br>5,00$/joueur sinon.
+
+Tournois rapides
+* 1,50$/joueur si les résultats sont soumis au format de fichier FCE (fichiers .ctr et .tms)
+  <br>3,50$/joueur sinon.
+
+Tournois juniors (Regular ou Quick)
+* Si tous les joueurs sont des juniors, les frais d'adhésion au FCE ne sont pas requis.
+* 0,50$/joueur si les résultats sont soumis au format de fichier FCE (fichiers .ctr et .tms)
+  <br>2,50$/joueur sinon.
+
+Impôts
+* Depuis le 1er juillet 2011, les taxes HST/GST sont applicables sur les frais de cote FCE.
+* Par exemple - pour les événements à 3$: NB, ON, NL - 3,39$; PEI - 3,42$; NS - 3,45$; Tous les autres - 3,15$  
  
-Regular tournaments
-* $3/player if results are submitted in CFC's file format (.ctr and .tms files) 
-  <br>$5/player otherwise.
+## Frais de cote FIDE
 
-Quick tournaments
-* $1.50/player if results are submitted in CFC's file format (.ctr and .tms files) 
-  <br>$3.50/player otherwise.
+Notification et rapport
+* _Avant le tournoi_, l'organisateur doit aviser le bureau du FCE
+  que l'événement devrait être classé par la FIDE.
+* L'organisateur doit rapporter les résultats du tournoi rapidement.
+* Ne pas le faire entraînera des frais supplémentaires de 100$.
 
-Junior tournaments (Regular or Quick)
-* If all players are juniors, CFC membership dues are not required.
-* $0.50/player if results are submitted in CFC's file format (.ctr and .tms files) 
-  <br>$2.50/player otherwise.
+Round Robin & matchs
+* 100$ si la note moyenne est U2300
+  <br>200$ si la note moyenne est de 2300-2399
+  <br>300$ si la note moyenne est de 2400-2499
+  <br>400$ si la note moyenne est de 2500-2599
+  <br>600$ si la note moyenne est de 2600+
 
-Taxes
-* As of July 1, 2011 HST/GST taxes are applicable on CFC rating fees
-* For example - for $3 events: NB, ON, NL - $3.39 ; PEI - $3.42; NS - $3.45; All others - $3.15
-  
- 
-## FIDE Rating Fees
+Tournois Swiss System et Team:
+* 2,20$ par joueur
 
-Notification and Reporting
-* The organizer must notify the CFC Office _before the tournament_
-  that the event will be FIDE rated.
-* The organizer must report the tournament results quickly.
-* Failure to do so will result in an additional fee of $100.
-
-Round Robin & matches
-* $100 if average rating is U2300 
-  <br>$200 if average rating is 2300-2399 
-  <br>$300 if average rating is 2400-2499
-  <br>$400 if average rating is 2500-2599
-  <br>$600 if average rating is 2600+ 
- 
-Swiss System and Team tournaments:
-* $ 2.20 per player
- 
-Taxes
-* As of July 1, 2011 HST/GST taxes are applicable on FIDE rating fees
+Impôts
+* Depuis le 1er juillet 2011, les taxes HST/GST sont applicables sur les frais de cote FCE.

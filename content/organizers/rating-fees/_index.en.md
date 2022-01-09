@@ -7,8 +7,8 @@ tableofcontents = false
 ## CFC Rating Fees
  
 Regular tournaments
-* $3/player if results are submitted in CFC's file format (.ctr and .tms files) 
-  <br>$5/player otherwise.
+* $3.00/player if results are submitted in CFC's file format (.ctr and .tms files) 
+  <br>$5.00/player otherwise.
 
 Quick tournaments
 * $1.50/player if results are submitted in CFC's file format (.ctr and .tms files) 
@@ -27,8 +27,8 @@ Taxes
 ## FIDE Rating Fees
 
 Notification and Reporting
-* The organizer must notify the CFC Office _before the tournament_
-  that the event will be FIDE rated.
+* _Before the tournament_, the organizer must notify the CFC Office 
+  that the event should be FIDE rated.
 * The organizer must report the tournament results quickly.
 * Failure to do so will result in an additional fee of $100.
 
@@ -40,7 +40,7 @@ Round Robin & matches
   <br>$600 if average rating is 2600+ 
  
 Swiss System and Team tournaments:
-* $ 2.20 per player
+* $2.20 per player
  
 Taxes
 * As of July 1, 2011 HST/GST taxes are applicable on FIDE rating fees
