@@ -4,8 +4,7 @@ slug = "covid-19-ratings-incentive-extended"
 author = "Tony Li, CFC Ratings Auditor"
 +++
 
-The ratings incentives have been extended (again) to April 1, 2022
-and to four bonuses for under 1200 players.
+The ratings incentives have been extended (again) to April 1, 2022.
 The updated policy is as follows:
 
 **Extension - Internet Rated Games and COVID-19 Rating Incentive**

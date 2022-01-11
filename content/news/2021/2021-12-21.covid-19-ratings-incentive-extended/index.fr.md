@@ -4,8 +4,7 @@ slug = "covid-19-ratings-incentive-extended"
 author = "Tony Li, CFC/FCE Ratings Auditor"
 +++
 
-Les incitations à la notation ont (à nouveau) été prolongées jusqu'au 1er avril 2022
-et à quatre bonus pour moins de 1200 joueurs.
+Les incitations à la notation ont (à nouveau) été prolongées jusqu'au 1er avril 2022.
 La politique mise à jour est la suivante :
 
 **Extension - Jeux classés par Internet et incitation à la classification COVID-19**
