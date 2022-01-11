@@ -1,5 +1,5 @@
 +++
-title = "COVID-19 Rating Incentive Extended"
+title = "COVID-19 Rating Incentive Extended To Oct 1"
 slug = "covid-19-ratings-incentive-extended"
 author = "Paul Leblanc, CFC Ratings Auditor"
 +++

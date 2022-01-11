@@ -1,5 +1,5 @@
 +++
-title = "L'incitation à la notation COVID-19 est à nouveau prolongée"
+title = "Incitation à l'évaluation COVID-19 prolongée jusqu'au 1er janvier"
 slug = "covid-19-ratings-incentive-extended"
 author = "Tony Li, CFC/FCE Ratings Auditor"
 +++

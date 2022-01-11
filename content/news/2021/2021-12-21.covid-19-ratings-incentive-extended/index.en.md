@@ -1,20 +1,20 @@
 +++
-title = "COVID-19 Rating Incentive Extended To Jan 1"
+title = "COVID-19 Rating Incentive Extended To April 1"
 slug = "covid-19-ratings-incentive-extended"
 author = "Tony Li, CFC Ratings Auditor"
 +++
 
-The ratings incentives have been extended (again) to January 1, 2022
+The ratings incentives have been extended (again) to April 1, 2022
 and to four bonuses for under 1200 players.
 The updated policy is as follows:
 
 **Extension - Internet Rated Games and COVID-19 Rating Incentive**
 
-The CFC is extending to **January 1, 2022**
+The CFC is extending to **April 1, 2022**
 the interim policy to accept internet events for Quick (Active).
 
-The COVID-19 rating incentive will also be extended until **January 1, 2022**.
-Players who play a minimum of 10 CFC rated games between October 1st, 2020 and **January 1, 2022**
+The COVID-19 rating incentive will also be extended until **April 1, 2022**.
+Players who play a minimum of 10 CFC rated games between October 1st, 2020 and **April 1, 2022**
 and who attain a Quick rating that is 200 points higher than their Regular rating
 will have their Regular rating increased by 200 points.
 
