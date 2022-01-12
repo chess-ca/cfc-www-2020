@@ -1,7 +1,7 @@
 +++
 title = "CFC NFP Continuance (2014)"
 layout = "ws-single"
-needs_anchorjs = 1
+include_js = "anchorjs"
 +++
 
 {{< ws-note >}}

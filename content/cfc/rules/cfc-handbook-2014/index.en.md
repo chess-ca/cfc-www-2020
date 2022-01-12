@@ -1,7 +1,7 @@
 +++
 title = "CFC Handbook (to 2014)"
 layout = "ws-single"
-needs_anchorjs = 1
+include_js = "anchorjs"
 content_todo = "fix many links."
 +++
 

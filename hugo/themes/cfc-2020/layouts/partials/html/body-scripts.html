@@ -1,17 +1,26 @@
-{{- if isset .Params "needs_cfc_data" }}
-{{- $cfc_data_js := resources.Get "ext/cfc-data.js" | resources.Fingerprint }}
- <script src="{{ $cfc_data_js.RelPermalink }}"></script>
-{{- end }}
+{{- if isset .Params "include_js" }}
+  {{- range (split (.Params.include_js) ",") }}
+    {{- $js := trim . " " }}
 
-{{- if isset .Params "needs_anchorjs" }}
+    {{- if eq $js "cfc-data" }}
+      {{- $cfc_data_js := resources.Get "ext/cfc-data.js" | resources.Fingerprint }}
+ <script src="{{ $cfc_data_js.RelPermalink }}"></script>
+    {{- end }}
+
+    {{- if eq $js "anchorjs" }}
  <script src="/js/anchor.min.js"></script>
  <script>anchors.add('h1,h2,h3,h4');</script>
+    {{- end }}
+
+    {{- if eq $js "ratings" }}
+      {{- $js_opts := dict "format" "iife" "target" "es2015" "minify" hugo.IsProduction }}
+      {{- $ratings_js := resources.Get "built/ratings.js" | js.Build $js_opts | resources.Fingerprint }}
+ <script src="{{ $ratings_js.RelPermalink }}"></script>
+    {{- end }}
+
+  {{- end }}
 {{- end }}
 
-{{- $js_opts := dict
-  "format" "iife"
-  "target" "es2015"
-  "minify" hugo.IsProduction
-}}
+{{- $js_opts := dict "format" "iife" "target" "es2015" "minify" hugo.IsProduction }}
 {{- $cfc_2020_js := resources.Get "js/cfc-2020.js" | js.Build $js_opts | resources.Fingerprint }}
  <script src="{{ $cfc_2020_js.RelPermalink }}"></script>

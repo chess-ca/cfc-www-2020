@@ -2,7 +2,7 @@
 title = "évènements à venir"
 date = "2020-07-11"
 pageid = "pg-events-list"
-needs_cfc_data = 1
+include_js = "cfc-data"
 
 [i18n]
     AddEvent = "Ajouter un évènement"
