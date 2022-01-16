@@ -2,7 +2,7 @@
 {{- $lang := $.Page.Language.Lang }}
 {{- $i18n := $.Page.Params.i18n }}
 {{- $list_blogs := first 20 (where .Site.RegularPages "Section" "blog") }}
- <main id="ws-home" class="container content pad-touch-only">
+ <main id="ws-home" aria-label="Main" class="container content pad-touch-only">
   <div class="columns is-8">
 
    <!-- LEFT MAIN COLUMN -->

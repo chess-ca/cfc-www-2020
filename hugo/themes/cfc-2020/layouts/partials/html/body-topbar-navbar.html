@@ -1,5 +1,5 @@
   <nav class="level is-hidden-mobile hide-if-print" role="navigation" aria-label="main navigation">
-   <div class="level-left">
+   <div role="navigation" aria-label="Main" class="level-left">
 {{- range .Site.Menus.main }}
     <a class="level-item menu-item" href="{{ .URL | relURL }}">{{ .Name }}</a>
 {{- end }}
