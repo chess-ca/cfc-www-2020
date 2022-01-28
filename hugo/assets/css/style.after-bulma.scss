@@ -1,6 +1,7 @@
 //----------------------------------------------------------------------
 // style.after-bulma.scss
 //----------------------------------------------------------------------
+[sveltejs] { display: none !important; }
 [x-cloak] { display: none !important; }
 .debug { border: 1px solid #f00; }
 .debug-bg { background-color: #fcc; }
@@ -123,7 +124,18 @@ html {
   tbody tr td { font-size:0.875rem; cursor: pointer; }
 }
 
-.ws-ratings-tdlist {
+.ws-table {
+  min-width:700px;
+  thead tr th { vertical-align:bottom; text-align:center; font-size:0.8rem;
+    &.td-l { text-align: left; } &.td-c { text-align: center; } &.td-r { text-align: right; }
+  }
+  tbody tr td { font-size:0.8rem;
+    &.td-l { text-align: left; } &.td-c { text-align: center; } &.td-r { text-align: right; }
+  }
+  .tr-hilight-1 {}
+}
+
+.ws-ratings-tdlist {  //TODO: remove when migrated
   min-width:700px;
   thead tr th { vertical-align:bottom; text-align:center; font-size:0.8rem;
     &.ta-left { text-align: left; }

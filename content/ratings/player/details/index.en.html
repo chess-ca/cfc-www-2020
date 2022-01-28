@@ -1,40 +1,7 @@
 +++
 slug = "../p/"
 title = "Player"
-pageid = "pg-player-details"
-
-[i18n_player]
-    name = 'Name'
-    city = 'City'
-    cfc_id = 'CFC id'
-    cfc_expiry = 'CFC Expiry'
-    regular_rating = 'Regular<br>Rating'
-    regular_high = 'Regular<br>High'
-    quick_rating = 'Quick<br>Rating'
-    quick_high = 'Quick<br>High'
-    provisional_notes = '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.'
-    games = 'g'
-    not_found = 'not found'
-    none_found = 'none found'
-[i18n_tournament_list]
-    filter_by_type = 'Filter by type'
-    all_types = 'All Tournaments'
-    only_regular = 'Only regular tournaments'
-    only_quick = 'Only quick tournaments'
-    event = 'Event'
-    end_date = 'End Date'
-    type = 'Type'
-    games_played = 'Games<br>Played'
-    score = 'Score'
-    rating_pre = 'Old<br>Rating'
-    rating_perf = 'Perf<br>Rating'
-    rating_post = 'New<br>Rating'
-    rating_high = 'Highest<br>Rating'
-    provisional_notes = '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.'
-    games = 'g'
-    none_found = 'none found'
+include_js = "ratings"
 +++
 
-{{< ws-embed-html "s1_top.html" >}}
-{{< ws-embed-html "s2_player.html" "i18n_player" >}}
-{{< ws-embed-html "s3_tournament_list.html" "i18n_tournament_list" >}}
+  <ratings-player-details sveltejs></ratings-player-details>

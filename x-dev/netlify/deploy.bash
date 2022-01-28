@@ -6,6 +6,7 @@ readonly DIVIDER="────────────────────�
 main() {
   do_npm_install
   do_cfc_data_build
+  do_sveltejs_build
   do_hugo_build
 }
 
@@ -14,6 +15,13 @@ do_npm_install() {
   set -e
   cd "${ROOT_DIR}/hugo"
   npm install
+}
+
+do_sveltejs_build() {
+  echo -e "\n${DIVIDER}\nTASK: npm run rollup:build-prod"
+  set -e
+  cd "${ROOT_DIR}/hugo"
+  npm run rollup:build-prod
 }
 
 do_cfc_data_build() {

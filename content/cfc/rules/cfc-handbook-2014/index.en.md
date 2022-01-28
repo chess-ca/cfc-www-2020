@@ -2854,6 +2854,8 @@ Annual Meetings are normally held in conjunction with the Canadian Open.
 
 # SECTION 7 - Canadian Youth and Junior Chess Championships
 
+## Canadian Youth Chess Championship
+
 **700. Canadian Youth Chess Championship:**
 The holding of the Canadian Youth Chess Championship (CYCC) which consists of the following twelve events:
 
@@ -3092,6 +3094,8 @@ All participants in the CYCC must possess a valid CFC membership.
 **716. Authority of the Board of Directors:**
 The CFC Board of Directors shall rule on any situation not covered by these regulations
 and shall have the authority to rule on any matter which is in dispute.
+
+## Canadian Junior Chess Championship
 
 **Rules of Procedure for The Canadian Junior Championship Tournament**
 
