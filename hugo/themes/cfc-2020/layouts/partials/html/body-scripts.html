@@ -13,7 +13,9 @@
     {{- end }}
 
     {{- if eq $js "ratings" }}
-      {{- $js_opts := dict "format" "iife" "target" "es2015" "minify" hugo.IsProduction }}
+      {{- $js_opts := dict "format" "iife" "target" "es2015" "minify" true }}{{/*  hugo.IsProduction */}}
+      {{- $i18n_js := resources.Get (printf "i18n/i18n.%s.js" $.Page.Language.Lang) | js.Build $js_opts | resources.Fingerprint }}
+ <script src="{{ $i18n_js.RelPermalink }}"></script>
       {{- $ratings_js := resources.Get "built/ratings.js" | js.Build $js_opts | resources.Fingerprint }}
  <script src="{{ $ratings_js.RelPermalink }}"></script>
     {{- end }}

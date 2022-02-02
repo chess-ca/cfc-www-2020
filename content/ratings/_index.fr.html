@@ -2,26 +2,7 @@
 title = "Cotes et tableaux croisés"
 pageid = "pg-ratings-home"
 layout = "single"
-
-[i18n_search_players]
-    search_intro = 'Utilisez &ldquo;*&rdquo; comme joker: Bob* Fis*er'
-    cfc_id = 'FCE id'
-    search_for_players = 'Recherchez des joueurs'
-    inp_first = 'Prénom'
-    inp_last = 'Nom de famille'
-    search = 'Chercher'
-    err_enter_criteria = 'Entrez les critères de recherche'
-[i18n_search_tournaments]
-    search_for_events = 'Rechercher des tournois'
-    inp_event_name = 'Nom du tournoi'
-    search = 'Chercher'
-    err_enter_criteria = 'Entrez les critères de recherche'
-[i18n_reports]
-    reports = 'Rapports'
-    getpage_top_players = '/ratings/player/lists-top'
-    getpage_tournament_lists = '/ratings/tournament/lists'
+include_js = "ratings"
 +++
 
-{{< ws-embed-html "s1_search_players.html" "i18n_search_players" >}}
-{{< ws-embed-html "s2_search_tournaments.html" "i18n_search_tournaments" >}}
-{{< ws-embed-html "s3_reports.html" "i18n_reports" >}}
+  <ratings-home sveltejs></ratings-home>

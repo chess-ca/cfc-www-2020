@@ -199,7 +199,7 @@
 <script>
     import Spinner from '../misc/Spinner.svelte';
     import {get_lang, goto, get_url_query_vars} from '../shared';
-    import {call_api_promise, get_translator_map} from '../shared';
+    import {call_api_promise} from '../shared';
 
     const page_lang = get_lang();
     let updated = '';
@@ -209,6 +209,7 @@
     let events_orgarb = [];
     let pg_view = 'played';
     let filter_type = '';
+    const i18n = window.App_i18n.ratings_player_details;    // See: hugo/assets/i18n/i18n.<lang>.js
 
     export function goto_event_handler(event) {
         const el_top = event.current;
@@ -257,56 +258,6 @@
         }
         function onError(event) {}
     }
-
-    const i18_map = {
-        event: ['Event','Événement'],
-        end_date: ['End Date','Date de fin'],
-        none_found: ['none found', 'personne n\'est trouve'],
-        provisional_notes: [
-            '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.',
-            '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés.'],
-
-        //---- Player Details
-        name: ['Name', 'Nom'],
-        city: ['City', 'Ville'],
-        cfc_id: ['CFC<br>Id', 'FCE<br>Id'],
-        cfc_expiry: ['CFC<br>Expiry', 'Expiration<br>du FCE'],
-        regular_rating: ['Regular<br>Rating', 'Cote<br>Régulière'],
-        regular_high: ['Regular<br>High', 'Régulier<br>élevé'],
-        quick_rating: ['Quick<br>Rating', 'Cote<br>Rapide'],
-        quick_high: ['Quick<br>High', 'Rapide<br>élevé'],
-        not_found: ['not found', 'pas trouvé'],
-
-        //---- Tabs
-        thankyou: ['is a chess organizer / arbiter. Thank you.', 'est un organisateur / arbitre d\'échecs. Merci.'],
-        thankyou_1: ['Thank you', 'Merci'],
-        thankyou_2: ['for being a chess organizer / arbiter', 'd\'être un organisateur / arbitre d\'échecs'],
-        player: ['Player', 'Joueur'],
-        org_arb: ['Organizer / Arbiter', 'Organisateur / Arbitre'],
-
-        // Player's Tournaments List
-        filter_by_type: ['Filter by type', 'Filtrer par type'],
-        all_types: ['All Tournaments', 'Tous les tournois'],
-        only_regular: ['Only regular tournaments', 'Seuls les tournois réguliers'],
-        only_quick: ['Only quick tournaments', 'Seuls les tournois rapides'],
-        type: ['Type', 'Type'],
-        games_played: ['Games<br>Played', 'Jeux<br>joués'],
-        score: ['Score', 'Score'],
-        rating_pre: ['Old<br>Rating', 'Ancien<br>Cote'],
-        rating_perf: ['Perf<br>Rating', 'Perf<br>Cote'],
-        rating_post: ['New<br>Rating', 'Nouvelle<br>Cote'],
-        rating_high: ['Highest<br>Rating', 'plus élevée<br>Cote'],
-        games: ['g', 'j'],
-
-        // Organizer / Arbiter List
-        province: ['Prov','='],
-        n_rounds: ['# of<br>Rounds','# de<br>tours'],
-        pairings: ['Type','='],
-        n_players: ['# of<br>Players','# de<br>joueurs'],
-        organizer: ['Organizer','Organisateur'],
-        arbiter: ['Arbiter','Arbitre']
-    };
-    const i18n = get_translator_map(page_lang === 'fr' ? 1 : 0, i18_map);
 </script>
 
 <style>

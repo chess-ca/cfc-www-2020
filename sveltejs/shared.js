@@ -229,30 +229,6 @@ export function get_url_hash_values() {
 }
 
 /**
- * Return a map of keys to i18n translated text an indicated language.
- * @param lang_index - index of required language: page_lang==='fr' ? 1 : 0
- * @param all_langs_map - { key_1: ['English text', 'French text'], key_2: ['More', '='], ...}
- * @return {map} - can be used in SvelteJS HTML as {i18n.key_1}
- */
-export function get_translator_map(lang_index, all_langs_map) {
-    // text_map = {'key': ['text for lang 0', 'text for lang 1']}
-    const lang_map = {}
-    for (const key in all_langs_map) {
-        if (all_langs_map.hasOwnProperty(key)) {
-            const text_list = all_langs_map[key];
-            if (lang_index >= text_list.length) {
-                console.error(`i18n translator: key "${key}" is missing text for index ${lang_index}.`);
-                // leave it "undefined" (can find it the same way as for invalid keys).
-            } else {
-                let text = text_list[lang_index];
-                lang_map[key] = (text === '=') ? text_list[0] : text;
-            }
-        }
-    }
-    return lang_map;
-}
-
-/**
  * Go to a web page (with some handy conveniences)
  * @param url - URL of the next web page.
  *      "[[lang]]" will be replaced by the value of &lt;html lang="en">.
@@ -298,4 +274,4 @@ export function str_fmt(format) {
     return format.replace(/{(\d+)}/g, function(match, i) {
         return typeof args[i] === 'undefined' ? match : args[i];
     });
-};
+}
