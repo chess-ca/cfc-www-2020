@@ -23,6 +23,6 @@
   {{- end }}
 {{- end }}
 
-{{- $js_opts := dict "format" "iife" "target" "es2015" "minify" hugo.IsProduction }}
+{{- $js_opts := dict "format" "iife" "target" "es2017" "minify" hugo.IsProduction }}
 {{- $cfc_2020_js := resources.Get "js/cfc-2020.js" | js.Build $js_opts | resources.Fingerprint }}
  <script src="{{ $cfc_2020_js.RelPermalink }}"></script>
