@@ -1,22 +1,17 @@
 
-<nav class="container content pad-touch-only mb-2">
- <div role="navigation" class="hide-if-print">
-  <button aria-label="Page Back" class="button is-info is-small" on:click={()=>goto('<<<')}><i class="fas fa-arrow-left"></i></button>
-  <button aria-label="Page Forward" class="button is-info is-small" on:click={()=>goto('>>>')}><i class="fas fa-arrow-right"></i></button>
-  <button aria-label="Search" class="button is-info is-small" on:click={()=>goto('/[[lang]]/ratings/')}><i class="fas fa-search"></i></button>
-  <div class="is-pulled-right">Data: {updated}</div>
- </div>
-</nav>
+<TopNav updated={updated}/>
 
 <div>
 {#await getDataPromise()}
- <Spinner/>
+ <div style="margin-top:4rem;"><Spinner/></div>
 
 {:then getDataResult}
- {#if ! p.name_last}
+ {#if !p.name_last}
   <!-- ---- ---- Player Not Found ---- ---- -->
   <section class="container pad-touch-only">
-   <p>"{p.cfc_id}" {@html i18n.not_found}.</p>
+   <p style="margin-top:3rem;">
+    CFC/FCE id &ldquo;<span style="font-weight: bold;">{requested_cfc_id}</span>&rdquo; {@html i18n.not_found}.
+   </p>
   </section>
  {:else}
   <!-- ---- ---- Player Details ---- ---- -->
@@ -39,13 +34,13 @@
      <tbody>
       <tr class="ws-bg-highlight">
        <td>{p.name_last}, {p.name_first}</td>
-       <td>{p.addr_city}, {p.addr_province}</td>
+       <td>{fmt_city_prov(p.addr_city, p.addr_province)}</td>
        <td class="td-c">{p.cfc_id}</td>
-       <td class="td-c">{@html cfc_expiry()}</td>
-       <td class="td-c">{@html rating(p.regular_rating, p.regular_indicator)}</td>
-       <td class="td-c">{@html rating_indicator(p.regular_indicator)}</td>
-       <td class="td-c">{@html rating(p.quick_rating, p.quick_indicator)}</td>
-       <td class="td-c">{@html rating_indicator(p.quick_indicator)}</td>
+       <td class="td-c">{@html fmt_cfc_expiry(p.cfc_expiry)}</td>
+       <td class="td-c">{@html fmt_rating(p.regular_rating, p.regular_indicator)}</td>
+       <td class="td-c">{@html fmt_rating_indicator(p.regular_indicator, i18n.games)}</td>
+       <td class="td-c">{@html fmt_rating(p.quick_rating, p.quick_indicator)}</td>
+       <td class="td-c">{@html fmt_rating_indicator(p.quick_indicator, i18n.games)}</td>
        <td class="td-c">
         {#if p.fide_id}<a href="https://ratings.fide.com/profile/{p.fide_id}" target="_blank">{p.fide_id}</a>{/if}
        </td>
@@ -119,7 +114,7 @@
        <th class="td-c"><span class="has-text-primary">{@html i18n.rating_high}</span></th>
       </tr>
      </thead>
-     <tbody on:click={goto_event_handler}
+     <tbody on:click={goto_handler}
          class:only-type-R={filter_type==='R'} class:only-type-Q={filter_type==='Q'}>
       {#each events_played as t (t.id)}
        <tr data-goto="/[[lang]]/ratings/t/?id={t.id}&p={p.cfc_id}"
@@ -132,8 +127,8 @@
         <td class="td-c">{t.score}</td>
         <td class="td-c">{t.rating_pre}</td>
         <td class="td-c">{t.rating_perf}</td>
-        <td class="td-c">{@html rating(t.rating_post, t.rating_indicator)}</td>
-        <td class="td-c has-text-primary">{@html rating_indicator(t.rating_indicator)}</td>
+        <td class="td-c">{@html fmt_rating(t.rating_post, t.rating_indicator)}</td>
+        <td class="td-c has-text-primary">{@html fmt_rating_indicator(t.rating_indicator, i18n.games)}</td>
        </tr>
       {:else}
        <tr><td></td><td colspan="99">({i18n.none_found})</td></tr>
@@ -164,7 +159,7 @@
        <th class="td-c">{@html i18n.n_players}</th>
       </tr>
      </thead>
-     <tbody on:click={goto_event_handler}>
+     <tbody on:click={goto_handler}>
       {#each events_orgarb as t, i (t.id)}
        <tr data-goto="/[[lang]]/ratings/t/?id={t.id}" class="is-clickable">
         <td><div class="ws-link size-18"></div></td>
@@ -191,70 +186,51 @@
  {/if}
 
 {:catch getDataErr}
- <!-- TODO: try this -->
- <p>Error: {getDataErr.message}</p>
+ <section class="container pad-touch-only">
+  <p style="margin-top:3rem;"> <!-- TODO: try this -->
+   Error: {getDataErr.message}
+  </p>
+ </section>
 {/await}
 </div>
 
 <script>
+    import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
-    import {get_lang, goto, get_url_query_vars} from '../shared';
-    import {call_api_promise} from '../shared';
+    import {fmt_city_prov, fmt_cfc_expiry, fmt_rating, fmt_rating_indicator} from './_shared';
+    import {goto_handler, get_url_query_vars, call_api_promise} from '../_shared';
 
-    const page_lang = get_lang();
     let updated = '';
+    let requested_cfc_id = '';
     let has_oa = false;
-    let p = {}
+    let p = {};
     let events_played = [];
     let events_orgarb = [];
     let pg_view = 'played';
     let filter_type = '';
     const i18n = window.App_i18n.ratings_player_details;    // See: hugo/assets/i18n/i18n.<lang>.js
 
-    export function goto_event_handler(event) {
-        const el_top = event.current;
-        let el_target = event.target;
-        while (el_target) {
-            let a_goto = el_target.attributes.getNamedItem('data-goto');
-            if (a_goto) {
-                goto(a_goto.value);
-                break;
-            }
-            el_target = el_target.parentElement;
-        }
-    }
-    function cfc_expiry() {
-        if (!p.cfc_expiry) return '&ndash;'
-        if (p.cfc_expiry > '2080-01-01') return 'LIFE';
-        if (p.cfc_expiry < '1980-01-01') return '&ndash;';
-        return p.cfc_expiry;
-    }
-    function rating(value, indicator) {
-        return (indicator > 40) ? value : `<i>(${value})</i>`;
-    }
-    function rating_indicator(indicator) {
-        return (indicator > 40) ? indicator
-            : `<i>(${indicator} ${page_lang==='fr' ? 'j' : 'g'})</i>`;
-    }
-
     function getDataPromise() {
         const q_vars = get_url_query_vars();
-        const cfc_id = q_vars['id'] || '0';
-        const url = 'https://server.chess.ca/api/player/v1/' + cfc_id;
+        requested_cfc_id = q_vars['id'] || '0';
+        const url = 'https://server.chess.ca/api/player/v1/' + requested_cfc_id;
         return call_api_promise({
             method:'GET', url, onComplete, onError
         });
 
         function onComplete(event, rsp) {
             rsp = rsp || {};
-            updated = rsp.updated;
+            updated = rsp.updated || '';
             p = rsp.player || {};
             events_played = p.events;
             events_orgarb = p.orgarb;
-            has_oa = (events_orgarb.length > 0);
-
-            const el_h1 = document.getElementById('ws-page-title');
-            if (el_h1) el_h1.innerText = `${p.name_first} ${p.name_last}`;
+            if (events_orgarb && events_orgarb.length)
+                has_oa = (events_orgarb.length > 0);
+            if (p.name_first && p.name_last) {
+                const el_h1 = document.getElementById('ws-page-title');
+                if (el_h1)
+                    el_h1.innerText = `${p.name_first} ${p.name_last}`;
+            }
         }
         function onError(event) {}
     }

@@ -63,5 +63,29 @@ window.App_i18n = {
         n_players: '# of<br>Players',
         organizer: 'Organizer',
         arbiter: 'Arbiter'
+    },
+    ratings_player_search: {
+        // Form
+        search_intro: 'Use &ldquo;*&rdquo; as a wild card: Bob* Fis*er',
+        inp_first: 'First name',
+        inp_last: 'Last name',
+        search: 'Search',
+        err_enter_criteria: 'Enter search criteria',
+        not_found: 'not found',
+
+        // Search Results
+        name: 'Name',
+        city: 'City',
+        cfc_id: 'CFC id',
+        cfc_expiry: 'CFC Expiry',
+        regular_rating: 'Regular<br>Rating',
+        regular_high: 'Regular<br>High',
+        quick_rating: 'Quick<br>Rating',
+        quick_high: 'Quick<br>High',
+        provisional_notes: '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.',
+        games: 'g',
+        none_found: 'none found',
+        bug_spinning: 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.',
+        err_fetching: 'Error getting data. Try again later.'
     }
 };

@@ -1,13 +1,13 @@
 
-import {mount_sveltejs_components, get_attr} from '../shared';
-import RatingsHome from './Home.svelte';
-import RatingsPlayerDetails from './PlayerDetails.svelte';
-import RatingsPlayerStatus from './PlayerStatus.svelte';
+import {mount_sveltejs_components, get_attr} from '../_shared';
+import ratings_home from './Home.svelte';
+import ratings_player_search from './PlayerSearch.svelte';
+import ratings_player_details from './PlayerDetails.svelte';
+import ratings_player_status from './PlayerStatus.svelte';
 
 const sveltejs_components = {
-    ratings_home: RatingsHome,
-    ratings_player_details: RatingsPlayerDetails,
-    ratings_player_status: RatingsPlayerStatus
+    ratings_home, ratings_player_search,
+    ratings_player_details, ratings_player_status
 }
 
 window.addEventListener('load', (event) => {

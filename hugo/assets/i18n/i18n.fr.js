@@ -63,5 +63,29 @@ window.App_i18n = {
         n_players: '# de<br>joueurs',
         organizer: 'Organisateur',
         arbiter: 'Arbitre'
+    },
+    ratings_player_search: {
+        // Form
+        search_intro: 'Utilisez &ldquo;*&rdquo; comme joker: Bob* Fis*er',
+        inp_first: 'Prénom',
+        inp_last: 'Nom de famille',
+        search: 'Chercher',
+        err_enter_criteria: 'Entrez les critères de recherche',
+        not_found: 'pas trouvé',
+
+        // Search Results
+        name: 'Nom',
+        city: 'Ville',
+        cfc_id: 'FCE id',
+        cfc_expiry: 'Expiration<br>du FCE',
+        regular_rating: 'Cote<br>Régulière',
+        regular_high: 'Régulier<br>élevé',
+        quick_rating: 'Cote<br>Rapide',
+        quick_high: 'Rapide<br>élevé',
+        provisional_notes: '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés.',
+        games: 'j',
+        none_found: "personne n'est trouve",
+        bug_spinning: "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration.",
+        err_fetching: "Erreur lors de l'obtention des données. Réessayez plus tard."
     }
 };

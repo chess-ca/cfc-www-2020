@@ -1,30 +1,7 @@
 +++
 slug = "../p/sr/"
 title = "Players - Search"
-pageid = "pg-player-search-results"
-
-[i18n_form]
-    search_intro = 'Use &ldquo;*&rdquo; as a wild card: Bob* Fis*er'
-    inp_first = 'First name'
-    inp_last = 'Last name'
-    search = 'Search'
-    err_enter_criteria = 'Enter search criteria'
-[i18n_results]
-    name = 'Name'
-    city = 'City'
-    cfc_id = 'CFC id'
-    cfc_expiry = 'CFC Expiry'
-    regular_rating = 'Regular<br>Rating'
-    regular_high = 'Regular<br>High'
-    quick_rating = 'Quick<br>Rating'
-    quick_high = 'Quick<br>High'
-    provisional_notes = '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.'
-    games = 'g'
-    none_found = 'none found'
-    bug_spinning = 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.'
-    err_fetching = 'Error getting data. Try again later.'
+include_js = "ratings"
 +++
 
-{{< ws-embed-html "s1_top.html" >}}
-{{< ws-embed-html "s2_form.html" "i18n_form" >}}
-{{< ws-embed-html "s3_results.html" "i18n_results" >}}
+  <ratings-player-search sveltejs></ratings-player-search>

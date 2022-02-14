@@ -20,9 +20,9 @@
     "buildTags": "extended"
   },
   "dependencies": {
-    "hugo-bin": "^0.75.0",
+    "hugo-bin": "*",
     "bulma": "*",
-    "alpinejs": "3.2.3",
+    "alpinejs": "*",
     "gsap": "*",
     "anchor-js": "*",
     "svelte": "*",

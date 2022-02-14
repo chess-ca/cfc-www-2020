@@ -261,11 +261,15 @@ export function goto(url, el, add_class) {
     }
 }
 
-export function goto_event_handler(event) {
-    const el_top = event.current
-    let target = event.target;
-    while (target) {
-        target = target.parentElement;
+export function goto_handler(event) {
+    let el_target = event.target;
+    while (el_target) {
+        let a_goto = el_target.attributes.getNamedItem('data-goto');
+        if (a_goto) {
+            goto(a_goto.value);
+            break;
+        }
+        el_target = el_target.parentElement;
     }
 }
 

@@ -67,7 +67,7 @@
 
 
 <script>
-    import {goto, get_lang} from "../shared";
+    import {goto, get_lang} from "../_shared";
 
     const page_lang = get_lang('en');
     let p_cfc = '';       // input: player cfc id
@@ -88,15 +88,14 @@
 
     function search_players(e) {
         e && e.stopPropagation && e.stopPropagation();
-        const el = e && e.target;
         p_cfc = p_cfc.trim();
         p_first = p_first.trim();
         p_last = p_last.trim();
 
         if (p_cfc !== '') {
-            goto(`/[[lang]]/ratings/p/?id=${encodeURI(p_cfc)}`, el);
+            goto(`/[[lang]]/ratings/p/?id=${encodeURI(p_cfc)}`);
         } else if (p_first !== '' || p_last !== '') {
-            goto(`/[[lang]]/ratings/p/sr/?fn=${encodeURI(p_first)}&ln=${encodeURI(p_last)}`, el);
+            goto(`/[[lang]]/ratings/p/sr/?fn=${encodeURI(p_first)}&ln=${encodeURI(p_last)}`);
         } else {
             err_fields = 'player';
         }
@@ -108,7 +107,7 @@
         t_name = t_name.trim();
 
         if (t_name !== '') {
-            goto(`/[[lang]]/ratings/t/sr/?n=${encodeURI(t_name)}`, el);
+            goto(`/[[lang]]/ratings/t/sr/?n=${encodeURI(t_name)}`);
         } else {
             err_fields = 'tournaments';
         }
