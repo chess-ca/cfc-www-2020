@@ -20,17 +20,17 @@
     "buildTags": "extended"
   },
   "dependencies": {
-    "hugo-bin": "*",
-    "bulma": "*",
-    "alpinejs": "*",
-    "gsap": "*",
-    "anchor-js": "*",
-    "svelte": "*",
-    "rollup": "*",
     "@rollup/plugin-node-resolve": "*",
+    "alpinejs": "*",
+    "anchor-js": "*",
+    "bulma": "*",
+    "gsap": "*",
+    "hugo-bin": "^0.80.2",
+    "rollup": "*",
     "rollup-plugin-delete": "*",
+    "rollup-plugin-sizes": "*",
     "rollup-plugin-svelte": "*",
-    "rollup-plugin-sizes": "*"
+    "svelte": "*"
   },
   "repository": {
     "type": "git",
