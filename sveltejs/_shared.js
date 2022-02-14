@@ -273,9 +273,41 @@ export function goto_handler(event) {
     }
 }
 
-export function str_fmt(format) {
+export function fmt_str(format) {
     const args = Array.prototype.slice.call(arguments, 1);
     return format.replace(/{(\d+)}/g, function(match, i) {
-        return typeof args[i] === 'undefined' ? match : args[i];
+        return (typeof args[i] === 'undefined') ? match : args[i];
     });
+}
+
+export function get_provinces (lang, exclude) {
+    lang = lang || 'en';
+    let p_list = [
+        {code: "AB", name: "Alberta"},
+        {code: "BC", name: "British Columbia"},
+        {code: "MB", name: "Manitoba"},
+        {code: "NB", name: "New Brunswick"},
+        {code: "NL", name: "Newfoundland and Labrador"},
+        {code: "NT", name: "Northwest Territories"},
+        {code: "NS", name: "Nova Scotia"},
+        {code: "NU", name: "Nunavut"},
+        {code: "ON", name: "Ontario"},
+        {code: "PE", name: "Prince Edward Island"},
+        {code: "QC", name: "Québec"},
+        {code: "SK", name: "Saskatchewan"},
+        {code: "YT", name: "Yukon"},
+        {code: "US", name: "USA"},
+        {code: "FO", name: "Foreign"},
+    ];
+    if (exclude) {
+        let filtered_list = [];
+        for (let i=0; i<p_list.length; i++) {
+            let p = p_list[i]
+            if ( ! exclude.includes(p.code) ) {
+                filtered_list.push(p);
+            }
+        }
+        p_list = filtered_list;
+    }
+    return p_list;
 }

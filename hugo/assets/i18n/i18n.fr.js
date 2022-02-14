@@ -87,5 +87,35 @@ window.App_i18n = {
         none_found: "personne n'est trouve",
         bug_spinning: "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration.",
         err_fetching: "Erreur lors de l'obtention des données. Réessayez plus tard."
+    },
+    ratings_player_top: {
+        // Form
+        css1: 'style="min-width:12rem;"',
+        top_n_size: 'Top N (taille de la liste)',
+        rating_type: 'Cote type',
+        regular_ratings: 'Cote Régulière',
+        quick_ratings: 'Cote Rapide',
+        age_ge: 'Âge &ge; (au 1 janv. {0})',
+        age_le: 'Âge &le;',
+        gender: 'Le genre',
+        province: 'Province',
+        cfc_expired: 'FCE expiré &ge;',
+        last_event_ge: 'Dernier événement CFC &ge;',
+        rating_ge: 'Cote &ge;',
+        rating_le: 'Cote &le;',
+        all: 'tout',
+        // Report
+        name: 'Nom',
+        city: 'Ville',
+        cfc_id: 'FCE id',
+        cfc_expiry: 'Expiration<br>du FCE',
+        regular_rating: 'Cote<br>Régulière',
+        regular_high: 'Régulier<br>élevé',
+        quick_rating: 'Cote<br>Rapide',
+        quick_high: 'Rapide<br>élevé',
+        games: 'j',
+        none_found: "personne n'est trouve",
+        provisional_notes: '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés.',
+        bug_spinning: "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration."
     }
 };

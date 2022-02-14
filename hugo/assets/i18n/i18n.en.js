@@ -87,5 +87,35 @@ window.App_i18n = {
         none_found: 'none found',
         bug_spinning: 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.',
         err_fetching: 'Error getting data. Try again later.'
+    },
+    ratings_player_top: {
+        // Form
+        css1: 'style="min-width:12rem;"',
+        top_n_size: 'Top N (size of list)',
+        rating_type: 'Rating type',
+        regular_ratings: 'Regular Rating',
+        quick_ratings: 'Quick Rating',
+        age_ge: 'Age &ge; (on Jan 1, {0})',
+        age_le: 'Age &le;',
+        gender: 'Gender',
+        province: 'Province',
+        cfc_expired: 'CFC expired &ge;',
+        last_event_ge: 'Last CFC event &ge;',
+        rating_ge: 'Rating &ge;',
+        rating_le: 'Rating &le;',
+        all: 'all',
+        // Report
+        name: 'Name',
+        city: 'City',
+        regular_rating: 'Regular<br>Rating',
+        regular_high: 'Regular<br>High',
+        quick_rating: 'Quick<br>Rating',
+        quick_high: 'Quick<br>High',
+        games: 'g',
+        cfc_id: 'CFC id',
+        cfc_expiry: 'CFC Expiry',
+        none_found: 'none found',
+        provisional_notes: '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.',
+        bug_spinning: 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.'
     }
 };

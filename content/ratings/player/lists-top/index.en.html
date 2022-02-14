@@ -1,41 +1,7 @@
 +++
 slug = "../p/top"
 title = "Top Players"
-pageid = "pg-ratings-player-lists-top"
-page_css = ".control input, .control select { min-width:12rem; }"
-
-[i18n_top]
-    none = ''
-[i18n_form]
-    css1 = 'style="min-width:12rem;"'
-    top_n_size = 'Top N (size of list)'
-    rating_type = 'Rating type'
-    regular_ratings = 'Regular Rating'
-    quick_ratings = 'Quick Rating'
-    age_ge = 'Age &ge; (on Jan 1, <span x-text="now_yyyy"></span>)'
-    age_le = 'Age &le;'
-    gender = 'Gender'
-    province = 'Province'
-    cfc_expired = 'CFC expired &ge;'
-    last_event_ge = 'Last CFC event &ge;'
-    rating_ge = 'Rating &ge;'
-    rating_le = 'Rating &le;'
-    # ---- For player-list.html partial
-[i18n_report]
-    name = 'Name'
-    city = 'City'
-    regular_rating = 'Regular<br>Rating'
-    regular_high = 'Regular<br>High'
-    quick_rating = 'Quick<br>Rating'
-    quick_high = 'Quick<br>High'
-    games = 'g'
-    cfc_id = 'CFC id'
-    cfc_expiry = 'CFC Expiry'
-    none_found = 'none found'
-    provisional_notes = '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.'
-    bug_spinning = 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.'
+include_js = "ratings"
 +++
 
-{{< ws-embed-html "s1_top.html" "i18n_top" >}}
-{{< ws-embed-html "s2_form.html" "i18n_form" >}}
-{{< ws-embed-html "s3_report.html" "i18n_report" >}}
+  <ratings-player-top sveltejs></ratings-player-top>

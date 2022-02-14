@@ -3,54 +3,50 @@
  <div class="notes">&mdash; {@html i18n.search_intro}</div>
 
  <h4 style="border-top:1px solid #759556; margin-top:2rem;">{i18n.search_for_players}</h4>
- <form on:submit|preventDefault={search_players}>
-  <div class="field is-grouped is-grouped-multiline" on:submit|preventDefault={search_players}>
-   <p class="control">
-    <label class="label is-small">{i18n.cfc_id}
-     <input bind:value={p_cfc} class="input is-small" type="text" placeholder={i18n.cfc_id}
-         on:keyup={e=>{on_keyup(e, 'p')}}>
-    </label>
-   </p>
-   <p class="control">
-    <label class="label is-small">{i18n.inp_first}
-     <input bind:value={p_first} class="input is-small" type="text" placeholder={i18n.inp_first}
-         on:keyup={e=>{on_keyup(e, 'p')}}>
-    </label>
-   </p>
-   <p class="control">
-    <label class="label is-small">{i18n.inp_last}
-     <input bind:value={p_last} class="input is-small" type="text" placeholder={i18n.inp_last}
-         on:keyup={e=>{on_keyup(e, 'p')}}>
-    </label>
-   </p>
-  </div>
-  {#if err_fields === 'player'}
-   <p class="ws-error">{i18n.err_enter_criteria}</p>
-  {/if}
-  <button type="submit" class="button is-small is-info" on:click|preventDefault={search_players}>{i18n.search}</button>
- </form>
+ <div class="field is-grouped is-grouped-multiline" on:submit|preventDefault={search_players}>
+  <p class="control">
+   <label class="label is-small">{i18n.cfc_id}
+    <input bind:value={p_cfc} class="input is-small" type="text" placeholder={i18n.cfc_id}
+        on:keyup={e=>{on_keyup(e, 'p')}}>
+   </label>
+  </p>
+  <p class="control">
+   <label class="label is-small">{i18n.inp_first}
+    <input bind:value={p_first} class="input is-small" type="text" placeholder={i18n.inp_first}
+        on:keyup={e=>{on_keyup(e, 'p')}}>
+   </label>
+  </p>
+  <p class="control">
+   <label class="label is-small">{i18n.inp_last}
+    <input bind:value={p_last} class="input is-small" type="text" placeholder={i18n.inp_last}
+        on:keyup={e=>{on_keyup(e, 'p')}}>
+   </label>
+  </p>
+ </div>
+ {#if err_fields === 'player'}
+  <p class="ws-error">{i18n.err_enter_criteria}</p>
+ {/if}
+ <button type="submit" class="button is-small is-info" on:click|preventDefault={search_players}>{i18n.search}</button>
 </section>
 
 <section class="container content pad-touch-only">
  <h4 style="border-top:1px solid #759556; margin-top:2rem;">{i18n.search_for_events}</h4>
- <form on:submit|preventDefault={search_tournaments}>
-  <div class="field is-grouped is-grouped-multiline">
-   <p class="control">
-    <label class="label is-small">{i18n.inp_event_name}
-     <input bind:value={t_name} class="input is-small" type="text" placeholder={i18n.inp_event_name}
-         on:keyup={e=>{on_keyup(e, 't')}}>
-    </label>
-   </p>
-  </div>
-  {#if err_fields === 'tournaments'}
-   <p class="ws-error">{i18n.err_enter_criteria}</p>
-  {/if}
-  <div class="field">
-   <p class="control">
-    <button type="submit" class="button is-small is-info" on:click|preventDefault={search_tournaments}>{i18n.search}</button>
-   </p>
-  </div>
- </form>
+ <div class="field is-grouped is-grouped-multiline">
+  <p class="control">
+   <label class="label is-small">{i18n.inp_event_name}
+    <input bind:value={t_name} class="input is-small" type="text" placeholder={i18n.inp_event_name}
+        on:keyup={e=>{on_keyup(e, 't')}}>
+   </label>
+  </p>
+ </div>
+ {#if err_fields === 'tournaments'}
+  <p class="ws-error">{i18n.err_enter_criteria}</p>
+ {/if}
+ <div class="field">
+  <p class="control">
+   <button type="submit" class="button is-small is-info" on:click|preventDefault={search_tournaments}>{i18n.search}</button>
+  </p>
+ </div>
 </section>
 
 <section class="container content pad-touch-only">
