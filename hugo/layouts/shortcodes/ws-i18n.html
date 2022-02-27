@@ -1,0 +1,8 @@
+{{- $i18n_code := .Get 0 }}
+{{- /*
+  ws-i18n - a Hugo Shortcode for i18n text
+    - Allows accessing i18n values from content markup.
+    - i18n codes/values are defined in hugo/config/languages.toml
+    - In markup, `{{< ws-i18n "cfc" >}}`
+*/}}
+{{- echoParam $.Site.Params $i18n_code -}}

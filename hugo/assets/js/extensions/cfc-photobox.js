@@ -29,7 +29,7 @@ function cfc_photobox(el, args, funcs) {
     let html = [];
     photo_list.forEach(p => {
         let text = page_lang === 'fr' ? p.fr : p.en;
-        text = text === '=' ? p.en : text;
+        text = (text === '=' || text === '') ? p.en : text;
         html.push(`<li><img src="${p.photo_url}" alt="(photo)"><p>${text}</p></li>`)
     });
     html = html.join('\n');
