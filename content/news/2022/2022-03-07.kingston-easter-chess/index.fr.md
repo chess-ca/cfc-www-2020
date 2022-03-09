@@ -10,7 +10,7 @@ author = "Aris Marghetis, Organizer"
 
 # KEC 2022 Announcement (Kingston Easter Chess)
 
-This is the KEC 2022 ANNOUNCEMENT, as of the morning of Monday, March 7th.
+This is the KEC 2022 ANNOUNCEMENT, now updated as of Wednesday, March 9th.
 Especially given changing pandemic conditions, this will be updated as applicable.
 
 KEC 2022 sections (all 5 sections rated both FIDE & CFC):
@@ -63,13 +63,13 @@ PLAYING AREAS:
 "Restaurant Rules" (subject to change):
 <br>&ndash; a player seated at their board may remove their mask
 <br>&ndash; everyone else on the 2nd floor must properly wear a mask
-<br>&ndash; all players must submit vaccine documentation with their registration
+<br>&ndash; players submit pandemic vaccine documentation with their registration
 <br>&ndash; any exceptions may be appealed on a case-by-case basis (early please!)
 <br>&ndash; the event and/or the hotel reserve the right to ban anyone deemed ill
 <br>&ndash; please note anyone may be subject to non-contact temperature testing
 
 ## Money & Prizes
-&ndash; as of March 7th, over $13K based on only 100 players (2019 numbers)
+&ndash; as of March 9th, over $14K based on only 100 players (2019 numbers)
 <br>&ndash; hope to be increased as registrations expected to increase
 <br>&ndash; all money prizes to be paid out AFTER April 18th!
 
@@ -84,14 +84,18 @@ PRIZES for Zonal/Closed sections (normally CAN players):
 <br>&ndash; 4th place = $500
 <br>&ndash; 65% in 9 games (6/9) = FM title
 <br>&ndash; 50% in 9 games (4.5/9) = CM title
+<br>&ndash; Bryon Nickoloff Memorial Prize for Top Open Junior = $500
+(splitable, for the top Open Canadian born in 2002 or later)
 
 ### Canada Women Zonal
 &ndash; 1st place = next Women Olympiad team + next Women World Cup + $1500
-  (tied for 1st place = WIM title)
+(tied for 1st place = WIM title)
 <br>&ndash; 2nd place = likely next Women World Cup + WFM title + WIM norm + $1000
 <br>&ndash; 3rd place = WFM title + WIM norm + $500
 <br>&ndash; 65% in 9 games (6/9) = WFM title
 <br>&ndash; 50% in 9 games (4.5/9) = WCM title
+<br>&ndash; Bryon Nickoloff Memorial Prize for Top Women Junior = $500
+(splitable, for the top Women Canadian born in 2002 or later)
 
 ### Tiebreaks
 (for Zonal/Closed sections)
@@ -110,9 +114,9 @@ These prizes ARE splitable, Zonal/Closed TIEBREAKS above DON'T apply:
 ## Registrations
 1) ensure CFC membership (FQE from Quebec) expires after April 18th
 2) email to [arismarghetis@rogers.com](mailto:arismarghetis@rogers.com) :
-   - CFC(FQE) & FIDE IDs, mobile phone, pandemic vaccine documentation (PDF)
-   - female players should confirm exactly which section they are registering for
-   - see below regarding SECTION ELIGIBILITY
+    - CFC(FQE) & FIDE IDs, mobile phone, pandemic vaccine documentation (PDF)
+    - female players should confirm exactly which section they are registering for
+    - see below regarding SECTION ELIGIBILITY
 3) please wait for confirming reply before actually paying for registration!
 4) e-transfer registration payment (or arrange alternative payment method)
 
@@ -136,8 +140,9 @@ These prizes ARE splitable, Zonal/Closed TIEBREAKS above DON'T apply:
 <br>&ndash; any other requested byes (including refused pairing) will be 0-point
 
 ## Section Eligibility
-&ndash; higher of FIDE Standard & CFC Regular (FQE “cote lente”) ratings
+&ndash; higher of FIDE Standard & CFC Regular (FQE "cote lente") ratings
 <br>&ndash; minimum rating of 2200 for Canada Zonal section (NO PLAYING UP)
+<br>&ndash; there's no minimum rating yet for the Canada Women Zonal section
 <br>&ndash; Sectional players deemed UNRated will play in U1600 Sectional
 <br>&ndash; final ratings review planned for after Wednesday, April 6th
 <br>&ndash; Chief Organizer reserves right to adjust ratings/sections
@@ -183,7 +188,7 @@ DGT Broadcasting: John Upper
 &ndash; East Blok United (merry band of Ottawa chess players!)
 <br>&ndash; Eastern Ontario Chess Association (EOCA)
 <br>&ndash; Ontario Chess Association (OCA)
-  
+
 IF YOU WANT TO SPONSOR, WE'LL HAPPILY PUBLICIZE!!
 
 ## History
@@ -198,7 +203,7 @@ IF YOU WANT TO SPONSOR, WE'LL HAPPILY PUBLICIZE!!
 <br>&ndash; CM title: William Li, Rejean Tremblay
 <br>&ndash; CM elect: Z.Dukic, S.Noritsyn, M.Rusonik, A.Saha, H.Yao
 
-EOCA Grand Prix: 
+EOCA Grand Prix:
 <br>This is an Eastern Ontario Chess Association Grand Prix event
 ([eoca.ca](https://eoca.ca))
 
