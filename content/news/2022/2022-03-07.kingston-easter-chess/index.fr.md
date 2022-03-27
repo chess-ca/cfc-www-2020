@@ -10,10 +10,10 @@ author = "Aris Marghetis, Organizer"
 
 # KEC 2022 Announcement (Kingston Easter Chess)
 
-This is the KEC 2022 ANNOUNCEMENT, now updated as of Wednesday, March 9th.
+This is the KEC 2022 ANNOUNCEMENT, now updated as of Sunday, March 27th.
 Especially given changing pandemic conditions, this will be updated as applicable.
 
-KEC 2022 sections (all 5 sections rated both FIDE & CFC):
+KEC 2022 sections - all sections rated both FIDE & CFC (and FQE for FQE#s):
 - Zonals/Closed championships:
   <br>&ndash; Canada Zonal,<br>&ndash; Canada Women Zonal
 - Easter Sectionals: U2200, U1900, U1600
@@ -48,20 +48,23 @@ free parking, free breakfasts, free Wi-Fi, up to $50 in restaurant coupons
 - [CLICK-HERE-TO-BOOK-A-ROOM](https://www.marriott.com/event-reservations/reservation-link.mi?id=1646247463753&key=GRP&app=resvlink)
 
 IMPORTANT RE BREAKFASTS:
-<br>&ndash; the KEC room rate is the SAME for 1-4 people
+<br>&ndash; the KEC room rate is the SAME for 1-4 people (GUARANTEED: ignore any "Extra Person Fee", it's an old software bug)
 <br>&ndash; enter number of people correctly, so the hotel can plan our breakfasts!
 
-ANOTHER IMPORTANT NOTE RE ROOMS:
-<br>&ndash; the SAME KEC room rate for THREE different kinds of rooms
-<br>&ndash; note the most rooms they have are the double-Queen-beds
-<br>&ndash; so other (normally more expensive) rooms will sell out first!
+FREE PARKING:
+<br>&ndash; anyone can use the hotel underground parking garage
+<br>&ndash; by staying at hotel, your bill will change by checkout from $20 to $0
+<br>&ndash; anyone not staying at the hotel will be charged parking
+
+ONTARIO RESIDENTS:
+<br>&ndash; keep hotel receipt for the 2022 Ontario Tax Staycation deduction!!
 
 PLAYING AREAS:
 <br>&ndash; continuous supply of ice water, coffee, hot water for tea!!
 
 ## Pandemic Conditions
 "Restaurant Rules" (subject to change):
-<br>&ndash; a player seated at their board may remove their mask
+<br>&ndash; a player seated at their board (game or skittles) may remove their mask
 <br>&ndash; everyone else on the 2nd floor must properly wear a mask
 <br>&ndash; players submit pandemic vaccine documentation with their registration
 <br>&ndash; any exceptions may be appealed on a case-by-case basis (early please!)
@@ -73,7 +76,8 @@ PLAYING AREAS:
 <br>&ndash; hope to be increased as registrations expected to increase
 <br>&ndash; all money prizes to be paid out AFTER April 18th!
 
-PRIZES for Zonal/Closed sections (normally CAN players):
+PRIZES for Zonal/Closed sections:
+<br>&ndash; Zonal/Closed sections currently open only to Canadians (FIDE flag = CAN)
 <br>&ndash; generally NO splitting of these prizes, see TIEBREAKS below.
 
 ### Canada Zonal
@@ -150,10 +154,12 @@ These prizes ARE splitable, Zonal/Closed TIEBREAKS above DON'T apply:
 ## Ratings for Pairings
 &ndash; Zonal/Closed sections: FIDE rating (if none exists, then UNR)
 <br>&ndash; Easter Sectionals: CFC rating (if none exists, then UNR)
-<br>&ndash; FORCED BYE may be offered free extra game
+<br>&ndash; FORCED BYE may be offered free rated extra game
 
 ## Default Time
 &ndash; (FIDE Law 6.7.1): 30 minutes after the start of the round.
+<br>&ndash; a player who forfeits will need to deposit $100 to return
+<br>&ndash; if they forfeit again, their opponent will get that $100
 
 ## Time Control
 &ndash; 90 minutes for the first 40 moves,
@@ -182,7 +188,7 @@ Arbiter Team & Fair Play Officers:
 
 DGT Broadcasting: John Upper
 <br>Appeals Committee Chair: TBD
-<br>French translations: TBD
+<br>French translations: Patrick Gougeon
 
 ## THANK YOU To Our Sponsors!!
 &ndash; East Blok United (merry band of Ottawa chess players!)
