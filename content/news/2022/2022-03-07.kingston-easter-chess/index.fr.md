@@ -10,7 +10,7 @@ author = "Aris Marghetis, Organizer"
 
 # KEC 2022 Announcement (Kingston Easter Chess)
 
-This is the KEC 2022 ANNOUNCEMENT, now updated as of Sunday, March 27th.
+This is the KEC 2022 ANNOUNCEMENT, now updated as of Tuesday, April 12th.
 Especially given changing pandemic conditions, this will be updated as applicable.
 
 KEC 2022 sections - all sections rated both FIDE & CFC (and FQE for FQE#s):
@@ -59,13 +59,10 @@ FREE PARKING:
 ONTARIO RESIDENTS:
 <br>&ndash; keep hotel receipt for the 2022 Ontario Tax Staycation deduction!!
 
-PLAYING AREAS:
-<br>&ndash; continuous supply of ice water, coffee, hot water for tea!!
-
 ## Pandemic Conditions
 "Restaurant Rules" (subject to change):
 <br>&ndash; a player seated at their board (game or skittles) may remove their mask
-<br>&ndash; everyone else on the 2nd floor must properly wear a mask
+<br>&ndash; everyone else on the 2nd floor must always properly wear their mask
 <br>&ndash; players submit pandemic vaccine documentation with their registration
 <br>&ndash; any exceptions may be appealed on a case-by-case basis (early please!)
 <br>&ndash; the event and/or the hotel reserve the right to ban anyone deemed ill
@@ -73,7 +70,6 @@ PLAYING AREAS:
 
 ## Money & Prizes
 &ndash; as of March 9th, over $14K based on only 100 players (2019 numbers)
-<br>&ndash; hope to be increased as registrations expected to increase
 <br>&ndash; all money prizes to be paid out AFTER April 18th!
 
 PRIZES for Zonal/Closed sections:
@@ -148,11 +144,12 @@ These prizes ARE splitable, Zonal/Closed TIEBREAKS above DON'T apply:
 <br>&ndash; minimum rating of 2200 for Canada Zonal section (NO PLAYING UP)
 <br>&ndash; there's no minimum rating yet for the Canada Women Zonal section
 <br>&ndash; Sectional players deemed UNRated will play in U1600 Sectional
+<br>&ndash; initial ratings considered/floored as of Monday, March 7th
 <br>&ndash; final ratings review planned for after Wednesday, April 6th
 <br>&ndash; Chief Organizer reserves right to adjust ratings/sections
 
 ## Ratings for Pairings
-&ndash; Zonal/Closed sections: FIDE rating (if none exists, then UNR)
+&ndash; Zonal/Closed sections: FIDE rating (if none exists, then UNR (CFC tiebreak))
 <br>&ndash; Easter Sectionals: CFC rating (if none exists, then UNR)
 <br>&ndash; FORCED BYE may be offered free rated extra game
 
@@ -171,6 +168,7 @@ Restroom conditions:
 <br>&ndash; one restroom for Men players and one restroom for Women players
 <br>&ndash; both are situated in the Foyer area near the Ballroom playing area
 <br>&ndash; staff may also use these restrooms, but no other non-players
+<br>&ndash; all onsite attendees may be photographed, videotaped, etc.
 
 (Except for staff) **NO TECH OF ANY KIND on the whole 2nd floor**
 
@@ -187,7 +185,10 @@ Arbiter Team & Fair Play Officers:
 <br>A.Ferreira, A.Field, A.Kovatcheva, FA O.Shah, FA C.Wan, FA K.Wan.
 
 DGT Broadcasting: John Upper
-<br>Appeals Committee Chair: TBD
+<br>Appeals Committee Chair: Hal Bond
+<br>&nbsp;&nbsp;&nbsp;&ndash; within 1 hour of end of round
+<br>&nbsp;&nbsp;&nbsp;&ndash; in writing to the Chief Arbiter
+<br>&nbsp;&nbsp;&nbsp;&ndash; accompanied by $100 deposit
 <br>French translations: Patrick Gougeon
 
 ## THANK YOU To Our Sponsors!!
