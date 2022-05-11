@@ -117,5 +117,27 @@ window.App_i18n = {
         none_found: "personne n'est trouve",
         provisional_notes: '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés.',
         bug_spinning: "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration."
+    },
+    ratings_event_details: {
+        event: 'événement',
+        end_date: 'Date de fin',
+        type: 'Type',
+        regular: 'Régulier',
+        quick: 'Rapide',
+        pairings: 'Appariements',
+        rr: 'Round Robin',
+        swiss: 'Swiss Sys',
+        prov: 'Prov',
+        org_name: 'Organisateur',
+        arb_name: 'Arbitre',
+        none_found: 'personne n\'est trouve',
+        // Crosstable
+        player: 'Joueur',
+        score: 'Score',
+        rating_pre: 'Ancien<br>Cote',
+        rating_perf: 'Perf<br>Cote',
+        rating_post: 'Nouvelle<br>Cote',
+        provisional_notes: '<i>(&mldr;)</i> est une note provisoire.',
+        show_cfc_ids: 'afficher les identifiants FCE'
     }
 };

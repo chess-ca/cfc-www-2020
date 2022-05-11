@@ -117,5 +117,27 @@ window.App_i18n = {
         none_found: 'none found',
         provisional_notes: '<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.',
         bug_spinning: 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.'
+    },
+    ratings_event_details: {
+        event: 'Event',
+        end_date: 'End Date',
+        type: 'Type',
+        regular: 'Regular',
+        quick: 'Quick',
+        pairings: 'Pairings',
+        rr: 'Round Robin',
+        swiss: 'Swiss Sys',
+        prov: 'Prov',
+        org_name: 'Organizer',
+        arb_name: 'Arbiter',
+        none_found: 'none found',
+        // Crossstable
+        player: 'Player',
+        score: 'Score',
+        rating_pre: 'Old<br>Rating',
+        rating_perf: 'Perf<br>Rating',
+        rating_post: 'New<br>Rating',
+        provisional_notes: '<i>(&mldr;)</i> is a provisional rating.',
+        show_cfc_ids: 'show CFC ids'
     }
 };
