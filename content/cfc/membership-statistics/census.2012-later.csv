@@ -1,7 +1,26 @@
+--section--,**Statisics for 2022-05-01**,,,,,,
+,,**Family**,**Honorary**,**Junior**,**Life**,**Adult**,**Total**
+,**Total:**,28,86,962,503,968,2547
+Alberta,AB,2,6,141,37,174,360
+British Columbia,BC,4,9,182,90,170,455
+Manitoba,MB,1,0,8,8,35,52
+New Brunswick,NB,0,0,17,9,39,65
+Newfoundland,NL,0,0,1,8,11,20
+Nova Scotia,NS,2,0,13,17,22,54
+North West Territories,NT,0,0,0,0,0,0
+Nunavut,NU,0,0,0,0,0,0
+Ontario,ON,19,45,551,255,464,1334
+PEI,PE,0,0,6,1,7,14
+Quebec,QC,0,20,16,27,26,89
+Saskatchewan,SK,0,0,9,16,8,33
+Yukon,YT,0,0,9,1,5,15
+USA,US,0,3,2,27,7,39
+Foreign,FO,0,3,7,7,0,17
+,,,,,,,_._
 --section--,**Statisics for 2021-05-01**,,,,,,
 ,,**Family**,**Honorary**,**Junior**,**Life**,**Adult**,**Total**
 ,**Total:**,38,83,809,473,970,2373
-Alberta,AB,4,6,44,32,1202,206
+Alberta,AB,4,6,44,32,120,206
 British Columbia,BC,5,9,128,86,166,394
 Manitoba,MB,2,0,12,8,46,68
 New Brunswick,NB,2,0,24,9,31,66
@@ -16,6 +35,7 @@ Saskatchewan,SK,1,0,15,16,19,51
 Yukon,YT,0,0,2,1,5,8
 USA,US,0,3,21,27,15,66
 Foreign,FO,0,3,8,6,7,24
+,,,,,,,_._
 --section--,**Statisics for 2020-05-01**,,,,,,
 ,,**Family**,**Honorary**,**Junior**,**Life**,**Adult**,**Total**
 ,**Total:**,61,83,1052,468,1126,2790
