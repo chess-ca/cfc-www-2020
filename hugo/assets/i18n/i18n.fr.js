@@ -139,5 +139,17 @@ window.App_i18n = {
         rating_post: 'Nouvelle<br>Cote',
         provisional_notes: '<i>(&mldr;)</i> est une note provisoire.',
         show_cfc_ids: 'afficher les identifiants FCE'
+    },
+    ratings_event_search: {
+        event: 'événement',
+        end_date: 'Date de fin',
+        type: 'Type',
+        pairings: 'Appariements',
+        prov: 'Prov',
+        org_name: 'Organisateur',
+        arb_name: 'Arbitre',
+        none_found: "personne n'est trouve",
+        bug_spinning: "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration.",
+        err_fetching: "Erreur lors de l'obtention des données. Réessayez plus tard."
     }
 };

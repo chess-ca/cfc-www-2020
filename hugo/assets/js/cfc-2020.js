@@ -9,7 +9,6 @@ import pg_home from './js4pages/home';
 import pg_membership_how from './js4pages/players/membership-how';
 import pg_upcoming_events from './js4pages/other/events-list';
 import pg_ratings_home from './js4pages/ratings/home';
-import pg_ratings_tournament_search_results from './js4pages/ratings/tournament-search-results';
 import { go } from "./utils";
 
 const plugin_list = [
@@ -17,7 +16,7 @@ const plugin_list = [
 ];
 const page_list = [
     pg_home, pg_upcoming_events, pg_membership_how,
-    pg_ratings_home, pg_ratings_tournament_search_results
+    pg_ratings_home
 ];
 
 _main();

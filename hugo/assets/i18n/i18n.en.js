@@ -139,5 +139,17 @@ window.App_i18n = {
         rating_post: 'New<br>Rating',
         provisional_notes: '<i>(&mldr;)</i> is a provisional rating.',
         show_cfc_ids: 'show CFC ids'
+    },
+    ratings_event_search: {
+        event: 'Event',
+        end_date: 'End Date',
+        type: 'Type',
+        pairings: 'Pairings',
+        prov: 'Prov',
+        org_name: 'Organizer',
+        arb_name: 'Arbiter',
+        none_found: 'none found',
+        bug_spinning: 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.',
+        err_fetching: 'Error getting data. Try again later.'
     }
 };

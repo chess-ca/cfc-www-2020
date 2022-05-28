@@ -159,71 +159,61 @@ export class ApiCall{
  * Call an API. A thin wrapper around XMLHttpRequest, which
  * supports onProgress (fetch doesn't).
  *
- * @param args - a map of argument name/values.
- * @param args.method - (default "POST") the API's URL method
- * @param args.url - the API's URL.
- * @param args.vars - a map of name/values for the FormData.
- * @param args.file_obj - for file uploads, ...
- * @param args.onProgress - function to call on "progress" events (file uploads).
- * @param args.onComplete - function to call on "complete" events
- * @param args.onError - function to call on "error" events
- * @param args.onAbort - function to call on "abort" events
+ * @param arg - a map of argument name/values.
+ * @param arg.method - (default "POST") the API's URL method
+ * @param arg.url - the API's URL.
+ * @param arg.vars - a map of name/values for the FormData.
+ * @param arg.file_obj - for file uploads, ...
+ * @param arg.onProgress - function to call on "progress" events (file uploads).
+ * @param arg.onComplete - function to call on "complete" events
+ * @param arg.onError - function to call on "error" events
+ * @param arg.onAbort - function to call on "abort" events
  */
-export function call_api(args) {
-    const method = args.method || 'POST';
-    let url = args.url;
-    const vars = args.vars || null;
-    const file_obj = args.file_obj || null;
-
-    const onProgress = args.onProgress || null;
-    const onComplete = args.onComplete || null;
-    const onError = args.onError || null;
-    const onErrorAlert = args.onErrorAlert || true;
-    const onAbort = args.onAbort || null;
-    const timeout = args.timeout || 8000;
-    const onTimeout = args.onTimeout || null;
-    const onTimeoutAlert = args.onTimeoutAlert || true;
-
-    const formdata = new FormData();
-    if (vars !== null) {
-        for (const key in vars) {
-            if (vars.hasOwnProperty(key))
-                formdata.append(key, vars[key]);
-        }
-    }
-    if (file_obj !== null) {
-        formdata.append('upload_file', file_obj, file_obj.name);
-    }
+export function call_api(arg) {
+    const method = arg.method || 'GET';
 
     const xhr = new XMLHttpRequest();
-    xhr.timeout = timeout;
+    xhr.timeout = arg.timeout || 8000;
     xhr.ontimeout = main_onTimeout;
     xhr.upload.addEventListener('progress', main_onProgress, false);
     xhr.addEventListener('load', main_onComplete);
     xhr.addEventListener('error', main_onError);
     xhr.addEventListener('abort', main_onAbort);
-    xhr.open(method, url);
+    xhr.open(method, arg.url);
 
-    console.log('API: Calling:', method, url);
-    if (vars !== null) console.log('\tVars:', vars);
-    if (file_obj !== null) console.log('\tFile:', file_obj);
-    xhr.send(formdata);
+    console.log('API: Call:', method, arg.url);
+    if (arg.vars || arg.file_obj) {
+        const formdata = new FormData();
+        if (arg.vars) {
+            console.log('\tVars:', arg.vars);
+            for (const key in arg.vars) {
+                if (arg.vars.hasOwnProperty(key))
+                    formdata.append(key, arg.vars[key]);
+            }
+        }
+        if (arg.file_obj) {
+            console.log('\tFile:', arg.file_obj);
+            formdata.append('upload_file', arg.file_obj, arg.file_obj.name);
+        }
+        xhr.send(formdata);
+    } else {
+        xhr.send();
+    }
 
-    //-------- Main Handlers
     function main_onProgress(event) {
         const p = Math.floor(100 * event.loaded / event.total);
-        console.log('File upload: progress:', p, '%');
-        onProgress && onProgress(event);
+        console.log('... Progress:', p, '%');
+        if (arg.onProgress) arg.onProgress(event);
     }
     function main_onComplete(event) {
         const rsp = xhr.response && JSON.parse(xhr.response);
         if (xhr.status >= 200 && xhr.status < 300) {
             console.log('API: Success:', rsp);
-            onComplete(event, rsp || {});
+            if (arg.onComplete) arg.onComplete(event, rsp || {});
         } else {
-            console.log('API: Failed:', xhr.status, method, url);
-            if (onError) {
-                onError(event);
+            console.log('API: Failed:', xhr.status, method, arg.url);
+            if (arg.onError) {
+                arg.onError(event);
             } else {
                 alert(get_lang('en') === 'fr'
                     ? 'Échec de l\'appel au serveur FCE.\n\nRéessayez plus tard.'
@@ -233,17 +223,17 @@ export function call_api(args) {
     }
     function main_onError(event) {
         console.error('API: Error:', event)
-        onError && onError(event);
+        if (arg.onError) arg.onError(event);
     }
     function main_onAbort(event) {
         console.warn('API: Aborted:', event);
-        onAbort && onAbort(event);
+        if (arg.onAbort) arg.onAbort(event);
     }
     function main_onTimeout (event) {
         console.error('API: Timeout:', event);
-        if (onTimeout) {
-            onTimeout(event);
-        } else if (onTimeoutAlert) {
+        if (arg.onTimeout) {
+            arg.onTimeout(event);
+        } else if (arg.onTimeoutAlert !== false) {
             alert( get_lang('en') === 'fr'
                 ? 'La demande a expiré.\n\nRéessayez plus tard.'
                 : 'Request timed-out.\n\nTry again later.');
@@ -416,18 +406,23 @@ export function goto(url, el, add_class) {
     }
 }
 
+/**
+ * One handler for many clickable elements. Set onclick on an ancestor of all the
+ * clickable elements and set "data-goto" attribute on each clickable element.
+ * @param event
+ */
 export function goto_handler(event) {
-    let el_target = event.target;
-    while (el_target) {
-        let a_goto = el_target.attributes.getNamedItem('data-goto');
-        if (a_goto) {
-            goto(a_goto.value);
-            break;
-        }
-        el_target = el_target.parentElement;
-    }
+    const el = event.target.closest('[data-goto]');
+    const attr = el && el.attributes.getNamedItem('data-goto');
+    if (attr) goto(attr.value);
 }
 
+/**
+ * Substitue values into a string. Useful for i18n strings.
+ * Example: fmt_str('Name is {1}, {0}', 'Ringo', 'Starr');
+ * @param format
+ * @return {*}
+ */
 export function fmt_str(format) {
     const args = Array.prototype.slice.call(arguments, 1);
     return format.replace(/{(\d+)}/g, function(match, i) {

@@ -1,35 +1,7 @@
 +++
 slug = "../t/sr/"
 title = "Tournaments - Search"
-pageid = "pg-tournament-search-results"
-page_css = """
-    .control input, .control select { min-width:12rem; }
-    @media screen and (min-width: 25rem) { .t-name {width:25rem;} }
-"""
-
-[i18n_form]
-    t_name = 'Tournament name (use &ldquo;*&rdquo; as a wild card)'
-    rating_type = 'Rating type'
-    all_rating_types = 'All types'
-    regular_ratings = 'Regular Rating'
-    quick_ratings = 'Quick Rating'
-    province = 'Province'
-    all_provinces = 'All provinces'
-    date_min = 'Date &ge;'
-    date_max = 'Date &le;'
-    search = 'Search'
-    err_enter_criteria = 'Enter search criteria'
-[i18n_results]
-    event = 'Event'
-    end_date = 'End Date'
-    type = 'Type'
-    pairings = 'Pairings'
-    prov = 'Prov'
-    org_name = 'Organizer'
-    none_found = 'none found'
-    bug_spinning = 'BUG: If this keeps spinning, click on button a few more times. A fix is being worked on.'
-    err_fetching = 'Error getting data. Try again later.'
+include_js = "ratings"
 +++
 
-{{< ws-embed-html "s1_top.html" >}}
-{{< ws-embed-html "s3_results.html" "i18n_results" >}}
+  <ratings-event-search sveltejs></ratings-event-search>

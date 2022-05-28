@@ -1,35 +1,7 @@
 +++
 slug = "../t/sr/"
 title = "Tournois - Recherche"
-pageid = "pg-tournament-search-results"
-page_css = """
-    .control input, .control select { min-width:12rem; }
-    @media screen and (min-width: 25rem) { .t-name {width:25rem;} }
-"""
-
-[i18n_form]
-    t_name = 'Tournament name (use &ldquo;*&rdquo; as a wild card)'
-    rating_type = 'Type cotes'
-    all_rating_types = 'Tous les types'
-    regular_ratings = 'Cote régulière'
-    quick_ratings = 'Cote rapide'
-    province = 'Province'
-    all_provinces = 'Toutes les provinces'
-    date_min = 'Date &ge;'
-    date_max = 'Date &le;'
-    search = 'Chercher'
-    err_enter_criteria = 'Entrez les critères de recherche'
-[i18n_results]
-    event = 'événement'
-    end_date = 'Date de fin'
-    type = 'Type'
-    pairings = 'Appariements'
-    prov = 'Prov'
-    org_name = 'Organisateur'
-    none_found = "personne n'est trouve"
-    bug_spinning = "BUG: Si cela continue de tourner, cliquez sur le bouton plusieurs fois de plus. Un correctif est en cours d'élaboration."
-    err_fetching = "Erreur lors de l'obtention des données. Réessayez plus tard."
+include_js = "ratings"
 +++
 
-{{< ws-embed-html "s1_top.html" >}}
-{{< ws-embed-html "s3_results.html" "i18n_results" >}}
+<ratings-event-search sveltejs></ratings-event-search>

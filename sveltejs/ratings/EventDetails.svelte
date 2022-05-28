@@ -32,8 +32,8 @@
        <td>{event.rating_type==='Q' ? i18n.quick : i18n.regular}</td>
        <td>{event.pairings==='RR' ? i18n.rr : i18n.swiss}</td>
        <td>{event.province}</td>
-       <td>{event.organizer_name}</td>
-       <td>{event.arbiter_name}</td>
+       <td>{event.organizer_name || '--'}</td>
+       <td>{event.arbiter_name || '--'}</td>
       </tr>
      {/if}
      </tbody>
@@ -112,35 +112,36 @@
     const q_vars = get_url_query_vars();
     const requested_event_id = q_vars['id'] || '0';
     const highlighted_mid = parseInt(q_vars['p'] || '0');
+    const i18n = window.App_i18n.ratings_event_details;
     const api_url = 'GET cfc-api:/event/v1/' + requested_event_id;
     const get_data = (new ApiCall(api_url))
-        .onComplete((dom_event, rsp) => {
-            updated = rsp.updated || '?!';
-            found = Boolean(rsp.event && rsp.event.crosstable);
-            event = rsp.event || {};
-            crosstable = event.crosstable || [];
-            //---- Split results from "+27|-12|=4|..." to an array
-            crosstable = crosstable.map( cte => {
-                cte.results = cte.results.replaceAll('X', '&#x2A2F;').split('|');
-                max_rounds = Math.max(cte.results.length, max_rounds);
-                has_provisional_ratings = has_provisional_ratings
-                    || (cte.rating_indicator < 40);
-                return cte;
-            });
-            //---- Column headings for rounds depend on tournament type (Swiss or RR)
-            let r_prefix = (event.pairings==='SS') ? 'R' : '#';
-            round_headers = [];
-            for (let i=1; i<=max_rounds; i++) {
-                round_headers.push(r_prefix + i);
-            }
-            if (event.name) {
-                const el_h1 = document.getElementById('ws-page-title');
-                if (el_h1)
-                    el_h1.innerText = event.name;
-            }
+        .onComplete(get_data_complete).call_as_promise();
 
-        }).call_as_promise();
-    const i18n = window.App_i18n.ratings_event_details;
+    function get_data_complete(dom_event, rsp) {
+        updated = rsp.updated || '?!';
+        found = Boolean(rsp.event && rsp.event.crosstable);
+        event = rsp.event || {};
+        crosstable = event.crosstable || [];
+        //---- Split results from "+27|-12|=4|..." into an array
+        for (const cte of crosstable) {
+            cte.results = cte.results.replaceAll('X', '&#x2A2F;').split('|');
+            max_rounds = Math.max(cte.results.length, max_rounds);
+            has_provisional_ratings = has_provisional_ratings
+                || (cte.rating_indicator < 40);
+        }
+        //---- Column headings for rounds depend on tournament type (Swiss or RR)
+        let r_prefix = (event.pairings==='SS') ? 'R' : '#';
+        round_headers = [];
+        for (let i=1; i<=max_rounds; i++) {
+            round_headers.push(r_prefix + i);
+        }
+        if (event.name) {
+            const el_h1 = document.getElementById('ws-page-title');
+            if (el_h1)
+                el_h1.innerText = event.name;
+        }
+    }
+
     function show_player(cfc_id) {
         goto(`/[[lang]]/ratings/p/?id=${cfc_id}`);
     }
