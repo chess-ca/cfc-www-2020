@@ -53,7 +53,7 @@
           <li>{@html i18n.provisional_notes}</li>
          {/if}
          {#if has_oa}
-          <li class="is_oa ws-bg-highlight"><span>&starf;</span> {p.name_first} {i18n.thankyou} <span>&starf;</span></li>
+          <li><span class="is_star">&starf;</span> {p.name_first} {i18n.thankyou} <span class="is_star">&starf;</span></li>
          {/if}
         </ul>
        </td>
@@ -208,7 +208,7 @@
     let events_orgarb = [];
     let pg_view = 'played';
     let filter_type = '';
-    const i18n = window.App_i18n.ratings_player_details;    // See: hugo/assets/i18n/i18n.<lang>.js
+    const i18n = window.page_i18n || {};
 
     function getDataPromise() {
         const q_vars = get_url_query_vars();
@@ -237,8 +237,7 @@
 </script>
 
 <style>
- .is_oa { font-weight: bold; }
- .is_oa span { color: #ffd700; font-size: 1.0rem; }
+ .is_star { color: #ffd700; font-size: 1.0rem; }
  .maxw-120 { max-width: 120px; }
  .hide { display:none; }
  .only-type-R .is-type-Q { display:none; }

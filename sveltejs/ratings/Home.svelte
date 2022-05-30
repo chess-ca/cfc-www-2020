@@ -72,7 +72,7 @@
     let t_name = '';      // input: tournament name
     let err_fields = '';
     const now_year = (new Date()).getFullYear();
-    const i18n = window.App_i18n.ratings_home;    // See: hugo/assets/i18n/i18n.<lang>.js
+    const i18n = window.page_i18n || {};
 
     function on_keyup(event, type) {
         err_fields = '';

@@ -108,6 +108,8 @@
     let round_headers = [];
     let has_provisional_ratings = false;
     let show_cfc_ids = false;
+    let error_message = '';
+    const i18n = window.page_i18n || {};
 
     const q_vars = get_url_query_vars();
     const requested_event_id = q_vars['id'] || '0';

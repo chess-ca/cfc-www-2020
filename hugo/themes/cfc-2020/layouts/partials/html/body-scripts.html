@@ -1,3 +1,6 @@
+{{- with .Params.i18n }}
+ <script>window.page_i18n = {{ jsonify . | safeJS }};</script>
+{{- end}}
 {{- if isset .Params "include_js" }}
   {{- range (split (.Params.include_js) ",") }}
     {{- $js := trim . " " }}
@@ -14,8 +17,6 @@
 
     {{- if eq $js "ratings" }}
       {{- $js_opts := dict "format" "iife" "target" "es2015" "minify" hugo.IsProduction }}
-      {{- $i18n_js := resources.Get (printf "i18n/i18n.%s.js" $.Page.Language.Lang) | js.Build $js_opts | resources.Fingerprint }}
- <script src="{{ $i18n_js.RelPermalink }}"></script>
       {{- $ratings_js := resources.Get "built/ratings.js" | js.Build $js_opts | resources.Fingerprint }}
  <script src="{{ $ratings_js.RelPermalink }}"></script>
     {{- end }}

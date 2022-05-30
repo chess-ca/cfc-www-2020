@@ -61,7 +61,7 @@
         events: []
     }
     let error_message = '';
-    const i18n = window.App_i18n.ratings_event_search;
+    const i18n = window.page_i18n || {};
 
     onMount(_getData);
 

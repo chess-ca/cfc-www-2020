@@ -109,7 +109,7 @@
     let name_first = '';
     let name_last = '';
     let players = [];
-    const i18n = window.App_i18n.ratings_player_search;    // See: hugo/assets/i18n/i18n.<lang>.js
+    const i18n = window.page_i18n || {};
 
     function getDataPromise() {
         const q_vars = get_url_query_vars();

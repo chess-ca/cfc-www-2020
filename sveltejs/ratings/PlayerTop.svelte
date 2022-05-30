@@ -184,7 +184,7 @@
     let error_message = '';
     let players = [];
     let player_list_is_single = false;
-    const i18n = window.App_i18n.ratings_player_top;    // See: hugo/assets/i18n/i18n.<lang>.js
+    const i18n = window.page_i18n || {};
 
     function getData() {
         report_is = 'loading';
