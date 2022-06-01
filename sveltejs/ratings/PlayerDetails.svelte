@@ -1,11 +1,9 @@
 
-<TopNav updated={updated}/>
-
-<div>
-{#await getDataPromise()}
+{#await getting_data}
  <div style="margin-top:4rem;"><Spinner/></div>
 
-{:then getDataResult}
+{:then d}
+ <TopNav updated={d.updated}/>
  {#if !p.name_last}
   <!-- ---- ---- Player Not Found ---- ---- -->
   <section class="container pad-touch-only">
@@ -135,9 +133,6 @@
       {/each}
      </tbody>
     </table>
-    <ul style="font-size:0.8rem; margin-top:2rem;">
-     <li>Data: {updated}</li>
-    </ul>
    </div>
   </section>
 
@@ -177,51 +172,40 @@
       {/each}
      </tbody>
     </table>
-    <ul style="font-size:0.8rem; margin-top:2rem;">
-     <li>Data: {updated}</li>
-    </ul>
    </div>
   </section>
 
  {/if}
 
-{:catch getDataErr}
+{:catch error}
  <section class="container pad-touch-only">
   <p style="margin-top:3rem;"> <!-- TODO: try this -->
-   Error: {getDataErr.message}
+   Error: {error.message}
   </p>
  </section>
 {/await}
-</div>
 
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
     import {fmt_city_prov, fmt_cfc_expiry, fmt_rating, fmt_rating_indicator} from './_shared';
-    import {goto_handler, get_url_query_vars, call_api_promise} from '../_shared';
+    import {get_data_promise, goto_handler, get_url_query_vars} from '../_shared';
 
-    let updated = '';
-    let requested_cfc_id = '';
+    const i18n = window.page_i18n || {};
+    const qvars = get_url_query_vars();
+    let requested_cfc_id = qvars.id || '0';
     let has_oa = false;
     let p = {};
     let events_played = [];
     let events_orgarb = [];
     let pg_view = 'played';
     let filter_type = '';
-    const i18n = window.page_i18n || {};
 
-    function getDataPromise() {
-        const q_vars = get_url_query_vars();
-        requested_cfc_id = q_vars['id'] || '0';
-        const url = 'https://server.chess.ca/api/player/v1/' + requested_cfc_id;
-        return call_api_promise({
-            method:'GET', url, onComplete, onError
-        });
-
-        function onComplete(event, rsp) {
-            rsp = rsp || {};
-            updated = rsp.updated || '';
-            p = rsp.player || {};
+    const getting_data = get_data_promise(
+        'cfc-server://api/player/v1/' + requested_cfc_id,
+        d => {
+            d.updated = d.updated || '';
+            p = d.player || {};
             events_played = p.events;
             events_orgarb = p.orgarb;
             if (events_orgarb && events_orgarb.length)
@@ -231,9 +215,9 @@
                 if (el_h1)
                     el_h1.innerText = `${p.name_first} ${p.name_last}`;
             }
+            return d;
         }
-        function onError(event) {}
-    }
+    );
 </script>
 
 <style>

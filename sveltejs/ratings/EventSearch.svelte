@@ -1,11 +1,10 @@
 
-<TopNav updated={data.updated}/>
-
-{#if !data.status}
+{#await getting_data}
  <div style="margin-top:4rem;"><Spinner/></div>
  <!--p>{@html i18n.bug_spinning}</p-->
 
-{:else if data.status === 'loaded'}
+{:then d}
+ <TopNav updated={d.updated}/>
  <section class="container content pad-touch-only">
   <table class="ws-ratings-tdlist table is-hoverable is-narrow">
    <thead>
@@ -21,7 +20,7 @@
    </tr>
    </thead>
    <tbody on:click={goto_handler}>
-   {#each data.events as event}
+   {#each d.events as event}
     <tr data-goto={'/[[lang]]/ratings/t/?id='+event.id} class="is-clickable">
      <td><div class="ws-link size-18"></div></td>
      <td>{event.name}</td>
@@ -41,59 +40,19 @@
   </table>
  </section>
 
-{:else if data.status === 'error'}
+{:catch error}
  <p class="ws-error">{@html i18n.err_fetching}</p>
- <p>({error_message})</p>
+ <p>({error.message})</p>
 
-{:else}
- <p>Error: Unexpected data.status="{data.status}".</p>
-{/if}
+{/await}
 
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
-    import {call_api, get_url_query_vars, goto_handler} from '../_shared';
-    import {onMount} from 'svelte';
+    import {get_data_promise, goto_handler} from '../_shared';
 
-    let data = {
-        status: false,
-        updated: '_',
-        events: []
-    }
-    let error_message = '';
     const i18n = window.page_i18n || {};
-
-    onMount(_getData);
-
-    function _getData() {
-        const qv = get_url_query_vars();
-        let url = 'https://server.chess.ca/api/event/v1/';
-        if (qv['n']) {
-            url += 'find?n=' + encodeURI(qv['n']);
-        } else if (qv['d']) {
-            url += 'find?d=' + qv['d'];
-        } else if (qv['y']) {
-            url += 'find?y=' + qv['y'];
-        } else {
-            console.log('No query vars; no data to get.');
-            return;     // no data to get
-        }
-        call_api({url, onComplete, onError});
-
-        function onComplete(event, rsp) {
-            data = {
-                status: 'loaded',
-                updated: rsp.updated || '???',
-                events: rsp.events || []
-            };
-        }
-        function onError(event) {
-            error_message = event.message;
-            data = {
-                status: 'error',
-                updated: '_',
-                events: []
-            };
-        }
-    }
+    const getting_data = get_data_promise(
+        'cfc-server://api/event/v1/find?[[qvars]]'
+    );
 </script>

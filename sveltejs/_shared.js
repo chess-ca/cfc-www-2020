@@ -1,159 +1,58 @@
-import {get_page_lang} from "../hugo/assets/js/utils";
-
-const api_aliases = {
-    'cfc-api:': 'https://server.chess.ca/api'
-};
-
-export class ApiCall{
-    #method;
-    #url;
-    #form_data;
-    #file_upload;
-    #lang;
-    #timeout_ms = 8000;
-    #show_error_alert = true;
-    #show_timeout_alert = true;
-    #alerts = {
-        'en': 'Call to the server failed.\n\nTry again later.',
-        'fr': 'L\'appel au serveur a échoué.\n\nRéessayez plus tard.'
-    };
-    #xhr;
-    #handlers = {};
-
-    /**
-     * @param method_url - 'GET https://foo.com/api/myapi'
-     * @param lang - (optional) language for alert message
-     */
-    constructor(method_url, lang) {
-        const m_l = method_url.split(/\s+/, 2);
-        this.#method = m_l[0].toUpperCase();
-        this.#url = m_l[1];
-        for (const key in api_aliases) {
-            this.#url = this.#url.replace(key, api_aliases[key]);
-        }
-        this.#lang = lang || 'en';
-    }
-
-    setFormData = (form_data) => {
-        this.#form_data = form_data;
-    }
-    setFileUpload = (file_obj) => {
-        this.#file_upload = file_obj;
-    }
-
-    onProgress = (func) => {
-        this.#handlers.onProgress = func;
-        return this;
-    }
-    onComplete = (func) => {
-        this.#handlers.onComplete = func;
-        return this;
-    }
-    onError = (func) => {
-        this.#handlers.onError = func;
-        return this;
-    }
-    showErrorAlert = (value) => {
-        this.#show_error_alert = Boolean(value);
-        return this;
-    }
-    onAbort = (func) => {
-        this.#handlers.onAbort = func;
-        return this;
-    }
-    setTimeout = (time_ms) => {
-        this.#timeout_ms = time_ms;
-        return this;
-    }
-    onTimeout = (func) => {
-        this.#handlers.onTimeout = func;
-        return this;
-    }
-    showTimeoutAlert = (value) => {
-        this.#show_timeout_alert = Boolean(value);
-        return this;
-    }
-
-    call = () => {
-        const fdata = new FormData();
-        if (this.#form_data) {
-            for (const key in this.#form_data) {
-                if (this.#form_data.hasOwnProperty(key))
-                    fdata.append(key, this.#form_data[key]);
-            }
-        }
-        if (this.#file_upload) {
-            fdata.append('file_upload', this.#file_upload, this.#file_upload.name);
-        }
-
-        const xhr = new XMLHttpRequest();
-        this.#xhr = xhr;
-        xhr.timeout = this.#timeout_ms;
-        xhr.ontimeout = this.#handle_timeout;
-        if (this.#handlers.onProgress)
-            xhr.upload.addEventListener('progress', this.#handle_progress, false);
-        xhr.addEventListener('load', this.#handle_complete);
-        xhr.addEventListener('error', this.#handle_error);
-        xhr.addEventListener('abort', this.#handle_abort);
-        xhr.open(this.#method, this.#url);
-
-        console.log('API: Call:\n\t', this.#method, this.#url);
-        if (this.#form_data) console.log('\tVars:', this.#form_data);
-        if (this.#file_upload) console.log('\tFile:', this.#file_upload);
-        xhr.send(fdata);
-    }
-
-    call_as_promise = () => {
-        const api_caller = (resolve, reject) => {
-            this.#handlers.resolve = resolve;
-            this.#handlers.reject = reject;
-            this.call();
-        }
-        return new Promise(api_caller);
-    }
-
-    #handle_complete = (event) => {
-        const rsp = this.#xhr.response && JSON.parse(this.#xhr.response);
-        if (this.#xhr.status >= 200 && this.#xhr.status < 300) {
-            console.log('API: Success:', rsp);
-            this.#handlers.onComplete && this.#handlers.onComplete(event, rsp || {});
-            this.#handlers.resolve && this.#handlers.resolve(rsp);
-        } else {
-            console.log('API: Failed:', this.#xhr.status, method, url);
-            if (this.#handlers.onError) {
-                this.#handlers.onError(event);
-            } else if (this.#show_error_alert) {
-                alert(this.#alerts[this.#lang]);
-            }
-            this.#handlers.reject && this.#handlers.reject(event);
-        }
-    }
-    #handle_progress = (event) => {
-        const p = Math.floor(100 * event.loaded / event.total);
-        console.log('File upload: progress:', p, '%');
-        this.#handlers.onProgress && this.#handlers.onProgress(event);
-    }
-    #handle_error = (event) => {
-        console.error('API: Error:', event)
-        this.#handlers.onError && this.#handlers.onError(event);
-        this.#handlers.reject && this.#handlers.reject(event);
-    }
-    #handle_abort = (event) => {
-        console.warn('API: Aborted:', event);
-        this.#handlers.onAbort && this.#handlers.onAbort(event);
-        this.#handlers.reject && this.#handlers.reject(event);
-    }
-    #handle_timeout = (event) => {
-        console.error('API: Timeout:', event);
-        if (this.#handlers.onTimeout) {
-            this.#handlers.onTimeout(event);
-        } else if (this.#show_timeout_alert) {
-            alert(this.#alerts[this.#lang]);
-        }
-        this.#handlers.reject && this.#handlers.reject(event);
-    }
+/**
+ * Call an API to get data for a page. URL substitutions are
+ * done for "cfc-server://", "[[qvars]]", and "[[qvar.x]]".
+ *
+ * @param url - URL of the API (with substitutable tokens)
+ * @param on_success - function called when API succeeds
+ * @param on_error - function called when API fails
+ * @return {Promise<*>}
+ */
+export function get_data_promise(url, on_success, on_error) {
+    url = url_substitutions(url);
+    console.log('API: Calling:\n' + url)
+    return fetch(url).then(
+            rsp => rsp.json()
+        ).then(data => {
+            console.log('API: Success:', data);
+            return on_success ? on_success(data) : data;
+        }).catch(error => {
+            console.error('API: Error:', error);
+            on_error && on_error(error);
+            throw error;
+        });
 }
 
+function url_substitutions(url) {
+    const qvars = get_url_query_vars();
+    //---- Substitute hostname alias depending on api=<environment>
+    const api_env = qvars.api || 'prod';
+    if (api_env === 'l') {
+        url = url.replace('cfc-server://', 'http://127.0.0.1:5000/');
+    } else {
+        url = url.replace('cfc-server://', 'https://server.chess.ca/');
+    }
+    //---- Substitute [[qvars]] with all query vars of the web page (except api=)
+    delete qvars.api;
+    url = url.replaceAll(
+        '[[qvars]]',
+        () => qvars_to_qstr(qvars)
+    );
+    //---- Substitute [[qvar.x]] with the query var "x" of the web page
+    url = url.replaceAll(
+        /\[\[qvar\.(.+?)]]/g,       // "?" ==> don't be greedy!
+        (m, key) => (qvars[key] || '')
+    );
+    return url;
+
+    function qvars_to_qstr(qvars) {
+        const props = [];
+        for (const prop in qvars) {
+            if (qvars.hasOwnProperty(prop))
+                props.push(prop+'='+encodeURI(qvars[prop]));
+        }
+        return props.join('&');
+    }
+}
 
 /**
  * Call an API. A thin wrapper around XMLHttpRequest, which
@@ -242,32 +141,6 @@ export function call_api(arg) {
     // Notes:
     //  - Although XMLHttpRequest is old-school, it supports onProgress
     //    (fetch does not!) and works on all browsers (without polyfills).
-}
-
-/**
- * Return a Promise that calls an API. The Promise wraps a call to
- * call_api(), which is a thin wrapper around XMLHttpRequest, which
- * supports onProgress (fetch doesn't). Use this for frameworks
- * (like SvelteJS) that work with Promises (not callbacks).
- * @param args - Same args as for call_api().
- * @return {Promise}
- */
-export function call_api_promise(args) {
-    const nothing = () => {};
-    const orig_onComplete = args.onComplete || nothing;
-    const orig_onError = args.onError || nothing;
-    function api_caller(resolve, reject) {
-        args.onComplete = (event, rsp) => {
-            orig_onComplete && orig_onComplete(event, rsp);
-            resolve(event);
-        };
-        args.onError = (event) => {
-            orig_onError && orig_onError(event);
-            reject(event);
-        };
-        call_api(args);
-    }
-    return new Promise(api_caller);
 }
 
 /**
@@ -449,15 +322,7 @@ export function get_provinces (lang, exclude) {
         {code: "US", name: "USA"},
         {code: "FO", name: "Foreign"},
     ];
-    if (exclude) {
-        let filtered_list = [];
-        for (let i=0; i<p_list.length; i++) {
-            let p = p_list[i]
-            if ( ! exclude.includes(p.code) ) {
-                filtered_list.push(p);
-            }
-        }
-        p_list = filtered_list;
-    }
-    return p_list;
+    return exclude
+        ? p_list.filter(p => !exclude.includes(p.code))
+        : plist;
 }

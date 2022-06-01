@@ -1,12 +1,11 @@
 
-<TopNav updated={updated}/>
-
-{#await getDataPromise()}
+{#await getting_data}
  <div style="margin-top:4rem;">
   <Spinner><p>{@html i18n.bug_spinning}</p></Spinner>
  </div>
 
-{:then getDataResult}
+{:then d}
+ <TopNav updated={d.updated}/>
  <section class="container content pad-touch-only">
   <p class="notes">&mdash; {@html i18n.search_intro}</p>
   <div class="field is-grouped is-grouped-multiline">
@@ -28,7 +27,7 @@
  </section>
 
  {#if report_is === 'ready' }
-  {#if players.length < 1 }
+  {#if d.players.length < 1 }
    <!-- ---- ---- Events Not Found ---- ---- -->
    <section class="container pad-touch-only">
     <p style="margin-top:3rem;">
@@ -54,7 +53,7 @@
      </tr>
      </thead>
      <tbody on:click={goto_handler}>
-     {#each players as p}
+     {#each d.players as p}
       <tr data-goto="/[[lang]]/ratings/p/?id={p.cfc_id}" class="is-clickable">
        <td><div class="ws-link size-18"></div></td>
        <td>{@html p.name_last}, {@html p.name_first}</td>
@@ -72,7 +71,7 @@
        </td>
       </tr>
      {/each}
-     {#if has_provisional_ratings(players)}
+     {#if has_provisional_ratings(d.players)}
       <tr>
        <td></td>
        <td colspan="99">
@@ -102,32 +101,23 @@
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
     import {fmt_cfc_expiry, fmt_city_prov, fmt_rating, fmt_rating_indicator} from './_shared';
-    import {goto, goto_handler, get_url_query_vars, call_api_promise} from '../_shared';
+    import {get_data_promise, goto, goto_handler, get_url_query_vars} from '../_shared';
 
-    let report_is = 'waiting';
-    let updated = '';
-    let name_first = '';
-    let name_last = '';
-    let players = [];
     const i18n = window.page_i18n || {};
+    const qvars = get_url_query_vars();
+    let name_first = qvars.fn || '';
+    let name_last = qvars.ln || '';
+    let report_is = 'empty';
 
-    function getDataPromise() {
-        const q_vars = get_url_query_vars();
-        name_first = q_vars['fn'] || '';
-        name_last = q_vars['ln'] || '';
-        const url = `https://server.chess.ca/api/player/v1/find?first=${name_first}&last=${name_last}`;
-        return call_api_promise({
-            method:'GET', url, onComplete, onError
-        });
-
-        function onComplete(event, rsp) {
-            rsp = rsp || {};
-            updated = rsp.updated || '';
-            players = rsp.players || [];
+    const getting_data = get_data_promise(
+        'cfc-server://api/player/v1/find?first=[[qvar.fn]]&last=[[qvar.ln]]',
+        d => {
+            d.updated = d.updated || '';
+            d.players = d.players || [];
             report_is = 'ready';
+            return d;
         }
-        function onError(event) {}
-    }
+    );
 
     function on_keyup(event) {
         report_is = 'empty';
