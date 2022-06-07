@@ -23,7 +23,7 @@ function cfc_newsflashes(el, args, funcs) {
     let html = [];
     news_list.forEach(nf => {
         let text = page_lang === 'fr' ? nf.fr : nf.en;
-        text = text === '=' ? nf.en : text;
+        if (text==='=' || text==='') text = nf.en;
         let highlight = String(nf.highlight || '').toLowerCase();
         html.push(`<div class="flash highlight-${highlight}">${text}</div>`)
     });
