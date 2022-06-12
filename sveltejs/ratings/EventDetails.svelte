@@ -18,7 +18,7 @@
      <th>{@html i18n.arb_name}</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody on:click={goto_handler}>
     {#if !found}
      <tr>
       <td></td><td colspan="5">({@html i18n.none_found})</td>
@@ -30,8 +30,20 @@
       <td>{d.event.rating_type==='Q' ? i18n.quick : i18n.regular}</td>
       <td>{d.event.pairings==='RR' ? i18n.rr : i18n.swiss}</td>
       <td>{d.event.province}</td>
-      <td>{d.event.organizer_name || '--'}</td>
-      <td>{d.event.arbiter_name || '--'}</td>
+      {#if d.event.organizer_id}
+       <td data-goto="/[[lang]]/ratings/p/?id={d.event.organizer_id}" class="is-clickable">
+        {d.event.organizer_name}
+       </td>
+      {:else}
+       <td>--</td>
+      {/if}
+      {#if d.event.arbiter_id}
+       <td data-goto="/[[lang]]/ratings/p/?id={d.event.arbiter_id}" class="is-clickable">
+        {d.event.arbiter_name}
+       </td>
+      {:else}
+       <td>--</td>
+      {/if}
      </tr>
     {/if}
     </tbody>
