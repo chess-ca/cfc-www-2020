@@ -14,7 +14,7 @@ layout = "ws-single"
 * ON: [Ontario Chess Association](http://www.ontariochess.com/) (OCA)
   * [Eastern Ontario Chess Association](http://www.eoca.ca/) (EOCA)
   * [Greater Toronto Chess League](http://www.torontochess.org/) (GTCL)
-  * Northern Ontario Chess League (NOCL)
+  * [Northern Ontario Chess League](https://www.chess.com/club/northern-ontario-chess-league) (NOCL)
   * South Western Ontario Chess League (SWOCL)
 * PE: [Chess PEI](http://mcc.devastation.ca/chess_pei.html)
 * QC: [Fédération québécoise des échecs](http://fqechecs.qc.ca/) (FQE)
