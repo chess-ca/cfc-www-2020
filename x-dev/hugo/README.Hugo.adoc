@@ -1,0 +1,83 @@
+= Hugo - README
+:icons: font
+:toc: left level 4
+:toclevels: 5
+:stylesheet: ../adoc.css
+
+//======================================================================
+
+== Hugo Techniques
+
+=== i18n / Internationalization
+
+==== Method 1: .../i18n/<lang>.toml (Global)
+
+Text translations are defined in `./hugo/themes/<theme>/i18n/en.toml`:
+
+[source,toml]
+----
+# Can have comments (such as where keys are used)
+# Keys are case sensitive
+Today.other = 'Today'
+today.other = 'today'
+# Keys can have sub-keys for plurality
+days = {one='day', other='days'}
+
+# STYLE-1: Recommend this short format for succintness
+as_recommended.other = 'this is more succint'
+# STYLE-2: Hugo documentation shows this more verbose format
+[as_shown_in_hugo_doc]
+other = 'this is verbose'
+# No more succincts allowed since they will "belong" to previous [grouping]
+----
+
+Within templates (not content), text is retrieved:
+[source,gotemplate]
+----
+{{ i18n "Today" }}
+or its alias {{ T "Today" }}
+----
+* See https://gohugo.io/functions/i18n/[Hugo doc] for more advanced uses.
+* CON: Text is defined "far away" from page definitions.
+  This is okay if text is used in many places and templates.
+  It's less okay if text is used in just one page.  It would be nicer
+  to have the text and page "closer".  See next method ...
+* CON: Key collisions are more likely.
+
+==== Method 2: [i18n] in Front Matter (Page)
+Text translations are defined in the front matter of the page
+in each `index.<lang>.md` file
+so that they are "closer" to the page.
+[source,markdown]
+----
++++
+[i18n]
+    intro_text = "The Chess Federation of Canada (CFC) is ..."
+    news = 'News'
++++
+----
+* Keys are case INsensitive.
+
+Within templates (not content), text is retrieved:
+[source,gotemplate]
+----
+{{- $i18n := $.Page.Params.i18n }}
+...
+<p>{{ $i18n.intro_text | safeHTML }}</p>
+----
+
+Within content (not templates), these text translations are not directly
+retrievable.  Could create a shortcode but the content is already language
+specific so there's really no need to get translated text defined in the
+front matter.
+
+==== Method 3: $i18n in layouts
+Text translations are defined in the templates (layouts, partials, etc)
+so that the they are "closer" to the template.
+[source,gotemplate]
+----
+{{- $lang := $.Page.Language.Lang }}
+   ((... not easy))
+----
+* Hmmm, this is not so easy to do. Hugo template language with
+conditionals, dictionarys, and variable scoping would be an ugly code-ball.
