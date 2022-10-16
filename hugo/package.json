@@ -9,10 +9,7 @@
     "hugo:build": "cd ../hugo && hugo --cleanDestinationDir",
     "hugo:serve": "cd ../hugo && hugo server",
     "hugo:serve+drafts": "cd ../hugo && hugo server --buildDrafts",
-    "hugo:new-post": "cd ../hugo && hugo",
-    "rollup:watch-dev": "rollup -c rollup.config.js --environment BUILD:dev --watch",
-    "rollup:build-dev": "rollup -c rollup.config.js --environment BUILD:dev",
-    "rollup:build-prod": "rollup -c rollup.config.js --environment BUILD:prod"
+    "hugo:new-post": "cd ../hugo && hugo"
   },
   "author": "Don Parakin",
   "license": "COPYRIGHT",
@@ -20,17 +17,11 @@
     "buildTags": "extended"
   },
   "dependencies": {
-    "@rollup/plugin-node-resolve": "*",
     "alpinejs": "*",
     "anchor-js": "*",
     "bulma": "*",
     "gsap": "*",
-    "hugo-bin": "0.75.0",
-    "rollup": "*",
-    "rollup-plugin-delete": "*",
-    "rollup-plugin-sizes": "*",
-    "rollup-plugin-svelte": "*",
-    "svelte": "*"
+    "hugo-bin": "0.92.3"
   },
   "repository": {
     "type": "git",

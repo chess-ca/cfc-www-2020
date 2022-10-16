@@ -18,7 +18,7 @@
      <th>{@html i18n.arb_name}</th>
     </tr>
     </thead>
-    <tbody on:click={goto_handler}>
+    <tbody on:click={goto_handler} on:keyup={a11y_click(goto_handler)}>
     {#if !found}
      <tr>
       <td></td><td colspan="5">({@html i18n.none_found})</td>
@@ -68,7 +68,7 @@
       <th class="ta-center">{@html i18n.rating_post}</th>
      </tr>
      </thead>
-     <tbody on:click={goto_handler}>
+     <tbody on:click={goto_handler} on:keyup={a11y_click(goto_handler)}>
      {#each d.crosstable as ct}
       <tr data-goto={'/[[lang]]/ratings/p/?id='+ct.cfc_id} class:ws-highlight={ct.cfc_id===highlighted_cfc_id} class="is-clickable">
        <td>{ct.place}</td>
@@ -107,7 +107,7 @@
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
-    import {get_data_promise, get_url_query_vars, goto_handler} from '../_shared';
+    import {get_data_promise, get_url_query_vars, goto_handler, a11y_click} from '../_shared';
     import {fmt_rating} from './_shared';
 
     const i18n = window.page_i18n || {};

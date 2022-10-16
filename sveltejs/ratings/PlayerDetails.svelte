@@ -1,3 +1,4 @@
+<svelte:options accessors={true}></svelte:options>
 
 {#await getting_data}
  <div style="margin-top:4rem;"><Spinner/></div>
@@ -68,10 +69,10 @@
     <div class="tabs is-boxed is-small">
      <!-- svelte-ignore a11y-missing-attribute -->
      <ul role="tablist" class="ml-0 mt-1 mb-1">
-      <li class:is-active={pg_view==='played'} on:click={()=>pg_view='played'}>
+      <li class:is-active={pg_view==='played'} on:click={()=>pg_view='played'} on:keyup={()=>pg_view='played'}>
        <a role="tab" aria-selected={pg_view==='played'} aria-controls="panel-played">{i18n.player}</a>
       </li>
-      <li class:is-active={pg_view==='orgarb'} on:click={()=>pg_view='orgarb'}>
+      <li class:is-active={pg_view==='orgarb'} on:click={()=>pg_view='orgarb'} on:keyup={()=>pg_view='orgarb'}>
        <a role="tab" aria-selected={pg_view==='orbarb'} aria-controls="panel-orbarb">{i18n.org_arb}</a>
       </li>
      </ul>
@@ -112,7 +113,7 @@
        <th class="td-c"><span class="has-text-primary">{@html i18n.rating_high}</span></th>
       </tr>
      </thead>
-     <tbody on:click={goto_handler}
+     <tbody on:click={goto_handler} on:keyup={a11y_click(goto_handler)}
          class:only-type-R={filter_type==='R'} class:only-type-Q={filter_type==='Q'}>
       {#each events_played as t (t.id)}
        <tr data-goto="/[[lang]]/ratings/t/?id={t.id}&p={p.cfc_id}"
@@ -154,7 +155,7 @@
        <th class="td-c">{@html i18n.n_players}</th>
       </tr>
      </thead>
-     <tbody on:click={goto_handler}>
+     <tbody on:click={goto_handler} on:keyup={a11y_click(goto_handler)}>
       {#each events_orgarb as t, i (t.id)}
        <tr data-goto="/[[lang]]/ratings/t/?id={t.id}" class="is-clickable">
         <td><div class="ws-link size-18"></div></td>
@@ -189,9 +190,9 @@
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
     import {fmt_city_prov, fmt_cfc_expiry, fmt_rating, fmt_rating_indicator} from './_shared';
-    import {get_data_promise, goto_handler, get_url_query_vars} from '../_shared';
+    import {get_data_promise, goto_handler, get_url_query_vars, get_i18n} from '../_shared';
+    import {a11y_click} from '../_shared';
 
-    const i18n = window.page_i18n || {};
     const qvars = get_url_query_vars();
     let requested_cfc_id = qvars.id || '0';
     let has_oa = false;
@@ -218,6 +219,56 @@
             return d;
         }
     );
+
+    const i18n = get_i18n({
+        event: ['Event', 'Événement'],
+        end_date: ['End Date', 'Date de fin'],
+        none_found: ['none found', "personne n'est trouve"],
+        provisional_notes: ['<i>(&mldr;)</i> is a provisional rating. <i>(&mldr; g)</i> is the number of games rated.',
+            '<i>(&mldr;)</i> est une note provisoire. <i>(&mldr; j)</i> est le nombre de jeux notés.'],
+
+        //---- Player Details
+        name: ['Name', 'Nom'],
+        city: ['City', 'Ville'],
+        cfc_id: ['CFC<br>Id', 'FCE<br>Id'],
+        cfc_expiry: ['CFC<br>Expiry', 'Expiration<br>du FCE'],
+        regular_rating: ['Regular<br>Rating', 'Cote<br>Régulière'],
+        regular_high: ['Regular<br>High', 'Régulier<br>élevé'],
+        quick_rating: ['Quick<br>Rating', 'Cote<br>Rapide'],
+        quick_high: ['Quick<br>High', 'Rapide<br>élevé'],
+        not_found: ['not found', 'pas trouvé'],
+
+        //---- Tabs
+        thankyou: ['is a chess organizer / arbiter. Thank you.',
+            "est un organisateur / arbitre d'échecs. Merci."],
+        thankyou_1: ['Thank you', 'Merci'],
+        thankyou_2: ['for being a chess organizer / arbiter',
+            "d'être un organisateur / arbitre d'échecs"],
+        player: ['Player', 'Joueur'],
+        org_arb: ['Organizer / Arbiter', 'Organisateur / Arbitre'],
+
+        //---- Tab: Player's Tournaments List
+        filter_by_type: ['Filter by type', 'Filtrer par type'],
+        all_types: ['All Tournaments', 'Tous les tournois'],
+        only_regular: ['Only regular tournaments', 'Seuls les tournois réguliers'],
+        only_quick: ['Only quick tournaments', 'Seuls les tournois rapides'],
+        type: ['Type', 'Type'],
+        games_played: ['Games<br>Played', 'Jeux<br>joués'],
+        score: ['Score', 'Score'],
+        rating_pre: ['Old<br>Rating', 'Ancien<br>Cote'],
+        rating_perf: ['Perf<br>Rating', 'Perf<br>Cote'],
+        rating_post: ['New<br>Rating', 'Nouvelle<br>Cote'],
+        rating_high: ['Highest<br>Rating', 'plus élevée<br>Cote'],
+        games: ['g', 'j'],
+
+        //---- Tab: Organizer / Arbiter List
+        province: ['Prov', 'Prov'],
+        n_rounds: ['# of<br>Rounds', '# de<br>tours'],
+        pairings: ['Type', 'Type'],
+        n_players: ['# of<br>Players', '# de<br>joueurs'],
+        organizer: ['Organizer', 'Organisateur'],
+        arbiter: ['Arbiter', 'Arbitre'],
+    });
 </script>
 
 <style>

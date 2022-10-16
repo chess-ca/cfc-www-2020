@@ -52,27 +52,26 @@
 <section class="container content pad-touch-only">
  <h4 style="border-top:1px solid #759556; margin-top:2rem;">{i18n.reports}</h4>
  <ul>
-  <li>{i18n.players}: <a href="/{page_lang}/ratings/p/top/">{i18n.top_rated}</a></li>
+  <li>{i18n.players}: <a href="/{lang}/ratings/p/top/">{i18n.top_rated}</a></li>
   <li>{i18n.tournaments}:
-   <a href="/{page_lang}/ratings/t/sr/?d=60">{i18n.recent}</a> ,
-   <a href="/{page_lang}/ratings/t/sr/?y={now_year}">{now_year}</a> ,
-   <a href="/{page_lang}/ratings/t/sr/?y={now_year - 1}">{now_year - 1}</a>
+   <a href="/{lang}/ratings/t/sr/?d=60">{i18n.recent}</a> ,
+   <a href="/{lang}/ratings/t/sr/?y={now_year}">{now_year}</a> ,
+   <a href="/{lang}/ratings/t/sr/?y={now_year - 1}">{now_year - 1}</a>
   </li>
  </ul>
 </section>
 
 
 <script>
-    import {goto, get_lang} from "../_shared";
+    import {goto, get_lang, get_i18n} from "../_shared";
 
-    const page_lang = get_lang('en');
+    const lang = get_lang('en');
     let p_cfc = '';       // input: player cfc id
     let p_first = '';     // input: player first name
     let p_last = '';      // input: player last name
     let t_name = '';      // input: tournament name
     let err_fields = '';
     const now_year = (new Date()).getFullYear();
-    const i18n = window.page_i18n || {};
 
     function on_keyup(event, type) {
         err_fields = '';
@@ -108,6 +107,27 @@
             err_fields = 'tournaments';
         }
     }
+
+    const i18n = get_i18n({
+        //---- Search Players
+        search_intro: ['Use &ldquo;*&rdquo; as a wild card: Bob* Fis*er',
+            'Utilisez &ldquo;*&rdquo; comme joker: Bob* Fis*er'],
+        cfc_id: ['CFC id', 'FCE id'],
+        search_for_players: ['Search for Players', 'Recherchez des joueurs'],
+        inp_first: ['First name', 'Prénom'],
+        inp_last: ['Last name', 'Nom de famille'],
+        search: ['Search', 'Chercher'],
+        err_enter_criteria: ['Enter search criteria', 'Entrez les critères de recherche'],
+        //---- Search Events
+        search_for_events: ['Search for Tournaments', 'Rechercher des tournois'],
+        inp_event_name: ['Tournament name', 'Nom du tournoi'],
+        //---- Reports
+        reports: ['Reports', 'Rapports'],
+        players: ['Players', 'Joueurs'],
+        top_rated: ['Top Rated', 'Les mieux notés'],
+        tournaments: ['Tournaments', 'Tournois'],
+        recent: ['Recent', 'Récents'],
+    });
 </script>
 
 <style>

@@ -52,7 +52,7 @@
       <th class="ta-center">FIDE<br>id</th>
      </tr>
      </thead>
-     <tbody on:click={goto_handler}>
+     <tbody on:click={goto_handler} on:keyup={a11y_click(goto_handler)}>
      {#each d.players as p}
       <tr data-goto="/[[lang]]/ratings/p/?id={p.cfc_id}" class="is-clickable">
        <td><div class="ws-link size-18"></div></td>
@@ -101,7 +101,7 @@
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
     import {fmt_cfc_expiry, fmt_city_prov, fmt_rating, fmt_rating_indicator} from './_shared';
-    import {get_data_promise, goto, goto_handler, get_url_query_vars} from '../_shared';
+    import {get_data_promise, goto, goto_handler, get_url_query_vars, a11y_click} from '../_shared';
 
     const i18n = window.page_i18n || {};
     const qvars = get_url_query_vars();
@@ -137,8 +137,7 @@
     }
 
     function has_provisional_ratings(players) {
-        for (let i=1; i<players.length; i++) {
-            let p = players[i];
+        for (const p of players) {
             if (p.regular_indicator < 40 || p.quick_indicator < 40)
                 return true;
         }

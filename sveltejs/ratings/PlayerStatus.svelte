@@ -5,7 +5,7 @@
 {:then d}
  <!-- ---- ---- Player Status ---- ---- -->
  <section aria-label="Player Status" class="container pad-touch-only">
-  <table on:click={goto_handler}>
+  <table on:click={goto_handler} on:keyup={a11y_click(goto_handler)}>
    <tbody>
     <tr class="t-title"><td>CFC id</td></tr>
     <tr class="t-data" class:expired={!found}><td>{p.cfc_id}</td></tr>
@@ -44,7 +44,7 @@
 
 <script>
     import Spinner from '../misc/Spinner.svelte';
-    import {get_data_promise, goto_handler} from '../_shared';
+    import {get_data_promise, goto_handler, a11y_click} from '../_shared';
     import {fmt_cfc_expiry, fmt_rating} from './_shared';
 
     let p = {};

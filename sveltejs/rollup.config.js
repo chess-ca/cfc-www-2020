@@ -1,21 +1,20 @@
 
 import path from 'path';
-// import del from 'rollup-plugin-delete';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
-// import scss from 'rollup-plugin-scss';
-// import { terser } from 'rollup-plugin-terser';
 import sizes from 'rollup-plugin-sizes';
 
 const project_dir = path.resolve(__dirname, '..');
 const src_dir = path.resolve(project_dir, 'sveltejs');
 const built_dir = path.resolve(project_dir, 'hugo/assets/built');
 
-const isDev = process.env.BUILD.toLowerCase().startsWith('dev');
+const isDev = String(process.env.BUILD).toLowerCase().startsWith('dev');
+console.log('Building SvelteJS for ' + (isDev ? 'development' : 'non-development'));
 
 const ratings_build = {
     input: {
-        ratings: path.resolve(src_dir, 'ratings/_main.js'),
+        //@@@@ main: path.resolve(src_dir, 'main/_main.ts'),
+        ratings: path.resolve(src_dir, 'ratings/_main.js')
     },
     output: {
         dir: built_dir,
@@ -30,15 +29,14 @@ const ratings_build = {
         //     force: true, runOnce: true //, verbose: true
         // }),
         nodeResolve({
-            moduleDirectories: ['hugo/node_modules', 'node_modules']
+            //@@@@ moduleDirectories: ['sveltejs/node_modules', 'node_modules']
         }),
         svelte({
             // include: path.resolve(src_dir, 'javascript/components/**/*.svelte'),
             emitCss: false,
             compilerOptions: {
                 dev: isDev
-                // customElements mount in Shadow DOM; hides external CSS (like Bulma.io)
-                // customElement: true
+                // customElement: true      // these mount in Shadow DOM; hides external CSS (like Bulma.io)
             }
         }),
         // scss({

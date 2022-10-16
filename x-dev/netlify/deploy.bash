@@ -4,35 +4,46 @@ readonly ROOT_DIR=$(readlink -e "$(dirname $0)/../..")
 readonly DIVIDER="────────────────────────────────────────────────────────────────────────"
 
 main() {
-  do_npm_install
   do_cfc_data_build
+  do_sveltejs_npm_install
   do_sveltejs_build
+  do_hugo_npm_install
   do_hugo_build
 }
 
-do_npm_install() {
-  echo -e "\n${DIVIDER}\nTASK: npm install"
-  set -e
-  cd "${ROOT_DIR}/hugo"
-  npm install
-}
-
-do_sveltejs_build() {
-  echo -e "\n${DIVIDER}\nTASK: npm run rollup:build-prod"
-  set -e
-  cd "${ROOT_DIR}/hugo"
-  npm run rollup:build-prod
-}
-
+# ---------------- CFC Data ----------------
 do_cfc_data_build() {
-  echo -e "\n${DIVIDER}\nTASK: CFC Data Build from Google Sheets"
+  echo -e "\n${DIVIDER}\nTASK: CFC Data: Get from Google Sheets"
   set -e
   python3 --version
   python3 "${ROOT_DIR}/x-dev/netlify/deploy-data.py"
 }
 
+# ---------------- SvelteJS ----------------
+do_sveltejs_npm_install() {
+  echo -e "\n${DIVIDER}\nTASK: SvelteJS: npm install"
+  set -e
+  cd "${ROOT_DIR}/sveltejs"
+  npm install
+}
+
+do_sveltejs_build() {
+  echo -e "\n${DIVIDER}\nTASK: SvelteJS: npm run rollup:build-prod"
+  set -e
+  cd "${ROOT_DIR}/hugo"
+  npm run rollup:build-prod
+}
+
+# ---------------- Hugo ----------------
+do_hugo_npm_install() {
+  echo -e "\n${DIVIDER}\nTASK: Hugo: npm install"
+  set -e
+  cd "${ROOT_DIR}/hugo"
+  npm install
+}
+
 do_hugo_build() {
-  echo -e "\n${DIVIDER}\nTASK: Website Build (using Hugo)"
+  echo -e "\n${DIVIDER}\nTASK: Hugo: npm hugo:build"
   set -e
   cd "${ROOT_DIR}/hugo"
   npm run hugo:version

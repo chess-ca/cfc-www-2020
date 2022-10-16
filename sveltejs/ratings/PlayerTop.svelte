@@ -111,7 +111,7 @@
      <th class="ta-center">{@html i18n.cfc_expiry}</th>
     </tr>
     </thead>
-    <tbody on:click={goto_handler}>
+    <tbody on:click={goto_handler} on:keyup={a11y_click(goto_handler)}>
     {#if players.length ===0}
      <tr><td></td><td colspan="99">({@html i18n.none_found})</td></tr>
 
@@ -162,6 +162,7 @@
     import Spinner from '../misc/Spinner.svelte';
     import {fmt_city_prov, fmt_cfc_expiry, fmt_rating, fmt_rating_indicator} from './_shared';
     import {goto_handler, call_api, get_lang, get_provinces, fmt_str} from '../_shared';
+    import {a11y_click} from '../_shared';
 
     let updated = '';
     let lang = get_lang();
@@ -221,10 +222,10 @@
     }
 
     function has_provisional_ratings(players, type) {
-        for (let i=1; i<players.length; i++) {
-            let p = players[i];
-            if (type === 'R' && p.regular_indicator < 40) return true;
-            if (type === 'Q' && p.quick_indicator < 40) return true;
+        for (const p of players) {
+            if ((type === 'R' && p.regular_indicator < 40)
+                || (type === 'Q' && p.quick_indicator < 40))
+                return true;
         }
         return false;
     }

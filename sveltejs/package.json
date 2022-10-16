@@ -1,0 +1,27 @@
+{
+  "name": "cfc-website - SvelteJS",
+  "version": "1.0.0",
+  "description": "CFC / chess.ca website - SvelteJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rollup:watch-dev": "rollup -c rollup.config.js --environment BUILD:dev --watch",
+    "rollup:build-dev": "rollup -c rollup.config.js --environment BUILD:dev",
+    "rollup:build-prod": "rollup -c rollup.config.js --environment BUILD:prod"
+  },
+  "author": "Don Parakin",
+  "license": "COPYRIGHT",
+  "dependencies": {
+    "@rollup/plugin-alias": "^3.1.9",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-sizes": "^1.0.4",
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte": "^3.50.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/parakin/cfc-website.git"
+  }
+}

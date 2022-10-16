@@ -1,3 +1,7 @@
+const cfc_server_prod = 'https://server.chess.ca/';
+const cfc_server_local = 'http://127.0.0.1:5000/';
+const cfc_server_default = cfc_server_prod;
+
 /**
  * Call an API to get data for a page. URL substitutions are
  * done for "cfc-server://", "[[qvars]]", and "[[qvar.x]]".
@@ -27,9 +31,9 @@ function url_substitutions(url) {
     //---- Substitute hostname alias depending on api=<environment>
     const api_env = qvars.api || 'prod';
     if (api_env === 'l') {
-        url = url.replace('cfc-server://', 'http://127.0.0.1:5000/');
+        url = url.replace('cfc-server://', cfc_server_local);
     } else {
-        url = url.replace('cfc-server://', 'https://server.chess.ca/');
+        url = url.replace('cfc-server://', cfc_server_default);
     }
     //---- Substitute [[qvars]] with all query vars of the web page (except api=)
     delete qvars.api;
@@ -147,39 +151,57 @@ export function call_api(arg) {
  * Mount SvelteJS components.  For each HTML tag with attribute "sveltejs",
  * mount an instance of a SvelteJS component.
  *
- * For tag names, in the HTML they may be mixed case with hyphens.
- * In the map, they must be lower-case with underscores replacing hyphens.
+ * Names of HTML tags may be mixed case with hyphens. In the map, they must be
+ * lower-case with underscores replacing hyphens.
  *
- * For tag attribute names, in the HTML they may be mixed case.
- * In MyCode.svelte, the attribute names *MUST* be lower-case (translated by the browser)
+ * Attributes of the HTML tags may be mixed case. In MyCode.svelte,
+ * the attribute names *MUST* be lower-case (translated by the browser)
  * with underscores replacing hyphens (translated by this function).
  *
- * @param tag_component_map: A map of `tag-names` to SvelteJS components.
+ * @param {Map} tag_component_map: A map of `tag-names` to SvelteJS components.
  *      Example: for &lt;My-App-Tag&gt;, ["my_app_tag"] = &lt;sveltejs-object&gt;.
+ * @param {string[]} excluded_attrs: names of attributes of the element
+ *      to exclude from passing to the Svelte component.
  */
-export function mount_sveltejs_components(tag_component_map) {
+export function mount_sveltejs_components(tag_component_map, excluded_attrs) {
+    excluded_attrs = excluded_attrs || ['sveltejs', 'style'];
     const component_list = document.querySelectorAll('[sveltejs]');
-    component_list.forEach((c_el) => {
-        const c_name = c_el.tagName.toLowerCase();
-        const c_svelte = tag_component_map[c_name.replaceAll('-', '_')];
-        if (!c_svelte) {
-            console.error(`SvelteJS component "${c_name}" is not defined.`);
-        } else {
-            const c_props = {};
-            const c_attrs = c_el.attributes;
-            for(let i = 0; i < c_attrs.length; i++) {
-                if (c_attrs[i].name !== 'sveltejs') {
-                    c_props[c_attrs[i].name.toLowerCase()] = c_attrs[i].value;
-                }
-            }
-            new c_svelte({target: c_el, props: c_props});
-            // CSS might have [sveltejs] {display:none;}. Remove to show it.
-            c_el.attributes.removeNamedItem('sveltejs');
+    for (const c_el of component_list) {
+        //---- Get the kids (might need to inject them later)
+        const c_children = new Map();
+        for (let i=0; i<c_el.children.length; i++) {
+            const child = c_el.children.item(i);
+            c_children.set(child.id || i, child);
         }
-    });
+        //---- Map the <tag-name> to a Svelte component
+        const c_tag = c_el.tagName.toLowerCase();
+        const c_svelte = tag_component_map[c_tag.replaceAll('-', '_')];
+        if (!c_svelte) {
+            console.error(`SvelteJS component for "${c_tag}" was not found.`);
+            continue;
+        }
+        //---- Get component's props from mount element's attributes
+        const c_props = {};
+        for (const attr of c_el.attributes) {
+            if (!excluded_attrs.includes(attr.name)) {
+                c_props[attr.name] = attr.value;
+            }
+        }
+        //---- Create/mount Svelete component (with target & props)
+        const c_instance = new c_svelte({target: c_el, props: c_props});
+        //---- If requested, inject the kids and remove them from the mount element
+        if (c_instance.children_map) {
+            c_instance.children_map = c_children;
+            for (let child of c_children.values()) {
+                c_el.removeChild(child);
+            }
+        }
+        //---- Remove [sveltejs] attribute since the CSS might do {display:none;} for it.
+        c_el.attributes.removeNamedItem('sveltejs');
+    }
     // Notes:
-    //  - FYI, this had base props passed to every component (page_lang, etc) but I removed it
-    //    because Svelte would complain if undeclared or else complain if declared but not used.
+    //  - FYI, before this code added base props to every component (page_lang, etc)
+    //    but Svelte would complain if undeclared or if declared but not used. So, removed.
 }
 
 /**
@@ -213,25 +235,39 @@ export function get_lang(default_lang) {
 }
 
 /**
+ * Return text translations for the page's language.
+ * @param {{string: string[]}} i18n_bundle - an object with a bundle of
+ *      text translations. Keys map to an array of text translations:
+ *      `text_key: ['en text', 'fr text']`
+ * @returns {{string: string}} - an object with only the text translations
+ *      for just the page's language: `text_key: 'fr text'`
+ */
+export function get_i18n(i18n_bundle) {
+    const lang = get_lang('en');
+    const lang_i = lang === 'fr' ? 1 : 0;
+    const i18n = { lang: lang };
+    for (const [key, txt] of Object.entries(i18n_bundle)) {
+        i18n[key] = txt[lang_i];
+    }
+    return i18n;
+}
+
+/**
  * Return the variable names/value from the URL's query string.
  * - For /path/to/page?x=1&y=2&z=my%20cat return {x:'1', y:'2', z:'my cat'}
  *
  * @returns {string: string, ...}
  */
 export function get_url_query_vars() {
-    let q = window.location.search.substring(1)    // drop the "?" prefix
-    if (q.trim() === '') {
-        return {};
-    }
-    q = q.split('&');
+    const q_str = window.location.search.substring(1).trim();  // drop the "?" prefix
+    if (q_str === '') return {};
+    const q_pairs = q_str.split('&');
     const qvars = {};
-    for (let i=0; i<q.length; i++) {
-        let n_v = q[i].split('=', 2);
-        if (n_v.length < 2) {
-            qvars[n_v[0]] = true;   // a var without a value
-        } else {
-            qvars[n_v[0]] = decodeURI(n_v[1]);
-        }
+    for (const pair of q_pairs) {
+        const n_v = pair.split('=', 2);
+        qvars[n_v[0]] = (n_v.length < 2)
+            ? true                // var without a value is boolean true
+            : decodeURI(n_v[1]);  // var with encoded value
     }
     return qvars;
 }
@@ -280,8 +316,9 @@ export function goto(url, el, add_class) {
 }
 
 /**
- * One handler for many clickable elements. Set onclick on an ancestor of all the
- * clickable elements and set "data-goto" attribute on each clickable element.
+ * For performance, can have just 1 click listener for MANY clickable
+ * elements. Set onclick on an ancestor of all the clickable elements
+ * and set "data-goto" attribute on each clickable element.
  * @param event
  */
 export function goto_handler(event) {
@@ -325,4 +362,22 @@ export function get_provinces (lang, exclude) {
     return exclude
         ? p_list.filter(p => !exclude.includes(p.code))
         : plist;
+}
+
+
+/**
+ * Invokes the handler function iff the "enter" key was pressed (code=13).
+ * For accessibility (a11y), actions caused by clicks should also be
+ * caused by the "enter" key. The browser does it already for some elements
+ * (<a>, <button>, <input>); must add it for others (<div>, <tbody>, etc).
+ * @param {function(Event)} handleClickEvent - called if [enter] key was pressed
+ * @returns {(function(Event): void)}
+ */
+// Ref: https://dev.to/receter/easy-accessible-click-handlers-4jkb
+export function a11y_click(handleClickEvent) {
+    return (event) => {
+        if (event.keyCode === 13 /* [enter] key */) {
+            handleClickEvent(event);
+        }
+    };
 }

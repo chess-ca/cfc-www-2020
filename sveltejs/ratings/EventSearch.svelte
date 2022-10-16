@@ -19,7 +19,7 @@
     <th>{@html i18n.arb_name}</th>
    </tr>
    </thead>
-   <tbody on:click={goto_handler}>
+   <tbody on:click={goto_handler} on:keyup={a11y_click(goto_handler)}>
    {#each d.events as event}
     <tr data-goto={'/[[lang]]/ratings/t/?id='+event.id} class="is-clickable">
      <td><div class="ws-link size-18"></div></td>
@@ -49,7 +49,7 @@
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
-    import {get_data_promise, goto_handler} from '../_shared';
+    import {get_data_promise, goto_handler, a11y_click} from '../_shared';
 
     const i18n = window.page_i18n || {};
     const getting_data = get_data_promise(
