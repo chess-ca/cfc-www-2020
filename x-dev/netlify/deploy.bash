@@ -30,7 +30,7 @@ do_sveltejs_npm_install() {
 do_sveltejs_build() {
   echo -e "\n${DIVIDER}\nTASK: SvelteJS: npm run rollup:build-prod"
   set -e
-  cd "${ROOT_DIR}/hugo"
+  cd "${ROOT_DIR}/sveltejs"
   npm run rollup:build-prod
 }
 
