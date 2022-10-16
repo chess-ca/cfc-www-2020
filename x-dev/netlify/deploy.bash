@@ -4,6 +4,7 @@ readonly ROOT_DIR=$(readlink -e "$(dirname $0)/../..")
 readonly DIVIDER="────────────────────────────────────────────────────────────────────────"
 
 main() {
+  show_versions
   do_cfc_data_build
   do_sveltejs_npm_install
   do_sveltejs_build
@@ -11,11 +12,17 @@ main() {
   do_hugo_build
 }
 
+# ---------------- Versions ----------------
+show_versions() {
+  echo -e "\n${DIVIDER}\nTASK: Versions"
+  echo npm version: $(npm --version)
+  echo python3 version: $(python3 --version)
+}
+
 # ---------------- CFC Data ----------------
 do_cfc_data_build() {
   echo -e "\n${DIVIDER}\nTASK: CFC Data: Get from Google Sheets"
   set -e
-  python3 --version
   python3 "${ROOT_DIR}/x-dev/netlify/deploy-data.py"
 }
 
