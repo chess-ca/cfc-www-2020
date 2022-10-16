@@ -41,7 +41,7 @@
        <td class="td-c">{@html fmt_rating(p.quick_rating, p.quick_indicator)}</td>
        <td class="td-c">{@html fmt_rating_indicator(p.quick_indicator, i18n.games)}</td>
        <td class="td-c">
-        {#if p.fide_id}<a href="https://ratings.fide.com/profile/{p.fide_id}" target="_blank">{p.fide_id}</a>{/if}
+        {#if p.fide_id}<a href="https://ratings.fide.com/profile/{p.fide_id}">{p.fide_id}</a>{/if}
        </td>
       </tr>
       {#if has_oa || p.regular_indicator < 40 || p.quick_indicator < 40}

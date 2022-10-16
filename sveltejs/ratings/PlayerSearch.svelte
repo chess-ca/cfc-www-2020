@@ -66,7 +66,7 @@
        <td class="ta-center">{@html fmt_rating_indicator(p.quick_indicator, i18n.games)}</td>
        <td class="ta-center" data-goto="https://ratings.fide.com/profile/{p.fide_id}">
         {#if p.fide_id}
-         <a href="https://ratings.fide.com/profile/{p.fide_id}" target="_blank">{@html p.fide_id}</a>
+         <a href="https://ratings.fide.com/profile/{p.fide_id}">{@html p.fide_id}</a>
         {/if}
        </td>
       </tr>

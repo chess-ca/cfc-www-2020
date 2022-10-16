@@ -15,6 +15,7 @@ main() {
 # ---------------- Versions ----------------
 show_versions() {
   echo -e "\n${DIVIDER}\nTASK: Versions"
+  echo node version: $(node --version)
   echo npm version: $(npm --version)
   echo python3 version: $(python3 --version)
 }
