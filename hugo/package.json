@@ -12,7 +12,7 @@
     "hugo:new-post": "cd ../hugo && hugo"
   },
   "author": "Don Parakin",
-  "license": "COPYRIGHT",
+  "license": "UNLICENSED",
   "hugo-bin": {
     "buildTags": "extended"
   },
@@ -21,7 +21,7 @@
     "anchor-js": "*",
     "bulma": "*",
     "gsap": "*",
-    "hugo-bin": "0.92.3"
+    "hugo-bin": "0.75.0"
   },
   "repository": {
     "type": "git",
