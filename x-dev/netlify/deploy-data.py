@@ -13,7 +13,7 @@ import argparse, csv, io, re, json, pathlib
 import urllib.request, datetime
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).parents[2]
+ROOT_DIR = Path(__file__).resolve().parents[2]
 CFC_DATA_DEST = ROOT_DIR / 'hugo/assets/ext/cfc-data.js'
 CFC_DATA_VARNAME = 'ws_cfc_data'
 

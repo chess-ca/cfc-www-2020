@@ -14,19 +14,25 @@
 # repository branch will inherit these settings.
 [context.production]
   [context.production.environment]
+    NODE_VERSION = "16.18.0"
+    NPM_VERSION = "8.19.2"
     HUGO_ENV = "production"
-    HUGO_VERSION = "0.82.0"
+    HUGO_VERSION = "0.104.3"
 
 # Deploy Preview context: All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.82.0"
+  NODE_VERSION = "16.18.0"
+  NPM_VERSION = "8.19.2"
+  HUGO_VERSION = "0.104.3"
 
 # Branch deploy context: All deploys that are not from a pull/merge request
 # or from the production branch will inherit these settings.
 [context.branch-deploy]
   [context.branch-deploy.environment]
-    HUGO_VERSION = "0.82.0"
+    NODE_VERSION = "16.18.0"
+    NPM_VERSION = "8.19.2"
+    HUGO_VERSION = "0.104.3"
 
 # Specific branch context: Deploys from this branch
 # will take these settings and override their

@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hugo:version": "cd ../hugo && hugo version",
-    "hugo:build": "cd ../hugo && hugo --cleanDestinationDir",
-    "hugo:serve": "cd ../hugo && hugo server",
-    "hugo:serve+drafts": "cd ../hugo && hugo server --buildDrafts",
-    "hugo:new-post": "cd ../hugo && hugo"
+    "hugo:version": "hugo version",
+    "hugo:build": "hugo --cleanDestinationDir",
+    "hugo:serve": "hugo server",
+    "hugo:serve+drafts": "hugo server --buildDrafts",
+    "hugo:new-post": "hugo new"
   },
   "author": "Don Parakin",
   "license": "UNLICENSED",
@@ -20,8 +20,7 @@
     "alpinejs": "*",
     "anchor-js": "*",
     "bulma": "*",
-    "gsap": "*",
-    "hugo-bin": "0.75.0"
+    "gsap": "*"
   },
   "repository": {
     "type": "git",
