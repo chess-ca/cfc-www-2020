@@ -14,10 +14,11 @@ main() {
 
 # ---------------- Versions ----------------
 show_versions() {
-  echo -e "\n${DIVIDER}\nTASK: Versions"
+  echo -e "\n${DIVIDER}\nINFO: Versions"
   echo node version: $(node --version)
   echo npm version: $(npm --version)
   echo python3 version: $(python3 --version)
+  hugo version
 }
 
 # ---------------- CFC Data ----------------
@@ -36,7 +37,7 @@ do_sveltejs_npm_install() {
 }
 
 do_sveltejs_build() {
-  echo -e "\n${DIVIDER}\nTASK: SvelteJS: npm run rollup:build-prod"
+  echo -e "\n${DIVIDER}\nTASK: SvelteJS: Build"
   set -e
   cd "${ROOT_DIR}/sveltejs"
   npm run rollup:build-prod
@@ -51,10 +52,9 @@ do_hugo_npm_install() {
 }
 
 do_hugo_build() {
-  echo -e "\n${DIVIDER}\nTASK: Hugo: npm hugo:build"
+  echo -e "\n${DIVIDER}\nTASK: Hugo: Build"
   set -e
   cd "${ROOT_DIR}/hugo"
-  npm run hugo:version
   npm run hugo:build
 }
 
