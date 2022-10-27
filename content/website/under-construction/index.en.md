@@ -12,8 +12,6 @@ Because of viruses and malware, the old website was being blocked by many browse
 Fixing it was too difficult. So an emergency re-write of the website was started.
 Parts will be migrated from old to new based in priority sequence.
 The part you requested hasn't been migrated (yet) so is still "under construction".
-You can still go to the old chess.ca by clicking
-this [LINK](http://www.chess.ca/en/ws/old-chess-ca/).
 
 </div>
 

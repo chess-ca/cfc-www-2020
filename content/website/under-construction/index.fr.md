@@ -12,8 +12,6 @@ En raison de virus et de logiciels malveillants, l'ancien site Web était bloqu�
 Le réparer était trop difficile. Une réécriture d'urgence du site Web a donc été lancée.
 Les pièces seront migrées de l'ancienne vers la nouvelle en fonction de l'ordre de priorité.
 La pièce que vous avez demandée n'a pas (encore) été migrée et est donc toujours "en construction".
-Vous pouvez toujours accéder à l'ancien chess.ca en cliquant
-sur [ce lien](http://www.chess.ca/fr/ws/old-chess-ca/).
 
 </div>
 
