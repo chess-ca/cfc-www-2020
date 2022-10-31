@@ -177,7 +177,7 @@ export function mount_sveltejs_components(tag_component_map, excluded_attrs) {
         const c_tag = c_el.tagName.toLowerCase();
         const c_svelte = tag_component_map[c_tag.replaceAll('-', '_')];
         if (!c_svelte) {
-            console.error(`SvelteJS component for "${c_tag}" was not found.`);
+            // Component not defined in this JS bundle (but may be in another bundle)
             continue;
         }
         //---- Get component's props from mount element's attributes

@@ -1,5 +1,5 @@
 
-import {mount_sveltejs_components, get_attr} from '../_shared';
+import {mount_sveltejs_components} from '../_shared';
 import ratings_home from './Home.svelte';
 import ratings_player_search from './PlayerSearch.svelte';
 import ratings_player_details from './PlayerDetails.svelte';
