@@ -1,7 +1,6 @@
 
 import Alpine from 'alpinejs';
 import CFC_Spinner from './extensions/cfc-spinner';
-import CFC_NewsFlashes from './extensions/cfc-newsflashes';
 import CFC_Game_ChessCom from './extensions/cfc-game-chess-com';
 
 import pg_home from './js4pages/home';
@@ -11,7 +10,7 @@ import pg_ratings_home from './js4pages/ratings/home';
 import { go } from "./utils";
 
 const plugin_list = [
-    CFC_Spinner, CFC_NewsFlashes, CFC_Game_ChessCom
+    CFC_Spinner, CFC_Game_ChessCom
 ];
 const page_list = [
     pg_home, pg_upcoming_events, pg_membership_how,

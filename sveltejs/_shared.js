@@ -205,6 +205,22 @@ export function mount_sveltejs_components(tag_component_map, excluded_attrs) {
 }
 
 /**
+ * Get data from the global variable "window.ws_cfc_data").
+ * @param var_name
+ * @returns {*}
+ */
+export function get_global(var_name) {
+    let data = window.ws_cfc_data;
+    const path = var_name.split('.');
+    for (let path_part of path) {
+        if (data !== undefined) {
+            data = data[path_part];
+        }
+    }
+    return data;
+}
+
+/**
  * Return the value of a DOM element's attribute
  * @param el - a DOM element or a selector string.
  * @param attr_name - name of attribute.

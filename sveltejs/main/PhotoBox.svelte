@@ -25,10 +25,11 @@
 </style>
 
 <script>
+    import { get_global } from '../_shared';
     import { onMount } from 'svelte';
 
     export let lang = 'en';
-    export let photos = 'ws_cfc_data.photobox_home'
+    export let photos = 'photobox_home'
     export let img_height = '300px';
     export let wait_ms = '8000';
     export let ease_ms = '500';
@@ -60,22 +61,16 @@
         photo_list = photo_list;     // tells Svelte it changed.
     }
 
-    function get_photo_list(img_list_variable) {
-        //---- Get full list from the window.* variable
-        const var_parts = String(img_list_variable).split('.');
-        let img_list = window;
-        for (let part of var_parts) {
-            if (img_list !== undefined) {
-                img_list = img_list[part]
-            }
-        }
-        img_list = img_list || [];
-        //---- Filter to remove photos not within start & end dates.
-        const now_ymd = (new Date()).toISOString().slice(0,10);
+    function get_photo_list(photo_list_variable) {
+        let img_list = get_global(photo_list_variable) || [];
+
+        //---- Filter to remove photos if today is not within start & end dates.
+        const today = (new Date()).toISOString().slice(0,10);
         img_list = img_list.filter(photo => {
-            return ((photo.start && now_ymd >= photo.start)
-                && (photo.end && now_ymd <= photo.end));
+            return ((photo.start && today >= photo.start)
+                && (photo.end && today <= photo.end));
         });
+
         //---- Map data to display formats (URLs, text)
         img_list = img_list.map(photo => {
             // Map URL suffixes to real values
@@ -87,6 +82,7 @@
             text = (text === '=' || text === '') ? photo.en : text;
             return {photo_url: url, text: text};
         });
+
         return img_list;
     }
 </script>
