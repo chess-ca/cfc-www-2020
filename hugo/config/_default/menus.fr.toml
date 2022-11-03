@@ -6,4 +6,5 @@ main = [
     {identifier="elite", name="élite", url="/fr/elite/", weight=40},
     {identifier="cfc", name="FCE", url="/fr/cfc/", weight=80},
     {identifier="news", name="nouvelles", url="/fr/news/", weight=90},
+    {identifier="join", name="REJOINDRE", url="/fr/players/membership-join/", weight=99},
 ]
