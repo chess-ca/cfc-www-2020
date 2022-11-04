@@ -167,12 +167,6 @@ export function mount_sveltejs_components(tag_component_map, excluded_attrs) {
     excluded_attrs = excluded_attrs || ['sveltejs', 'style'];
     const component_list = document.querySelectorAll('[sveltejs]');
     for (const c_el of component_list) {
-        //---- Get the kids (might need to inject them later)
-        const c_children = new Map();
-        for (let i=0; i<c_el.children.length; i++) {
-            const child = c_el.children.item(i);
-            c_children.set(child.id || i, child);
-        }
         //---- Map the <tag-name> to a Svelte component
         const c_tag = c_el.tagName.toLowerCase();
         const c_svelte = tag_component_map[c_tag.replaceAll('-', '_')];
@@ -189,13 +183,6 @@ export function mount_sveltejs_components(tag_component_map, excluded_attrs) {
         }
         //---- Create/mount Svelete component (with target & props)
         const c_instance = new c_svelte({target: c_el, props: c_props});
-        //---- If requested, inject the kids and remove them from the mount element
-        if (c_instance.children_map) {
-            c_instance.children_map = c_children;
-            for (let child of c_children.values()) {
-                c_el.removeChild(child);
-            }
-        }
         //---- Remove [sveltejs] attribute since the CSS might do {display:none;} for it.
         c_el.attributes.removeNamedItem('sveltejs');
     }
@@ -218,6 +205,29 @@ export function get_global(var_name) {
         }
     }
     return data;
+}
+
+/**
+ * Get the siblings of a DOM element (excludes itself).
+ * Useful in SvelteJS components to get the siblings of
+ * an element added with bind:this={my_el}.
+ * @param element
+ * @param remove - if not false, remove from parent
+ * @returns {Map<any, any>}
+ */
+export function get_siblings(element, remove) {
+    remove = remove !== false;
+    const el_parent = element.parentElement;
+    const children = new Map();
+    for (let i=0; i<el_parent.children.length; i++) {
+        const child = el_parent.children.item(i);
+        if (child === element) continue;
+        children.set(child.id || i, child);
+    }
+    if (remove) {
+        children.forEach(child => el_parent.removeChild(child));
+    }
+    return children;
 }
 
 /**
