@@ -285,7 +285,7 @@ export function get_i18n(i18n_bundle) {
  * @returns {string: string, ...}
  */
 export function get_url_query_vars() {
-    const q_str = window.location.search.substring(1).trim();  // drop the "?" prefix
+    const q_str = window.location.search.slice(1).trim();  // drop the "?" prefix
     if (q_str === '') return {};
     const q_pairs = q_str.split('&');
     const qvars = {};
@@ -304,7 +304,7 @@ export function get_url_query_vars() {
  * @returns {string[]}
  */
 export function get_url_hash_values() {
-    let hash = window.location.hash.substring(1);      // drop the "#" prefix
+    let hash = window.location.hash.slice(1);      // drop the "#" prefix
     return (hash.trim() === '') ? [] : hash.split('/');
 }
 
@@ -329,7 +329,7 @@ export function goto(url, el, add_class) {
         history.forward();
     } else if (url.startsWith('lang=')) {
         // "lang=en:fr" switches language of current URL (from /en to /fr)
-        const langs_from_to = url.substring(5).split(':');
+        const langs_from_to = url.slice(5).split(':');
         const lang_from = `/${langs_from_to[0]}`;
         const lang_to = `/${langs_from_to[1]}`;
         const new_url = String(window.location).replace(lang_from, lang_to, 1);

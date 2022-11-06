@@ -6,7 +6,7 @@ layout = "ws-single"
 ## Provincial and Regional
 * AB: [Alberta Chess Association](http://www.albertachess.org/) (ACA)
 * BC: [British Columbia Chess Federation](http://www.chess.bc.ca/) (BCCF)
-* MB: [Manitoba Chess Association](http://www.chessmanitoba.com/) (MCA)
+* MB: [Manitoba Chess Association](https://chess.chessmanitoba.org/) (MCA)
 * NB: [New Brunswick Chess Association](http://mcc.devastation.ca/NBCA.html) (NBCA)
 * NL: [Newfoundland and Labrador Chess Association](http://nlchess.ca/) (NLCA)
 * NS: [Chess Nova Scotia](https://www.chessns.ca/)
