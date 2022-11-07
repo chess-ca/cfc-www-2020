@@ -183,8 +183,9 @@ export function mount_sveltejs_components(tag_component_map, excluded_attrs) {
         }
         //---- Create/mount Svelete component (with target & props)
         const c_instance = new c_svelte({target: c_el, props: c_props});
-        //---- Remove [sveltejs] attribute since the CSS might do {display:none;} for it.
-        c_el.attributes.removeNamedItem('sveltejs');
+    }
+    for (const el of document.querySelectorAll('[s-cloak]')) {
+        el.attributes.removeNamedItem('s-cloak');
     }
     // Notes:
     //  - FYI, before this code added base props to every component (page_lang, etc)

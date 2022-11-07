@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------
 // style.after-bulma.scss
 //----------------------------------------------------------------------
-[sveltejs] { display: none !important; }
+[s-cloak] { display: none !important; }
 [x-cloak] { display: none !important; }
 .debug { border: 1px solid #f00; }
 .debug-bg { background-color: #fcc; }

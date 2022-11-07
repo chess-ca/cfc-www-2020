@@ -6,9 +6,9 @@
 {{- block "inside-head" . }}{{ end -}}
 </head>
 
-<body>
+<body s-cloak>
+ <div id="ws-overlay"></div>
  <div x-data="page_data">
- <div id="ws-overlay" x-bind:class="{'is-overlay':sideNav.show}" x-on:click="sideNav.toggle"></div>
 {{ partial "html/body-topbar.html" . -}}
 
 {{ block "main" . }}

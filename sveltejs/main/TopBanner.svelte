@@ -1,0 +1,75 @@
+<section id="ws-topbar" aria-label="Top Bar" class="container" bind:this={el_root}>
+ <div class="columns is-mobile">
+  <div class="column is-narrow">
+   <a class="level-item" href="/{lang}/">
+    <img src="/img/cfc.logo/cfc.logo.540x140.en.png" class="is-hidden-mobile" style="min-height:100px;" alt="CFC Logo">
+    <img src="/img/cfc.logo/cfc.logo.186x120.en.png" class="is-hidden-tablet" style="min-height:100px;" alt="CFC Logo">
+   </a>
+  </div>
+  <div class="column">
+   <img src="/img/cfc-150.200x71.en.gif" class="is-hidden-mobile" width="200" height="71" alt="150th Anniversary" style="margin-top:40px;">
+  </div>
+  <div class="column is-narrow pt-5 mr-1 hide-if-print">
+   <a class="level-item button is-small is-primary" aria-label="switch language"
+       href={other_lang()}>{lang==='fr' ? 'FR' : 'EN'}</a>
+  </div>
+  <div class="column is-narrow is-hidden-tablet pt-5 mr-1"
+      on:click={toggleSideNav} on:keyup={a11y_click(toggleSideNav)}>
+   <i class="fas fa-bars fa-border"></i>
+  </div>
+ </div>
+ <aside class:is-open={sideNavOpen} class="menu is-pulled-left is-overlay is-hidden-tablet"
+     role="navigation" aria-label="main navigation"
+     on:click={toggleSideNav} on:keyup={a11y_click(toggleSideNav)}>
+  <ul class="menu-list">
+   {#each menu_list as m}
+    <li><a class="menu-item" href="{m.href}">{m.text}</a></li>
+   {/each}
+  </ul>
+ </aside>
+
+ <nav class="level is-hidden-mobile hide-if-print" aria-label="main navigation">
+  <div class="level-left">
+   {#each menu_list as m}
+    <a class="level-item menu-item" href={m.href}>{m.text}</a>
+   {/each}
+  </div>
+ </nav>
+</section>
+
+<script>
+ import {onMount} from 'svelte';
+ import {get_siblings, a11y_click} from '../_shared';
+
+ export let lang = 'en';
+
+ let sideNavOpen = false;
+ let menu_list = [];
+ let el_root;
+ const el_overlay = document.getElementById('ws-overlay');
+
+ function other_lang() {
+     const url = window.location.pathname;
+     return (lang === 'en')
+         ? '/fr' + url.slice(3)
+         : '/en' + url.slice(3);
+ }
+
+ function toggleSideNav() {
+     sideNavOpen = !sideNavOpen;
+     el_overlay.classList.toggle('is-overlay');
+ }
+
+ onMount(() => {
+     const children = get_siblings(el_root, true);
+     for (const el of children.values()) {
+         if (el.tagName && el.tagName.toLowerCase() === 'a') {
+             menu_list.push({
+                 href: el.href, text: el.innerText
+             });
+         }
+     }
+     menu_list = menu_list;   // so SvelteJS detects a change
+     el_overlay.addEventListener('click', toggleSideNav);
+ });
+</script>

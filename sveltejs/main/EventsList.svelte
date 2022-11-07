@@ -57,7 +57,7 @@
     {:else}
      <tr>
       <td>{e.dates[lang]}</td>
-      <td>{e.name}</td>
+      <td>{@html e.name}</td>
       <td>{e.type}</td>
       <td>{e.city_prov}</td>
       <td>{@html e.links}</td>
