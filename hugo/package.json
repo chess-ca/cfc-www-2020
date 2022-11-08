@@ -17,10 +17,8 @@
     "buildTags": "extended"
   },
   "dependencies": {
-    "alpinejs": "*",
     "anchor-js": "*",
-    "bulma": "*",
-    "gsap": "*"
+    "bulma": "*"
   },
   "repository": {
     "type": "git",

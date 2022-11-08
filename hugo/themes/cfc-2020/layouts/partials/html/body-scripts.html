@@ -29,5 +29,3 @@
 {{- $js_opts := dict "format" "iife" "target" "es2017" "minify" $minifyJS }}
 {{- $main_js := resources.Get "built/main.js" | js.Build $js_opts | resources.Fingerprint }}
  <script src="{{ $main_js.RelPermalink }}"></script>
-{{- $cfc_2020_js := resources.Get "js/cfc-2020.js" | js.Build $js_opts | resources.Fingerprint }}
- <script src="{{ $cfc_2020_js.RelPermalink }}"></script>

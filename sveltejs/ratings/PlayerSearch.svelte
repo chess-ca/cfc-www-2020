@@ -36,7 +36,7 @@
    </section>
   {:else}
    <!-- ---- ---- Events Found ---- ---- -->
-   <section class="container content pad-touch-only" x-cloak>
+   <section class="container content pad-touch-only">
     <table class="ws-ratings-tdlist table fix-for-alpinejs is-hoverable is-narrow">
      <thead>
      <tr>

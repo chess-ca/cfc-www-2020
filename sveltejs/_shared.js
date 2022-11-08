@@ -246,41 +246,41 @@ export function get_lang(default_lang) {
 }
 
 /**
- * Return text translations for the page's language.
- * @param {{string: string[]}} i18n_bundle - an object with a bundle of
- *      text translations. Keys map to an array of text translations:
- *      `text_key: ['en text', 'fr text']`
- * @returns {{string: string}} - an object with only the text translations
- *      for just the page's language: `text_key: 'fr text'`
- */
-export function get_i18n(i18n_bundle) {
-    const lang = get_lang('en');
-    const lang_i = lang === 'fr' ? 1 : 0;
-    const i18n = { lang: lang };
-    for (const [key, txt] of Object.entries(i18n_bundle)) {
-        i18n[key] = txt[lang_i];
-    }
-    return i18n;
-}
-
-/**
  * Return the variable names/value from the URL's query string.
  * - For /path/to/page?x=1&y=2&z=my%20cat return {x:'1', y:'2', z:'my cat'}
  *
  * @returns {string: string, ...}
  */
 export function get_url_query_vars() {
-    const q_str = window.location.search.slice(1).trim();  // drop the "?" prefix
-    if (q_str === '') return {};
-    const q_pairs = q_str.split('&');
-    const qvars = {};
-    for (const pair of q_pairs) {
-        const n_v = pair.split('=', 2);
-        qvars[n_v[0]] = (n_v.length < 2)
-            ? true                // var without a value is boolean true
-            : decodeURI(n_v[1]);  // var with encoded value
+    let qvars = window.page_url_query_vars;
+    if (qvars === undefined) {
+        const q_str = window.location.search.slice(1).trim();  // drop the "?" prefix
+        if (q_str === '') {
+            qvars = {};
+        } else {
+            const q_pairs = q_str.split('&');
+            qvars = {};
+            for (const pair of q_pairs) {
+                const n_v = pair.split('=', 2);
+                qvars[n_v[0]] = (n_v.length < 2)
+                    ? true                // var without a value is boolean true
+                    : decodeURI(n_v[1]);  // var with encoded value
+            }
+        }
+        window.page_url_query_vars = qvars;
     }
     return qvars;
+}
+
+/**
+ * Get value for key in the URL's query string (...?x=1&y=2)
+ * @param key - name of variable in query string
+ * @param default_value - value if key is not in query string
+ * @returns {string|boolean} - value (boolean "true" if key but no value)
+ */
+export function query_var(key, default_value) {
+    const qvars = get_url_query_vars();
+    return (qvars[key] === undefined) ? default_value : qvars[key];
 }
 
 /**
