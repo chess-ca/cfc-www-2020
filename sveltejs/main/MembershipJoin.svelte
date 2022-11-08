@@ -72,9 +72,10 @@
 
 <script>
  import {onMount} from 'svelte';
+ import {get_data} from "../data_access";
  import {get_siblings} from '../_shared';
 
- let i18n = window.page_i18n;
+ const i18n = get_data.page_i18n();
  let el_root;
  let is_member = '';
  let knows_cfc_id = '';

@@ -100,10 +100,11 @@
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
+    import {get_data} from "../data_access";
     import {fmt_cfc_expiry, fmt_city_prov, fmt_rating, fmt_rating_indicator} from './_shared';
     import {get_data_promise, goto, goto_handler, get_url_query_vars, a11y_click} from '../_shared';
 
-    const i18n = window.page_i18n || {};
+    const i18n = get_data.page_i18n();
     const qvars = get_url_query_vars();
     let name_first = qvars.fn || '';
     let name_last = qvars.ln || '';

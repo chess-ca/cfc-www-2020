@@ -63,9 +63,12 @@
 
 
 <script>
-    import {goto, get_lang, get_i18n} from "../_shared";
+    import {goto} from "../_shared";
+    import {get_data} from "../data_access";
 
-    const lang = get_lang('en');
+    export let lang = 'en';
+
+    let i18n = get_data.page_i18n();
     let p_cfc = '';       // input: player cfc id
     let p_first = '';     // input: player first name
     let p_last = '';      // input: player last name
@@ -107,27 +110,6 @@
             err_fields = 'tournaments';
         }
     }
-
-    const i18n = get_i18n({
-        //---- Search Players
-        search_intro: ['Use &ldquo;*&rdquo; as a wild card: Bob* Fis*er',
-            'Utilisez &ldquo;*&rdquo; comme joker: Bob* Fis*er'],
-        cfc_id: ['CFC id', 'FCE id'],
-        search_for_players: ['Search for Players', 'Recherchez des joueurs'],
-        inp_first: ['First name', 'Prénom'],
-        inp_last: ['Last name', 'Nom de famille'],
-        search: ['Search', 'Chercher'],
-        err_enter_criteria: ['Enter search criteria', 'Entrez les critères de recherche'],
-        //---- Search Events
-        search_for_events: ['Search for Tournaments', 'Rechercher des tournois'],
-        inp_event_name: ['Tournament name', 'Nom du tournoi'],
-        //---- Reports
-        reports: ['Reports', 'Rapports'],
-        players: ['Players', 'Joueurs'],
-        top_rated: ['Top Rated', 'Les mieux notés'],
-        tournaments: ['Tournaments', 'Tournois'],
-        recent: ['Recent', 'Récents'],
-    });
 </script>
 
 <style>

@@ -28,8 +28,8 @@
      <td>{event.rating_type}</td>
      <td>{event.pairings}</td>
      <td>{event.province}</td>
-     <td data-goto={'/[[lang]]/ratings/p/?id='+event.organizer_id}>{event.organizer_name || '--'}</td>
-     <td data-goto={'/[[lang]]/ratings/p/?id='+event.arbiter_id}>{event.arbiter_name || '--'}</td>
+     <td data-goto={'/[[lang]]/ratings/p/?id='+event.organizer_id} class="max-w">{event.organizer_name || '--'}</td>
+     <td data-goto={'/[[lang]]/ratings/p/?id='+event.arbiter_id} class="max-w">{event.arbiter_name || '--'}</td>
     </tr>
    {:else}
     <tr>
@@ -49,10 +49,15 @@
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
+    import {get_data} from "../data_access";
     import {get_data_promise, goto_handler, a11y_click} from '../_shared';
 
-    const i18n = window.page_i18n || {};
+    const i18n = get_data.page_i18n();
     const getting_data = get_data_promise(
         'cfc-server://api/event/v1/find?[[qvars]]'
     );
 </script>
+
+<style>
+ .max-w { max-width: 180px; }
+</style>

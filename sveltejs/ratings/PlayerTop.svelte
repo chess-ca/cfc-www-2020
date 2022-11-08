@@ -160,14 +160,15 @@
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
+    import {get_data} from "../data_access";
     import {fmt_city_prov, fmt_cfc_expiry, fmt_rating, fmt_rating_indicator} from './_shared';
-    import {goto_handler, call_api, get_lang, get_provinces, fmt_str} from '../_shared';
+    import {goto_handler, call_api, get_lang, fmt_str} from '../_shared';
     import {a11y_click} from '../_shared';
 
     let updated = '';
     let lang = get_lang();
     let now_yyyy = (new Date()).getFullYear();
-    let prov_list = get_provinces(lang, ['US', 'FO']);
+    let prov_list = get_data.provinces();
 
     let type = 'R';
     let topn = 50;
@@ -185,7 +186,7 @@
     let error_message = '';
     let players = [];
     let player_list_is_single = false;
-    const i18n = window.page_i18n || {};
+    const i18n = get_data.page_i18n();
 
     function getData() {
         report_is = 'loading';

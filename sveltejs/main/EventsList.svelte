@@ -17,21 +17,11 @@
    <select bind:value={e_prov}>
     <option value="*">{ i18n.filter_by_location }</option>
     <option value="*">{ i18n.all_provinces }</option>
-    <option value="Online">{ i18n.online }</option>
-    <option value="AB">AB - Alberta</option>
-    <option value="BC">BC - British Columbia</option>
-    <option value="MB">MB - Manitoba</option>
-    <option value="NB">NB - New Brunswick</option>
-    <option value="NL">NL - Newfoundland and Labrador</option>
-    <option value="NT">NT - Northwest Territories</option>
-    <option value="NS">NS - Nova Scotia</option>
-    <option value="NU">NU - Nunavut</option>
-    <option value="ON">ON - Ontario</option>
-    <option value="PE">PE - Prince Edward Island</option>
-    <option value="QC">QC - Quebec</option>
-    <option value="SK">SK - Saskatchewan</option>
-    <option value="YT">YT - Yukon</option>
-    <option value="FO">{ i18n.foreign }</option>
+    <option value="Online">-- { i18n.online } --</option>
+    {#each get_data.provinces() as p}
+     <option value={p.code}>{p.name}</option>
+    {/each}
+    <option value="FO">-- { i18n.foreign } --</option>
    </select>
   </div>
  </div>
@@ -75,24 +65,19 @@
 </div>
 
 <script>
-    import {get_global} from "../_shared";
+    import {get_data} from '../data_access';
 
     export let lang = 'en';
-    export let events_varname = 'events';
 
-    const i18n = window.page_i18n;
+    const i18n = get_data.page_i18n();
     let e_type = '*';
     let e_prov = '*';
-    const today = (new Date()).toISOString().slice(0,10)
 
     function filtered_events(e_type, e_prov) {
-        // (type, prov are passed as args so its use is reactive to changes)
-        const all_events = get_global(events_varname) || [];
-        let current_year = today.slice(0,4);
+        const all_events = get_data.events_upcoming();
+        let current_year = (new Date()).getFullYear().toString();
         const events = [];
         for (let e of all_events) {
-            if (e.end < today)
-                continue;
             if (e.type !== e_type && e_type !== '*')
                 continue;
             if (e.prov !== e_prov && e_prov !== '*')

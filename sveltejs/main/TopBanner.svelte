@@ -11,7 +11,7 @@
   </div>
   <div class="column is-narrow pt-5 mr-1 hide-if-print">
    <a class="level-item button is-small is-primary" aria-label="switch language"
-       href={other_lang()}>{lang==='fr' ? 'FR' : 'EN'}</a>
+       href={other_lang()}>{lang==='fr' ? 'EN' : 'FR'}</a>
   </div>
   <div class="column is-narrow is-hidden-tablet pt-5 mr-1"
       on:click={toggleSideNav} on:keyup={a11y_click(toggleSideNav)}>
@@ -49,10 +49,10 @@
  const el_overlay = document.getElementById('ws-overlay');
 
  function other_lang() {
-     const url = window.location.pathname;
-     return (lang === 'en')
-         ? '/fr' + url.slice(3)
-         : '/en' + url.slice(3);
+     const url_from = window.location.pathname + window.location.search;
+     const lang_from = url_from.slice(0,3);
+     const lang_to = (lang_from==='/en') ? '/fr' : '/en';
+     return lang_to + url_from.slice(3)
  }
 
  function toggleSideNav() {

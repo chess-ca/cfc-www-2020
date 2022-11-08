@@ -193,22 +193,6 @@ export function mount_sveltejs_components(tag_component_map, excluded_attrs) {
 }
 
 /**
- * Get data from the global variable "window.ws_cfc_data").
- * @param var_name
- * @returns {*}
- */
-export function get_global(var_name) {
-    let data = window.ws_cfc_data;
-    const path = var_name.split('.');
-    for (let path_part of path) {
-        if (data !== undefined) {
-            data = data[path_part];
-        }
-    }
-    return data;
-}
-
-/**
  * Get the siblings of a DOM element (excludes itself).
  * Useful in SvelteJS components to get the siblings of
  * an element added with bind:this={my_el}.
@@ -367,44 +351,19 @@ export function fmt_str(format) {
     });
 }
 
-export function get_provinces (lang, exclude) {
-    lang = lang || 'en';
-    let p_list = [
-        {code: "AB", name: "Alberta"},
-        {code: "BC", name: "British Columbia"},
-        {code: "MB", name: "Manitoba"},
-        {code: "NB", name: "New Brunswick"},
-        {code: "NL", name: "Newfoundland and Labrador"},
-        {code: "NT", name: "Northwest Territories"},
-        {code: "NS", name: "Nova Scotia"},
-        {code: "NU", name: "Nunavut"},
-        {code: "ON", name: "Ontario"},
-        {code: "PE", name: "Prince Edward Island"},
-        {code: "QC", name: "Québec"},
-        {code: "SK", name: "Saskatchewan"},
-        {code: "YT", name: "Yukon"},
-        {code: "US", name: "USA"},
-        {code: "FO", name: "Foreign"},
-    ];
-    return exclude
-        ? p_list.filter(p => !exclude.includes(p.code))
-        : plist;
-}
-
-
 /**
  * Invokes the handler function iff the "enter" key was pressed (code=13).
  * For accessibility (a11y), actions caused by clicks should also be
  * caused by the "enter" key. The browser does it already for some elements
  * (<a>, <button>, <input>); must add it for others (<div>, <tbody>, etc).
- * @param {function(Event)} handleClickEvent - called if [enter] key was pressed
+ * @param {function(Event)} clickHandler- called if [enter] key was pressed
  * @returns {(function(Event): void)}
  */
 // Ref: https://dev.to/receter/easy-accessible-click-handlers-4jkb
-export function a11y_click(handleClickEvent) {
+export function a11y_click(clickHandler) {
     return (event) => {
         if (event.keyCode === 13 /* [enter] key */) {
-            handleClickEvent(event);
+            clickHandler(event);
         }
     };
 }

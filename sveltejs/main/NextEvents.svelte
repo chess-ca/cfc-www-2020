@@ -17,26 +17,22 @@
 {/each}
 
 <script>
-    import {get_global} from "../_shared";
+    import {get_data} from '../data_access';
 
     export let lang = 'en';
-    export let events = 'events';
     export let max = '7';
 
-    const event_list = get_event_list(events);
+    const event_list = get_event_list(max);
     const i18n = get_i18n(lang);
 
-    function get_event_list(event_list_variable, max_events) {
-        max_events = max_events || Number(max);
+    function get_event_list(max_events) {
+        max_events = Number(max_events);
 
         const re_cancelled = /cancelled/i;
-        const today = (new Date()).toISOString().slice(0,10);
-        const all_events = get_global(event_list_variable) || [];
+        const all_events = get_data.events_upcoming();
         const events = [];
         for (let e of all_events) {
-            if (
-                (e.end < today)
-                || (e.prov === 'FO')
+            if ((e.prov === 'FO')
                 || (e.prov === 'US')
                 || (e.name.match(re_cancelled))
             ) continue;

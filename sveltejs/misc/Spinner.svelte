@@ -1,13 +1,13 @@
 
 <script>
- export let delay = 1000;
+    import { onDestroy } from 'svelte';
 
- import { onDestroy } from 'svelte';
+    export let delay = 1000;
 
- let show = false;
- const timeoutId = setTimeout(()=>show=true, delay);
+    let show = false;
+    const timeoutId = setTimeout(()=>show=true, delay);
 
- onDestroy(()=>clearTimeout(timeoutId));
+    onDestroy(()=>clearTimeout(timeoutId));
 </script>
 
 {#if show}
@@ -31,27 +31,15 @@
 <style>
 .sk-fading-circle {
     margin: 1rem 3rem;
-    width: 40px;
-    height: 40px;
-    position: relative;
+    width: 40px; height: 40px; position: relative;
 }
-
 .sk-fading-circle .sk-circle {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+    width: 100%; height: 100%; position: absolute;
+    left: 0; top: 0;
 }
-
 .sk-fading-circle .sk-circle:before {
-    content: '';
-    display: block;
-    margin: 0 auto;
-    width: 15%;
-    height: 15%;
-    background-color: #759556;
-    border-radius: 100%;
+    content: ''; display: block; margin: 0 auto; width: 15%; height: 15%;
+    background-color: #759556; border-radius: 100%;
     -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
     animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
 }

@@ -107,10 +107,11 @@
 <script>
     import TopNav from './TopNav.svelte';
     import Spinner from '../misc/Spinner.svelte';
+    import {get_data} from "../data_access";
     import {get_data_promise, get_url_query_vars, goto_handler, a11y_click} from '../_shared';
     import {fmt_rating} from './_shared';
 
-    const i18n = window.page_i18n || {};
+    const i18n = get_data.page_i18n();
     let found = false;
     let n_rounds = 0;
     let round_headers = [];
