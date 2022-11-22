@@ -2,12 +2,12 @@
  <div class="columns is-mobile">
   <div class="column is-narrow">
    <a class="level-item" href="/{lang}/">
-    <img src="/img/cfc.logo/cfc.logo.540x140.en.png" class="is-hidden-mobile" style="min-height:100px;" alt="CFC Logo">
-    <img src="/img/cfc.logo/cfc.logo.186x120.en.png" class="is-hidden-tablet" style="min-height:100px;" alt="CFC Logo">
+    <img src="/img/cfc.logo/cfc.logo.540x140.{lang}.png" class="is-hidden-mobile" style="min-height:100px;" alt="CFC Logo">
+    <img src="/img/cfc.logo/cfc.logo.186x120.{lang}.png" class="is-hidden-tablet" style="min-height:100px;" alt="CFC Logo">
    </a>
   </div>
   <div class="column">
-   <img src="/img/cfc-150.200x71.en.gif" class="is-hidden-mobile" width="200" height="71" alt="150th Anniversary" style="margin-top:40px;">
+   <img src="/img/cfc-150.200x71.{lang}.gif" class="is-hidden-mobile" width="200" height="71" alt="150th Anniversary" style="margin-top:40px;">
   </div>
   <div class="column is-narrow pt-5 mr-1 hide-if-print">
    <a class="level-item button is-small is-primary" aria-label="switch language"
