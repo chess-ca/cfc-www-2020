@@ -29,9 +29,9 @@
     <thead>
      <tr><th>Date</th><th>News</th></tr>
     </thead>
-    <tbody>
+    <tbody clickgo-listener>
 {{- range .Data.Pages }}
-     <tr x-on:click="go('{{ .Param "external-url" | default .RelPermalink }}')">
+     <tr clickgo="{{ .Param "external-url" | default .RelPermalink }}">
       <td class="is-narrow"><time datetime="{{ .Date.Format "2006-01-02" }}">{{- .Param "short-date" | default (.Date.Format "2006-01-02") -}}</time></td>
       <td><strong>{{ .Title }}</strong>{{ with .Param "short-text" }} : {{ . }}{{ end }}</td>
      </tr>

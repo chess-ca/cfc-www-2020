@@ -15,3 +15,14 @@ const sveltejs_components = {
 window.addEventListener('load', (event) => {
     mount_sveltejs_components(sveltejs_components);
 });
+
+//---- clickgo (formerly done by AlpineJS)
+document.querySelectorAll('[clickgo-listener]').forEach(el => {
+    el.addEventListener('click', event => {
+        const el_goto = event.target.closest('[clickgo]');
+        if (el_goto) {
+            const go_url = el_goto.getAttribute('clickgo');
+            window.location.assign(go_url);
+        }
+    });
+});
