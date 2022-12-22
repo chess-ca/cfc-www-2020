@@ -1,7 +1,7 @@
 +++
 title = "IM Shawn Rodrigue-Lemieux sur sa préparation, ses talismans et les clés du succès"
 slug = "im-shawn-rodrigue-lemieux"
-author = "Olga Mushtaler"
+author = "Olga Mushtaler, Brian MacLeod"
 +++
 
 (Traduit par Google. Nos excuses par avance.)
