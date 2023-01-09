@@ -1,5 +1,6 @@
 
 import {mount_sveltejs_components} from '../_shared';
+import {add_clickgo_listeners, insert_cfc_constants} from '../_shared';
 import cfc_top_banner from './TopBanner.svelte';
 import news_flashes from './NewsFlashes.svelte';
 import photo_box from './PhotoBox.svelte';
@@ -14,15 +15,6 @@ const sveltejs_components = {
 
 window.addEventListener('load', (event) => {
     mount_sveltejs_components(sveltejs_components);
-});
-
-//---- clickgo (formerly done by AlpineJS)
-document.querySelectorAll('[clickgo-listener]').forEach(el => {
-    el.addEventListener('click', event => {
-        const el_goto = event.target.closest('[clickgo]');
-        if (el_goto) {
-            const go_url = el_goto.getAttribute('clickgo');
-            window.location.assign(go_url);
-        }
-    });
+    add_clickgo_listeners();
+    insert_cfc_constants();
 });

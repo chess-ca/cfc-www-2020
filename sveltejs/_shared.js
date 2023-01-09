@@ -294,6 +294,23 @@ export function get_url_hash_values() {
 }
 
 /**
+ * Add listeners for "clickgo".  For containers (such as a table and its rows),
+ * instead of one listener per contained item (row) have just one listener on
+ * the container (table).  For performance.  Formerly done by AlpineJS.
+ */
+export function add_clickgo_listeners() {
+    document.querySelectorAll('[clickgo-listener]').forEach(el => {
+        el.addEventListener('click', event => {
+            const el_goto = event.target.closest('[clickgo]');
+            if (el_goto) {
+                const go_url = el_goto.getAttribute('clickgo');
+                window.location.assign(go_url);
+            }
+        });
+    });
+}
+
+/**
  * Go to a web page (with some handy conveniences)
  * @param url - URL of the next web page.
  *      "[[lang]]" will be replaced by the value of &lt;html lang="en">.
@@ -366,4 +383,20 @@ export function a11y_click(clickHandler) {
             clickHandler(event);
         }
     };
+}
+
+/**
+ * Insert CFC constants:
+ * - "junior-year-of-birth": the current year cut-off for Juniors.
+ */
+export function insert_cfc_constants() {
+    const junior_yob = String((new Date()).getFullYear() - 20);
+
+    const el_list = document.querySelectorAll('[cfc-constant]');
+    el_list.forEach(el => {
+        const name = el.getAttribute('cfc-constant');
+        if (name === 'junior-year-of-birth') {
+            el.textContent = junior_yob;
+        }
+    });
 }
