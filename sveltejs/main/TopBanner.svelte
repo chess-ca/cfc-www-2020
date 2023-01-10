@@ -1,23 +1,23 @@
 <section id="ws-topbar" aria-label="Top Bar" class="container" bind:this={el_root}>
- <div class="columns is-mobile">
-  <div class="column is-narrow">
+ <div class="level is-mobile">
+  <div class="level-left">
    <a class="level-item" href="/{lang}/">
     <img src="/img/cfc.logo/cfc.logo.540x140.{lang}.png" class="is-hidden-mobile" style="min-height:100px;" alt="CFC Logo">
     <img src="/img/cfc.logo/cfc.logo.186x120.{lang}.png" class="is-hidden-tablet" style="min-height:100px;" alt="CFC Logo">
    </a>
   </div>
-  <div class="column">
-   <img src="/img/cfc-150.200x71.{lang}.gif" class="is-hidden-mobile" width="200" height="71" alt="150th Anniversary" style="margin-top:40px;">
-  </div>
-  <div class="column is-narrow pt-5 mr-1 hide-if-print">
-   <a class="level-item button is-small is-primary" aria-label="switch language"
-       href={other_lang()}>{lang==='fr' ? 'EN' : 'FR'}</a>
-  </div>
-  <div class="column is-narrow is-hidden-tablet pt-5 mr-1"
-      on:click={toggleSideNav} on:keyup={a11y_click(toggleSideNav)}>
-   <i class="fas fa-bars fa-border"></i>
+  <div class="level-right">
+   <div class="level-item hide-if-print">
+    <a class="button is-small is-primary is-rounded ws-bold" aria-label="switch language"
+        href={other_lang()}>{lang==='fr' ? 'EN' : 'FR'}</a>
+   </div>
+   <div class="level-item is-hidden-tablet"
+        on:click={toggleSideNav} on:keyup={a11y_click(toggleSideNav)}>
+    <i class="fas fa-bars fa-border"></i>
+   </div>
   </div>
  </div>
+
  <aside class:is-open={sideNavOpen} class="menu is-pulled-left is-overlay is-hidden-tablet"
      role="navigation" aria-label="main navigation"
      on:click={toggleSideNav} on:keyup={a11y_click(toggleSideNav)}>
