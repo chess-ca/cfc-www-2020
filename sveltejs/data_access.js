@@ -69,7 +69,7 @@ function newsflashes(lang) {
             && (f.end && f.end >= today));
     });
     flashes = flashes.map(f => { return {
-        text: 'DAO:'+fmt_lang_text(lang, f.en, f.fr),
+        text: fmt_lang_text(lang, f.en, f.fr),
         highlight: String(f.highlight || '').toLowerCase()
     }; });
     return flashes;
