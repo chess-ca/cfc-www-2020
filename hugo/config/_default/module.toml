@@ -1,0 +1,32 @@
+[hugoVersion]
+    extended = true
+    #max = ''
+    #min = ''
+
+[[mounts]]
+    source = '../content'
+    target = 'content'
+[[mounts]]
+    source = 'static'
+    target = 'static'
+[[mounts]]
+    source = 'layouts'
+    target = 'layouts'
+[[mounts]]
+    source = '../data'
+    includeFiles = [
+#        '/clubs/*.csv',
+        '/members/census-*.yaml',
+        '/people/cfc/*.yaml',
+        '/titles/*/*.yaml',
+    ]
+    target = 'data'
+[[mounts]]
+    source = 'assets'
+    target = 'assets'
+[[mounts]]
+    source = 'i18n'
+    target = 'i18n'
+[[mounts]]
+    source = 'archetypes'
+    target = 'archetypes'

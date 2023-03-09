@@ -2,14 +2,12 @@
 # Site:  BareNakedCoder.com
 #-----------------------------------------------------------------------
 baseURL = "https://www.chess.ca/"
-#languageCode = "en-us"
 title = "chess.ca"
-#uglyURLs = true
 
 theme = "cfc-2020"
 
-contentDir = "../content"
-#publishDir = "../gae/static-gen"
+#---- See config/_default/module.toml for more settings
+
 enableRobotsTXT = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
