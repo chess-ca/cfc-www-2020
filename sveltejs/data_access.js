@@ -11,6 +11,7 @@ export const get_data = {
 
 export const get_data_promise = {};
 
+const url_wwwfiles = 'https://www-files.chess.ca';
 const url_cfccdn = 'https://server.chess.ca/files';
 const url_cloud = 'https://storage.googleapis.com/cfc-public';
 
@@ -100,8 +101,11 @@ function provinces() {
 
 //================================ DATA UTILITIES ================================
 function fmt_url(url) {
-    return (!url) ? '[URL UNDEFINED]'
-        : url.replace('cfccdn:', url_cfccdn).replace('cloud:', url_cloud);
+    url = url || '[URL UNDEFINED]';
+    url = url.replace('wwwfiles:', url_wwwfiles);
+    url = url.replace('cfccdn:', url_cfccdn);
+    url = url.replace('cloud:', url_cloud);
+    return url;
 }
 
 function fmt_lang_text(lang, en_text, fr_text) {
