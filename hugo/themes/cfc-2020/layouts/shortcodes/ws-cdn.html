@@ -1,3 +1,3 @@
 {{- $path := .Get 0 }}
-{{- $path_prefix := strings.TrimRight "/" "https://server.chess.ca/files/" }}
+{{- $path_prefix := strings.TrimRight "/" "https://www-files.chess.ca/" }}
 {{- printf "%s/%s" $path_prefix (strings.TrimLeft "/" $path) -}}

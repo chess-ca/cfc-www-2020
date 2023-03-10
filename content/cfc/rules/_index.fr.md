@@ -38,4 +38,4 @@ aurait dissous le FCE et versé ses actifs à d'autres organismes de bienfaisanc
 En tant que tel, il n'y avait pas assez de temps pour convertir l'intégralité du CFC Handbook hérité.
 
 ## Versions
-* 2020-08: [CFC Handbook (and NFP Continuance) de l'ancien site Web](https://server.chess.ca/files/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf) (PDF)
+* 2020-08: [CFC Handbook (and NFP Continuance) de l'ancien site Web](https://www-files.chess.ca/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf) (PDF)

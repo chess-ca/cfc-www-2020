@@ -38,4 +38,4 @@ would have dissolved the CFC and disbursed its assets to other charities.
 As such, there was not enough time to convert the entire legacy CFC Handbook.
 
 ## Versions
-* 2020-08: [CFC Handbook (and NFP Continuance) from the old website](https://server.chess.ca/files/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf) (PDF)
+* 2020-08: [CFC Handbook (and NFP Continuance) from the old website](https://www-files.chess.ca/cfc/rules/cfc-handbook.to-2014.from-old-website.pdf) (PDF)
