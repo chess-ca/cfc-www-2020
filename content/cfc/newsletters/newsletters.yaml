@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
 - ["--set-editor--", "John Upper"]
-- ["--set-url-prefix--", "https://server.chess.ca/files/cfc/newsletters"]
+- ["--set-url-prefix--", "https://www-files.chess.ca/newsletters"]
 - ["2021", "[Chess Canada - 99-Problems - 96 pages](URL_PREFIX/2021/2021.CFC.ChessCanada.99-Problems.pdf)", "[PGN](URL_PREFIX/2021/2021.CFC.ChessCanada.99-Problems.pgn)"]
 - ["2020", "[Chess Canada - Embiggened - 131 pages](URL_PREFIX/2020/2020.CFC.ChessCanada.Embiggened.pdf)", "[PGN](URL_PREFIX/2020/2020.CFC.ChessCanada.Embiggened.pgn)"]
 - ["2019", "[Chess Canada - Gnome - 96 pages](URL_PREFIX/2019/2019.CFC.ChessCanada.Gnome.pdf)", "[PGN](URL_PREFIX/2019/2019.CFC.ChessCanada.Gnome.pgn)"]
