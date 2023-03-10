@@ -12,15 +12,9 @@
 [[mounts]]
     source = 'layouts'
     target = 'layouts'
-[[mounts]]
-    source = '../data'
-    includeFiles = [
-#        '/clubs/*.csv',
-        '/members/census-*.yaml',
-        '/people/cfc/*.yaml',
-        '/titles/*/*.yaml',
-    ]
-    target = 'data'
+#[[mounts]]
+#    source = '../data'
+#    target = 'data'
 [[mounts]]
     source = 'assets'
     target = 'assets'
