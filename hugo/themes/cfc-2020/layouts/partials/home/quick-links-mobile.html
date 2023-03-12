@@ -1,0 +1,7 @@
+{{- $lang := $.Page.Language.Lang }}
+{{- $i18n := $.Page.Params.i18n }}
+      <aside class="menu ws-links is-hidden-tablet">
+       <a href="/{{ $lang }}/events/" class="button is-small">{{ i18n "Tournaments" }}</a>
+       <a href="/{{ $lang }}/ratings/" class="button is-small">{{ i18n "Ratings" }}</a>
+       <a href="/{{ $lang }}/news/" class="button is-small">{{ i18n "news" }}</a>
+      </aside>

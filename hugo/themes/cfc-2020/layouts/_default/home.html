@@ -8,12 +8,12 @@
    <div class="column is-8">
     <div class="columns is-multiline">
      <div class="column is-12">
+{{- partial "home/quick-links-mobile.html" . }}
       <div class="is-pulled-right">
        <a href="/{{ $lang }}/players/membership-join/" class="button is-small is-primary"><b>{{ $i18n.join }}</b></a>
       </div>
       <p class="ws-intro">{{ $i18n.intro_text | safeHTML }}</p>
      </div>
-
      <div class="column is-12">
       <news-flashes sveltejs lang="{{ $lang }}"></news-flashes>
       <photo-box sveltejs lang="{{ $lang }}"></photo-box>

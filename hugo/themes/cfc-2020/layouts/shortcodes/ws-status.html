@@ -1,23 +1,32 @@
-<h5>---- DUE or OVERDUE ----</h5>
-Pages with "content_todo"<br>
+<div class="ws-content">
+
+<h2>Due or Overdue</h2>
+ Pages with <code>content_todo: &lt;action&gt;</code> in its front matter.
+<ul>
 {{- range (sort (where $.Site.AllPages ".Params.content_todo" "!=" nil) ".RelPermalink") }}
- &nbsp;&nbsp;__ <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a> - {{ .Param "content_todo" }}<br>
+ <li style="margin:0;">{{ .Param "content_todo" }} &nbsp;&#x21d2; <a href="{{ .RelPermalink }}">{{ .File.Path }}</a></li>
 {{- else }}
- &nbsp;&nbsp;__ (none found)<br>
+ <li style="margin:0;">(none found)</li>
 {{- end }}
+</ul>
 
 {{- $today := now.Format "2006-01-02" }}
-<br>Pages with "content_review" date &leq; {{ $today }}<br>
-{{- range (sort (where $.Site.AllPages "Params.content_review" "<=" $today) ".Params.content_review") }}
-&nbsp;&nbsp;__ {{ .Param "content_review" }} - <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a><br>
+ Pages with <code>content_review: &lt;yyyy-mm-dd&gt; - &lt;action&gt;</code> &leq; {{ $today }}<br>
+<ul>
+ {{- range (sort (where $.Site.AllPages "Params.content_review" "<=" $today) ".Params.content_review") }}
+ <li style="margin:0;">{{ .Param "content_review" }} &nbsp;&#x21d2; <a href="{{ .RelPermalink }}">{{ .File.Path }}</a></li>
 {{- else }}
-&nbsp;&nbsp;__ (none found)<br>
+ <li style="margin:0;">(none found)</li>
 {{- end }}
+</ul>
 
-<br><br><h5>---- FUTURE ----</h5>
-Pages with "content_review" date &gt; {{ $today }}<br>
+<h2>Not Yet Due</h2>
+ Pages with <code>content_review: &lt;yyyy-mm-dd&gt; - &lt;action&gt;</code> &gt; {{ $today }}<br>
+<ul>
 {{- range (sort (where $.Site.AllPages "Params.content_review" ">" $today) ".Params.content_review") }}
-&nbsp;&nbsp;__ {{ .Param "content_review" }} - <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a><br>
+ <li style="margin:0;">{{ .Param "content_review" }} &nbsp;&#x21d2; <a href="{{ .RelPermalink }}">{{ .File.Path }}</a></li>
 {{- else }}
-&nbsp;&nbsp;__ (none found)<br>
+ <li style="margin:0;">(none found)</li>
 {{- end }}
+</ul>
+</div>
