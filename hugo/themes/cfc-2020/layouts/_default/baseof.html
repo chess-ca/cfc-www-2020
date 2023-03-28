@@ -2,7 +2,7 @@
 
 <html lang="{{ .Page.Language }}"{{ with .Params.pageid }} data-pageid="{{.}}"{{end}}>
 <head>
-{{- partial "html/head.html" . }}
+{{ partial "html/head.html" . }}
 {{- block "inside-head" . }}{{ end -}}
 </head>
 

@@ -25,6 +25,9 @@
    </select>
   </div>
  </div>
+ <div class="control is-expanded">
+  <input bind:value={e_search} class="input is-small is-primary" type="text" placeholder="{ i18n.filter_by_text }">
+ </div>
  <div class="control ml-6">
   <a href="https://forms.gle/w9EXzkLtRUhabrns9" target="_blank" rel="noreferrer"
       class="button is-small is-primary">{ i18n.addevent }</a>
@@ -41,7 +44,7 @@
   </tr>
   </thead>
   <tbody>
-   {#each filtered_events(e_type, e_prov) as e (e.oid)}
+   {#each filtered_events(e_type, e_prov, e_search) as e (e.oid)}
     {#if e.new_year}
      <tr><td></td><td colspan="99"><strong>---- {e.new_year} ----</strong></td></tr>
     {:else}
@@ -70,17 +73,23 @@
     export let lang = 'en';
 
     const i18n = get_data.page_i18n();
+    const all_events = get_data.events_upcoming();
     let e_type = '*';
     let e_prov = '*';
+    let e_search = '';
 
-    function filtered_events(e_type, e_prov) {
-        const all_events = get_data.events_upcoming();
+    function filtered_events(e_type, e_prov, e_search) {
+        e_search = e_search.trim();
         let current_year = (new Date()).getFullYear().toString();
+        let re_search = e_search === '' ? false
+            : new RegExp(e_search, 'i');
         const events = [];
         for (let e of all_events) {
-            if (e.type !== e_type && e_type !== '*')
+            if (e_type !== '*' && e.type !== e_type)
                 continue;
-            if (e.prov !== e_prov && e_prov !== '*')
+            if (e_prov !== '*' && e.prov !== e_prov)
+                continue;
+            if (re_search && !re_search.test(e.name) && !re_search.test(e.city_prov))
                 continue;
 
             const events_year = e.start.slice(0, 4);
