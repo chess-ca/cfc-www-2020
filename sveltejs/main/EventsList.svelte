@@ -79,17 +79,23 @@
     let e_search = '';
 
     function filtered_events(e_type, e_prov, e_search) {
-        e_search = e_search.trim();
+        const search_str = e_search.trim().replaceAll('*', '.*');
+        let search_re = null;
+        if (search_str !== '') {
+            try {
+                search_re = new RegExp(search_str, 'i');
+            } catch (error) {
+                // invalid regular expression: continue without one.
+            }
+        }
         let current_year = (new Date()).getFullYear().toString();
-        let re_search = e_search === '' ? false
-            : new RegExp(e_search, 'i');
         const events = [];
         for (let e of all_events) {
             if (e_type !== '*' && e.type !== e_type)
                 continue;
             if (e_prov !== '*' && e.prov !== e_prov)
                 continue;
-            if (re_search && !re_search.test(e.name) && !re_search.test(e.city_prov))
+            if (search_re && !search_re.test(e.name) && !search_re.test(e.city_prov))
                 continue;
 
             const events_year = e.start.slice(0, 4);
