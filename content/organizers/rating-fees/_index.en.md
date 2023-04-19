@@ -6,11 +6,11 @@ tableofcontents = false
 
 ## CFC Rating Fees
  
-Regular tournaments
+Regular tournaments (time control of &ge; 60 minutes for a 60 move game):
 * $3.00/player if results are submitted in CFC's file format (.ctr and .tms files) 
   <br>$5.00/player otherwise.
 
-Quick tournaments
+Quick tournaments (time control of &lt; 60 minutes for a 60 move game (and &ge; 5 min)):
 * $1.50/player if results are submitted in CFC's file format (.ctr and .tms files) 
   <br>$3.50/player otherwise.
 
@@ -24,8 +24,7 @@ British Columbia tournament fees
 * Instead of annual BC Chess Federation membership dues, CFC-rated tournaments held in BC
   are required to pay an extra fee per player along with the CFC rating fees.
   These fees are paid to the CFC (who collect them on behalf of the BCCF).
-  See [Fee Reorganization, 2008](https://www.chess.bc.ca/Policy/FeeReorganizationNov08a.pdf)
-  and [Motion: BCCF Junior Membership, 2016](https://www.chess.bc.ca/Policy.php).
+  See [BCCF Membership](https://www.chess.bc.ca/membership.php).
 * Fees are per player for both BC residents and non-residents
   but not for BCCF Life Members ([list](https://www.chess.bc.ca/lifemembers.php)).
 * $3.00/player for multi-day events and $1.50/player for single day events.

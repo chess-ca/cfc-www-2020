@@ -6,28 +6,27 @@ tableofcontents = false
 
 ## Frais de cote FCE
 
-Tournois réguliers
+Tournois réguliers (contrôle du temps &ge; 60 minutes pour une partie de 60 coups):
 * 3,00$/joueur si les résultats sont soumis au format de fichier FCE (fichiers .ctr et .tms)
   <br>5,00$/joueur sinon.
 
-Tournois rapides
+Tournois rapides (contrôle du temps &lt; 60 minutes pour une partie de 60 coups (et &ge; 5 min)):
 * 1,50$/joueur si les résultats sont soumis au format de fichier FCE (fichiers .ctr et .tms)
   <br>3,50$/joueur sinon.
 
-Tournois juniors (Regular ou Quick)
+Tournois juniors (réguliers ou rapides)
 * 0,50$/joueur si les résultats sont soumis au format de fichier FCE (fichiers .ctr et .tms)
   <br>2,50$/joueur sinon.
-* Remarque: Pour les cotisations d'adhésion au CFC (qui sont des frais différents),
+* Remarque: Pour les cotisations d'adhésion au FCE (qui sont des frais différents),
   si tous les joueurs sont juniors, Les frais d'adhésion aux FCC ne sont pas exigés.
   Cependant, les frais de tournoi de la BC *sont* requis; voir ensuite.
 
 Frais de tournoi en Colombie-Britannique
 * Au lieu des cotisations annuelles des membres de la BC Chess Federation,
-  tournois classés CFC organisés en Colombie-Britannique
+  tournois classés FCE organisés en Colombie-Britannique
   sont tenus de payer des frais supplémentaires par joueur en plus des frais de classement FCE.
-  Ces frais sont versés au CFC (qui les perçoit pour le compte du BCCF).
-  Voir [Fee Reorganization, 2008](https://www.chess.bc.ca/Policy/FeeReorganizationNov08a.pdf)
-  et [Motion: BCCF Junior Membership, 2016](https://www.chess.bc.ca/Policy.php).
+  Ces frais sont versés au FCE (qui les perçoit pour le compte du BCCF).
+  Voir [BCCF Membership](https://www.chess.bc.ca/membership.php).
 * Les frais sont par joueur pour les résidents de la BC et les non-résidents
   mais pas pour les membres à vie de BCCF ([liste](https://www.chess.bc.ca/lifemembers.php)).
 * $3,00/joueur pour les événements de plusieurs jours
