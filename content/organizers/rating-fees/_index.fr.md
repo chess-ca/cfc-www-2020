@@ -15,13 +15,38 @@ Tournois rapides
   <br>3,50$/joueur sinon.
 
 Tournois juniors (Regular ou Quick)
-* Si tous les joueurs sont des juniors, les frais d'adhésion au FCE ne sont pas requis.
 * 0,50$/joueur si les résultats sont soumis au format de fichier FCE (fichiers .ctr et .tms)
   <br>2,50$/joueur sinon.
+* Remarque: Pour les cotisations d'adhésion au CFC (qui sont des frais différents),
+  si tous les joueurs sont juniors, Les frais d'adhésion aux FCC ne sont pas exigés.
+  Cependant, les frais de tournoi de la BC *sont* requis; voir ensuite.
+
+Frais de tournoi en Colombie-Britannique
+* Au lieu des cotisations annuelles des membres de la BC Chess Federation,
+  tournois classés CFC organisés en Colombie-Britannique
+  sont tenus de payer des frais supplémentaires par joueur en plus des frais de classement FCE.
+  Ces frais sont versés au CFC (qui les perçoit pour le compte du BCCF).
+  Voir [Fee Reorganization, 2008](https://www.chess.bc.ca/Policy/FeeReorganizationNov08a.pdf)
+  et [Motion: BCCF Junior Membership, 2016](https://www.chess.bc.ca/Policy.php).
+* Les frais sont par joueur pour les résidents de la BC et les non-résidents
+  mais pas pour les membres à vie de BCCF ([liste](https://www.chess.bc.ca/lifemembers.php)).
+* Pour les événements non-juniors, $4,00/joueur pour les événements de plusieurs jours
+  et $2,00/joueur pour les événements d'une journée.
+* Pour les événements juniors, $3,00/joueur pour les événements de plusieurs jours
+  et $1,50/joueur pour les événements d'une journée.
 
 Impôts
-* Depuis le 1er juillet 2011, les taxes HST/GST sont applicables sur les frais de cote FCE.
+* Depuis le 1er juillet 2011, les taxes HST ou PST+GST s'appliquent aux frais de cote FCE.
+  *et* sur les frais de tournoi en BC (le cas échéant).
 * Par exemple - pour les événements à 3$: NB, ON, NL - 3,39$; PEI - 3,42$; NS - 3,45$; Tous les autres - 3,15$  
+
+**--- TOTAL DES FRAIS ---**
+* Le total des frais dus comprend les frais de notation FCE (Regular, Quick ou Junior),
+  les frais de tournoi de la BC (le cas échéant) et les taxes HST ou PST+GST.
+* Pour être classé FCE, l'organisateur de l'événement doit envoyer le total des frais au FCE
+  avec les résultats de l'événement.
+* Toutes les cotisations d'adhésion aux FCE (nouvelles et renouvellements) collectées
+  lors de l'événement doivent également être envoyées aux FCE.
  
 ## Frais de cote FIDE
 
