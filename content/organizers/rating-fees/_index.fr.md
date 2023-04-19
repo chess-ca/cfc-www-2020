@@ -30,9 +30,7 @@ Frais de tournoi en Colombie-Britannique
   et [Motion: BCCF Junior Membership, 2016](https://www.chess.bc.ca/Policy.php).
 * Les frais sont par joueur pour les résidents de la BC et les non-résidents
   mais pas pour les membres à vie de BCCF ([liste](https://www.chess.bc.ca/lifemembers.php)).
-* Pour les événements non-juniors, $4,00/joueur pour les événements de plusieurs jours
-  et $2,00/joueur pour les événements d'une journée.
-* Pour les événements juniors, $3,00/joueur pour les événements de plusieurs jours
+* $3,00/joueur pour les événements de plusieurs jours
   et $1,50/joueur pour les événements d'une journée.
 
 Impôts

@@ -28,8 +28,7 @@ British Columbia tournament fees
   and [Motion: BCCF Junior Membership, 2016](https://www.chess.bc.ca/Policy.php).
 * Fees are per player for both BC residents and non-residents
   but not for BCCF Life Members ([list](https://www.chess.bc.ca/lifemembers.php)).
-* For non-junior events, $4.00/player for multi-day events and $2.00/player for single day events.
-* For junior events, $3.00/player for multi-day events and $1.50/player for single day events.
+* $3.00/player for multi-day events and $1.50/player for single day events.
 
 Taxes
 * As of July 1, 2011 HST or PST+GST taxes are applicable on CFC rating fees
