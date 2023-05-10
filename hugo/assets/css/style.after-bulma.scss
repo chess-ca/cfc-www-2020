@@ -59,6 +59,12 @@ html {
     transition: all 1s;
   }
 }
+.ukraine {
+  border-top: 60px solid #0057b7; background-color: #ffd700;
+  width: 100%; min-height: 44px; padding: 8px 8px;
+  text-align: center; font-size:16px;
+  a { color: #0057b7; font-weight: bold; border-bottom: 2px dotted #0057b7; }
+}
 
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------

@@ -16,7 +16,7 @@
      </div>
      <div class="column is-12">
       <news-flashes sveltejs lang="{{ $lang }}"></news-flashes>
-      <photo-box sveltejs lang="{{ $lang }}"></photo-box>
+      <photo-box sveltejs lang="{{ $lang }}">&nbsp;</photo-box>
      </div>
 
      <div class="column is-6">
@@ -38,6 +38,9 @@
     <div class="columns is-multiline">
      <div class="column is-12">
 {{- partial "home/quick-links.html" . }}
+     </div>
+     <div class="column is-12">
+      <div class="ukraine is-inline-block">{{ $i18n.ukraine|safeHTML }}</div>
      </div>
      <div class="column is-12">
 {{- partial "home/puzzle-of-the-day.html" . }}
