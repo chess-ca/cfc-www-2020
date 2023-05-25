@@ -30,8 +30,7 @@ British Columbia tournament fees
 * $3.00/player for multi-day events and $1.50/player for single day events.
 
 Taxes
-* As of July 1, 2011 HST or PST+GST taxes are applicable on CFC rating fees
-  *and* on BC tournament fees (when applicable). 
+* As of July 1, 2011 HST or PST+GST taxes are applicable on CFC rating fees. 
 * For example - for $3 events: NB, ON, NL - $3.39 ; PEI - $3.42; NS - $3.45; All others - $3.15
 
 **--- TOTAL FEES ---**

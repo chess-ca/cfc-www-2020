@@ -23,4 +23,5 @@ include_js = "cfc-data, page_i18n"
     info = "Info"
     none = "(none)"
     caveat = "The CFC does not endorse nor is in any way responsible for the events listed."
+    organizers = "Organizers: click to request <a>adding or changing your event</a>."
 +++

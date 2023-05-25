@@ -1,4 +1,6 @@
-<p>&#x27A4; {@html i18n.caveat }</p>
+<p class="pg-notes">&#x27A4; {@html i18n.caveat }<br>
+ &#x27A4; {@html String(i18n.organizers).replace("<a>", tag_add_event) }
+</p>
 <div class="field is-grouped is-grouped-multiline">
  <div class="control">
   <div class="select is-small is-primary">
@@ -73,6 +75,7 @@
     export let lang = 'en';
 
     const i18n = get_data.page_i18n();
+    const tag_add_event = '<a href="https://forms.gle/w9EXzkLtRUhabrns9" target="_blank" rel="noreferrer">';
     const all_events = get_data.events_upcoming();
     let e_type = '*';
     let e_prov = '*';
@@ -110,3 +113,11 @@
         return events;
     }
 </script>
+
+<style>
+ .pg-notes { font-size: 88%; }
+ .pg-notes :global(a) { border-bottom: 2px dotted #a6be8e; transition: all 500ms; }
+ .pg-notes :global(a:hover) {
+   background-color:hsl(90,27%,90%); border-bottom:2px solid #a6be8e; transition: all 2s;
+  }
+</style>

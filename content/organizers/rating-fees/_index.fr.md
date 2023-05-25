@@ -34,7 +34,6 @@ Frais de tournoi en Colombie-Britannique
 
 Impôts
 * Depuis le 1er juillet 2011, les taxes HST ou PST+GST s'appliquent aux frais de cote FCE.
-  *et* sur les frais de tournoi en BC (le cas échéant).
 * Par exemple - pour les événements à 3$: NB, ON, NL - 3,39$; PEI - 3,42$; NS - 3,45$; Tous les autres - 3,15$  
 
 **--- TOTAL DES FRAIS ---**

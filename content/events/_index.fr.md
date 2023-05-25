@@ -23,6 +23,7 @@ include_js = "cfc-data, page_i18n"
     info = "Info"
     none = "(rien)"
     caveat = "Le FCE n'endosse ni n'est en aucun cas responsable de tout événement répertorié."
+    organizers = "Organisateurs: cliquez pour demander <a>l'ajout ou la modification de votre événement</a>."
 +++
 
 
