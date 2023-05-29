@@ -9,7 +9,7 @@ Sauter à [International Arbiters](#international-arbiter-ia),
 [FIDE Arbiters](#fide-arbiter-fa),
 [National Arbiters](#national-arbiter-na).
 
-Dernière mise à jour: 2020-11-17
+Dernière mise à jour: 2023-05-22
 du [FIDE Arbiters Database](https://arbiters.fide.com/arbiters/arbiters-database).
 
 ## International Arbiter (IA)

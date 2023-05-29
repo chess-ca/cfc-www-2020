@@ -2,7 +2,7 @@
 title = "Arbiter Titles"
 layout = "ws-single"
 tableofcontents = false
-content_review = "2021-04-01 - Check for updates"
+content_review = "2024-01-01 - Check for updates"
 +++
 
 Jump to [International Arbiters](#international-arbiter-ia),
@@ -10,7 +10,7 @@ Jump to [International Arbiters](#international-arbiter-ia),
 [FIDE Arbiters](#fide-arbiter-fa),
 [National Arbiters](#national-arbiter-na).
 
-Last update: 2020-11-17
+Last update: 2023-05-22
 from the [FIDE Arbiters Database](https://arbiters.fide.com/arbiters/arbiters-database).
 
 ## International Arbiter (IA)
