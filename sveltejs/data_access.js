@@ -28,12 +28,15 @@ function page_i18n() {
 
 /**
  * Get chess events (filtered by end date).
+ * - >= Yesterday to stays past midnight GMT which is evening local time.
  * @returns {Array.<Object>}
  */
 function events_upcoming() {
     let events = window.ws_cfc_data.events || [];
-    const today = (new Date()).toISOString().slice(0,10);
-    return events.filter(e => (e.end && e.end >= today));
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterday_ymd = yesterday.toISOString().slice(0,10);
+    return events.filter(e => (e.end && e.end >= yesterday_ymd));
 }
 
 /**
