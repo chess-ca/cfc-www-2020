@@ -14,5 +14,6 @@ Jump to [National Master](#national-master-nm), [National Candidate Master](#nat
 {{< ws-table thead="Name|Residence|Achieved|Awarded" data="cfc-titles.NM.yaml" >}}
 
 ## National Candidate Master (NCM)
+{{< ws-table thead="Name|Residence|Achieved|Awarded" data="cfc-titles.NCM.yaml" >}}
 
-(coming soon)
+(More names are coming. We are writing a program to scan the ratings database to collect more names.)
