@@ -128,8 +128,11 @@
             d.crosstable = (d.event && d.event.crosstable) || [];
             d.updated = d.updated || '?';
             for (const cte of d.crosstable) {
-                //---- Convert round-robin "X" into a nicer looking char
-                cte.results = cte.results.replaceAll('X', '&#x2A2F;');
+                //---- For round-robins, conver "X" and "=" to nicer symbols
+                if (d.event.pairings === 'RR'){
+                    cte.results = cte.results.replaceAll('X', '&#x2A2F;');
+                    cte.results = cte.results.replaceAll('=', '&half;');
+                }
                 //---- Split results from "+27|-12|=4|..." into an array
                 cte.results = cte.results.split('|');
                 n_rounds = Math.max(cte.results.length, n_rounds);
