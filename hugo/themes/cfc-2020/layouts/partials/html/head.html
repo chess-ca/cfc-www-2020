@@ -1,6 +1,9 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
  <title>{{ i18n "cfc" }}{{ with .Page.Title }} - {{ . }}{{ end }}</title>
+{{- with .Params.redirect_url }}
+ <meta http-equiv="refresh" content="0; url={{ . }}">
+{{- end }}
  <meta name="description" content="{{- block "description" . -}}{{- .Site.Params.description -}}{{- end -}}">
  {{ hugo.Generator }}
 {{- with .OutputFormats.Get "rss"}}{{/* FIX: it escapes the valid + in type; safeHTMLAttr not work */}}
