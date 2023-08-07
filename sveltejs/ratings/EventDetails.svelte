@@ -124,12 +124,14 @@
         'cfc-server://api/event/v1/[[qvar.id]]',
         d => {
             found = Boolean(d.event && d.event.crosstable);
+            let rr_rounds = null;
             d.event = d.event || {};
             d.crosstable = (d.event && d.event.crosstable) || [];
             d.updated = d.updated || '?';
             for (const cte of d.crosstable) {
                 //---- For round-robins, conver "X" and "=" to nicer symbols
                 if (d.event.pairings === 'RR'){
+                    rr_rounds = rr_rounds || (cte.results.split('X').length - 1);
                     cte.results = cte.results.replaceAll('X', '&#x2A2F;');
                     cte.results = cte.results.replaceAll('=', '&half;');
                 }
@@ -140,10 +142,14 @@
                     || (cte.rating_indicator < 40);
             }
             //---- Column headings for rounds depend on tournament type (Swiss or RR)
-            let r_prefix = (d.event.pairings==='SS') ? 'R' : '#';
-            for (let n=1; n<=n_rounds; n++) {
-                round_headers.push(r_prefix + n);
+            round_headers = [];
+            for (let i=1; i<=n_rounds; i++) round_headers.push(i);
+            if (d.event.pairings === 'SS') {
+                round_headers = round_headers.map(n => `R${n}`)
+            } else {
+                round_headers = round_headers.map(n => `#${Math.ceil(n/rr_rounds)}`);
             }
+            console.log('round_headers:', round_headers);
             if (d.event.name) {
                 const el_h1 = document.getElementById('ws-page-title');
                 if (el_h1) el_h1.innerText = d.event.name;
