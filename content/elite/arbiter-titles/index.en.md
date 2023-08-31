@@ -10,8 +10,13 @@ Jump to [International Arbiters](#international-arbiter-ia),
 [FIDE Arbiters](#fide-arbiter-fa),
 [National Arbiters](#national-arbiter-na).
 
-Last update: 2023-05-22
-from the [FIDE Arbiters Database](https://arbiters.fide.com/arbiters/arbiters-database).
+<div style="background-color:#FFFFCC; padding:0.5rem; border: 2px solid #ccc;">
+
+For the latest official list, see the
+[FIDE Arbiters Database](https://arbiters.fide.com/arbiters/arbiters-database).
+<br>La liste ci-dessous a été mise à jour pour la dernière fois le 2023-08-31.
+
+</div>
 
 ## International Arbiter (IA)
 {{< ws-table thead="Name|Title|License" data="fide-titles.IA.yaml" >}}
