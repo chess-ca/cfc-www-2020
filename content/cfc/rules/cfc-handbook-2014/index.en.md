@@ -1363,7 +1363,7 @@ but the same shall be referred to the next ensuing Annual Meeting of the Assembl
 who may direct a summary or record of the matter he inserted in the Minute Book for purposes of record
 as such meeting may consider advisable.
 
-**22A. PROCEDURES FOR GOVERNORS' ONLINE MEETINGS:**
+<span id="s2-22a"> **22A. PROCEDURES FOR GOVERNORS' ONLINE MEETINGS:** </span>
 
 1) The Meeting [Motion 2010-18]:
 
