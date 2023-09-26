@@ -14,7 +14,7 @@ Jump to [International Arbiters](#international-arbiter-ia),
 
 For the latest official list, see the
 [FIDE Arbiters Database](https://arbiters.fide.com/arbiters/arbiters-database).
-<br>La liste ci-dessous a été mise à jour pour la dernière fois le 2023-08-31.
+<br>The list below was last updated 2023-09-25.
 
 </div>
 

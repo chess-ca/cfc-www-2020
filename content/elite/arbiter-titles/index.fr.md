@@ -13,7 +13,7 @@ Sauter à [International Arbiters](#international-arbiter-ia),
 
 Pour la dernière liste officielle, voir le
 [Base de données des arbitres FIDE](https://arbiters.fide.com/arbiters/arbiters-database).
-<br>Cette liste a été mise à jour pour la dernière fois le 2023-08-31.
+<br>La liste ci-dessous a été mise à jour pour la dernière fois le 2023-09-25.
 
 </div>
 
