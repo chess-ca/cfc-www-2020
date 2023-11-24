@@ -24,9 +24,9 @@ Le CFC a envoyé une équipe à l'Olympiade d'échecs de la FIDE à chaque fois 
   <td class="has-text-right">Adresse:</td>
   <td>
    The Chess Federation of Canada
-   <br>PO Box 85015, Brant Plaza
+   <br>901-505 Locust Street
    <br>Burlington, ON 
-   <br>L7R 4K3
+   <br>L7S 1X6
   </td>
  </tr>
  <tr>
